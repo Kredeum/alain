@@ -19,7 +19,7 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 
 ## Contenu
 
-- Positionnement : Alain en façade, l'équipe Kredeum en renfort. « Je » pour ce qu'Alain fait lui-même, « nous / l'équipe Kredeum » pour le renfort.
+- Positionnement : Alain en façade, l'équipe Kredeum en renfort. Écrire au « nous », y compris pour ce qu'Alain fait lui-même (choix d'Alain : il n'aime pas le « je »). Nommer « l'équipe Kredeum » quand il s'agit du renfort.
 - Sections : en-tête, Votre projet (3 types), L'offre (3 étapes + deux façons de travailler), Nos références (expérience + parcours), L'équipe Kredeum, Modalités, Contact.
 - L'équipe sur cette page : Alain, Yoann, Philippe ; les autres membres restent sur labs.kredeum.com.
 
