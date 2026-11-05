@@ -25,6 +25,5 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 
 ## À faire
 
-- Brancher les vrais liens Malt, LinkedIn et X (actuellement `#contact`).
 - Confirmer la mention « missions contractées via Kredeum ».
 - Vérifier le rendu mobile (largeur ~400 px).
