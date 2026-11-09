@@ -6,6 +6,7 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 
 - `index.html` : la page entière, HTML statique avec styles en ligne. Pas de build.
 - `.nojekyll` : désactive Jekyll sur GitHub Pages.
+- `README.md` : présentation du dépôt, reprend l'accroche de la page et les liens de contact (à tenir à jour si l'en-tête change).
 
 ## Charte
 
