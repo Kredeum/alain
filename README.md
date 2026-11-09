@@ -12,7 +12,6 @@ Projet ambitieux, besoin de plus de ressources ? L'équipe [Kredeum](https://lab
 - E-mail : [alain@kredeum.com](mailto:alain@kredeum.com)
 - Malt : [malt.fr/profile/alainpapazoglou](https://www.malt.fr/profile/alainpapazoglou)
 - LinkedIn : [linkedin.com/in/alain](https://www.linkedin.com/in/alain/)
-- X : [@zapaz35](https://x.com/zapaz35)
 
 ## Contenu du dépôt
 
