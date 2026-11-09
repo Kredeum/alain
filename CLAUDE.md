@@ -5,7 +5,6 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 ## Structure
 
 - `index.html` : la page entière, HTML statique avec styles en ligne. Pas de build.
-- `assets/` : photos de l'équipe (200×200, JPEG), reprises de labs.kredeum.com.
 - `.nojekyll` : désactive Jekyll sur GitHub Pages.
 
 ## Charte
@@ -19,11 +18,11 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 
 ## Contenu
 
-- Positionnement : Alain en façade, l'équipe Kredeum en renfort. Écrire au « nous », y compris pour ce qu'Alain fait lui-même (choix d'Alain : il n'aime pas le « je »). Nommer « l'équipe Kredeum » quand il s'agit du renfort.
-- Sections : en-tête, Votre projet (3 types), L'offre (3 étapes + deux façons de travailler), Nos références (expérience + parcours), L'équipe Kredeum, Modalités, Contact.
-- L'équipe sur cette page : Alain, Yoann, Philippe ; les autres membres restent sur labs.kredeum.com.
+- Positionnement : Alain en façade, son équipe en renfort. Écrire au « nous », y compris pour ce qu'Alain fait lui-même (choix d'Alain : il n'aime pas le « je »).
+- Kredeum le moins possible : nommé seulement dans la phrase d'en-tête (« Quand le projet demande plus de bras, l'équipe Kredeum prend le relais ») et en pied de page (« Alain Papazoglou, président de Kredeum », lien vers labs.kredeum.com). Ailleurs, dire « l'équipe ».
+- Sections : en-tête, Votre projet (3 types), L'offre (3 étapes + deux façons de travailler), Nos références (expérience + parcours), Modalités, Contact.
+- Pas de section équipe ni de photos : l'équipe est présentée sur labs.kredeum.com.
 
 ## À faire
 
-- Confirmer la mention « missions contractées via Kredeum ».
 - Vérifier le rendu mobile (largeur ~400 px).
