@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparer les designs</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#16161A;--bar:#1E1E23;--line:#2E2E35;--text:#ECECEF;--muted:#9A9AA3;--acc:#FF7A2F;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:14px/1.4 system-ui,-apple-system,sans-serif}
+.app{display:flex;flex-direction:column;height:100%}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:10px 14px;background:var(--bar);border-bottom:1px solid var(--line)}
+.group{display:flex;gap:4px;padding:3px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+button{font:inherit;color:var(--muted);background:none;border:0;border-radius:7px;padding:6px 12px;cursor:pointer;white-space:nowrap}
+button:hover{color:var(--text)}
+button[aria-pressed="true"]{background:var(--line);color:var(--text)}
+button:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+#auto[aria-pressed="true"]{background:var(--acc);color:#111}
+.spacer{flex:1}
+.hint{color:var(--muted);font-size:12px}
+.prog{height:2px;background:var(--line)}
+.prog i{display:block;height:100%;width:0;background:var(--acc)}
+.stage{flex:1;display:flex;justify-content:center;overflow:hidden;background:var(--bg)}
+iframe{border:0;width:100%;height:100%;background:#fff;transition:width .25s}
+.mobile iframe{width:390px;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+a{color:var(--muted)}
+@media (max-width:640px){.hint{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="bar">
+<div class="group" id="tabs" role="group" aria-label="Design affiché"></div>
+<div class="group" role="group" aria-label="Largeur">
+<button id="w-desk" aria-pressed="true">Bureau</button><button id="w-mob" aria-pressed="false">Mobile</button>
+</div>
+<button id="auto" aria-pressed="false">▶ Auto</button>
+<span class="spacer"></span>
+<span class="hint">← → ou 0 à 3 pour changer · A pour l'auto · <a id="open" href="../" target="_blank" rel="noopener">ouvrir seul</a></span>
+</div>
+<div class="prog"><i id="prog"></i></div>
+<div class="stage" id="stage"><iframe id="frame" title="Aperçu du design"></iframe></div>
+</div>
+<script>
+const designs = [
+  { key: "ref", label: "Référence", src: "../" },
+  { key: "1", label: "1 · Éditorial", src: "1/" },
+  { key: "2", label: "2 · Console", src: "2/" },
+  { key: "3", label: "3 · Suisse", src: "3/" },
+];
+const AUTO_MS = 6000;
+const tabs = document.getElementById("tabs");
+const frame = document.getElementById("frame");
+const stage = document.getElementById("stage");
+const prog = document.getElementById("prog");
+const autoBtn = document.getElementById("auto");
+const openLink = document.getElementById("open");
+let current = -1, timer = null, started = 0, raf = 0;
+
+designs.forEach((d, i) => {
+  const b = document.createElement("button");
+  b.textContent = d.label;
+  b.setAttribute("aria-pressed", "false");
+  b.onclick = () => { show(i); };
+  tabs.appendChild(b);
+});
+
+function scrollRatio() {
+  try {
+    const doc = frame.contentDocument.documentElement;
+    const max = doc.scrollHeight - frame.contentWindow.innerHeight;
+    return max > 0 ? frame.contentWindow.scrollY / max : 0;
+  } catch (e) { return 0; }
+}
+
+function show(i) {
+  i = (i + designs.length) % designs.length;
+  if (i === current) return;
+  const ratio = current >= 0 ? scrollRatio() : 0;
+  current = i;
+  [...tabs.children].forEach((b, j) => b.setAttribute("aria-pressed", String(j === i)));
+  frame.onload = () => {
+    try {
+      const w = frame.contentWindow, doc = w.document.documentElement;
+      doc.style.scrollBehavior = "auto";
+      w.scrollTo(0, ratio * (doc.scrollHeight - w.innerHeight));
+      doc.style.scrollBehavior = "";
+      w.addEventListener("keydown", onKey);
+    } catch (e) {}
+  };
+  frame.src = designs[i].src;
+  openLink.href = designs[i].src;
+  history.replaceState(null, "", "#" + designs[i].key);
+  if (timer) restartAuto();
+}
+
+function tick() {
+  const p = Math.min(1, (performance.now() - started) / AUTO_MS);
+  prog.style.width = (p * 100) + "%";
+  raf = requestAnimationFrame(tick);
+}
+function restartAuto() {
+  clearInterval(timer); cancelAnimationFrame(raf);
+  started = performance.now();
+  timer = setInterval(() => { started = performance.now(); show(current + 1); }, AUTO_MS);
+  tick();
+}
+function setAuto(on) {
+  autoBtn.setAttribute("aria-pressed", String(on));
+  autoBtn.textContent = on ? "❚❚ Auto" : "▶ Auto";
+  if (on) restartAuto();
+  else { clearInterval(timer); timer = null; cancelAnimationFrame(raf); prog.style.width = "0"; }
+}
+autoBtn.onclick = () => setAuto(!timer);
+
+function setWidth(mobile) {
+  stage.classList.toggle("mobile", mobile);
+  document.getElementById("w-desk").setAttribute("aria-pressed", String(!mobile));
+  document.getElementById("w-mob").setAttribute("aria-pressed", String(mobile));
+}
+document.getElementById("w-desk").onclick = () => setWidth(false);
+document.getElementById("w-mob").onclick = () => setWidth(true);
+
+function onKey(e) {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.key === "ArrowRight") { show(current + 1); e.preventDefault(); }
+  else if (e.key === "ArrowLeft") { show(current - 1); e.preventDefault(); }
+  else if (/^[0-3]$/.test(e.key)) show(Number(e.key));
+  else if (e.key === "a" || e.key === "A") setAuto(!timer);
+}
+window.addEventListener("keydown", onKey);
+
+const start = designs.findIndex(d => "#" + d.key === location.hash);
+show(start >= 0 ? start : 0);
+</script>
+</body>
+</html>

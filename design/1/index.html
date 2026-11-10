@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alain Papazoglou · IA appliquée au code</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{--paper:#F5F0E8;--paper2:#ECE5D9;--ink:#16130F;--muted:#5E554B;--soft:#8A8076;--rule:rgba(22,19,15,.18);--accent:#C2410C;--serif:"Instrument Serif",Georgia,serif;--sans:Inter,system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+svg{flex:0 0 auto}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.label{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.serif{font-family:var(--serif);font-weight:400}
+em{font-style:italic}
+
+/* En-tête */
+header{border-bottom:1px solid var(--ink)}
+header .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px;padding-top:22px;padding-bottom:18px}
+.brand{font-family:var(--serif);font-size:26px;line-height:1.1;white-space:nowrap}
+.brand small{display:block;margin-top:4px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+nav{display:flex;flex-wrap:wrap;gap:28px;align-items:center;font-size:14px;white-space:nowrap}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+nav a.cta{color:var(--ink);font-weight:600;border-bottom:1px solid var(--ink);padding-bottom:2px}
+
+/* Hero */
+.hero{padding-top:72px;padding-bottom:88px}
+.hero h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(48px,7.6vw,112px);line-height:.98;letter-spacing:-.02em;max-width:1100px}
+.hero h1 em{color:var(--accent)}
+.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;margin-top:56px;padding-top:28px;border-top:1px solid var(--rule)}
+.hero p{margin:0;font-size:21px;line-height:1.5;color:var(--muted);max-width:560px}
+.btn{display:inline-flex;align-items:center;gap:14px;margin-top:32px;padding:14px 22px;border-radius:999px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;font-size:15px}
+.btn:hover{background:var(--accent)}
+.fiche .name{font-family:var(--serif);font-size:30px;line-height:1.1}
+.fiche .sub{margin-top:6px;font-size:15px;color:var(--muted)}
+.fiche dl{margin:22px 0 0;display:grid;grid-template-columns:max-content 1fr;font-size:15px}
+.fiche dt,.fiche dd{margin:0;padding:10px 0;border-top:1px solid var(--rule)}
+.fiche dt{color:var(--soft);padding-right:24px}
+.fiche dd{font-weight:600}
+
+/* Sections */
+section{padding:96px 0;border-top:1px solid var(--ink)}
+.sec{display:grid;grid-template-columns:220px 1fr;gap:40px}
+.sec-label{position:sticky;top:24px;align-self:start}
+h2{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.6vw,64px);line-height:1.04;letter-spacing:-.01em;max-width:900px}
+h2 em{color:var(--accent)}
+.lead{margin:20px 0 0;max-width:680px;font-size:19px;color:var(--muted)}
+h3{margin:0;font-size:19px;font-weight:700;display:flex;align-items:center;gap:12px}
+.ico{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--rule);color:var(--accent);flex:0 0 auto}
+
+/* Votre projet */
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--ink)}
+.cols3>article{display:flex;flex-direction:column;padding:28px 28px 0 0}
+.cols3>article+article{padding-left:28px;border-left:1px solid var(--rule)}
+.cols3 p{margin:12px 0 20px;font-size:15px;color:var(--muted)}
+.ia{margin:auto 0 0!important;padding:4px 0 4px 16px;border-left:2px solid var(--accent);font-family:var(--serif);font-size:19px!important;line-height:1.35;color:var(--ink)!important}
+.ia strong{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:4px}
+
+/* Démarche */
+#offre{background:var(--ink);color:var(--paper);border-top:none}
+#offre .label{color:#FF8A4C}
+#offre h2 em{color:#FF8A4C}
+#offre .lead{color:#BDB3A7}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:64px}
+.step .num{font-family:var(--serif);font-size:88px;line-height:.9;color:#FF8A4C}
+.step h3{margin-top:18px}
+.step .ico{border-color:rgba(245,240,232,.25);color:#FF8A4C}
+.step p{margin:12px 0 0;font-size:15px;color:#BDB3A7}
+.ways-title{margin:88px 0 0;font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.2vw,42px);line-height:1.1}
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:28px;border:1px solid rgba(245,240,232,.3)}
+.way{padding:32px}
+.way+.way{border-left:1px solid rgba(245,240,232,.3);background:var(--paper);color:var(--ink)}
+.way h4{margin:12px 0 10px;font-size:22px;font-weight:700;display:flex;align-items:center;gap:12px}
+.way p,.way ul{margin:0;font-size:15px;color:#BDB3A7}
+.way .ico{border-color:rgba(245,240,232,.25);color:#FF8A4C}
+.way+.way .label{color:var(--accent)}
+.way+.way .ico{border-color:var(--rule);color:var(--accent)}
+.way+.way ul{color:var(--muted);padding-left:18px}
+.way+.way li+li{margin-top:6px}
+
+/* Références */
+.refs{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px}
+.refs>div{padding-top:22px;border-top:1px solid var(--ink)}
+.refs p{margin:12px 0 0;font-size:16px;color:var(--muted)}
+blockquote{margin:80px 0 0;padding:0;font-family:var(--serif);font-size:clamp(26px,3vw,40px);line-height:1.2;max-width:960px}
+blockquote::before{content:"“";display:block;height:44px;font-size:96px;line-height:1;color:var(--accent)}
+.proofs-title{margin:88px 0 0;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.15}
+.proofs{margin-top:24px;border-top:1px solid var(--ink)}
+.proof{display:grid;grid-template-columns:220px 1fr 1fr 24px;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.proof:hover .proof-name{color:var(--accent)}
+.proof-name{font-family:var(--serif);font-size:30px;line-height:1}
+.proof-tag{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.3}
+.proof-desc{font-size:15px;color:var(--muted)}
+.proof svg{color:var(--accent);align-self:center}
+.big{display:grid;grid-template-columns:auto 1fr;gap:20px 48px;align-items:end;margin-top:56px;padding:40px;background:var(--paper2)}
+.big .n{font-family:var(--serif);font-size:clamp(72px,11vw,160px);line-height:.85;color:var(--accent);white-space:nowrap}
+.big .u{font-family:var(--serif);font-size:28px;line-height:1.1;margin-top:8px}
+.big strong{display:block;font-size:17px;line-height:1.4}
+.big p{margin:10px 0 0;font-size:15px;color:var(--muted)}
+
+/* Contact */
+#contact{text-align:center;padding:120px 0}
+#contact h2{margin:0 auto;font-size:clamp(44px,7vw,104px);line-height:.98;max-width:1000px}
+#contact p{margin:28px auto 0;max-width:620px;font-size:19px;color:var(--muted)}
+.contact-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;margin-top:40px}
+.contact-row span{font-weight:600;margin-right:6px}
+.pill{display:inline-flex;align-items:center;gap:12px;padding:13px 22px;border-radius:999px;border:1px solid var(--ink);text-decoration:none;font-weight:600}
+.pill:hover{background:var(--ink);color:var(--paper)}
+.pill.solid{background:var(--ink);color:var(--paper)}
+.pill.solid:hover{background:var(--accent);border-color:var(--accent)}
+
+footer{border-top:1px solid var(--ink)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:28px;padding-bottom:40px;font-size:14px;color:var(--soft)}
+footer a{color:var(--soft)}
+
+@media (max-width:900px){
+  .hero-grid,.sec,.cols3,.steps,.ways,.refs{grid-template-columns:1fr}
+  .sec{gap:20px}.sec-label{position:static}
+  .cols3>article,.cols3>article+article{padding:28px 0;border-left:none;border-bottom:1px solid var(--rule)}
+  .way+.way{border-left:none;border-top:1px solid rgba(245,240,232,.3)}
+  .proof{grid-template-columns:1fr 24px;gap:8px 16px}
+  .proof-name{grid-column:1}.proof svg{grid-column:2;grid-row:1}
+  .proof-tag,.proof-desc{grid-column:1/-1}
+  .big{grid-template-columns:1fr;padding:28px}
+  section{padding:72px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+<div class="brand">Alain Papazoglou @ Kredeum<small>Senior dev IA</small></div>
+<nav><a href="#situation">Votre projet</a><a href="#offre">La démarche</a><a href="#pourquoi">Références</a><a class="cta" href="#contact">Nous contacter</a></nav>
+</div></header>
+
+<div class="wrap hero">
+<h1>Rendre votre équipe dev <em>autonome</em> avec l'IA.</h1>
+<div class="hero-grid">
+<div>
+<p>Nous travaillons avec vos devs sur votre code, afin qu'ils maîtrisent l'IA. Projet ambitieux, besoin de plus de ressources&nbsp;? L'équipe Kredeum vous accompagne.</p>
+<a class="btn" href="#offre">Voir la démarche en 3 étapes<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+</div>
+<aside class="fiche">
+<div class="name">Alain Papazoglou</div>
+<div class="sub">40 ans d'expertise sur le logiciel, appliquée au code avec l'IA.</div>
+<dl><dt>Basé à</dt><dd>Rennes</dd><dt>Missions</dt><dd>Ouest, Paris ou distanciel</dd><dt>Outils</dt><dd>Claude Code, Codex</dd></dl>
+</aside>
+</div>
+</div>
+
+<section id="situation"><div class="wrap sec">
+<div class="sec-label label">Votre projet</div>
+<div>
+<h2>Maintenance, sécurisation ou création&nbsp;?</h2>
+<p class="lead">Dynamisez vos projets, gagnez en productivité et sécurisez vos développements grâce à une méthodologie logicielle éprouvée, augmentée par l'IA.</p>
+<div class="cols3">
+<article>
+<h3><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.760z"/></svg></span>Maintenance</h3>
+<p>Une application en production, au cœur de votre activité. Corriger les bugs ou faire des évolutions, sans interruption de service.</p>
+<p class="ia"><strong>Avec l'IA&nbsp;:</strong> reprendre un code legacy que plus personne ne maîtrise, pour le maintenir et le faire évoluer sereinement.</p>
+</article>
+<article>
+<h3><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>Sécurisation</h3>
+<p>Du code exposé aux failles en série révélées par l'IA. Contrer ces failles, renforcer les accès, mettre à jour les OS et librairies.</p>
+<p class="ia"><strong>Avec l'IA&nbsp;:</strong> examiner tout le code, vérifier chaque correction, avant que les failles ne soient exploitées.</p>
+</article>
+<article>
+<h3><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>Création</h3>
+<p>Un nouveau projet&nbsp;: un produit à lancer, un outil interne, un prototype à valider. Définir le besoin, concevoir, développer, mettre en production.</p>
+<p class="ia"><strong>Avec l'IA&nbsp;:</strong> passer plus vite de l'idée au prototype, puis à un produit solide, avec vous à chaque étape.</p>
+</article>
+</div>
+</div>
+</div></section>
+
+<section id="offre"><div class="wrap sec">
+<div class="sec-label label">La démarche</div>
+<div>
+<h2>Trois étapes, un objectif&nbsp;: l'<em>autonomie de votre équipe avec l'IA</em></h2>
+<p class="lead">Pas de démonstration hors sol&nbsp;: votre code, vos outils, au rythme de votre équipe.</p>
+<div class="steps">
+<div class="step"><div class="num">01</div><h3><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>Cadrage</h3><p>Une demi-journée avec vous et votre équipe, sur votre code et vos outils. Nous repérons où l'IA vous fera gagner le plus, et ce qu'il faut sécuriser. Un rapport suit, avec un plan d'adoption concret&nbsp;: outils, process, priorités.</p></div>
+<div class="step"><div class="num">02</div><h3><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Immersion</h3><p>Sur place, dans vos locaux, avec vos développeurs. Nous travaillons ensemble sur vos vrais tickets&nbsp;: mise en place des outils IA, premiers agents, premières corrections vérifiées. Les process s'adaptent au fil des jours à votre projet et à votre société.</p></div>
+<div class="step"><div class="num">03</div><h3><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></span>Accompagnement</h3><p>Tout au long de votre projet, nous restons aux côtés de vos développeurs, à distance&nbsp;: revue de code, réglage des outils et des process, réponses aux questions du quotidien. Notre présence diminue à mesure qu'ils prennent la main.</p></div>
+</div>
+<h3 class="ways-title">Deux façons de travailler ensemble.</h3>
+<div class="ways">
+<div class="way">
+<div class="label">Avec Alain</div>
+<h4><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Former et accompagner votre équipe</h4>
+<p>Un seul interlocuteur pour vous accompagner. Nous apprenons à connaître votre code et votre équipe, et restons à ses côtés jusqu'à ce qu'elle soit autonome avec l'IA.</p>
+</div>
+<div class="way">
+<div class="label">Avec l'équipe Kredeum</div>
+<h4><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Renforcer ou livrer</h4>
+<ul>
+<li>Renfort de développeurs experts de l'IA dans votre équipe</li>
+<li>Projet livré de bout en bout en sous-traitance, de la spécification à la production</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section>
+
+<section id="pourquoi"><div class="wrap sec">
+<div class="sec-label label">Références</div>
+<div>
+<h2>Alain, un senior qui livre et qui transmet.</h2>
+<div class="refs">
+<div><h3><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></span>L'expérience</h3><p>3 start-up SaaS créées, de l'idée à la mise sur le marché. Une forte expertise en développement logiciel, du cycle en V aux méthodes agiles. Avec une expérience à tous les postes&nbsp;: code, produit, projet, direction technique et générale.</p></div>
+<div><h3><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span>La méthodologie</h3><p>Des agents IA qui gèrent le développement, les tests en mode TDD, les bugs de prod corrigés automatiquement, avec plusieurs LLM qui vérifient en concurrence. Le vrai sujet n'est plus de générer le code, mais de le vérifier, le sécuriser et le superviser.</p></div>
+<div><h3><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>La transmission</h3><p>Nous travaillons avec votre équipe, pas à sa place&nbsp;: elle apprend en faisant, avec un transfert de savoir-faire au quotidien. Une méthode éprouvée sur nos projets passés en encadrant et en formant jusqu'à 40 personnes.</p></div>
+</div>
+<blockquote>Du Minitel à l'IA, en passant par le web, le mobile et la blockchain&nbsp;: chaque domaine traversé nous a appris à séparer l'effet de mode de ce qui dure. C'est ce recul que nous mettons au service de votre projet.</blockquote>
+<h3 id="preuves" class="proofs-title">Des projets IA concrets, pas des promesses&nbsp;:</h3>
+<div class="proofs">
+<a class="proof" href="https://iacodelive.fr/" target="_blank" rel="noopener"><span class="proof-name">IA Code Live</span><span class="proof-tag">Le Live qui compile l'actu IA&nbsp;!</span><span class="proof-desc">Blog français sur le code, les agents et les modèles IA.</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+<a class="proof" href="https://github.com/zapaz/gitgraph-lite" target="_blank" rel="noopener"><span class="proof-name">GitGraph Lite</span><span class="proof-tag">Parallel AI coding. With worktrees and a clean graph.</span><span class="proof-desc">Navigateur Git macOS avec worktrees.</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+<a class="proof" href="https://phyxia.dev/" target="_blank" rel="noopener"><span class="proof-name">Phyxia</span><span class="proof-tag">AI builds your app. Phyxia Agent keeps it alive.</span><span class="proof-desc">Agent IA qui surveille et répare vos applications en temps réel.</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+</div>
+<div class="big">
+<div><div class="n">300&nbsp;000</div><div class="u">lignes de code</div></div>
+<div><strong>Notre projet client le plus récent, maintenu en solo avec l'IA, sans écrire une ligne de code à la main.</strong><p>Maintenance corrective et évolutive avec Claude Code, Codex et Grok Build, avec un process et des skills maison en évolution permanente pour automatiser le développement, la vérification du code, le déploiement et le suivi des erreurs en production.</p></div>
+</div>
+</div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Parlons de votre projet et de <em>votre code</em>.</h2>
+<p>Décrivez votre situation en quelques lignes&nbsp;: maintenance corrective ou évolutive, sécurisation, ou création d'un nouveau projet. Nous vous répondons par une proposition de cadrage, avec Alain ou l'équipe Kredeum.</p>
+<div class="contact-row">
+<span>Nous contacter&nbsp;:</span>
+<a class="pill solid" href="https://www.malt.fr/profile/alainpapazoglou" target="_blank" rel="noopener">sur Malt<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="pill" href="mailto:devia@kredeum.com?subject=Projet%20dev%20avec%20l%27IA">par e-mail<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="pill" href="https://www.linkedin.com/in/alain/" target="_blank" rel="noopener">sur LinkedIn<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+</div></section>
+
+<footer><div class="wrap">
+<span>© 2026 Alain Papazoglou @ Kredeum · Rennes</span>
+<span><a href="https://labs.kredeum.com/" target="_blank" rel="noopener">Kredeum</a> · <a href="mailto:devia@kredeum.com?subject=Projet%20dev%20avec%20l%27IA">E-mail</a> · <a href="https://www.malt.fr/profile/alainpapazoglou" target="_blank" rel="noopener">Malt</a> · <a href="https://www.linkedin.com/in/alain/" target="_blank" rel="noopener">LinkedIn</a> · <a href="../../en/" hreflang="en" lang="en">English version</a></span>
+</div></footer>
+
+</body>
+</html>
