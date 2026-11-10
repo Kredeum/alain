@@ -5,7 +5,7 @@ Ce dépôt contient la page d'accueil d'Alain Papazoglou, publiée sur GitHub Pa
 
 ## Rendre votre équipe dev autonome avec l'IA
 
-Nous travaillons avec vos devs sur votre code, pour qu'ils maîtrisent l'IA et deviennent autonomes.
+Nous travaillons avec vos devs sur votre code, pour qu'ils maîtrisent l'IA.
 Projet ambitieux, besoin de plus de ressources ? L'équipe [Kredeum](https://labs.kredeum.com/) vous accompagne.
 
 - Site : [zapaz.github.io/alain](https://zapaz.github.io/alain/)

@@ -20,6 +20,9 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 ## Contenu
 
 - Positionnement : Alain en façade, son équipe en renfort. Écrire au « nous », y compris pour ce qu'Alain fait lui-même (choix d'Alain : il n'aime pas le « je »).
-- Kredeum le moins possible : nommé seulement dans le nom en haut à gauche (« Alain Papazoglou @ Kredeum »), la phrase d'en-tête (« Projet ambitieux, besoin de plus de ressources ? L'équipe Kredeum vous accompagne »), dans l'étiquette « Avec l'équipe Kredeum » de l'offre, dans le texte du bloc contact (« avec Alain ou avec toute l'équipe Kredeum »), et en pied de page (« Alain Papazoglou, président de Kredeum », lien vers labs.kredeum.com). Ailleurs, dire « l'équipe ».
-- Sections : en-tête, Votre projet (3 types), L'offre (3 étapes + deux façons de travailler), Nos références (expérience + preuve chiffrée), Contact.
+- Jamais « on » : toujours « nous ».
+- Style direct et sans remplissage (pas de « le tout… »). Listes d'actions à l'infinitif, pas à l'impératif.
+- Espace insécable (`&nbsp;`) avant « ? », « : », « ! » et « ; », pour qu'ils ne passent jamais seuls en début de ligne.
+- Kredeum le moins possible : nommé seulement dans le nom en haut à gauche (« Alain Papazoglou @ Kredeum »), la phrase d'en-tête (« Projet ambitieux, besoin de plus de ressources ? L'équipe Kredeum vous accompagne »), dans l'étiquette « Avec l'équipe Kredeum » de la démarche, dans le texte du bloc contact (« avec Alain ou avec l'équipe Kredeum »), et en pied de page (« © 2026 Alain Papazoglou @ Kredeum · Rennes », lien « Kredeum » vers labs.kredeum.com). Ailleurs, dire « l'équipe ».
+- Sections : en-tête, Votre projet (3 types), La démarche (3 étapes + deux façons de travailler), Nos références (expérience + preuve chiffrée), Contact.
 - Pas de section équipe ni de photos : l'équipe est présentée sur labs.kredeum.com.
