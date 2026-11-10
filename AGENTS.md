@@ -23,7 +23,3 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 - Kredeum le moins possible : nommé seulement dans le nom en haut à gauche (« Alain Papazoglou @ Kredeum »), la phrase d'en-tête (« Projet ambitieux, besoin de plus de ressources ? L'équipe Kredeum peut également vous accompagner »), dans l'étiquette « Avec l'équipe Kredeum » de l'offre, dans le texte du bloc contact (« avec Alain ou avec toute l'équipe Kredeum »), et en pied de page (« Alain Papazoglou, président de Kredeum », lien vers labs.kredeum.com). Ailleurs, dire « l'équipe ».
 - Sections : en-tête, Votre projet (3 types), L'offre (3 étapes + deux façons de travailler), Nos références (expérience + preuve chiffrée), Contact.
 - Pas de section équipe ni de photos : l'équipe est présentée sur labs.kredeum.com.
-
-## À faire
-
-- Vérifier le rendu mobile (largeur ~400 px).

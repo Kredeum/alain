@@ -17,7 +17,7 @@ Projet ambitieux, besoin de plus de ressources ? L'équipe [Kredeum](https://lab
 
 - `index.html` : la page entière, en HTML statique avec les styles en ligne. Aucune étape de build.
 - `.nojekyll` : désactive Jekyll sur GitHub Pages.
-- `CLAUDE.md` : la charte graphique et les règles de rédaction de la page.
+- `AGENTS.md` : la charte graphique et les règles de rédaction de la page.
 
 ## Modifier la page
 
