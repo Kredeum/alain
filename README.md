@@ -1,4 +1,4 @@
-# Alain Papazoglou · Développeur senior, IA appliquée au code
+# Alain Papazoglou · Senior dev IA
 
 Ce dépôt contient la page d'accueil d'Alain Papazoglou, publiée sur GitHub Pages :
 **https://zapaz.github.io/alain/**
@@ -9,7 +9,7 @@ Nous travaillons avec vos devs sur votre code, afin qu'ils maîtrisent l'IA.
 Projet ambitieux, besoin de plus de ressources ? L'équipe [Kredeum](https://labs.kredeum.com/) vous accompagne.
 
 - Site : [zapaz.github.io/alain](https://zapaz.github.io/alain/)
-- E-mail : [alain@kredeum.com](mailto:alain@kredeum.com)
+- E-mail : [devia@kredeum.com](mailto:devia@kredeum.com)
 - Malt : [malt.fr/profile/alainpapazoglou](https://www.malt.fr/profile/alainpapazoglou)
 - LinkedIn : [linkedin.com/in/alain](https://www.linkedin.com/in/alain/)
 
