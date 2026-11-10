@@ -7,6 +7,7 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 - `index.html` : la page entière, HTML statique avec styles en ligne. Pas de build.
 - `en/index.html` : la même page en anglais, même structure. Toute modification de `index.html` se reporte ici. Le français est la langue par défaut. Lien vers l'autre langue en pied de page seulement, jamais dans le menu.
 - `.nojekyll` : désactive Jekyll sur GitHub Pages.
+- `CNAME` : domaine personnalisé `alain.kredeum.com` (entrée CNAME chez OVH vers kredeum.github.io).
 - `README.md` : présentation du dépôt, reprend l'accroche de la page et les liens de contact (à tenir à jour si l'en-tête change).
 
 ## Charte
