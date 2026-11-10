@@ -37,7 +37,7 @@ a{color:var(--muted)}
 </div>
 <button id="auto" aria-pressed="false">▶ Auto</button>
 <span class="spacer"></span>
-<span class="hint">← → ou 0 à 3 pour changer · A pour l'auto · <a id="open" href="../" target="_blank" rel="noopener">ouvrir seul</a></span>
+<span class="hint">← → ou 0 à 6 pour changer · A pour l'auto · <a id="open" href="../" target="_blank" rel="noopener">ouvrir seul</a></span>
 </div>
 <div class="prog"><i id="prog"></i></div>
 <div class="stage" id="stage"><iframe id="frame" title="Aperçu du design"></iframe></div>
@@ -48,6 +48,9 @@ const designs = [
   { key: "1", label: "1 · Éditorial", src: "1/" },
   { key: "2", label: "2 · Console", src: "2/" },
   { key: "3", label: "3 · Suisse", src: "3/" },
+  { key: "4", label: "4 · Nuit", src: "4/" },
+  { key: "5", label: "5 · Forêt", src: "5/" },
+  { key: "6", label: "6 · Clair", src: "6/" },
 ];
 const AUTO_MS = 6000;
 const tabs = document.getElementById("tabs");
@@ -126,7 +129,7 @@ function onKey(e) {
   if (e.metaKey || e.ctrlKey || e.altKey) return;
   if (e.key === "ArrowRight") { show(current + 1); e.preventDefault(); }
   else if (e.key === "ArrowLeft") { show(current - 1); e.preventDefault(); }
-  else if (/^[0-3]$/.test(e.key)) show(Number(e.key));
+  else if (/^[0-6]$/.test(e.key)) show(Number(e.key));
   else if (e.key === "a" || e.key === "A") setAuto(!timer);
 }
 window.addEventListener("keydown", onKey);
