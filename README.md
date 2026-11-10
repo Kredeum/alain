@@ -16,6 +16,7 @@ Projet ambitieux, besoin de plus de ressources ? L'équipe [Kredeum](https://lab
 ## Contenu du dépôt
 
 - `index.html` : la page entière, en HTML statique avec les styles en ligne. Aucune étape de build.
+- `en/index.html` : la version anglaise, publiée sur [zapaz.github.io/alain/en](https://zapaz.github.io/alain/en/).
 - `.nojekyll` : désactive Jekyll sur GitHub Pages.
 - `AGENTS.md` : la charte graphique et les règles de rédaction de la page.
 
