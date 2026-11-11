@@ -9,6 +9,7 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 - `og.png` et `en/og.png` : images d'aperçu 1200×630 pour les partages de liens (thème nuit). À refaire si le titre principal change.
 - Référencement : chaque page porte en tête une adresse officielle (canonical), les balises d'aperçu (Open Graph) et une fiche JSON-LD (Person, ProfessionalService, WebPage). Tenir ces balises à jour si le titre, la description ou les liens de contact changent, dans les deux langues.
 - `robots.txt` (tous les robots autorisés, IA comprises), `sitemap.xml` (les deux pages et leurs langues, date `lastmod` à mettre à jour) et `llms.txt` (résumé du site et de l'offre pour les IA, à tenir à jour si le contenu change).
+- `BingSiteAuth.xml` et la balise `google-site-verification` des deux pages : preuves de propriété du site pour Bing Webmaster Tools et Google Search Console. Ne jamais les supprimer, sinon les deux outils perdent la vérification.
 - `.nojekyll` : désactive Jekyll sur GitHub Pages.
 - `CNAME` : domaine personnalisé `alain.kredeum.com` (entrée CNAME chez OVH vers kredeum.github.io).
 - `README.md` : présentation du dépôt, reprend l'accroche de la page et les liens de contact (à tenir à jour si l'en-tête change).
