@@ -1,0 +1,5 @@
+# Tous les robots sont les bienvenus, y compris ceux des moteurs de recherche IA.
+User-agent: *
+Allow: /
+
+Sitemap: https://alain.kredeum.com/sitemap.xml

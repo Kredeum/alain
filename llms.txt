@@ -1,0 +1,41 @@
+# Alain Papazoglou @ Kredeum
+
+> Développeur senior, IA appliquée au code, basé à Rennes. Nous travaillons avec les développeurs d'une équipe, sur leur propre code, pour qu'ils maîtrisent l'IA et deviennent autonomes. Pour les projets qui demandent plus de ressources, l'équipe Kredeum prend le relais.
+
+Missions dans l'Ouest, à Paris ou à distance. Outils : Claude Code, Codex. 40 ans d'expertise sur le logiciel, 3 start-up SaaS créées, des équipes jusqu'à 40 personnes encadrées et formées.
+
+## Types de projets
+
+- Maintenance : reprendre un code legacy que plus personne ne maîtrise, corriger les bugs et faire évoluer une application en production, sans interruption de service.
+- Sécurisation : examiner tout le code avec l'IA, corriger les failles, renforcer les accès, mettre à jour OS et librairies, en vérifiant chaque correction.
+- Création : passer plus vite de l'idée au prototype, puis à un produit solide.
+
+## La démarche, en trois étapes
+
+- Cadrage : une demi-journée sur le code et les outils de l'équipe, suivie d'un rapport avec un plan d'adoption de l'IA (outils, process, priorités).
+- Immersion : sur place, avec les développeurs, sur leurs vrais tickets : mise en place des outils IA, premiers agents, premières corrections vérifiées.
+- Accompagnement : à distance, tout au long du projet (revue de code, réglage des outils et des process), jusqu'à ce que l'équipe soit autonome.
+
+## Deux façons de travailler
+
+- Avec Alain : former et accompagner l'équipe, un seul interlocuteur.
+- Avec l'équipe Kredeum : renfort de développeurs experts de l'IA, ou projet livré de bout en bout en sous-traitance.
+
+## Références
+
+- Un projet client de 300 000 lignes de code maintenu en solo avec l'IA, sans écrire une ligne de code à la main (Claude Code, Codex, Grok Build, skills maison).
+- [IA Code Live](https://iacodelive.fr/) : blog français sur le code, les agents et les modèles IA.
+- [GitGraph Lite](https://github.com/zapaz/gitgraph-lite) : navigateur Git macOS avec worktrees.
+- [Phyxia](https://phyxia.dev/) : agent IA qui surveille et répare les applications en temps réel.
+
+## Pages
+
+- [Page d'accueil (français)](https://alain.kredeum.com/)
+- [Home page (English)](https://alain.kredeum.com/en/) : same content, fully remote missions.
+- [Kredeum](https://labs.kredeum.com/) : l'équipe et le studio.
+
+## Contact
+
+- E-mail : devia@kredeum.com
+- [Malt](https://www.malt.fr/profile/alainpapazoglou)
+- [LinkedIn](https://www.linkedin.com/in/alain/)
