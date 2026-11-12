@@ -90,6 +90,9 @@ figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
 aside.dev { margin: 8px 0; padding: 22px clamp(16px, 3vw, 28px); border: 1px solid var(--line); border-radius: 20px;
   display: flex; flex-direction: column; gap: 12px; font-size: 16px; }
 aside.dev ul { font-size: 16px; }
+.outro { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; }
+.wrap .outro p { font: italic 500 21px/1.45 var(--display); color: var(--text); text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+details .fig-note { margin-top: 12px; }
 @media (max-width: 480px) { body { font-size: 17px; } .lead { font-size: 18px; } }
 h3 { margin: 12px 0 0; font: 600 19px/1.35 var(--body); color: var(--text); }
 h3 .n { color: var(--accent); margin-right: 2px; }
@@ -289,6 +292,7 @@ th { color: var(--text); font-weight: 600; }
           </tbody>
         </table>
       </div>
+      <p class="fig-note">Méthode&nbsp;: chiffres tirés des lignes de bilan laissées par chaque passe de revue sur les 896 PRs du projet, du 18 février au 11 novembre 2026. Les mois sont ceux de l’ouverture de la PR. Novembre, incomplet, est exclu des graphiques. Le rapport entre écriture et revue est mesuré sur 7 sessions d’octobre et novembre, temps actif seulement.</p>
     </details>
 
     <h2>Ce que nous avons appris</h2>
@@ -345,14 +349,15 @@ th { color: var(--text); font-weight: 600; }
     </aside>
 
     <h2>Conclusion</h2>
-    <p>Neuf mois et près de 900 PRs plus tard, le constat est net&nbsp;: écrire du code ne coûte presque plus rien, le valider coûte cher. Une seule IA qui relit ne suffit pas. Plusieurs IA de fournisseurs différents, encadrées par un processus strict, relisent avec une attention qu’aucun relecteur humain ne tient sur des milliers de revues.</p>
-    <p>Ce processus a un prix&nbsp;: plus de temps et de tokens par PR, et des réglages à reprendre sans cesse. C’est pourtant lui qui permet de confier à l’IA l’évolution d’un code de 300&nbsp;000 lignes déjà en production.</p>
-    <p>L’humain ne disparaît pas pour autant. Il décide quoi construire, fixe le niveau d’exigence, écrit et ajuste les règles de validation. Il délègue l’exécution à l’IA, jamais la compréhension.</p>
+    <p>Neuf mois et près de 900 PRs plus tard, le constat est net&nbsp;: écrire du code ne coûte presque plus rien, le valider coûte cher. Une seule IA qui relit ne suffit pas. Plusieurs IA de fournisseurs différents, encadrées par un processus strict, relisent avec une attention qu’aucun relecteur humain ne tient sur des centaines de revues.</p>
+    <p>Ce processus a un prix&nbsp;: plus de temps et de tokens par PR, et des réglages à reprendre sans cesse. C’est pourtant lui qui permet de confier, les yeux fermés, en toute confiance, à l’IA l’évolution d’un code de plus de 300&nbsp;000 lignes en production.</p>
+    <p>L’humain ne disparaît pas pour autant. Il décide quoi construire, fixe le niveau d’exigence, écrit et ajuste les règles de validation.</p>
+    <p><strong>Il délègue l’exécution à l’IA, jamais la compréhension.</strong></p>
 
-    <p>Nous mettons cette démarche en place avec les équipes dev, sur leur code et avec leurs outils.</p>
-    <a class="post-cta" href="../../#offre">Découvrir la démarche<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
-
-    <p class="fig-note">Méthode&nbsp;: chiffres tirés des lignes de bilan laissées par chaque passe de revue sur les 896 PRs du projet, du 18 février au 11 novembre 2026. Les mois sont ceux de l’ouverture de la PR. Novembre, incomplet, est exclu des graphiques. Le rapport entre écriture et revue est mesuré sur 7 sessions d’octobre et novembre, temps actif seulement.</p>
+    <div class="outro">
+      <p>Nous mettons cette démarche en place avec les équipes dev, sur leur code et avec leurs outils.</p>
+      <a class="post-cta" href="../../#offre">Découvrir la démarche<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    </div>
   </article>
 </div>
 </main>
