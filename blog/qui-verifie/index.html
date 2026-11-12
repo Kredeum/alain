@@ -340,7 +340,7 @@ th { color: var(--text); font-weight: 600; }
 
     <h3><span class="n">9.</span> Régler les paramètres pour que la boucle converge</h3>
     <p>Deux réglages décident quand la boucle s’arrête. D’abord le seuil d’exigence&nbsp;: chaque relecteur classe ce qu’il trouve sur sa propre échelle, du bug bloquant à la faute de frappe dans la documentation, et le skill fixe le niveau à partir duquel un problème relance la boucle. Ensuite, le nombre de revues sans bug d’affilée exigé pour merger&nbsp;: deux par défaut, un paramètre du skill.</p>
-    <p>Mal réglée, la boucle tourne sans fin&nbsp;: huit PRs ont dépassé les 20 passes, une est montée à 30. Au final, nous avons rendu la revue moins exigeante sur les détails, pour faire baisser le nombre de passes.</p>
+    <p>Mal réglée, la boucle tourne sans fin. En comptant les relances du skill sur une même PR, 34 PRs ont atteint 20 passes, et sept ont dépassé les 30, jusqu’à 41. Au final, nous avons rendu la revue moins exigeante sur les détails, pour faire baisser le nombre de passes.</p>
 
     <h3><span class="n">10.</span> Une règle non lue n’est pas appliquée</h3>
     <p>Les instructions du processus avaient grossi jusqu’à 91&nbsp;000 tokens, relus en entier à chaque passe. Nous les avons découpées&nbsp;: chaque étape charge seulement ce dont elle a besoin, et chaque passe tourne dans un agent neuf, sans le bruit des précédentes.</p>
