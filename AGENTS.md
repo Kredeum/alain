@@ -11,6 +11,7 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 - Référencement : chaque page porte en tête une adresse officielle (canonical), les balises d'aperçu (Open Graph) et une fiche JSON-LD (Person, ProfessionalService, WebPage ; Blog pour la liste du blog, BlogPosting pour un article). Tenir ces balises à jour si le titre, la description ou les liens de contact changent, dans les deux langues.
 - `robots.txt` (tous les robots autorisés, IA comprises), `sitemap.xml` (les pages d'accueil et leurs langues, le blog et chaque article, date `lastmod` à mettre à jour) et `llms.txt` (résumé du site et de l'offre pour les IA, à tenir à jour si le contenu change).
 - `BingSiteAuth.xml` et la balise `google-site-verification` des deux pages : preuves de propriété du site pour Bing Webmaster Tools et Google Search Console. Ne jamais les supprimer, sinon les deux outils perdent la vérification.
+- `favicon.svg` (suit le mode clair ou sombre du navigateur), `favicon.ico` et `apple-touch-icon.png` : icônes d'onglet « ap », en tracés Inter Bold. Liées en tête de chaque page, accueil et blog.
 - `.nojekyll` : désactive Jekyll sur GitHub Pages.
 - `CNAME` : domaine personnalisé `alain.kredeum.com` (entrée CNAME chez OVH vers kredeum.github.io).
 - `README.md` : présentation du dépôt, reprend l'accroche de la page et les liens de contact (à tenir à jour si l'en-tête change).
@@ -34,6 +35,7 @@ Jour (aucun aplat noir) :
 Les propositions de design écartées sont gardées dans le tag `designs-2026-11-10` (page de comparaison `design/index.html`).
 
 Communs aux deux thèmes :
+- Logo « <ap/> » en Inter Bold, barre oblique en orange (`var(--accent)`), à gauche de l'en-tête et lien vers l'accueil (classe `.logo`).
 - Polices Google Fonts : Gelasio (titres, proche de Georgia) et Inter (texte).
 - Boutons : pilule avec pastille ronde à droite contenant une flèche, deux couleurs par bouton (noir + crème).
 - Le titre principal doit tenir sur 2 lignes en écran large.
