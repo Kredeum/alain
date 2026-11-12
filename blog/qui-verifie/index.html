@@ -217,12 +217,9 @@ th { color: var(--text); font-weight: 600; }
     <figure>
       <figcaption>Chronologie du projet</figcaption>
       <ol class="timeline">
-        <li><b>Janvier 2026</b>Import du code existant dans le dépôt.</li>
-        <li><b>Février à avril&nbsp;: sans processus de revue</b>136 PRs, petites (200 lignes en médiane), fusionnées en 1&nbsp;h&nbsp;20 en médiane. Une PR sur deux environ reçoit une seule relecture, par une IA, en un seul passage. La revue automatique en intégration continue, lancée fin mars, est coupée au bout de quatre jours.</li>
-        <li class="key"><b>Avril&nbsp;: naissance du skill&nbsp;<code>/full-review</code></b>Premier bilan posté sur une PR en mai.</li>
-        <li><b>Mai à juillet&nbsp;: le rodage</b>Les règles changent presque chaque semaine. Les relecteurs tombent en panne, les solutions de secours se multiplient.</li>
-        <li class="key"><b>Juillet&nbsp;: le skill <code>/full-review</code> v2</b>Fin du rodage. Le processus évolue encore, mais par petites retouches.</li>
-        <li><b>Août&nbsp;: trois fournisseurs</b>Les relecteurs externes passent par un outil d’orchestration. Fin août, Grok (xAI) rejoint Claude (Anthropic) et Codex (OpenAI).</li>
+        <li><b>Février à avril&nbsp;: une IA, une passe</b>136 PRs, petites et fusionnées vite. Une sur deux environ est relue une seule fois, par une seule IA.</li>
+        <li class="key"><b>Mai à juillet&nbsp;: le rodage</b>Naissance du skill <code>/full-review</code>. Les règles changent chaque semaine, les relecteurs tombent en panne.</li>
+        <li class="key"><b>Juillet à septembre&nbsp;: trois fournisseurs</b>Le skill passe en v2, puis Grok (xAI) rejoint Claude (Anthropic) et Codex (OpenAI).</li>
         <li class="key"><b>Octobre&nbsp;: la boucle converge</b>3 passes par PR en médiane, contre 7 en août.</li>
       </ol>
     </figure>
@@ -255,34 +252,21 @@ th { color: var(--text); font-weight: 600; }
     <p>Août est le pic&nbsp;: les PRs doublent de taille, près de 1&nbsp;000 lignes en médiane, et tout grimpe avec elles. En octobre, la première passe trouve encore six problèmes, mais les suivantes presque plus&nbsp;: la deuxième passe est propre une fois sur deux, contre une fois sur dix en août.</p>
 
     <figure>
-      <figcaption>Passes de revue par PR, en médiane</figcaption>
-      <div class="cols" role="img" aria-label="Passes par PR, en médiane : mai 5, juin 5, juillet 5, août 7, septembre 4, octobre 3.">
-        <div class="col rod"><div class="plot single"><div class="bar s1" style="--h:62%" title="Mai : 5 passes"><b>5</b></div></div><span class="m">mai</span></div>
-        <div class="col rod"><div class="plot single"><div class="bar s1" style="--h:62%" title="Juin : 5 passes"><b>5</b></div></div><span class="m">juin</span></div>
-        <div class="col"><div class="plot single"><div class="bar s1" style="--h:62%" title="Juillet : 5 passes"><b>5</b></div></div><span class="m">juil.</span></div>
-        <div class="col"><div class="plot single"><div class="bar s1" style="--h:88%" title="Août : 7 passes"><b>7</b></div></div><span class="m">août</span></div>
-        <div class="col"><div class="plot single"><div class="bar s1" style="--h:50%" title="Septembre : 4 passes"><b>4</b></div></div><span class="m">sept.</span></div>
-        <div class="col"><div class="plot single"><div class="bar s1" style="--h:38%" title="Octobre : 3 passes"><b>3</b></div></div><span class="m">oct.</span></div>
+      <figcaption>Passes de revue par PR et délai de fusion, en médiane</figcaption>
+      <div class="legend"><span><i class="s1"></i>Passes par PR</span><span><i class="s2"></i>Délai entre l’ouverture et la fusion, en heures</span></div>
+      <div class="cols" role="img" aria-label="Passes par PR et délai de fusion en heures, en médiane : avril, sans revue, délai 1,3 ; mai 5 passes et 7 h ; juin 5 et 14,6 ; juillet 5 et 3,6 ; août 7 et 5,8 ; septembre 4 et 6 ; octobre 3 et 3,9.">
+        <div class="col"><div class="plot"><div class="bar s2" style="--h:8%" title="Avril : 1,3 h"><b>1,3</b></div></div><span class="m">avril<br>sans revue</span></div>
+        <div class="col rod"><div class="plot"><div class="bar s1" style="--h:31%" title="Mai : 5 passes"><b>5</b></div><div class="bar s2" style="--h:44%" title="Mai : 7 h"><b>7</b></div></div><span class="m">mai</span></div>
+        <div class="col rod"><div class="plot"><div class="bar s1" style="--h:31%" title="Juin : 5 passes"><b>5</b></div><div class="bar s2" style="--h:91%" title="Juin : 14,6 h"><b>14,6</b></div></div><span class="m">juin</span></div>
+        <div class="col"><div class="plot"><div class="bar s1" style="--h:31%" title="Juillet : 5 passes"><b>5</b></div><div class="bar s2" style="--h:22%" title="Juillet : 3,6 h"><b>3,6</b></div></div><span class="m">juil.</span></div>
+        <div class="col"><div class="plot"><div class="bar s1" style="--h:44%" title="Août : 7 passes"><b>7</b></div><div class="bar s2" style="--h:36%" title="Août : 5,8 h"><b>5,8</b></div></div><span class="m">août</span></div>
+        <div class="col"><div class="plot"><div class="bar s1" style="--h:25%" title="Septembre : 4 passes"><b>4</b></div><div class="bar s2" style="--h:38%" title="Septembre : 6 h"><b>6</b></div></div><span class="m">sept.</span></div>
+        <div class="col"><div class="plot"><div class="bar s1" style="--h:19%" title="Octobre : 3 passes"><b>3</b></div><div class="bar s2" style="--h:24%" title="Octobre : 3,9 h"><b>3,9</b></div></div><span class="m">oct.</span></div>
       </div>
       <div class="axis"></div>
       <div class="rodnote"><i></i>Rodage (jusqu’au 13 juillet)</div>
     </figure>
-
-    <figure>
-      <figcaption>Délai entre l’ouverture et la fusion d’une PR, en heures (médiane)</figcaption>
-      <div class="cols" role="img" aria-label="Délai médian en heures : avril, sans revue, 1,3 ; mai 7 ; juin 14,6 ; juillet 3,6 ; août 5,8 ; septembre 6 ; octobre 3,9.">
-        <div class="col"><div class="plot single"><div class="bar s2" style="--h:8%" title="Avril, sans full-review : 1,3 h"><b>1,3</b></div></div><span class="m">avril<br>sans revue</span></div>
-        <div class="col rod"><div class="plot single"><div class="bar s1" style="--h:44%" title="Mai : 7 h"><b>7</b></div></div><span class="m">mai</span></div>
-        <div class="col rod"><div class="plot single"><div class="bar s1" style="--h:91%" title="Juin : 14,6 h"><b>14,6</b></div></div><span class="m">juin</span></div>
-        <div class="col"><div class="plot single"><div class="bar s1" style="--h:22%" title="Juillet : 3,6 h"><b>3,6</b></div></div><span class="m">juil.</span></div>
-        <div class="col"><div class="plot single"><div class="bar s1" style="--h:36%" title="Août : 5,8 h"><b>5,8</b></div></div><span class="m">août</span></div>
-        <div class="col"><div class="plot single"><div class="bar s1" style="--h:38%" title="Septembre : 6 h"><b>6</b></div></div><span class="m">sept.</span></div>
-        <div class="col"><div class="plot single"><div class="bar s1" style="--h:24%" title="Octobre : 3,9 h"><b>3,9</b></div></div><span class="m">oct.</span></div>
-      </div>
-      <div class="axis"></div>
-      <div class="rodnote"><i></i>Rodage (jusqu’au 13 juillet)</div>
-    </figure>
-    <p>Sans processus, une PR était fusionnée en 1&nbsp;h&nbsp;20. Pendant le rodage, le délai explose&nbsp;: jusqu’à près de 15 heures en juin. Une fois le processus stable, il revient à 4 à 6 heures. C’est le prix de la validation, et il se lit directement sur ce graphique.</p>
+    <p>En avril, sans processus, une PR était fusionnée en 1&nbsp;h&nbsp;20. Pendant le rodage, le délai explose&nbsp;: jusqu’à près de 15 heures en juin. Une fois le processus stable, il revient à 4 à 6 heures. C’est le prix de la validation, et il se lit directement sur ce graphique.</p>
 
     <details>
       <summary>Voir les données mois par mois</summary>
