@@ -29,6 +29,8 @@ p, ul { margin: 0; color: var(--text2); }
 .lead { font-size: 20px; color: var(--text); }
 .subtitle { margin: -4px 0 8px; font: italic 500 clamp(20px, 2.6vw, 24px)/1.4 var(--display); color: var(--text); text-wrap: pretty; }
 ul { padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
+.wrap p, .wrap li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.wrap .subtitle, .wrap figure p, .wrap figure li, .wrap .fig-note { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 strong { color: var(--text); font-weight: 600; }
 figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--band); border-radius: 20px;
   display: flex; flex-direction: column; gap: 18px; }
