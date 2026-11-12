@@ -142,7 +142,7 @@ th { color: var(--text); font-weight: 600; }
 
     <figure>
       <figcaption>Le skill <code>/full-review</code></figcaption>
-      <svg class="loopsvg" viewBox="0 0 390 520" role="img" aria-label="Le skill /full-review. 1 : une IA écrit la PR. 2a : un LLM relit la PR et cherche les bugs. Test : deux revues sans bug d’affilée ? Si non, 2b : les bugs trouvés sont corrigés en TDD, puis 3 : la main passe à un autre LLM, et la boucle repart en 2a. Si oui, 4 : la PR sort de la boucle, merge.">
+      <svg class="loopsvg" viewBox="0 0 390 440" role="img" aria-label="Le skill /full-review. 1 : une IA écrit la PR. 2a : un LLM relit la PR et cherche les bugs. Test : deux revues sans bug d’affilée ? Si non, 2b : les bugs trouvés sont corrigés en TDD, et la boucle repart en 2a avec un autre LLM. Si oui, 3 : merge, la PR sort de la boucle.">
 <defs>
 <marker id="lb-ah-lb-arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="lb-head-arc"/></marker>
 <marker id="lb-ah-lb-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="lb-head-line"/></marker>
@@ -150,16 +150,15 @@ th { color: var(--text); font-weight: 600; }
 <path class="lb-line" d="M160.0,54 V81" marker-end="url(#lb-ah-lb-line)"/>
 <path class="lb-arc" d="M160.0,138 V155" marker-end="url(#lb-ah-lb-arc)"/>
 <path class="lb-arc" d="M160.0,240 V289" marker-end="url(#lb-ah-lb-arc)"/>
-<path class="lb-arc" d="M160.0,346 V373" marker-end="url(#lb-ah-lb-arc)"/>
-<path class="lb-arc" d="M60,402.0 H36 Q24,402.0 24,390.0 V122.0 Q24,110.0 36,110.0 H59" marker-end="url(#lb-ah-lb-arc)"/>
-<text class="lb-r" x="17" y="256.0" transform="rotate(-90 17 256.0)">la boucle repart</text>
-<path class="lb-line" d="M240.0,198 H288 Q300,198 300,210 V480.0 Q300,492.0 288,492.0 H261" marker-end="url(#lb-ah-lb-line)"/>
+<path class="lb-arc" d="M60,318.0 H36 Q24,318.0 24,306.0 V122.0 Q24,110.0 36,110.0 H59" marker-end="url(#lb-ah-lb-arc)"/>
+<text class="lb-r" x="17" y="214.0" transform="rotate(-90 17 214.0)">la boucle repart avec un autre LLM</text>
+<path class="lb-line" d="M240.0,198 H288 Q300,198 300,210 V400.0 Q300,412.0 288,412.0 H261" marker-end="url(#lb-ah-lb-line)"/>
 <path class="lb-diamond" d="M160.0,158 L238.0,198 L160.0,238 L82.0,198 Z"/>
 <text class="lb-d" x="160.0" y="195">2 revues</text>
 <text class="lb-d" x="160.0" y="211">sans bug&#160;?</text>
 <text class="lb-yes" x="248.0" y="190">oui</text>
 <text class="lb-no" x="169.0" y="258">non</text>
-<rect class="lb-box " x="62" y="0" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="22">1. Écrire</text><text class="lb-s" x="160.0" y="40">Une IA écrit la PR</text><rect class="lb-box lb-loop" x="62" y="84" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="106">2a. Chercher les bugs</text><text class="lb-s" x="160.0" y="124">Un LLM relit la PR</text><rect class="lb-box lb-loop" x="62" y="292" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="314">2b. Corriger les findings</text><text class="lb-s" x="160.0" y="332">Les bugs trouvés, en TDD</text><rect class="lb-box lb-loop" x="62" y="376" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="398">3. Passer la main</text><text class="lb-s" x="160.0" y="416">à un autre LLM</text><rect class="lb-box lb-end" x="62" y="466" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="488">4. Merge</text><text class="lb-s" x="160.0" y="506">La PR sort de la boucle</text>
+<rect class="lb-box " x="62" y="0" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="22">1. Écrire</text><text class="lb-s" x="160.0" y="40">Une IA écrit la PR</text><rect class="lb-box lb-loop" x="62" y="84" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="106">2a. Chercher les bugs</text><text class="lb-s" x="160.0" y="124">Un LLM relit la PR</text><rect class="lb-box lb-loop" x="62" y="292" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="314">2b. Corriger les findings</text><text class="lb-s" x="160.0" y="332">Les bugs trouvés, en TDD</text><rect class="lb-box lb-end" x="62" y="386" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="408">3. Merge</text><text class="lb-s" x="160.0" y="426">La PR sort de la boucle</text>
 </svg>
       <p class="fig-note">Après deux revues sans bug d’affilée, faites par deux LLM différents, la PR sort de la boucle.</p>
     </figure>
