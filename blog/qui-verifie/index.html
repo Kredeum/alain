@@ -101,9 +101,12 @@ h3 .when { display: block; font: 600 12px/1.4 var(--body); letter-spacing: 0.08e
 .timeline { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
 .timeline li { position: relative; padding: 0 0 20px 30px; font-size: 15px; line-height: 1.5; color: var(--text2); }
 .timeline li:last-child { padding-bottom: 0; }
-.timeline li::before { content: ""; position: absolute; z-index: 1; left: 0; top: 5px; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: var(--band); border: 2px solid var(--accent); }
-.timeline li.key::before { background: var(--accent); }
-.timeline li:not(:last-child)::after { content: ""; position: absolute; left: 6px; top: 12px; bottom: -12px; width: 2px; background: var(--line); }
+.timeline li::before { content: ""; position: absolute; z-index: 1; left: 0; top: 4px; width: 16px; height: 16px; box-sizing: border-box; border-radius: 50%; border: 2px solid var(--accent); }
+.timeline li::before { background-clip: padding-box; background-image: linear-gradient(to top, var(--accent) var(--fill, 0%), var(--band) var(--fill, 0%)); }
+.timeline li.f1 { --fill: 33%; }
+.timeline li.f2 { --fill: 67%; }
+.timeline li.f3 { --fill: 100%; }
+.timeline li:not(:last-child)::after { content: ""; position: absolute; left: 7px; top: 12px; bottom: -12px; width: 2px; background: var(--line); }
 .timeline b { display: block; color: var(--text); font-weight: 600; }
 /* Graphiques en colonnes */
 .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font: 500 13px/1.4 var(--body); color: var(--text2); }
@@ -225,9 +228,9 @@ th { color: var(--text); font-weight: 600; }
       <figcaption>Chronologie du projet</figcaption>
       <ol class="timeline">
         <li><b>Février à avril&nbsp;: une IA, une passe</b>136 PRs, petites et fusionnées vite. Une sur deux environ est relue une seule fois, par une seule IA.</li>
-        <li class="key"><b>Mai à juillet&nbsp;: le rodage</b>Naissance du skill <code>/full-review</code>. Les règles changent chaque semaine, les relecteurs tombent en panne.</li>
-        <li class="key"><b>Juillet à septembre&nbsp;: trois fournisseurs</b>Le skill passe en v2, puis Grok (xAI) rejoint Claude (Anthropic) et Codex (OpenAI).</li>
-        <li class="key"><b>Octobre&nbsp;: la boucle converge</b>3 passes par PR en médiane, contre 7 en août.</li>
+        <li class="f1"><b>Mai à juillet&nbsp;: le rodage</b>Naissance du skill <code>/full-review</code>. Les règles changent chaque semaine, les relecteurs tombent en panne.</li>
+        <li class="f2"><b>Juillet à septembre&nbsp;: trois fournisseurs</b>Le skill passe en v2, puis Grok (xAI) rejoint Claude (Anthropic) et Codex (OpenAI).</li>
+        <li class="f3"><b>Octobre&nbsp;: la boucle converge</b>3 passes par PR en médiane, contre 7 en août.</li>
       </ol>
     </figure>
 
