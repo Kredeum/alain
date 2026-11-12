@@ -86,7 +86,9 @@ figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
 .figs { display: flex; flex-wrap: wrap; gap: 8px 28px; font: 500 14px/1.4 var(--body); color: var(--text2); }
 .figs b { font: 700 22px/1.1 var(--display); color: var(--text); font-variant-numeric: tabular-nums; margin-right: 6px; }
 .case { margin: 4px 0; padding-left: 18px; border-left: 2px solid var(--accent); display: flex; flex-direction: column; gap: 10px; }
-.case .eyebrow { color: var(--gray); }
+details.case { font-size: inherit; color: inherit; display: block; }
+details.case summary { font: 600 12px/1.4 var(--body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); cursor: pointer; }
+details.case > p { margin-top: 10px; }
 aside.dev { margin: 8px 0; padding: 22px clamp(16px, 3vw, 28px); border: 1px solid var(--line); border-radius: 20px;
   display: flex; flex-direction: column; gap: 12px; font-size: 16px; }
 aside.dev ul { font-size: 16px; }

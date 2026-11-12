@@ -86,7 +86,9 @@ figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
 .figs { display: flex; flex-wrap: wrap; gap: 8px 28px; font: 500 14px/1.4 var(--body); color: var(--text2); }
 .figs b { font: 700 22px/1.1 var(--display); color: var(--text); font-variant-numeric: tabular-nums; margin-right: 6px; }
 .case { margin: 4px 0; padding-left: 18px; border-left: 2px solid var(--accent); display: flex; flex-direction: column; gap: 10px; }
-.case .eyebrow { color: var(--gray); }
+details.case { font-size: inherit; color: inherit; display: block; }
+details.case summary { font: 600 12px/1.4 var(--body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); cursor: pointer; }
+details.case > p { margin-top: 10px; }
 aside.dev { margin: 8px 0; padding: 22px clamp(16px, 3vw, 28px); border: 1px solid var(--line); border-radius: 20px;
   display: flex; flex-direction: column; gap: 12px; font-size: 16px; }
 aside.dev ul { font-size: 16px; }
@@ -306,11 +308,11 @@ th { color: var(--text); font-weight: 600; }
     <h3><span class="n">1.</span> Faire jouer la concurrence</h3>
     <p>Faire relire à une IA le code qu’elle vient d’écrire apporte peu. Changer son niveau d’effort, ou passer à un autre modèle du même fournisseur, aide un peu. Le mieux reste de faire jouer la concurrence&nbsp;: Codex (OpenAI) relit le code écrit par Claude Code (Anthropic), ou inversement. Chacun traque chez l’autre le moindre détail.</p>
     <p>Les chiffres le confirment&nbsp;: dans 38&nbsp;% des PRs, une IA a jugé le code propre, puis celle d’un autre fournisseur y a trouvé un problème. Même code, autre regard. C’est la raison d’être des trois fournisseurs.</p>
-    <div class="case">
-      <div class="eyebrow">Un cas réel</div>
+    <details class="case">
+      <summary>Un cas réel</summary>
       <p>Une PR remplaçait une erreur par une valeur de secours, quand une source externe envoyait des données corrompues. La première revue n’y a vu qu’un détail de documentation. La deuxième l’a décrite comme une amélioration, «&nbsp;plus sûre&nbsp;».</p>
       <p>À la quatrième passe, le modèle d’un autre fournisseur a suivi cette valeur jusqu’à ses usages&nbsp;: elle servait à calculer des montants réels. Problème classé critique, changement annulé.</p>
-    </div>
+    </details>
     <p>Un trait très humain, au passage. Quand une IA reçoit les bugs trouvés dans son propre code, elle les accepte presque toujours. Mais elle les minimise volontiers&nbsp;: «&nbsp;D’accord, c’est un bug, mais il est moins grave que tu ne le dis.&nbsp;» Un échange entre deux IA, sans aucun humain dans la boucle.</p>
 
     <h3><span class="n">2.</span> Valider coûte cinq à dix fois plus qu’écrire</h3>
@@ -328,16 +330,16 @@ th { color: var(--text); font-weight: 600; }
     <h3><span class="n">5.</span> Les bugs se cachent dans les cas limites</h3>
     <p>Les relecteurs ne s’arrêtent pas aux fautes évidentes. Les problèmes qu’ils relèvent touchent surtout les conditions aux limites, les cas rares et les failles de sécurité&nbsp;: une valeur vide, un nombre négatif, une source externe qui renvoie des données corrompues. Avant, ces cas n’étaient traités que partiellement, et souvent imparfaitement. C’est là que la revue par IA apporte le plus.</p>
 
-    <h3><span class="n">6.</span> Une revue en panne n’est pas une revue propre</h3>
-    <p>Un relecteur qui plante ne renvoie aucun problème. Compté comme «&nbsp;propre&nbsp;», il pouvait faire livrer une PR que personne n’avait lue. Depuis, une revue en erreur est ignorée, jamais comptée.</p>
-
-    <h3><span class="n">7.</span> Un problème trouvé en cache d’autres</h3>
+    <h3><span class="n">6.</span> Un problème trouvé en cache d’autres</h3>
     <p>Corriger la seule ligne signalée ne suffit pas&nbsp;: le même défaut se trouve souvent ailleurs dans le code. Avant chaque correction, l’IA cherche le même motif dans tout le dépôt, et corrige chaque occurrence, avec un test pour chacune.</p>
 
-    <h3><span class="n">8.</span> Le processus se corrige lui-même</h3>
+    <h3><span class="n">7.</span> Le processus se corrige lui-même</h3>
     <p>À la fin de chaque revue, l’IA propose des améliorations de ses propres règles. Nous les relisons et les intégrons par lots, plusieurs fois par mois. Le processus d’octobre n’est plus celui de juillet, et c’est voulu.</p>
 
     <p class="also">Mais aussi</p>
+
+    <h3><span class="n">8.</span> Une revue en panne n’est pas une revue propre</h3>
+    <p>Un relecteur qui plante ne renvoie aucun problème. Compté comme «&nbsp;propre&nbsp;», il pouvait faire livrer une PR que personne n’avait lue. Depuis, une revue en erreur est ignorée, jamais comptée.</p>
 
     <h3><span class="n">9.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
     <p>Avec deux revues propres d’affilée comme seul critère, la boucle pouvait s’arrêter avant que le troisième relecteur ait lu le code. Désormais, les deux dernières revues propres viennent de deux relecteurs différents, et les trois doivent avoir lu la version finale. C’est ce qui explique les 5 passes en médiane.</p>
