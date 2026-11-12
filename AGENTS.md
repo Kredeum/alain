@@ -39,6 +39,7 @@ Communs aux deux thèmes :
 - Polices Google Fonts : Gelasio (titres, proche de Georgia) et Inter (texte).
 - Boutons : pilule avec pastille ronde à droite contenant une flèche, deux couleurs par bouton (noir + crème).
 - Le titre principal doit tenir sur 2 lignes en écran large.
+- Paragraphes justifiés avec césure (règle `p` du bloc de styles, sauf le bloc contact, centré) ; dans le blog, texte des articles justifié aussi, sauf sous-titre et graphiques.
 
 ## Contenu
 
