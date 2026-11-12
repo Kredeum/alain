@@ -38,20 +38,18 @@ figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--
 figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
 .fig-note { font-size: 13px; line-height: 1.5; color: var(--gray); }
 /* Boucle de revue */
-.loopsvg { display: block; width: 100%; max-width: 440px; margin: 0 auto; overflow: visible; }
+.loopsvg { display: block; width: 100%; max-width: 460px; margin: 0 auto; overflow: visible; }
 .loopsvg .lb-box { fill: var(--bg); stroke: var(--line); stroke-width: 1; }
-.loopsvg .lb-loop { stroke: var(--accent); }
-.loopsvg .lb-t { font: 600 13.5px var(--body); fill: var(--text); text-anchor: middle; }
+.loopsvg .lb-loop { stroke: var(--accent); stroke-width: 1.5; }
+.loopsvg .lb-end { stroke: var(--text2); stroke-width: 1.5; }
+.loopsvg .lb-t { font: 600 14px var(--body); fill: var(--text); text-anchor: middle; }
 .loopsvg .lb-s { font: 500 12.5px var(--body); fill: var(--text2); text-anchor: middle; }
 .loopsvg .lb-arc { fill: none; stroke: var(--accent); stroke-width: 2; }
-.loopsvg .lb-ahead { fill: var(--accent); }
-.loopsvg .lb-exit { fill: none; stroke: var(--text2); stroke-width: 1.5; }
-.loopsvg .lb-dash { stroke-dasharray: 4 4; }
-.loopsvg .lb-xhead { fill: var(--text2); }
-.loopsvg .lb-label-bg { fill: var(--band); }
-.loopsvg .lb-l { font: 600 13px var(--body); fill: var(--text); text-anchor: middle; }
-.loopsvg .lb-o { font: 600 12px var(--body); fill: var(--text2); }
-.loopsvg .lb-o2 { fill: var(--accent); }
+.loopsvg .lb-head-arc { fill: var(--accent); }
+.loopsvg .lb-line { fill: none; stroke: var(--text2); stroke-width: 1.5; }
+.loopsvg .lb-head-line { fill: var(--text2); }
+.loopsvg .lb-c { font: 600 13px var(--body); fill: var(--text); }
+.loopsvg .lb-r { font: 600 11.5px var(--body); fill: var(--accent); text-anchor: middle; }
 /* Barres par passe */
 .bars { display: grid; grid-template-columns: max-content 1fr max-content; align-items: center; gap: 10px 12px;
   font: 500 14px/1.3 var(--body); color: var(--text2); }
