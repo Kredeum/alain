@@ -301,10 +301,10 @@ th { color: var(--text); font-weight: 600; }
     </details>
 
     <h2>Ce que nous avons appris</h2>
-    <p>Chaque règle du processus vient d’un incident réel. Nous en avons consigné 140. Voici les dix leçons qui ont le plus changé notre façon de valider.</p>
+    <p>Chaque règle du processus vient d’un retour d’expérience. Nous en avons consigné plus d’une centaine. Voici les dix leçons qui ont le plus changé notre façon de valider.</p>
 
     <h3><span class="n">1.</span> Faire jouer la concurrence</h3>
-    <p>Faire relire à une IA le code qu’elle vient d’écrire apporte peu. Changer son niveau d’effort, ou passer à un autre modèle du même fournisseur, aide un peu. Le mieux reste de faire jouer la concurrence&nbsp;: Codex (OpenAI) relit le code écrit par Claude Code (Anthropic), et inversement. Chacun traque chez l’autre le moindre détail.</p>
+    <p>Faire relire à une IA le code qu’elle vient d’écrire apporte peu. Changer son niveau d’effort, ou passer à un autre modèle du même fournisseur, aide un peu. Le mieux reste de faire jouer la concurrence&nbsp;: Codex (OpenAI) relit le code écrit par Claude Code (Anthropic), ou inversement. Chacun traque chez l’autre le moindre détail.</p>
     <p>Les chiffres le confirment&nbsp;: dans 38&nbsp;% des PRs, une IA a jugé le code propre, puis celle d’un autre fournisseur y a trouvé un problème. Même code, autre regard. C’est la raison d’être des trois fournisseurs.</p>
     <div class="case">
       <div class="eyebrow">Un cas réel</div>
@@ -315,7 +315,7 @@ th { color: var(--text); font-weight: 600; }
 
     <h3><span class="n">2.</span> Valider coûte cinq à dix fois plus qu’écrire</h3>
     <p>Sur les sessions où nous avons pu mesurer les deux phases, la revue prend cinq fois plus de temps que l’écriture en médiane, et jusqu’à dix fois. Écrire prend quelques dizaines de minutes, valider prend des heures. Elle consomme aussi bien plus de tokens, avec trois relecteurs par PR.</p>
-    <p>C’est pourtant là que l’IA a le plus progressé en 2026. Elle est devenue bien meilleure que l’humain pour valider du code, trouver les failles de sécurité et les corriger avant la mise en production. Aucun relecteur humain ne garde la même attention de la première à la 2&nbsp;542e revue.</p>
+    <p>C’est pourtant là que l’IA a le plus progressé en 2026. Elle est devenue bien meilleure que l’humain pour valider du code, trouver les failles de sécurité et les corriger avant la mise en production. Aucun relecteur humain ne garde la même attention de la première à la centième revue.</p>
 
     <h3><span class="n">3.</span> Régler les paramètres pour que la boucle converge</h3>
     <p>Deux réglages décident quand la boucle s’arrête. D’abord le seuil d’exigence&nbsp;: chaque relecteur classe ce qu’il trouve sur sa propre échelle, du bug bloquant à la faute de frappe dans la documentation, et le skill fixe le niveau à partir duquel un problème relance la boucle. Ensuite, le nombre de revues sans bug d’affilée exigé pour merger&nbsp;: deux par défaut, un paramètre du skill.</p>
