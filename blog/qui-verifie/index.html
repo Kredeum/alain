@@ -38,7 +38,7 @@ figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--
 figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
 .fig-note { font-size: 13px; line-height: 1.5; color: var(--gray); }
 /* Schéma horizontal en tête */
-.hero { padding: 0; overflow: hidden; margin-top: 16px; }
+.hero { padding: 0; overflow: hidden; }
 @media (max-width: 760px) { .hero { display: none; } }
 .mobile-only { display: none; }
 @media (max-width: 760px) { .mobile-only { display: flex; } }
@@ -153,6 +153,17 @@ th { color: var(--text); font-weight: 600; }
     <div class="eyebrow">Blog · 12 novembre 2026</div>
     <h1 class="one-line">L’IA code, ok&nbsp;! Mais qui <em>vérifie</em>&nbsp;?</h1>
     <p class="subtitle">Écrire du code n’est plus un problème&nbsp;: l’IA le fait vite et bien. Le point clé, désormais, c’est de vérifier et sécuriser son code avant déploiement en production&nbsp;!</p>
+
+    <h2>Fin 2025&nbsp;: l’IA écrit, l’humain relit</h2>
+    <p>Fin 2025, Claude Code change radicalement notre façon de coder. Un agent lit le code, écrit la correction, lance les tests en TDD et ouvre une PR, en quelques dizaines de minutes. Avec plusieurs agents en parallèle, les PRs arrivent par dizaines. Mais dans l’ancien paradigme&nbsp;: rien ne passe en production sans revue humaine. S’en passer&nbsp;? «&nbsp;Ô sacrilège&nbsp;!&nbsp;», diraient les plus réfractaires.</p>
+    <p><em>Pour l’instant, l’IA écrit, l’humain relit.</em></p>
+    <p>Mais l’humain ne suit pas&nbsp;: une seule PR peut demander des heures de relecture, et tout relire devient impossible. Résultat&nbsp;: les burn-out se multiplient. Comment faire&nbsp;? Ralentir l’IA au rythme de l’humain, ou valider sans vraiment relire&nbsp;: deux mauvais choix.</p>
+    <p><em>La relecture doit changer d’échelle… avec l’IA&nbsp;!</em></p>
+
+    <h2>2026&nbsp;: les IA se relisent entre elles</h2>
+    <p>L’IA code mieux que l’humain, c’est acquis. Elle relit aussi mieux que lui&nbsp;: elle lit chaque ligne, ne se lasse jamais, et ajoute en prime une analyse de sécurité systématique, que l’humain fait le plus souvent après coup, dans de rares audits.</p>
+    <p>Aussi, nous avons décidé de confier notre revue de code à des IA, mais de façon maîtrisée, au travers d’un skill nommé <code>/full-review</code>. Plusieurs IA relisent à tour de rôle la PR. Chaque problème détecté est fixé de suite, puis la revue repart, avec un autre relecteur.</p>
+
     <figure class="hero"><svg class="hzsvg" viewBox="21 86 1158 470" role="img" aria-label="Le skill /full-review, la revue de code en boucle par plusieurs IA. 1 : un LLM écrit la PR. 2a : un LLM relit la PR et cherche les bugs. Deux revues sans bug d’affilée ? Si oui, 3 : merge, la PR sort de la boucle. Si non, 2b : les bugs trouvés sont corrigés en TDD, et la boucle repart en 2a avec un autre LLM.">
 <defs>
 <marker id="hz-hz-arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="hz-head-arc"/></marker>
@@ -174,17 +185,6 @@ th { color: var(--text); font-weight: 600; }
 <text class="hz-no" x="751.0" y="396.0">non</text>
 <rect class="hz-box hz-plain" x="31.0" y="230.0" width="222" height="92" rx="18"/><text class="hz-t" x="142.0" y="271">1. Écrire</text><text class="hz-s" x="142.0" y="302">Un LLM écrit la PR</text><rect class="hz-box hz-loop" x="295.0" y="230.0" width="284" height="92" rx="18"/><text class="hz-t" x="437.0" y="271">2a. Chercher les bugs</text><text class="hz-s" x="437.0" y="302">Un LLM relit la PR</text><rect class="hz-box hz-end" x="923.0" y="230.0" width="246" height="92" rx="18"/><text class="hz-t" x="1046.0" y="271">3. Merge</text><text class="hz-s" x="1046.0" y="302">La PR sort de la boucle</text><rect class="hz-box hz-loop" x="589.0" y="430.0" width="296" height="92" rx="18"/><text class="hz-t" x="737.0" y="471">2b. Corriger les findings</text><text class="hz-s" x="737.0" y="502">Les bugs trouvés, en TDD</text>
 </svg></figure>
-
-    <h2>Fin 2025&nbsp;: l’IA écrit, l’humain relit</h2>
-    <p>Fin 2025, Claude Code change radicalement notre façon de coder. Un agent lit le code, écrit la correction, lance les tests en TDD et ouvre une PR, en quelques dizaines de minutes. Avec plusieurs agents en parallèle, les PRs arrivent par dizaines. Mais dans l’ancien paradigme&nbsp;: rien ne passe en production sans revue humaine. S’en passer&nbsp;? «&nbsp;Ô sacrilège&nbsp;!&nbsp;», diraient les plus réfractaires.</p>
-    <p><em>Pour l’instant, l’IA écrit, l’humain relit.</em></p>
-    <p>Mais l’humain ne suit pas&nbsp;: une seule PR peut demander des heures de relecture, et tout relire devient impossible. Résultat&nbsp;: les burn-out se multiplient. Comment faire&nbsp;? Ralentir l’IA au rythme de l’humain, ou valider sans vraiment relire&nbsp;: deux mauvais choix.</p>
-    <p><em>La relecture doit changer d’échelle… avec l’IA&nbsp;!</em></p>
-
-    <h2>2026&nbsp;: les IA se relisent entre elles</h2>
-    <p>L’IA code mieux que l’humain, c’est acquis. Elle relit aussi mieux que lui&nbsp;: elle lit chaque ligne, ne se lasse jamais, et ajoute en prime une analyse de sécurité systématique, que l’humain fait le plus souvent après coup, dans de rares audits.</p>
-    <p>Aussi, nous avons décidé de confier notre revue de code à des IA, mais de façon maîtrisée, au travers d’un skill nommé <code>/full-review</code>. Plusieurs IA relisent à tour de rôle la PR. Chaque problème détecté est fixé de suite, puis la revue repart, avec un autre relecteur.</p>
-
     <figure class="mobile-only">
       <figcaption>Le skill <code>/full-review</code></figcaption>
       <svg class="loopsvg" viewBox="0 0 390 440" role="img" aria-label="Le skill /full-review. 1 : une IA écrit la PR. 2a : un LLM relit la PR et cherche les bugs. Test : deux revues sans bug d’affilée ? Si non, 2b : les bugs trouvés sont corrigés en TDD, et la boucle repart en 2a avec un autre LLM. Si oui, 3 : merge, la PR sort de la boucle.">
