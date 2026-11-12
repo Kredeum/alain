@@ -22,10 +22,11 @@
 article { display: flex; flex-direction: column; gap: 20px; }
 h1 { margin: 0; font: 700 clamp(32px, 5.4vw, 46px)/1.1 var(--display); letter-spacing: -0.015em; text-wrap: balance; }
 h1 em { font-weight: 500; color: var(--accent); }
+@media (min-width: 720px) { h1.one-line { white-space: nowrap; font-size: min(5vw, 43px); } }
 h2 { margin: 24px 0 0; font: 500 clamp(24px, 3.6vw, 30px)/1.2 var(--display); text-wrap: balance; }
 p, ul { margin: 0; color: var(--text2); }
 .lead { font-size: 20px; color: var(--text); }
-.subtitle { margin: -4px 0 8px; font: 400 clamp(20px, 2.6vw, 24px)/1.4 var(--display); color: var(--text); text-wrap: pretty; }
+.subtitle { margin: -4px 0 8px; font: italic 500 clamp(20px, 2.6vw, 24px)/1.4 var(--display); color: var(--text); text-wrap: pretty; }
 ul { padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
 strong { color: var(--text); font-weight: 600; }
 figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--band); border-radius: 20px;
@@ -115,7 +116,7 @@ th { color: var(--text); font-weight: 600; }
 <div class="wrap">
   <article>
     <div class="eyebrow">Blog · 12 novembre 2026</div>
-    <h1>L’IA code, ok&nbsp;! Mais qui <em>vérifie</em>&nbsp;?</h1>
+    <h1 class="one-line">L’IA code, ok&nbsp;! Mais qui <em>vérifie</em>&nbsp;?</h1>
     <p class="subtitle">Écrire du code n’est plus un problème&nbsp;: l’IA le fait vite et bien. L’étape clé, désormais, c’est de vérifier, valider et sécuriser ce code avant de le déployer en production&nbsp;!</p>
 
     <h2>Retour d’expérience sur un projet de maintenance de 300&nbsp;000 lignes</h2>
