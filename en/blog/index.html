@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog · Alain Papazoglou</title>
+<meta name="description" content="Articles by Alain Papazoglou on AI applied to code: writing, validating and maintaining software with AI, backed by real numbers.">
+<link rel="canonical" href="https://alain.kredeum.com/en/blog/"><link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/"><link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/"><link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Alain Papazoglou @ Kredeum"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:url" content="https://alain.kredeum.com/en/blog/"><meta property="og:title" content="Blog · Alain Papazoglou"><meta property="og:description" content="Articles by Alain Papazoglou on AI applied to code: writing, validating and maintaining software with AI, backed by real numbers.">
+<meta property="og:image" content="https://alain.kredeum.com/en/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "@id": "https://alain.kredeum.com/en/blog/#blog", "name": "Blog · Alain Papazoglou", "description": "Articles by Alain Papazoglou on AI applied to code: writing, validating and maintaining software with AI, backed by real numbers.", "url": "https://alain.kredeum.com/en/blog/", "inLanguage": "en", "author": {"@id": "https://alain.kredeum.com/#alain"}, "blogPost": [{"@id": "https://alain.kredeum.com/en/blog/validating-code/#article"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap">
+<style>:root{color-scheme:dark;--track:rgba(243,233,220,0.1);--bg:#0E0D0C;--band:#24201C;--line:rgba(243,233,220,0.3);--line2:rgba(243,233,220,0.35);--text:#F3ECE4;--text2:#CFC6BC;--gray:#A89F95;--accent:#FF7A2F;--accent-box:#B4410F;--box-text:#1C1916;--box-muted1:#5C534A;--box-label:#6B6157;--box-muted:#4A433C;--box-line:rgba(28,25,22,0.35);--hover:#FFFFFF;--card:#191715;--nav-btn-bg:#F3E9DC;--nav-btn-text:#0E0D0C;--cta-line:#F3E9DC;--pastille-bg:#F3E9DC;--pastille-fg:#0E0D0C;--aside-bg:#F3E9DC;--aside-border:transparent;--ia-bg:#F3E9DC;--box-bg:#F3E9DC;--alain-border:#1C1916;--team-bg:#0E0D0C;--team-text:#F3ECE4;--ref-rule:#F3E9DC;--contact-text:#0E0D0C;--malt-bg:#0E0D0C;--malt-text:#F3ECE4;--outline-btn:#0E0D0C;--outline-past-bg:#0E0D0C;--outline-past-fg:#F3E9DC;}:root[data-theme="day"]{color-scheme:light;--track:rgba(22,19,15,0.08);--bg:#F5F0E8;--band:#ECE5D9;--line:rgba(22,19,15,0.12);--line2:rgba(22,19,15,0.16);--text:#16130F;--text2:#5E554B;--gray:#8A8076;--accent:#C2410C;--accent-box:#C2410C;--box-text:#16130F;--box-muted1:#5E554B;--box-label:#8A8076;--box-muted:#5E554B;--box-line:rgba(22,19,15,0.2);--hover:#000000;--card:#FBF8F3;--nav-btn-bg:#C2410C;--nav-btn-text:#FFFFFF;--cta-line:#16130F;--pastille-bg:#C2410C;--pastille-fg:#FFFFFF;--aside-bg:#FFFFFF;--aside-border:rgba(22,19,15,0.12);--ia-bg:#F6E3D3;--box-bg:#FFFFFF;--alain-border:rgba(22,19,15,0.25);--team-bg:#F6E3D3;--team-text:#16130F;--ref-rule:#16130F;--contact-text:#16130F;--malt-bg:#C2410C;--malt-text:#FFFFFF;--outline-btn:#16130F;--outline-past-bg:#C2410C;--outline-past-fg:#FFFFFF;}.theme-toggle,.lang-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--accent);cursor:pointer}.theme-toggle:hover,.lang-toggle:hover{border-color:var(--text)}a.lang-toggle:hover{color:var(--accent)}.theme-toggle:focus-visible,.lang-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.lang-toggle{box-sizing:border-box;font:600 13px/1 Inter,system-ui,sans-serif;letter-spacing:0.04em;text-decoration:none}.theme-toggle .i-moon{display:none}:root[data-theme="day"] .theme-toggle .i-sun{display:none}:root[data-theme="day"] .theme-toggle .i-moon{display:block}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text)}a{color:var(--text)}a:hover{color:var(--hover)}a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}img{max-width:100%}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
+<style>
+:root{--display:Gelasio,Georgia,"Times New Roman",serif;--body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap { max-width: 680px; margin: 0 auto; padding-block: 48px 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 56px; }
+.eyebrow { font: 600 12px/1.4 var(--body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+article { display: flex; flex-direction: column; gap: 20px; }
+h1 { margin: 0; font: 700 clamp(32px, 5.4vw, 46px)/1.1 var(--display); letter-spacing: -0.015em; text-wrap: balance; }
+h1 em { font-weight: 500; color: var(--accent); }
+h2 { margin: 24px 0 0; font: 500 clamp(24px, 3.6vw, 30px)/1.2 var(--display); text-wrap: balance; }
+p, ul { margin: 0; color: var(--text2); }
+.lead { font-size: 20px; color: var(--text); }
+ul { padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
+strong { color: var(--text); font-weight: 600; }
+figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--band); border-radius: 20px;
+  display: flex; flex-direction: column; gap: 18px; }
+figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
+.fig-note { font-size: 13px; line-height: 1.5; color: var(--gray); }
+/* Boucle de revue */
+.flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 600px) { .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.flow .step { min-width: 0; padding: 12px 12px; border: 1px solid var(--line); border-radius: 14px;
+  font: 500 14px/1.4 var(--body); color: var(--text2); }
+.flow .step b { display: block; font-weight: 600; color: var(--text); }
+.flow .step.loop { border-color: var(--accent); }
+.flow-back { font: 500 14px/1.4 var(--body); color: var(--text2); }
+.flow-back span { color: var(--accent); font-weight: 600; }
+/* Barres par passe */
+.bars { display: grid; grid-template-columns: max-content 1fr max-content; align-items: center; gap: 10px 12px;
+  font: 500 14px/1.3 var(--body); color: var(--text2); }
+.bars .track { height: 14px; background: var(--track); border-radius: 0 4px 4px 0; }
+.bars .bar { height: 100%; background: var(--accent); border-radius: 0 4px 4px 0; }
+.bars .val { font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+.figs { display: flex; flex-wrap: wrap; gap: 8px 28px; font: 500 14px/1.4 var(--body); color: var(--text2); }
+.figs b { font: 700 22px/1.1 var(--display); color: var(--text); font-variant-numeric: tabular-nums; margin-right: 6px; }
+.case { margin: 4px 0; padding-left: 18px; border-left: 2px solid var(--accent); display: flex; flex-direction: column; gap: 10px; }
+.case .eyebrow { color: var(--gray); }
+aside.dev { margin: 8px 0; padding: 22px clamp(16px, 3vw, 28px); border: 1px solid var(--line); border-radius: 20px;
+  display: flex; flex-direction: column; gap: 12px; font-size: 16px; }
+aside.dev ul { font-size: 16px; }
+@media (max-width: 480px) { body { font-size: 17px; } .lead { font-size: 18px; } }
+h3 { margin: 12px 0 0; font: 600 19px/1.35 var(--body); color: var(--text); }
+h3 .when { display: block; font: 600 12px/1.4 var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+/* Chronologie */
+.timeline { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
+.timeline li { position: relative; padding: 0 0 18px 26px; border-left: 2px solid var(--line); margin-left: 6px; font-size: 15px; line-height: 1.5; color: var(--text2); }
+.timeline li:last-child { padding-bottom: 0; border-left-color: transparent; }
+.timeline li::before { content: ""; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+.timeline li.key::before { background: var(--accent); }
+.timeline b { display: block; color: var(--text); font-weight: 600; }
+/* Graphiques en colonnes */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font: 500 13px/1.4 var(--body); color: var(--text2); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.s1 { background: var(--accent); }
+.s2 { background: var(--gray); }
+.cols { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 6px; align-items: end; }
+.col { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; padding: 8px 2px 0; border-radius: 10px 10px 0 0; }
+.col.rod { background: var(--track); }
+.col .plot { height: 150px; width: 100%; display: flex; align-items: flex-end; justify-content: center; gap: 2px; }
+.col .bar { width: min(26px, 42%); height: var(--h); border-radius: 4px 4px 0 0; position: relative; }
+.col .plot.single .bar { width: min(34px, 70%); }
+.col .bar b { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); padding-bottom: 3px; font: 600 12px/1 var(--body); color: var(--text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.col .m { font: 500 12px/1.2 var(--body); color: var(--text2); text-align: center; }
+.axis { border-top: 1px solid var(--line); margin-top: -6px; }
+.rodnote { font: 500 12px/1.4 var(--body); color: var(--gray); }
+.rodnote i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: var(--track); border: 1px solid var(--line); margin-right: 6px; vertical-align: -1px; }
+@media (max-width: 480px) { .col .bar b { font-size: 10px; } .col .m { font-size: 11px; } }
+/* Tableau de données */
+details { font-size: 14px; color: var(--text2); }
+summary { cursor: pointer; font-weight: 600; color: var(--text); }
+.tablewrap { overflow-x: auto; margin-top: 12px; }
+table { border-collapse: collapse; width: 100%; font: 400 13px/1.4 var(--body); font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--text); font-weight: 600; }
+.wrap{padding-block:24px 64px}
+.post-cta{display:inline-flex;align-items:center;gap:14px;align-self:flex-start;margin-top:8px;padding:6px 6px 6px 26px;border-radius:999px;border:1px solid var(--cta-line);color:var(--cta-line);text-decoration:none;font:600 16px var(--body)}
+.post-cta span{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--pastille-bg);color:var(--pastille-fg)}
+.post-cta:hover{color:var(--cta-line)}
+.posts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.posts a{display:block;padding:22px 24px;border-radius:16px;border:1px solid var(--line2);text-decoration:none}
+.posts a:hover{border-color:var(--text)}
+.posts h2{margin:6px 0 8px}
+.posts p{margin:0}
+.flow .step.loop{border-color:var(--accent)}
+</style>
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='day'&&t!=='night')t=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'day':'night';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+
+<div style="background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6">
+
+<header style="max-width: 1180px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
+<a href="../../en/" style="display: block; line-height: 1.3; text-decoration: none"><div style="font-family: Gelasio, Georgia, serif; font-weight: 700; font-size: 20px; white-space: nowrap">Alain Papazoglou @ Kredeum</div><div style="margin-top: 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); white-space: nowrap">Senior AI dev</div></a>
+<nav style="display: flex; flex-wrap: wrap; gap: 26px; align-items: center; font-size: 15px; white-space: nowrap"><a href="../../en/#situation" style="color: var(--gray); text-decoration: none">Your project</a><a href="../../en/#offre" style="color: var(--gray); text-decoration: none">The approach</a><a href="../../en/#pourquoi" style="color: var(--gray); text-decoration: none">References</a><a href="../../en/blog/" style="color: var(--text); text-decoration: none" aria-current="page">Blog</a><a href="../../en/#contact" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: var(--nav-btn-bg); color: var(--nav-btn-text); text-decoration: none; font-weight: 600">Contact us</a><span style="display: inline-flex; gap: 10px"><a href="../../blog/" hreflang="fr" lang="fr" class="lang-toggle" aria-label="Version française" title="Version française">FR</a><button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to day mode" title="Switch to day mode"><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></span></nav>
+</header>
+
+<main>
+<div class="wrap">
+  <article>
+    <div class="eyebrow">Blog</div>
+    <h1>AI applied to code, backed by <em>real numbers</em>.</h1>
+    <p class="lead">What we learn writing, validating and maintaining software with AI, on real projects.</p>
+  </article>
+  <ul class="posts">
+    <li><a href="validating-code/"><div class="eyebrow">November 12, 2026</div><h2>Writing code is no longer the problem. Validating it is.</h2><p>Nine months of AI code review on an existing 300,000-line application: 896 changes, month-by-month numbers, and seven lessons.</p></a></li>
+  </ul>
+</div>
+</main>
+
+<footer style="max-width: 1180px; margin: 0 auto; padding: 32px 24px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--gray)">
+<span>© 2026 Alain Papazoglou @ Kredeum · Rennes, France</span>
+<span><a href="https://labs.kredeum.com/" style="color: var(--gray)" target="_blank" rel="noopener">Kredeum</a> · <a href="mailto:devia@kredeum.com?subject=AI%20coding%20project" style="color: var(--gray)">Email</a> · <a href="https://www.malt.fr/profile/alainpapazoglou" style="color: var(--gray)" target="_blank" rel="noopener">Malt</a> · <a href="https://www.linkedin.com/in/alain/" style="color: var(--gray)" target="_blank" rel="noopener">LinkedIn</a> · <a href="../../blog/" hreflang="fr" lang="fr" style="color: var(--gray)">Version française</a></span>
+</footer>
+
+</div>
+<script>(function(){var b=document.getElementById('theme-toggle'),r=document.documentElement,L={day:'Switch to night mode',night:'Switch to day mode'};function sync(){var t=r.getAttribute('data-theme');b.setAttribute('aria-label',L[t]);b.title=L[t]}sync();b.addEventListener('click',function(){var t=r.getAttribute('data-theme')==='day'?'night':'day';r.setAttribute('data-theme',t);try{localStorage.setItem('theme',t)}catch(e){}sync()})})()</script>
+</body>
+</html>

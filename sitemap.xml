@@ -17,9 +17,29 @@
   <url>
     <loc>https://alain.kredeum.com/blog/</loc>
     <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/"/>
+  </url>
+  <url>
+    <loc>https://alain.kredeum.com/en/blog/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/"/>
   </url>
   <url>
     <loc>https://alain.kredeum.com/blog/valider-le-code/</loc>
     <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/valider-le-code/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/validating-code/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/valider-le-code/"/>
+  </url>
+  <url>
+    <loc>https://alain.kredeum.com/en/blog/validating-code/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/valider-le-code/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/validating-code/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/valider-le-code/"/>
   </url>
 </urlset>

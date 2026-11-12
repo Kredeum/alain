@@ -31,13 +31,14 @@ Missions dans l'Ouest, à Paris ou à distance. Outils : Claude Code, Codex. 40 
 ## Blog
 
 - [Écrire le code n'est plus le problème. Le valider, si.](https://alain.kredeum.com/blog/valider-le-code/) : neuf mois de revue de code par IA sur une application existante de 300 000 lignes (896 modifications), avec les chiffres mois par mois et sept leçons tirées de l'évolution du processus.
+- [Writing code is no longer the problem. Validating it is.](https://alain.kredeum.com/en/blog/validating-code/) : version anglaise du même article.
 
 ## Pages
 
 
 - [Page d'accueil (français)](https://alain.kredeum.com/)
 - [Home page (English)](https://alain.kredeum.com/en/) : same content, fully remote missions.
-- [Blog](https://alain.kredeum.com/blog/) : articles en français sur l'IA appliquée au code.
+- [Blog](https://alain.kredeum.com/blog/) : articles sur l'IA appliquée au code, en français et en anglais ([English](https://alain.kredeum.com/en/blog/)).
 - [Kredeum](https://labs.kredeum.com/) : l'équipe et le studio.
 
 ## Contact

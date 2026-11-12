@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing code is no longer the problem. Validating it is.</title>
+<meta name="description" content="Nine months of AI code review on an existing 300,000-line application: 896 changes, month-by-month numbers, and seven lessons.">
+<link rel="canonical" href="https://alain.kredeum.com/en/blog/validating-code/"><link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/valider-le-code/"><link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/validating-code/"><link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/valider-le-code/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Alain Papazoglou @ Kredeum"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:url" content="https://alain.kredeum.com/en/blog/validating-code/"><meta property="og:title" content="Writing code is no longer the problem. Validating it is."><meta property="og:description" content="Nine months of AI code review on an existing 300,000-line application: 896 changes, month-by-month numbers, and seven lessons.">
+<meta property="og:image" content="https://alain.kredeum.com/en/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/en/blog/validating-code/#article", "headline": "Writing code is no longer the problem. Validating it is.", "description": "Nine months of AI code review on an existing 300,000-line application: 896 changes, month-by-month numbers, and seven lessons.", "url": "https://alain.kredeum.com/en/blog/validating-code/", "mainEntityOfPage": "https://alain.kredeum.com/en/blog/validating-code/", "datePublished": "2026-11-12", "inLanguage": "en", "image": "https://alain.kredeum.com/en/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/en/blog/#blog"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap">
+<style>:root{color-scheme:dark;--track:rgba(243,233,220,0.1);--bg:#0E0D0C;--band:#24201C;--line:rgba(243,233,220,0.3);--line2:rgba(243,233,220,0.35);--text:#F3ECE4;--text2:#CFC6BC;--gray:#A89F95;--accent:#FF7A2F;--accent-box:#B4410F;--box-text:#1C1916;--box-muted1:#5C534A;--box-label:#6B6157;--box-muted:#4A433C;--box-line:rgba(28,25,22,0.35);--hover:#FFFFFF;--card:#191715;--nav-btn-bg:#F3E9DC;--nav-btn-text:#0E0D0C;--cta-line:#F3E9DC;--pastille-bg:#F3E9DC;--pastille-fg:#0E0D0C;--aside-bg:#F3E9DC;--aside-border:transparent;--ia-bg:#F3E9DC;--box-bg:#F3E9DC;--alain-border:#1C1916;--team-bg:#0E0D0C;--team-text:#F3ECE4;--ref-rule:#F3E9DC;--contact-text:#0E0D0C;--malt-bg:#0E0D0C;--malt-text:#F3ECE4;--outline-btn:#0E0D0C;--outline-past-bg:#0E0D0C;--outline-past-fg:#F3E9DC;}:root[data-theme="day"]{color-scheme:light;--track:rgba(22,19,15,0.08);--bg:#F5F0E8;--band:#ECE5D9;--line:rgba(22,19,15,0.12);--line2:rgba(22,19,15,0.16);--text:#16130F;--text2:#5E554B;--gray:#8A8076;--accent:#C2410C;--accent-box:#C2410C;--box-text:#16130F;--box-muted1:#5E554B;--box-label:#8A8076;--box-muted:#5E554B;--box-line:rgba(22,19,15,0.2);--hover:#000000;--card:#FBF8F3;--nav-btn-bg:#C2410C;--nav-btn-text:#FFFFFF;--cta-line:#16130F;--pastille-bg:#C2410C;--pastille-fg:#FFFFFF;--aside-bg:#FFFFFF;--aside-border:rgba(22,19,15,0.12);--ia-bg:#F6E3D3;--box-bg:#FFFFFF;--alain-border:rgba(22,19,15,0.25);--team-bg:#F6E3D3;--team-text:#16130F;--ref-rule:#16130F;--contact-text:#16130F;--malt-bg:#C2410C;--malt-text:#FFFFFF;--outline-btn:#16130F;--outline-past-bg:#C2410C;--outline-past-fg:#FFFFFF;}.theme-toggle,.lang-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--accent);cursor:pointer}.theme-toggle:hover,.lang-toggle:hover{border-color:var(--text)}a.lang-toggle:hover{color:var(--accent)}.theme-toggle:focus-visible,.lang-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.lang-toggle{box-sizing:border-box;font:600 13px/1 Inter,system-ui,sans-serif;letter-spacing:0.04em;text-decoration:none}.theme-toggle .i-moon{display:none}:root[data-theme="day"] .theme-toggle .i-sun{display:none}:root[data-theme="day"] .theme-toggle .i-moon{display:block}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text)}a{color:var(--text)}a:hover{color:var(--hover)}a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}img{max-width:100%}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
+<style>
+:root{--display:Gelasio,Georgia,"Times New Roman",serif;--body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap { max-width: 680px; margin: 0 auto; padding-block: 48px 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 56px; }
+.eyebrow { font: 600 12px/1.4 var(--body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+article { display: flex; flex-direction: column; gap: 20px; }
+h1 { margin: 0; font: 700 clamp(32px, 5.4vw, 46px)/1.1 var(--display); letter-spacing: -0.015em; text-wrap: balance; }
+h1 em { font-weight: 500; color: var(--accent); }
+h2 { margin: 24px 0 0; font: 500 clamp(24px, 3.6vw, 30px)/1.2 var(--display); text-wrap: balance; }
+p, ul { margin: 0; color: var(--text2); }
+.lead { font-size: 20px; color: var(--text); }
+ul { padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
+strong { color: var(--text); font-weight: 600; }
+figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--band); border-radius: 20px;
+  display: flex; flex-direction: column; gap: 18px; }
+figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
+.fig-note { font-size: 13px; line-height: 1.5; color: var(--gray); }
+/* Boucle de revue */
+.flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 600px) { .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.flow .step { min-width: 0; padding: 12px 12px; border: 1px solid var(--line); border-radius: 14px;
+  font: 500 14px/1.4 var(--body); color: var(--text2); }
+.flow .step b { display: block; font-weight: 600; color: var(--text); }
+.flow .step.loop { border-color: var(--accent); }
+.flow-back { font: 500 14px/1.4 var(--body); color: var(--text2); }
+.flow-back span { color: var(--accent); font-weight: 600; }
+/* Barres par passe */
+.bars { display: grid; grid-template-columns: max-content 1fr max-content; align-items: center; gap: 10px 12px;
+  font: 500 14px/1.3 var(--body); color: var(--text2); }
+.bars .track { height: 14px; background: var(--track); border-radius: 0 4px 4px 0; }
+.bars .bar { height: 100%; background: var(--accent); border-radius: 0 4px 4px 0; }
+.bars .val { font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+.figs { display: flex; flex-wrap: wrap; gap: 8px 28px; font: 500 14px/1.4 var(--body); color: var(--text2); }
+.figs b { font: 700 22px/1.1 var(--display); color: var(--text); font-variant-numeric: tabular-nums; margin-right: 6px; }
+.case { margin: 4px 0; padding-left: 18px; border-left: 2px solid var(--accent); display: flex; flex-direction: column; gap: 10px; }
+.case .eyebrow { color: var(--gray); }
+aside.dev { margin: 8px 0; padding: 22px clamp(16px, 3vw, 28px); border: 1px solid var(--line); border-radius: 20px;
+  display: flex; flex-direction: column; gap: 12px; font-size: 16px; }
+aside.dev ul { font-size: 16px; }
+@media (max-width: 480px) { body { font-size: 17px; } .lead { font-size: 18px; } }
+h3 { margin: 12px 0 0; font: 600 19px/1.35 var(--body); color: var(--text); }
+h3 .when { display: block; font: 600 12px/1.4 var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+/* Chronologie */
+.timeline { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
+.timeline li { position: relative; padding: 0 0 18px 26px; border-left: 2px solid var(--line); margin-left: 6px; font-size: 15px; line-height: 1.5; color: var(--text2); }
+.timeline li:last-child { padding-bottom: 0; border-left-color: transparent; }
+.timeline li::before { content: ""; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+.timeline li.key::before { background: var(--accent); }
+.timeline b { display: block; color: var(--text); font-weight: 600; }
+/* Graphiques en colonnes */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font: 500 13px/1.4 var(--body); color: var(--text2); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.s1 { background: var(--accent); }
+.s2 { background: var(--gray); }
+.cols { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 6px; align-items: end; }
+.col { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; padding: 8px 2px 0; border-radius: 10px 10px 0 0; }
+.col.rod { background: var(--track); }
+.col .plot { height: 150px; width: 100%; display: flex; align-items: flex-end; justify-content: center; gap: 2px; }
+.col .bar { width: min(26px, 42%); height: var(--h); border-radius: 4px 4px 0 0; position: relative; }
+.col .plot.single .bar { width: min(34px, 70%); }
+.col .bar b { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); padding-bottom: 3px; font: 600 12px/1 var(--body); color: var(--text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.col .m { font: 500 12px/1.2 var(--body); color: var(--text2); text-align: center; }
+.axis { border-top: 1px solid var(--line); margin-top: -6px; }
+.rodnote { font: 500 12px/1.4 var(--body); color: var(--gray); }
+.rodnote i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: var(--track); border: 1px solid var(--line); margin-right: 6px; vertical-align: -1px; }
+@media (max-width: 480px) { .col .bar b { font-size: 10px; } .col .m { font-size: 11px; } }
+/* Tableau de données */
+details { font-size: 14px; color: var(--text2); }
+summary { cursor: pointer; font-weight: 600; color: var(--text); }
+.tablewrap { overflow-x: auto; margin-top: 12px; }
+table { border-collapse: collapse; width: 100%; font: 400 13px/1.4 var(--body); font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--text); font-weight: 600; }
+.wrap{padding-block:24px 64px}
+.post-cta{display:inline-flex;align-items:center;gap:14px;align-self:flex-start;margin-top:8px;padding:6px 6px 6px 26px;border-radius:999px;border:1px solid var(--cta-line);color:var(--cta-line);text-decoration:none;font:600 16px var(--body)}
+.post-cta span{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--pastille-bg);color:var(--pastille-fg)}
+.post-cta:hover{color:var(--cta-line)}
+.posts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.posts a{display:block;padding:22px 24px;border-radius:16px;border:1px solid var(--line2);text-decoration:none}
+.posts a:hover{border-color:var(--text)}
+.posts h2{margin:6px 0 8px}
+.posts p{margin:0}
+.flow .step.loop{border-color:var(--accent)}
+</style>
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='day'&&t!=='night')t=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'day':'night';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+
+<div style="background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6">
+
+<header style="max-width: 1180px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
+<a href="../../../en/" style="display: block; line-height: 1.3; text-decoration: none"><div style="font-family: Gelasio, Georgia, serif; font-weight: 700; font-size: 20px; white-space: nowrap">Alain Papazoglou @ Kredeum</div><div style="margin-top: 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); white-space: nowrap">Senior AI dev</div></a>
+<nav style="display: flex; flex-wrap: wrap; gap: 26px; align-items: center; font-size: 15px; white-space: nowrap"><a href="../../../en/#situation" style="color: var(--gray); text-decoration: none">Your project</a><a href="../../../en/#offre" style="color: var(--gray); text-decoration: none">The approach</a><a href="../../../en/#pourquoi" style="color: var(--gray); text-decoration: none">References</a><a href="../../../en/blog/" style="color: var(--text); text-decoration: none" aria-current="page">Blog</a><a href="../../../en/#contact" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: var(--nav-btn-bg); color: var(--nav-btn-text); text-decoration: none; font-weight: 600">Contact us</a><span style="display: inline-flex; gap: 10px"><a href="../../../blog/valider-le-code/" hreflang="fr" lang="fr" class="lang-toggle" aria-label="Version française" title="Version française">FR</a><button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to day mode" title="Switch to day mode"><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></span></nav>
+</header>
+
+<main>
+<div class="wrap">
+  <article>    <div class="eyebrow">Blog · November 12, 2026</div>
+    <h1>Writing code is no longer the problem. <em>Validating</em> it is.</h1>
+    <p class="lead">Since February 2026, AI has written every change to an existing 300,000-line application. Of 896 changes, 604 went through our review process, where AIs from different vendors review each other’s work. Here is what nine months of data show, and what they taught us.</p>
+
+    <h2>Not a demo: maintenance</h2>
+    <p>An agent that builds an app from scratch in ten minutes proves very little. Here, the code existed before us: 300,000 lines, imported into the repository at the end of January 2026, with their history, their dependencies and real users in production.</p>
+    <p>Every change is evolutionary maintenance: fix, extend, without breaking what works. Writing that code is still fast. The hard part is proving it breaks nothing.</p>
+
+    <h2>Late 2025: AI writes, humans review</h2>
+    <p>In late 2025, Claude Code turned the way we code upside down: an agent writes a whole change in a few dozen minutes. The first setup came naturally: AI writes, humans review.</p>
+    <p>It does not hold. A serious review takes hours, and code arrives faster than it can be read. That leaves two bad options: slow the AI down to human speed, or approve without really reviewing.</p>
+
+    <h2>2026: AIs review each other</h2>
+    <p>At the end of April 2026, we handed review over to AIs, in a process we call full-review. Several AIs review each change in turn. Every problem is fixed, then the review starts again, with another reviewer.</p>
+
+    <figure>
+      <figcaption>The review loop</figcaption>
+      <div class="flow">
+        <div class="step"><b>1. Write</b>One AI writes the change</div>
+        <div class="step loop"><b>2. Review</b>Another AI looks for problems</div>
+        <div class="step loop"><b>3. Fix</b>A test proves the problem, then the fix</div>
+        <div class="step"><b>4. Ship</b>After two clean reviews in a row</div>
+      </div>
+      <div class="flow-back"><span>↺</span> Back to step 2 after every fix, with a different reviewer. To ship, the last two clean reviews come from two different reviewers, and all three reviewers have read the final version.</div>
+    </figure>
+
+    <h2>Nine months in four phases</h2>
+    <figure>
+      <figcaption>Project timeline</figcaption>
+      <ol class="timeline">
+        <li><b>January 30, 2026</b>The existing code is imported into the repository.</li>
+        <li><b>February to April: no review process</b>136 changes, small ones (200 lines median), merged in 1 h 20 min median. Automatic review in continuous integration is switched off on March 30.</li>
+        <li class="key"><b>April 30: full-review is born</b>First report posted on a change on May 8.</li>
+        <li><b>May to July 13: the break-in period</b>The rules change almost every week. Reviewers crash, fallbacks multiply.</li>
+        <li class="key"><b>July 13: the second version replaces the first</b>End of the break-in period. The process keeps evolving, but through small adjustments.</li>
+        <li><b>August: three vendors</b>External reviewers now run through an orchestration tool. On August 28, Grok (xAI) joins Claude (Anthropic) and Codex (OpenAI).</li>
+        <li class="key"><b>October: the loop converges</b>3 passes per change median, down from 7 in August.</li>
+      </ol>
+    </figure>
+
+    <h2>What the numbers show</h2>
+    <p>Since the end of the break-in period, on July 13:</p>
+    <div class="figs">
+      <span><b>376</b>changes</span>
+      <span><b>2,542</b>review passes</span>
+      <span><b>11,090</b>problems found</span>
+      <span><b>97%</b>of changes with at least one problem</span>
+    </div>
+    <p>It takes 5 passes per change, median. Only 11 of 376 shipped as the AI had written them.</p>
+
+    <figure>
+      <figcaption>Problems found per review pass, on average</figcaption>
+      <div class="legend"><span><i class="s1"></i>1st pass</span><span><i class="s2"></i>Following passes</span></div>
+      <div class="cols" role="img" aria-label="Problems per pass, 1st pass then following passes: May 3.4 and 0.8; June 3.0 and 1.7; July 5.9 and 2.5; August 12.7 and 4.6; September 9.4 and 3.0; October 6.4 and 0.9.">
+        <div class="col rod"><div class="plot"><div class="bar s1" style="--h:24%" title="May, 1st pass: 3.4"><b>3.4</b></div><div class="bar s2" style="--h:6%" title="May, following passes: 0.8"><b>0.8</b></div></div><span class="m">May</span></div>
+        <div class="col rod"><div class="plot"><div class="bar s1" style="--h:21%" title="June, 1st pass: 3.0"><b>3.0</b></div><div class="bar s2" style="--h:12%" title="June, following passes: 1.7"><b>1.7</b></div></div><span class="m">June</span></div>
+        <div class="col"><div class="plot"><div class="bar s1" style="--h:42%" title="July, 1st pass: 5.9"><b>5.9</b></div><div class="bar s2" style="--h:18%" title="July, following passes: 2.5"><b>2.5</b></div></div><span class="m">July</span></div>
+        <div class="col"><div class="plot"><div class="bar s1" style="--h:91%" title="August, 1st pass: 12.7"><b>12.7</b></div><div class="bar s2" style="--h:33%" title="August, following passes: 4.6"><b>4.6</b></div></div><span class="m">Aug.</span></div>
+        <div class="col"><div class="plot"><div class="bar s1" style="--h:67%" title="September, 1st pass: 9.4"><b>9.4</b></div><div class="bar s2" style="--h:21%" title="September, following passes: 3.0"><b>3.0</b></div></div><span class="m">Sept.</span></div>
+        <div class="col"><div class="plot"><div class="bar s1" style="--h:46%" title="October, 1st pass: 6.4"><b>6.4</b></div><div class="bar s2" style="--h:6%" title="October, following passes: 0.9"><b>0.9</b></div></div><span class="m">Oct.</span></div>
+      </div>
+      <div class="axis"></div>
+      <div class="rodnote"><i></i>Break-in period (until July 13)</div>
+    </figure>
+    <p>In May, the second pass found nothing seven times out of ten. The code was not better: the review was less demanding. Tightened in June and July, it finds two to four times more problems from the first pass.</p>
+    <p>August is the peak: changes double in size, close to 1,000 lines median, and everything climbs with them. In October, the first pass still finds six problems, but the following ones almost none: the second pass is clean one time in two, against one time in ten in August.</p>
+
+    <figure>
+      <figcaption>Review passes per change, median</figcaption>
+      <div class="cols" role="img" aria-label="Passes per change, median: May 5, June 5, July 5, August 7, September 4, October 3.">
+        <div class="col rod"><div class="plot single"><div class="bar s1" style="--h:62%" title="May: 5 passes"><b>5</b></div></div><span class="m">May</span></div>
+        <div class="col rod"><div class="plot single"><div class="bar s1" style="--h:62%" title="June: 5 passes"><b>5</b></div></div><span class="m">June</span></div>
+        <div class="col"><div class="plot single"><div class="bar s1" style="--h:62%" title="July: 5 passes"><b>5</b></div></div><span class="m">July</span></div>
+        <div class="col"><div class="plot single"><div class="bar s1" style="--h:88%" title="August: 7 passes"><b>7</b></div></div><span class="m">Aug.</span></div>
+        <div class="col"><div class="plot single"><div class="bar s1" style="--h:50%" title="September: 4 passes"><b>4</b></div></div><span class="m">Sept.</span></div>
+        <div class="col"><div class="plot single"><div class="bar s1" style="--h:38%" title="October: 3 passes"><b>3</b></div></div><span class="m">Oct.</span></div>
+      </div>
+      <div class="axis"></div>
+      <div class="rodnote"><i></i>Break-in period (until July 13)</div>
+    </figure>
+
+    <figure>
+      <figcaption>Time from opening to merging a change, in hours (median)</figcaption>
+      <div class="cols" role="img" aria-label="Median time in hours: April, no review, 1.3; May 7; June 14.6; July 3.6; August 5.8; September 6; October 3.9.">
+        <div class="col"><div class="plot single"><div class="bar s2" style="--h:8%" title="April, without full-review: 1.3 h"><b>1.3</b></div></div><span class="m">April<br>no review</span></div>
+        <div class="col rod"><div class="plot single"><div class="bar s1" style="--h:44%" title="May: 7 h"><b>7</b></div></div><span class="m">May</span></div>
+        <div class="col rod"><div class="plot single"><div class="bar s1" style="--h:91%" title="June: 14.6 h"><b>14.6</b></div></div><span class="m">June</span></div>
+        <div class="col"><div class="plot single"><div class="bar s1" style="--h:22%" title="July: 3.6 h"><b>3.6</b></div></div><span class="m">July</span></div>
+        <div class="col"><div class="plot single"><div class="bar s1" style="--h:36%" title="August: 5.8 h"><b>5.8</b></div></div><span class="m">Aug.</span></div>
+        <div class="col"><div class="plot single"><div class="bar s1" style="--h:38%" title="September: 6 h"><b>6</b></div></div><span class="m">Sept.</span></div>
+        <div class="col"><div class="plot single"><div class="bar s1" style="--h:24%" title="October: 3.9 h"><b>3.9</b></div></div><span class="m">Oct.</span></div>
+      </div>
+      <div class="axis"></div>
+      <div class="rodnote"><i></i>Break-in period (until July 13)</div>
+    </figure>
+    <p>Without a process, a change was merged in 1 h 20 min. During the break-in period, the delay explodes: close to 15 hours in June. Once the process is stable, it comes back to 4 to 6 hours. That is the price of validation, and this chart shows it plainly.</p>
+
+    <details>
+      <summary>See the month-by-month data</summary>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Month</th><th>Changes</th><th>Reviewed</th><th>Median size</th><th>Median passes</th><th>Pb 1st pass</th><th>Pb next passes</th><th>Clean 2nd pass</th><th>Median time</th></tr></thead>
+          <tbody>
+            <tr><td>February</td><td>4</td><td>0%</td><td>712</td><td>–</td><td>–</td><td>–</td><td>–</td><td>0 h</td></tr>
+            <tr><td>March</td><td>43</td><td>9%</td><td>255</td><td>–</td><td>–</td><td>–</td><td>–</td><td>13 h</td></tr>
+            <tr><td>April</td><td>89</td><td>1%</td><td>201</td><td>–</td><td>–</td><td>–</td><td>–</td><td>1.3 h</td></tr>
+            <tr><td>May</td><td>108</td><td>58%</td><td>285</td><td>5</td><td>3.4</td><td>0.8</td><td>70%</td><td>7 h</td></tr>
+            <tr><td>June</td><td>165</td><td>75%</td><td>317</td><td>5</td><td>3.0</td><td>1.7</td><td>29%</td><td>14.6 h</td></tr>
+            <tr><td>July</td><td>134</td><td>83%</td><td>476</td><td>5</td><td>5.9</td><td>2.5</td><td>28%</td><td>3.6 h</td></tr>
+            <tr><td>August</td><td>117</td><td>86%</td><td>961</td><td>7</td><td>12.7</td><td>4.6</td><td>9%</td><td>5.8 h</td></tr>
+            <tr><td>September</td><td>144</td><td>83%</td><td>564</td><td>4</td><td>9.4</td><td>3.0</td><td>37%</td><td>6 h</td></tr>
+            <tr><td>October</td><td>76</td><td>91%</td><td>471</td><td>3</td><td>6.4</td><td>0.9</td><td>50%</td><td>3.9 h</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <h2>What one AI misses, another one sees</h2>
+    <p>In 38% of changes, one AI judged the code clean, then an AI from another vendor found a problem in it. Same code, different eyes. That is why we use three vendors.</p>
+    <div class="case">
+      <div class="eyebrow">A real case</div>
+      <p>A change replaced an error with a fallback value whenever an external source sent corrupted data. The first review saw only a documentation detail. The second described it as an improvement, “safer”.</p>
+      <p>On the fourth pass, a model from another vendor followed that value to where it was used: it fed calculations of real amounts of money. The problem was rated critical, and the change was reverted.</p>
+    </div>
+
+    <h2>Validating costs five to ten times more than writing</h2>
+    <p>In the sessions where we could measure both phases, review takes five times longer than writing, median, and up to ten times. Writing takes a few dozen minutes, validating takes hours. It also burns far more tokens, with three reviewers per change.</p>
+    <p>Yet this is where AI made the most progress in 2026. It has become far better than humans at validating code, finding security flaws and fixing them before production. No human reviewer keeps the same focus from the first to the 2,542nd review.</p>
+
+    <h2>What we learned</h2>
+    <p>Every rule in the process comes from a real incident. We have logged 140 of them. Here are the seven lessons that changed the numbers most.</p>
+
+    <h3><span class="when">May 13</span>A crashed review is not a clean review</h3>
+    <p>A reviewer that crashes reports no problems. Counted as “clean”, it could ship a change nobody had read. Since then, a review that errors out is ignored, never counted.</p>
+
+    <h3><span class="when">May 22</span>One problem found hides others</h3>
+    <p>Fixing only the flagged line is not enough: the same flaw often sits elsewhere in the code. Before every fix, the AI searches the whole repository for the same pattern and fixes every occurrence, with a test for each.</p>
+
+    <h3><span class="when">June and July</span>A single reviewer must never be able to close the loop</h3>
+    <p>With two clean reviews in a row as the only exit rule, the loop could stop before the third reviewer had read the code. Now the last two clean reviews come from two different reviewers, and all three must have read the final version. That is what explains the median of 5 passes.</p>
+
+    <h3><span class="when">August</span>Check every suspicion before fixing</h3>
+    <p>AIs flag many false problems. So every suspicion is checked in the code before it is fixed. Since September, 8,504 false alarms have been ruled out and passed on to the next reviewers so they do not raise them again.</p>
+
+    <h3><span class="when">June 4, then September 10</span>Set the bar by what is at stake</h3>
+    <p>A style detail in a test restarted the whole loop, just like a production bug. The bar is now high on running code and scripts, lower on tests and documentation. It is one of the changes behind the convergence in October.</p>
+
+    <h3><span class="when">August</span>A rule that is not read is not applied</h3>
+    <p>The process instructions had grown to 91,000 tokens, read in full on every pass. We split them: each step loads only what it needs, and each pass runs in a fresh agent, free of the noise of the previous ones.</p>
+
+    <h3><span class="when">Throughout</span>The process fixes itself</h3>
+    <p>At the end of every review, the AI proposes improvements to its own rules. We review them and merge them in batches, several times a month. The October process is not the July one, and that is by design.</p>
+
+    <aside class="dev">
+      <strong>For developers</strong>
+      <ul>
+        <li>The reviewers: Claude (Anthropic), Codex (OpenAI) and Grok (xAI), in a fixed order.</li>
+        <li>Every fix follows TDD: a failing test first, the fix second. 2,979 fixes proven this way since July 13.</li>
+        <li>Keep changes small: in August, when their median size doubled, passes and problems climbed with it.</li>
+        <li>Every pass leaves a report line on the change: reviewer, problems, false alarms, fixes. All the numbers in this article come from those lines.</li>
+      </ul>
+    </aside>
+
+    <h2>What is left for humans?</h2>
+    <p>Giving the orders: deciding what to build, and to what standard. Writing and evolving the validation rules, like these seven lessons. And holding to one rule: delegate execution to AI, but not understanding. That will be the topic of the next articles.</p>
+
+    <h2>One last lesson, to finish</h2>
+    <p>These 300,000 lines are written mostly in Python. Alain, who runs the project, does not know Python: he can barely read it.</p>
+    <p>Yet 896 changes later, the application keeps evolving in production. The review does not hold thanks to a language expert. It holds only thanks to AI and the process around it. That may be the best proof that it works. The understanding he keeps is of the product and the rules, not of the syntax.</p>
+
+    <p>We set up this approach with dev teams, on their code and with their tools.</p>
+    <a class="post-cta" href="../../#offre">See the approach<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+
+    <p class="fig-note">Method: numbers taken from the report lines left by every review pass on the project’s 896 changes, from February 18 to November 11, 2026. Months are those in which the change was opened. November, incomplete, is left out of the charts. The writing-to-review ratio is measured on 7 sessions in October and November, active time only.</p>
+</article>
+</div>
+</main>
+
+<footer style="max-width: 1180px; margin: 0 auto; padding: 32px 24px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--gray)">
+<span>© 2026 Alain Papazoglou @ Kredeum · Rennes, France</span>
+<span><a href="https://labs.kredeum.com/" style="color: var(--gray)" target="_blank" rel="noopener">Kredeum</a> · <a href="mailto:devia@kredeum.com?subject=AI%20coding%20project" style="color: var(--gray)">Email</a> · <a href="https://www.malt.fr/profile/alainpapazoglou" style="color: var(--gray)" target="_blank" rel="noopener">Malt</a> · <a href="https://www.linkedin.com/in/alain/" style="color: var(--gray)" target="_blank" rel="noopener">LinkedIn</a> · <a href="../../../blog/valider-le-code/" hreflang="fr" lang="fr" style="color: var(--gray)">Version française</a></span>
+</footer>
+
+</div>
+<script>(function(){var b=document.getElementById('theme-toggle'),r=document.documentElement,L={day:'Switch to night mode',night:'Switch to day mode'};function sync(){var t=r.getAttribute('data-theme');b.setAttribute('aria-label',L[t]);b.title=L[t]}sync();b.addEventListener('click',function(){var t=r.getAttribute('data-theme')==='day'?'night':'day';r.setAttribute('data-theme',t);try{localStorage.setItem('theme',t)}catch(e){}sync()})})()</script>
+</body>
+</html>
