@@ -5,10 +5,11 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 ## Structure
 
 - `index.html` : la page entière, HTML statique avec styles en ligne. Pas de build.
-- `en/index.html` : la même page en anglais, même structure. Toute modification de `index.html` se reporte ici. Le français est la langue par défaut. Lien vers l'autre langue en pied de page seulement, jamais dans le menu.
+- `en/index.html` : la même page en anglais, même structure. Toute modification de `index.html` se reporte ici. Le français est la langue par défaut. Lien vers l'autre langue en fin de menu (bouton rond « EN » ou « FR », même dessin que le bouton de thème) et en pied de page.
 - `og.png` et `en/og.png` : images d'aperçu 1200×630 pour les partages de liens (thème nuit). À refaire si le titre principal change.
-- Référencement : chaque page porte en tête une adresse officielle (canonical), les balises d'aperçu (Open Graph) et une fiche JSON-LD (Person, ProfessionalService, WebPage). Tenir ces balises à jour si le titre, la description ou les liens de contact changent, dans les deux langues.
-- `robots.txt` (tous les robots autorisés, IA comprises), `sitemap.xml` (les deux pages et leurs langues, date `lastmod` à mettre à jour) et `llms.txt` (résumé du site et de l'offre pour les IA, à tenir à jour si le contenu change).
+- `blog/` : le blog, en français seulement. `blog/index.html` liste les articles, un dossier par article (`blog/<slug>/index.html`). Les pages du blog reprennent l'en-tête, le pied de page et les variables de couleur de la page d'accueil, avec en plus leurs propres styles d'article. Lien « Blog » dans le menu des deux langues. Les brouillons, notes et données des articles vivent dans le dépôt privé `zapaz/brain`, jamais ici.
+- Référencement : chaque page porte en tête une adresse officielle (canonical), les balises d'aperçu (Open Graph) et une fiche JSON-LD (Person, ProfessionalService, WebPage ; Blog pour la liste du blog, BlogPosting pour un article). Tenir ces balises à jour si le titre, la description ou les liens de contact changent, dans les deux langues.
+- `robots.txt` (tous les robots autorisés, IA comprises), `sitemap.xml` (les pages d'accueil et leurs langues, le blog et chaque article, date `lastmod` à mettre à jour) et `llms.txt` (résumé du site et de l'offre pour les IA, à tenir à jour si le contenu change).
 - `BingSiteAuth.xml` et la balise `google-site-verification` des deux pages : preuves de propriété du site pour Bing Webmaster Tools et Google Search Console. Ne jamais les supprimer, sinon les deux outils perdent la vérification.
 - `.nojekyll` : désactive Jekyll sur GitHub Pages.
 - `CNAME` : domaine personnalisé `alain.kredeum.com` (entrée CNAME chez OVH vers kredeum.github.io).
