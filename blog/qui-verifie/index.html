@@ -32,19 +32,26 @@ ul { padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
 .wrap p, .wrap li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 7 4 3; }
 .wrap .subtitle, .wrap figure p, .wrap figure li, .wrap .fig-note { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 strong { color: var(--text); font-weight: 600; }
+code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; color: var(--text); white-space: nowrap; hyphens: none; -webkit-hyphens: none; }
 figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--band); border-radius: 20px;
   display: flex; flex-direction: column; gap: 18px; }
 figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
 .fig-note { font-size: 13px; line-height: 1.5; color: var(--gray); }
 /* Boucle de revue */
-.flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-@media (max-width: 600px) { .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.flow .step { min-width: 0; padding: 12px 12px; border: 1px solid var(--line); border-radius: 14px;
-  font: 500 14px/1.4 var(--body); color: var(--text2); }
-.flow .step b { display: block; font-weight: 600; color: var(--text); }
-.flow .step.loop { border-color: var(--accent); }
-.flow-back { font: 500 14px/1.4 var(--body); color: var(--text2); }
-.flow-back span { color: var(--accent); font-weight: 600; }
+.loopsvg { display: block; width: 100%; max-width: 440px; margin: 0 auto; overflow: visible; }
+.loopsvg .lb-box { fill: var(--bg); stroke: var(--line); stroke-width: 1; }
+.loopsvg .lb-loop { stroke: var(--accent); }
+.loopsvg .lb-t { font: 600 13.5px var(--body); fill: var(--text); text-anchor: middle; }
+.loopsvg .lb-s { font: 500 12.5px var(--body); fill: var(--text2); text-anchor: middle; }
+.loopsvg .lb-arc { fill: none; stroke: var(--accent); stroke-width: 2; }
+.loopsvg .lb-ahead { fill: var(--accent); }
+.loopsvg .lb-exit { fill: none; stroke: var(--text2); stroke-width: 1.5; }
+.loopsvg .lb-dash { stroke-dasharray: 4 4; }
+.loopsvg .lb-xhead { fill: var(--text2); }
+.loopsvg .lb-label-bg { fill: var(--band); }
+.loopsvg .lb-l { font: 600 13px var(--body); fill: var(--text); text-anchor: middle; }
+.loopsvg .lb-o { font: 600 12px var(--body); fill: var(--text2); }
+.loopsvg .lb-o2 { fill: var(--accent); }
 /* Barres par passe */
 .bars { display: grid; grid-template-columns: max-content 1fr max-content; align-items: center; gap: 10px 12px;
   font: 500 14px/1.3 var(--body); color: var(--text2); }
@@ -129,18 +136,25 @@ th { color: var(--text); font-weight: 600; }
     <p><em>La relecture doit changer d’échelle… avec l’IA&nbsp;!</em></p>
 
     <h2>2026&nbsp;: les IA se relisent entre elles</h2>
-    <p>L’IA code mieux que l’humain, c’est acquis. Elle relit aussi mieux que lui&nbsp;: elle lit chaque ligne, ne se lasse jamais, et ajoute en prime une analyse de sécurité systématique, que l’humain fait rarement, et le plus souvent après coup.</p>
-    <p>Fin avril 2026, nous avons confié la revue à des IA, dans un skill nommé full-review. Plusieurs IA relisent chaque PR à tour de rôle. Chaque problème est corrigé, puis la revue repart, avec un autre relecteur.</p>
+    <p>L’IA code mieux que l’humain, c’est acquis. Elle relit aussi mieux que lui&nbsp;: elle lit chaque ligne, ne se lasse jamais, et ajoute en prime une analyse de sécurité systématique, que l’humain fait le plus souvent après coup, dans de rares audits.</p>
+    <p>Fin avril 2026, nous avons confié la revue à des IA, dans un skill nommé <code>/full-review</code>. Plusieurs IA relisent à tour de rôle la PR. Chaque problème détecté est fixé de suite, puis la revue repart, avec un autre relecteur.</p>
 
     <figure>
       <figcaption>La boucle de revue</figcaption>
-      <div class="flow">
-        <div class="step"><b>1. Écrire</b>Une IA écrit la PR</div>
-        <div class="step loop"><b>2. Relire</b>Une autre IA cherche les problèmes</div>
-        <div class="step loop"><b>3. Corriger</b>Un test prouve le problème, puis le correctif</div>
-        <div class="step"><b>4. Livrer</b>Après deux revues propres d’affilée</div>
-      </div>
-      <div class="flow-back"><span>↺</span> Retour à l’étape 2 après chaque correction, avec un relecteur différent. Pour livrer, les deux dernières revues propres viennent de deux relecteurs différents, et les trois relecteurs ont lu la version finale.</div>
+      <svg class="loopsvg" viewBox="0 0 380 491" role="img" aria-label="Boucle de revue : 1, une IA écrit la PR ; 2a, un LLM cherche les bugs ; 2b, les bugs trouvés sont corrigés en TDD ; 3, la main passe à un autre LLM, retour en 2a. Après deux revues sans bug d’affilée, la PR sort de la boucle : 4, merge.">
+<defs><marker id="lb-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="lb-ahead"/></marker>
+<marker id="lb-ahx" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="lb-xhead"/></marker></defs>
+<path class="lb-exit" d="M190,59.0 V120.0" marker-end="url(#lb-ahx)"/>
+<path class="lb-exit lb-dash" d="M190,179.0 V432.0" marker-end="url(#lb-ahx)"/>
+<path class="lb-arc" d="M269.7,181.0 A118,118 0 0 1 304.7,295.5" marker-end="url(#lb-ah)"/><path class="lb-arc" d="M266.2,358.1 A118,118 0 0 1 113.8,358.1" marker-end="url(#lb-ah)"/><path class="lb-arc" d="M75.3,295.5 A118,118 0 0 1 110.3,181.0" marker-end="url(#lb-ah)"/>
+<rect class="lb-label-bg" x="138" y="247" width="104" height="38" rx="8"/>
+<text class="lb-l" x="190" y="262">2 revues</text>
+<text class="lb-l" x="190" y="278">sans bug ?</text>
+<text class="lb-o" x="198" y="404.0">oui</text>
+<text class="lb-o lb-o2" x="296.2" y="194.8">non</text>
+<rect class="lb-box" x="111.0" y="3.0" width="158" height="54" rx="12"/><text class="lb-t" x="190.0" y="26.0">1. Écrire</text><text class="lb-s" x="190.0" y="44.0">Une IA écrit la PR</text><rect class="lb-box lb-loop" x="111.0" y="123.0" width="158" height="54" rx="12"/><text class="lb-t" x="190.0" y="146.0">2a. Chercher les bugs</text><text class="lb-s" x="190.0" y="164.0">Un LLM relit la PR</text><rect class="lb-box lb-loop" x="213.2" y="300.0" width="158" height="54" rx="12"/><text class="lb-t" x="292.2" y="323.0">2b. Corriger</text><text class="lb-s" x="292.2" y="341.0">les findings, en TDD</text><rect class="lb-box lb-loop" x="8.8" y="300.0" width="158" height="54" rx="12"/><text class="lb-t" x="87.8" y="323.0">3. Passer la main</text><text class="lb-s" x="87.8" y="341.0">à un autre LLM</text><rect class="lb-box" x="111.0" y="435.0" width="158" height="54" rx="12"/><text class="lb-t" x="190.0" y="458.0">4. Merge</text><text class="lb-s" x="190.0" y="476.0">La PR sort de la boucle</text>
+</svg>
+      <p class="fig-note">Après deux revues sans bug d’affilée, faites par deux LLM différents, la PR sort de la boucle.</p>
     </figure>
 
     <h2>Neuf mois en quatre temps</h2>

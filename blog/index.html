@@ -32,19 +32,26 @@ ul { padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
 .wrap p, .wrap li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 7 4 3; }
 .wrap .subtitle, .wrap figure p, .wrap figure li, .wrap .fig-note { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 strong { color: var(--text); font-weight: 600; }
+code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; color: var(--text); white-space: nowrap; hyphens: none; -webkit-hyphens: none; }
 figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--band); border-radius: 20px;
   display: flex; flex-direction: column; gap: 18px; }
 figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
 .fig-note { font-size: 13px; line-height: 1.5; color: var(--gray); }
 /* Boucle de revue */
-.flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-@media (max-width: 600px) { .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.flow .step { min-width: 0; padding: 12px 12px; border: 1px solid var(--line); border-radius: 14px;
-  font: 500 14px/1.4 var(--body); color: var(--text2); }
-.flow .step b { display: block; font-weight: 600; color: var(--text); }
-.flow .step.loop { border-color: var(--accent); }
-.flow-back { font: 500 14px/1.4 var(--body); color: var(--text2); }
-.flow-back span { color: var(--accent); font-weight: 600; }
+.loopsvg { display: block; width: 100%; max-width: 440px; margin: 0 auto; overflow: visible; }
+.loopsvg .lb-box { fill: var(--bg); stroke: var(--line); stroke-width: 1; }
+.loopsvg .lb-loop { stroke: var(--accent); }
+.loopsvg .lb-t { font: 600 13.5px var(--body); fill: var(--text); text-anchor: middle; }
+.loopsvg .lb-s { font: 500 12.5px var(--body); fill: var(--text2); text-anchor: middle; }
+.loopsvg .lb-arc { fill: none; stroke: var(--accent); stroke-width: 2; }
+.loopsvg .lb-ahead { fill: var(--accent); }
+.loopsvg .lb-exit { fill: none; stroke: var(--text2); stroke-width: 1.5; }
+.loopsvg .lb-dash { stroke-dasharray: 4 4; }
+.loopsvg .lb-xhead { fill: var(--text2); }
+.loopsvg .lb-label-bg { fill: var(--band); }
+.loopsvg .lb-l { font: 600 13px var(--body); fill: var(--text); text-anchor: middle; }
+.loopsvg .lb-o { font: 600 12px var(--body); fill: var(--text2); }
+.loopsvg .lb-o2 { fill: var(--accent); }
 /* Barres par passe */
 .bars { display: grid; grid-template-columns: max-content 1fr max-content; align-items: center; gap: 10px 12px;
   font: 500 14px/1.3 var(--body); color: var(--text2); }
