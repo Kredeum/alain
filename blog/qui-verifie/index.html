@@ -8,9 +8,9 @@
 <link rel="canonical" href="https://alain.kredeum.com/blog/qui-verifie/"><link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/qui-verifie/"><link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/validating-code/"><link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/qui-verifie/">
 <meta property="og:type" content="article"><meta property="og:site_name" content="Alain Papazoglou @ Kredeum"><meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://alain.kredeum.com/blog/qui-verifie/"><meta property="og:title" content="L’IA code, ok ! Mais qui vérifie ?"><meta property="og:description" content="Neuf mois de revue de code par IA sur une application existante de 300 000 lignes : 896 PRs, les chiffres mois par mois, et sept leçons.">
-<meta property="og:image" content="https://alain.kredeum.com/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image" content="https://alain.kredeum.com/blog/qui-verifie/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/blog/qui-verifie/#article", "headline": "L’IA code, ok ! Mais qui vérifie ?", "description": "Neuf mois de revue de code par IA sur une application existante de 300 000 lignes : 896 PRs, les chiffres mois par mois, et sept leçons.", "url": "https://alain.kredeum.com/blog/qui-verifie/", "mainEntityOfPage": "https://alain.kredeum.com/blog/qui-verifie/", "datePublished": "2026-11-12", "inLanguage": "fr", "image": "https://alain.kredeum.com/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/blog/#blog"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/blog/qui-verifie/#article", "headline": "L’IA code, ok ! Mais qui vérifie ?", "description": "Neuf mois de revue de code par IA sur une application existante de 300 000 lignes : 896 PRs, les chiffres mois par mois, et sept leçons.", "url": "https://alain.kredeum.com/blog/qui-verifie/", "mainEntityOfPage": "https://alain.kredeum.com/blog/qui-verifie/", "datePublished": "2026-11-12", "inLanguage": "fr", "image": "https://alain.kredeum.com/blog/qui-verifie/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/blog/#blog"}}</script>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap">
 <style>:root{color-scheme:dark;--track:rgba(243,233,220,0.1);--bg:#0E0D0C;--band:#24201C;--line:rgba(243,233,220,0.3);--line2:rgba(243,233,220,0.35);--text:#F3ECE4;--text2:#CFC6BC;--gray:#A89F95;--accent:#FF7A2F;--accent-box:#B4410F;--box-text:#1C1916;--box-muted1:#5C534A;--box-label:#6B6157;--box-muted:#4A433C;--box-line:rgba(28,25,22,0.35);--hover:#FFFFFF;--card:#191715;--nav-btn-bg:#F3E9DC;--nav-btn-text:#0E0D0C;--cta-line:#F3E9DC;--pastille-bg:#F3E9DC;--pastille-fg:#0E0D0C;--aside-bg:#F3E9DC;--aside-border:transparent;--ia-bg:#F3E9DC;--box-bg:#F3E9DC;--alain-border:#1C1916;--team-bg:#0E0D0C;--team-text:#F3ECE4;--ref-rule:#F3E9DC;--contact-text:#0E0D0C;--malt-bg:#0E0D0C;--malt-text:#F3ECE4;--outline-btn:#0E0D0C;--outline-past-bg:#0E0D0C;--outline-past-fg:#F3E9DC;}:root[data-theme="day"]{color-scheme:light;--track:rgba(22,19,15,0.08);--bg:#F5F0E8;--band:#ECE5D9;--line:rgba(22,19,15,0.12);--line2:rgba(22,19,15,0.16);--text:#16130F;--text2:#5E554B;--gray:#8A8076;--accent:#C2410C;--accent-box:#C2410C;--box-text:#16130F;--box-muted1:#5E554B;--box-label:#8A8076;--box-muted:#5E554B;--box-line:rgba(22,19,15,0.2);--hover:#000000;--card:#FBF8F3;--nav-btn-bg:#C2410C;--nav-btn-text:#FFFFFF;--cta-line:#16130F;--pastille-bg:#C2410C;--pastille-fg:#FFFFFF;--aside-bg:#FFFFFF;--aside-border:rgba(22,19,15,0.12);--ia-bg:#F6E3D3;--box-bg:#FFFFFF;--alain-border:rgba(22,19,15,0.25);--team-bg:#F6E3D3;--team-text:#16130F;--ref-rule:#16130F;--contact-text:#16130F;--malt-bg:#C2410C;--malt-text:#FFFFFF;--outline-btn:#16130F;--outline-past-bg:#C2410C;--outline-past-fg:#FFFFFF;}.logo{font:700 26px/1 Inter,system-ui,sans-serif;letter-spacing:-0.02em;color:var(--text);text-decoration:none;white-space:nowrap}.logo span{color:var(--accent);margin-left:0.18em}.logo:hover{color:var(--text)}.theme-toggle,.lang-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--accent);cursor:pointer}.theme-toggle:hover,.lang-toggle:hover{border-color:var(--text)}a.lang-toggle:hover{color:var(--accent)}.theme-toggle:focus-visible,.lang-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.lang-toggle{box-sizing:border-box;font:600 13px/1 Inter,system-ui,sans-serif;letter-spacing:0.04em;text-decoration:none}.theme-toggle .i-moon{display:none}:root[data-theme="day"] .theme-toggle .i-sun{display:none}:root[data-theme="day"] .theme-toggle .i-moon{display:block}p{text-align:justify;hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:7 4 3}#contact p{text-align:inherit;hyphens:manual;-webkit-hyphens:manual}html{scroll-behavior:smooth;scrollbar-gutter:stable}body{margin:0;background:var(--bg);color:var(--text)}a{color:var(--text)}a:hover{color:var(--hover)}a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}img{max-width:100%}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
@@ -37,6 +37,28 @@ figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--
   display: flex; flex-direction: column; gap: 18px; }
 figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
 .fig-note { font-size: 13px; line-height: 1.5; color: var(--gray); }
+/* Schéma horizontal en tête */
+.hero { padding: 0; overflow: hidden; margin: 16px 0 8px 50%; width: min(1040px, calc(100vw - 48px)); transform: translateX(-50%); }
+@media (max-width: 760px) { .hero { display: none; } }
+.hzsvg { display: block; width: 100%; height: auto; }
+.hzsvg .hz-box { fill: var(--bg); stroke: var(--line); stroke-width: 1.5; }
+.hzsvg .hz-loop { stroke: var(--accent); stroke-width: 2; }
+.hzsvg .hz-end { stroke: var(--text); stroke-width: 2; }
+.hzsvg .hz-t { font: 600 21px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-s { font: 500 17px var(--body); fill: var(--text2); text-anchor: middle; }
+.hzsvg .hz-arc { fill: none; stroke: var(--accent); stroke-width: 3; }
+.hzsvg .hz-head-arc { fill: var(--accent); }
+.hzsvg .hz-line { fill: none; stroke: var(--text2); stroke-width: 2.5; }
+.hzsvg .hz-head-line { fill: var(--text2); }
+.hzsvg .hz-diamond { fill: var(--bg); stroke: var(--text); stroke-width: 2; stroke-linejoin: round; }
+.hzsvg .hz-d { font: 600 18px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-yes { font: 700 17px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-no { font: 700 17px var(--body); fill: var(--accent); }
+.hzsvg .hz-lt { font: italic 700 19px var(--display); fill: var(--accent); }
+.hzsvg .hz-zone { fill: var(--accent); fill-opacity: 0.07; stroke: var(--accent); stroke-opacity: 0.35; stroke-width: 1.5; stroke-dasharray: 6 6; }
+.hzsvg .hz-title { text-anchor: middle; }
+.hzsvg .hz-k { font: 700 32px ui-monospace, "SF Mono", Menlo, monospace; fill: var(--accent); }
+.hzsvg .hz-k2 { font: italic 500 27px var(--display); fill: var(--text2); }
 /* Boucle de revue */
 .loopsvg { display: block; width: 100%; max-width: 460px; margin: 0 auto; overflow: visible; }
 .loopsvg .lb-box { fill: var(--bg); stroke: var(--line); stroke-width: 1; }
@@ -129,6 +151,27 @@ th { color: var(--text); font-weight: 600; }
     <div class="eyebrow">Blog · 12 novembre 2026</div>
     <h1 class="one-line">L’IA code, ok&nbsp;! Mais qui <em>vérifie</em>&nbsp;?</h1>
     <p class="subtitle">Écrire du code n’est plus un problème&nbsp;: l’IA le fait vite et bien. Le point clé, désormais, c’est de vérifier et sécuriser son code avant déploiement en production&nbsp;!</p>
+    <figure class="hero"><svg class="hzsvg" viewBox="26 78 1148 478" role="img" aria-label="Le skill /full-review, la revue de code en boucle par plusieurs IA. 1 : un LLM écrit la PR. 2a : un LLM relit la PR et cherche les bugs. Deux revues sans bug d’affilée ? Si oui, 3 : merge, la PR sort de la boucle. Si non, 2b : les bugs trouvés sont corrigés en TDD, et la boucle repart en 2a avec un autre LLM.">
+<defs>
+<marker id="hz-hz-arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="hz-head-arc"/></marker>
+<marker id="hz-hz-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="hz-head-line"/></marker>
+</defs>
+<text class="hz-title" x="600.0" y="130"><tspan class="hz-k">/full-review</tspan><tspan class="hz-k2" dx="18">la revue de code en boucle, par plusieurs IA</tspan></text>
+<rect class="hz-zone" x="296" y="186" width="622" height="346.0" rx="30"/>
+<path class="hz-line" d="M265,274 H316" marker-end="url(#hz-hz-line)"/>
+<path class="hz-arc" d="M595,274 H642" marker-end="url(#hz-hz-arc)"/>
+<path class="hz-line" d="M873,274 H938" marker-end="url(#hz-hz-line)"/>
+<path class="hz-arc" d="M758,349 V422.0" marker-end="url(#hz-hz-arc)"/>
+<path class="hz-arc" d="M619,470 H474.0 Q456.0,470 456.0,452 V322.0" marker-end="url(#hz-hz-arc)"/>
+<text class="hz-lt" x="480.0" y="388.0">la boucle repart</text>
+<text class="hz-lt" x="480.0" y="412.0">avec un autre LLM</text>
+<path class="hz-diamond" d="M758,202 L870,274 L758,346 L646,274 Z"/>
+<text class="hz-d" x="758" y="270">deux revues</text>
+<text class="hz-d" x="758" y="294">sans bug&#160;?</text>
+<text class="hz-yes" x="906.0" y="260">oui</text>
+<text class="hz-no" x="772" y="392.0">non</text>
+<rect class="hz-box hz-plain" x="50" y="230.0" width="212" height="88" rx="18"/><text class="hz-t" x="156.0" y="270">1. Écrire</text><text class="hz-s" x="156.0" y="299">Un LLM écrit la PR</text><rect class="hz-box hz-loop" x="320" y="230.0" width="272" height="88" rx="18"/><text class="hz-t" x="456.0" y="270">2a. Chercher les bugs</text><text class="hz-s" x="456.0" y="299">Un LLM relit la PR</text><rect class="hz-box hz-end" x="942" y="230.0" width="208" height="88" rx="18"/><text class="hz-t" x="1046.0" y="270">3. Merge</text><text class="hz-s" x="1046.0" y="299">La PR sort de la boucle</text><rect class="hz-box hz-loop" x="622" y="426.0" width="272" height="88" rx="18"/><text class="hz-t" x="758.0" y="466">2b. Corriger les findings</text><text class="hz-s" x="758.0" y="495">Les bugs trouvés, en TDD</text>
+</svg></figure>
 
     <h2>Fin 2025&nbsp;: l’IA écrit, l’humain relit</h2>
     <p>Fin 2025, Claude Code change radicalement notre façon de coder. Un agent lit le code, écrit la correction, lance les tests en TDD et ouvre une PR, en quelques dizaines de minutes. Avec plusieurs agents en parallèle, les PRs arrivent par dizaines. Mais dans l’ancien paradigme&nbsp;: rien ne passe en production sans revue humaine. S’en passer&nbsp;? «&nbsp;Ô sacrilège&nbsp;!&nbsp;», diraient les plus réfractaires.</p>
