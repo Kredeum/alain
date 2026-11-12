@@ -30,7 +30,7 @@ Missions dans l'Ouest, à Paris ou à distance. Outils : Claude Code, Codex. 40 
 
 ## Blog
 
-- [L'IA code, ok ! Mais qui vérifie ?](https://alain.kredeum.com/blog/qui-verifie/) : neuf mois de revue de code par IA sur une application existante de 300 000 lignes (896 Pull Requests), avec les chiffres mois par mois et les leçons tirées de l'évolution du processus.
+- [L'IA code, ok ! Mais qui vérifie ?](https://alain.kredeum.com/blog/qui-verifie/) : neuf mois de revue de code par IA sur une application existante de 300 000 lignes (plus de 600 Pull Requests), avec les chiffres mois par mois et les leçons tirées de l'évolution du processus.
 - [AI writes the code. Fine. But who checks it?](https://alain.kredeum.com/en/blog/validating-code/) : version anglaise du même article.
 
 ## Pages
