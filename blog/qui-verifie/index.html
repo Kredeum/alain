@@ -301,7 +301,7 @@ th { color: var(--text); font-weight: 600; }
     </details>
 
     <h2>Ce que nous avons appris</h2>
-    <p>Chaque règle du processus vient d’un retour d’expérience. Nous en avons consigné plus d’une centaine. Voici les dix leçons qui ont le plus changé notre façon de valider.</p>
+    <p>Chaque règle du processus vient d’un retour d’expérience. Nous en avons consigné plus d’une centaine. Voici les onze leçons qui ont le plus changé notre façon de valider.</p>
 
     <h3><span class="n">1.</span> Faire jouer la concurrence</h3>
     <p>Faire relire à une IA le code qu’elle vient d’écrire apporte peu. Changer son niveau d’effort, ou passer à un autre modèle du même fournisseur, aide un peu. Le mieux reste de faire jouer la concurrence&nbsp;: Codex (OpenAI) relit le code écrit par Claude Code (Anthropic), ou inversement. Chacun traque chez l’autre le moindre détail.</p>
@@ -325,24 +325,27 @@ th { color: var(--text); font-weight: 600; }
     <h3><span class="n">4.</span> Documenter chaque PR pour garder la mémoire du projet</h3>
     <p>Chaque PR s’accompagne d’un fichier Markdown versionné dans le dépôt&nbsp;: le contexte, la cause du problème, la correction, les fichiers touchés et le plan de test. Plus de 700 PRs sont documentées ainsi. C’est la mémoire du projet&nbsp;: une IA qui reprend un sujet des mois plus tard n’a pas à tout redécouvrir, elle relit ce fichier comme le ferait un nouveau développeur. Ce fichier passe lui aussi en revue, au même titre que le code.</p>
 
-    <h3><span class="n">5.</span> Une revue en panne n’est pas une revue propre</h3>
+    <h3><span class="n">5.</span> Les bugs se cachent dans les cas limites</h3>
+    <p>Les relecteurs ne s’arrêtent pas aux fautes évidentes. Les problèmes qu’ils relèvent touchent surtout les conditions aux limites, les cas rares et les failles de sécurité&nbsp;: une valeur vide, un nombre négatif, une source externe qui renvoie des données corrompues. Avant, ces cas n’étaient traités que partiellement, et souvent imparfaitement. C’est là que la revue en boucle apporte le plus.</p>
+
+    <h3><span class="n">6.</span> Une revue en panne n’est pas une revue propre</h3>
     <p>Un relecteur qui plante ne renvoie aucun problème. Compté comme «&nbsp;propre&nbsp;», il pouvait faire livrer une PR que personne n’avait lue. Depuis, une revue en erreur est ignorée, jamais comptée.</p>
 
     <p class="also">Mais aussi</p>
 
-    <h3><span class="n">6.</span> Un problème trouvé en cache d’autres</h3>
+    <h3><span class="n">7.</span> Un problème trouvé en cache d’autres</h3>
     <p>Corriger la seule ligne signalée ne suffit pas&nbsp;: le même défaut se trouve souvent ailleurs dans le code. Avant chaque correction, l’IA cherche le même motif dans tout le dépôt, et corrige chaque occurrence, avec un test pour chacune.</p>
 
-    <h3><span class="n">7.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
+    <h3><span class="n">8.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
     <p>Avec deux revues propres d’affilée comme seul critère, la boucle pouvait s’arrêter avant que le troisième relecteur ait lu le code. Désormais, les deux dernières revues propres viennent de deux relecteurs différents, et les trois doivent avoir lu la version finale. C’est ce qui explique les 5 passes en médiane.</p>
 
-    <h3><span class="n">8.</span> Vérifier chaque soupçon avant de corriger</h3>
+    <h3><span class="n">9.</span> Vérifier chaque soupçon avant de corriger</h3>
     <p>Les IA relèvent beaucoup de faux problèmes. Chaque soupçon est donc vérifié dans le code avant d’être corrigé. Depuis septembre, 8&nbsp;504 fausses alertes ont été écartées, et transmises aux relecteurs suivants pour qu’ils n’y reviennent pas.</p>
 
-    <h3><span class="n">9.</span> Une règle non lue n’est pas appliquée</h3>
+    <h3><span class="n">10.</span> Une règle non lue n’est pas appliquée</h3>
     <p>Les instructions du processus avaient grossi jusqu’à 91&nbsp;000 tokens, relus en entier à chaque passe. Nous les avons découpées&nbsp;: chaque étape charge seulement ce dont elle a besoin, et chaque passe tourne dans un agent neuf, sans le bruit des précédentes.</p>
 
-    <h3><span class="n">10.</span> Le processus se corrige lui-même</h3>
+    <h3><span class="n">11.</span> Le processus se corrige lui-même</h3>
     <p>À la fin de chaque revue, l’IA propose des améliorations de ses propres règles. Nous les relisons et les intégrons par lots, plusieurs fois par mois. Le processus d’octobre n’est plus celui de juillet, et c’est voulu.</p>
 
     <aside class="dev">
