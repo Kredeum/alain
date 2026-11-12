@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>L’IA code, ok ! Mais qui vérifie ?</title>
-<meta name="description" content="Neuf mois de revue de code par IA sur une application existante de 300 000 lignes : 896 modifications, les chiffres mois par mois, et sept leçons.">
+<meta name="description" content="Neuf mois de revue de code par IA sur une application existante de 300 000 lignes : 896 PR, les chiffres mois par mois, et sept leçons.">
 <link rel="canonical" href="https://alain.kredeum.com/blog/qui-verifie/"><link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/qui-verifie/"><link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/validating-code/"><link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/qui-verifie/">
 <meta property="og:type" content="article"><meta property="og:site_name" content="Alain Papazoglou @ Kredeum"><meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
-<meta property="og:url" content="https://alain.kredeum.com/blog/qui-verifie/"><meta property="og:title" content="L’IA code, ok ! Mais qui vérifie ?"><meta property="og:description" content="Neuf mois de revue de code par IA sur une application existante de 300 000 lignes : 896 modifications, les chiffres mois par mois, et sept leçons.">
+<meta property="og:url" content="https://alain.kredeum.com/blog/qui-verifie/"><meta property="og:title" content="L’IA code, ok ! Mais qui vérifie ?"><meta property="og:description" content="Neuf mois de revue de code par IA sur une application existante de 300 000 lignes : 896 PR, les chiffres mois par mois, et sept leçons.">
 <meta property="og:image" content="https://alain.kredeum.com/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/blog/qui-verifie/#article", "headline": "L’IA code, ok ! Mais qui vérifie ?", "description": "Neuf mois de revue de code par IA sur une application existante de 300 000 lignes : 896 modifications, les chiffres mois par mois, et sept leçons.", "url": "https://alain.kredeum.com/blog/qui-verifie/", "mainEntityOfPage": "https://alain.kredeum.com/blog/qui-verifie/", "datePublished": "2026-11-12", "inLanguage": "fr", "image": "https://alain.kredeum.com/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/blog/#blog"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/blog/qui-verifie/#article", "headline": "L’IA code, ok ! Mais qui vérifie ?", "description": "Neuf mois de revue de code par IA sur une application existante de 300 000 lignes : 896 PR, les chiffres mois par mois, et sept leçons.", "url": "https://alain.kredeum.com/blog/qui-verifie/", "mainEntityOfPage": "https://alain.kredeum.com/blog/qui-verifie/", "datePublished": "2026-11-12", "inLanguage": "fr", "image": "https://alain.kredeum.com/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/blog/#blog"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap">
 <style>:root{color-scheme:dark;--track:rgba(243,233,220,0.1);--bg:#0E0D0C;--band:#24201C;--line:rgba(243,233,220,0.3);--line2:rgba(243,233,220,0.35);--text:#F3ECE4;--text2:#CFC6BC;--gray:#A89F95;--accent:#FF7A2F;--accent-box:#B4410F;--box-text:#1C1916;--box-muted1:#5C534A;--box-label:#6B6157;--box-muted:#4A433C;--box-line:rgba(28,25,22,0.35);--hover:#FFFFFF;--card:#191715;--nav-btn-bg:#F3E9DC;--nav-btn-text:#0E0D0C;--cta-line:#F3E9DC;--pastille-bg:#F3E9DC;--pastille-fg:#0E0D0C;--aside-bg:#F3E9DC;--aside-border:transparent;--ia-bg:#F3E9DC;--box-bg:#F3E9DC;--alain-border:#1C1916;--team-bg:#0E0D0C;--team-text:#F3ECE4;--ref-rule:#F3E9DC;--contact-text:#0E0D0C;--malt-bg:#0E0D0C;--malt-text:#F3ECE4;--outline-btn:#0E0D0C;--outline-past-bg:#0E0D0C;--outline-past-fg:#F3E9DC;}:root[data-theme="day"]{color-scheme:light;--track:rgba(22,19,15,0.08);--bg:#F5F0E8;--band:#ECE5D9;--line:rgba(22,19,15,0.12);--line2:rgba(22,19,15,0.16);--text:#16130F;--text2:#5E554B;--gray:#8A8076;--accent:#C2410C;--accent-box:#C2410C;--box-text:#16130F;--box-muted1:#5E554B;--box-label:#8A8076;--box-muted:#5E554B;--box-line:rgba(22,19,15,0.2);--hover:#000000;--card:#FBF8F3;--nav-btn-bg:#C2410C;--nav-btn-text:#FFFFFF;--cta-line:#16130F;--pastille-bg:#C2410C;--pastille-fg:#FFFFFF;--aside-bg:#FFFFFF;--aside-border:rgba(22,19,15,0.12);--ia-bg:#F6E3D3;--box-bg:#FFFFFF;--alain-border:rgba(22,19,15,0.25);--team-bg:#F6E3D3;--team-text:#16130F;--ref-rule:#16130F;--contact-text:#16130F;--malt-bg:#C2410C;--malt-text:#FFFFFF;--outline-btn:#16130F;--outline-past-bg:#C2410C;--outline-past-fg:#FFFFFF;}.theme-toggle,.lang-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--accent);cursor:pointer}.theme-toggle:hover,.lang-toggle:hover{border-color:var(--text)}a.lang-toggle:hover{color:var(--accent)}.theme-toggle:focus-visible,.lang-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.lang-toggle{box-sizing:border-box;font:600 13px/1 Inter,system-ui,sans-serif;letter-spacing:0.04em;text-decoration:none}.theme-toggle .i-moon{display:none}:root[data-theme="day"] .theme-toggle .i-sun{display:none}:root[data-theme="day"] .theme-toggle .i-moon{display:block}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text)}a{color:var(--text)}a:hover{color:var(--hover)}a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}img{max-width:100%}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
 <style>
@@ -117,24 +117,24 @@ th { color: var(--text); font-weight: 600; }
   <article>
     <div class="eyebrow">Blog · 12 novembre 2026</div>
     <h1 class="one-line">L’IA code, ok&nbsp;! Mais qui <em>vérifie</em>&nbsp;?</h1>
-    <p class="subtitle">Écrire du code n’est plus un problème&nbsp;: l’IA le fait vite et bien. L’étape clé, désormais, c’est de vérifier, valider et sécuriser ce code avant de le déployer en production&nbsp;!</p>
+    <p class="subtitle">Écrire du code n’est plus un problème&nbsp;: l’IA le fait vite et bien. L’étape clé, désormais, c’est de vérifier et sécuriser ce code avant déploiement en production&nbsp;!</p>
 
-    <h2>Retour d’expérience sur un projet de maintenance de 300&nbsp;000 lignes</h2>
-    <p>Depuis février 2026, l’IA écrit chaque modification d’une application existante de 300&nbsp;000 lignes. Sur 896 modifications, 604 sont passées par notre processus de revue, où des IA de fournisseurs différents se relisent entre elles. Voici ce que montrent neuf mois de chiffres, et ce qu’ils nous ont appris.</p>
-    <p>Un agent qui crée une application de zéro en dix minutes ne prouve pas grand-chose. Ici, le code existait avant nous&nbsp;: 300&nbsp;000 lignes, importées dans le dépôt fin janvier 2026, avec leur histoire, leurs dépendances et des utilisateurs en production.</p>
-    <p>Chaque modification est de la maintenance évolutive&nbsp;: corriger, faire évoluer, sans casser ce qui marche. Écrire ce code reste rapide. Le difficile, c’est de prouver qu’il ne casse rien.</p>
+    <h2>Notre retour d’expérience</h2>
+    <p>Le contexte&nbsp;: la maintenance corrective et évolutive d’un logiciel existant de 300&nbsp;000 lignes de code, en production. Corriger les bugs, faire évoluer les fonctionnalités, sans casser ce qui marche.</p>
+    <p>Depuis février 2026, chaque correction et chaque évolution passe par une Pull Request (PR) écrite par l’IA. En neuf mois, 896 PR ont été ouvertes, dont 604 sont passées par notre processus de revue de code.</p>
+    <p>Pour l’IA, écrire une PR est devenu rapide. La vérifier, non&nbsp;: dans un code de cette taille, il faut prouver qu’elle fait ce qui est demandé, et rien d’autre. Voici ce que neuf mois de chiffres nous ont appris.</p>
 
     <h2>Fin 2025&nbsp;: l’IA écrit, l’humain relit</h2>
-    <p>Fin 2025, Claude Code a bouleversé notre façon de coder&nbsp;: un agent écrit une modification entière en quelques dizaines de minutes. La première organisation s’est imposée d’elle-même&nbsp;: l’IA écrit, l’humain relit.</p>
+    <p>Fin 2025, Claude Code a bouleversé notre façon de coder&nbsp;: un agent écrit une PR complète en quelques dizaines de minutes. La première organisation s’est imposée d’elle-même&nbsp;: l’IA écrit, l’humain relit.</p>
     <p>Elle ne tient pas. Relire sérieusement demande des heures, et le code arrive plus vite qu’il ne peut être relu. Il reste deux mauvais choix&nbsp;: ralentir l’IA au rythme de l’humain, ou valider sans vraiment relire.</p>
 
     <h2>2026&nbsp;: les IA se relisent entre elles</h2>
-    <p>Fin avril 2026, nous avons confié la revue à des IA, dans un processus que nous appelons full-review. Plusieurs IA relisent chaque modification à tour de rôle. Chaque problème est corrigé, puis la revue repart, avec un autre relecteur.</p>
+    <p>Fin avril 2026, nous avons confié la revue à des IA, dans un processus que nous appelons full-review. Plusieurs IA relisent chaque PR à tour de rôle. Chaque problème est corrigé, puis la revue repart, avec un autre relecteur.</p>
 
     <figure>
       <figcaption>La boucle de revue</figcaption>
       <div class="flow">
-        <div class="step"><b>1. Écrire</b>Une IA écrit la modification</div>
+        <div class="step"><b>1. Écrire</b>Une IA écrit la PR</div>
         <div class="step loop"><b>2. Relire</b>Une autre IA cherche les problèmes</div>
         <div class="step loop"><b>3. Corriger</b>Un test prouve le problème, puis le correctif</div>
         <div class="step"><b>4. Livrer</b>Après deux revues propres d’affilée</div>
@@ -147,24 +147,24 @@ th { color: var(--text); font-weight: 600; }
       <figcaption>Chronologie du projet</figcaption>
       <ol class="timeline">
         <li><b>30 janvier 2026</b>Import du code existant dans le dépôt.</li>
-        <li><b>Février à avril&nbsp;: sans processus de revue</b>136 modifications, petites (200 lignes en médiane), fusionnées en 1&nbsp;h&nbsp;20 en médiane. La revue automatique en intégration continue est coupée le 30 mars.</li>
-        <li class="key"><b>30 avril&nbsp;: naissance de full-review</b>Premier bilan posté sur une modification le 8 mai.</li>
+        <li><b>Février à avril&nbsp;: sans processus de revue</b>136 PR, petites (200 lignes en médiane), fusionnées en 1&nbsp;h&nbsp;20 en médiane. La revue automatique en intégration continue est coupée le 30 mars.</li>
+        <li class="key"><b>30 avril&nbsp;: naissance de full-review</b>Premier bilan posté sur une PR le 8 mai.</li>
         <li><b>Mai au 13 juillet&nbsp;: le rodage</b>Les règles changent presque chaque semaine. Les relecteurs tombent en panne, les solutions de secours se multiplient.</li>
         <li class="key"><b>13 juillet&nbsp;: la deuxième version remplace la première</b>Fin du rodage. Le processus évolue encore, mais par petites retouches.</li>
         <li><b>Août&nbsp;: trois fournisseurs</b>Les relecteurs externes passent par un outil d’orchestration. Le 28 août, Grok (xAI) rejoint Claude (Anthropic) et Codex (OpenAI).</li>
-        <li class="key"><b>Octobre&nbsp;: la boucle converge</b>3 passes par modification en médiane, contre 7 en août.</li>
+        <li class="key"><b>Octobre&nbsp;: la boucle converge</b>3 passes par PR en médiane, contre 7 en août.</li>
       </ol>
     </figure>
 
     <h2>Ce que montrent les chiffres</h2>
     <p>Depuis la fin du rodage, le 13 juillet&nbsp;:</p>
     <div class="figs">
-      <span><b>376</b>modifications</span>
+      <span><b>376</b>PR</span>
       <span><b>2&nbsp;542</b>passes de revue</span>
       <span><b>11&nbsp;090</b>problèmes relevés</span>
-      <span><b>97&nbsp;%</b>des modifications avec au moins un problème</span>
+      <span><b>97&nbsp;%</b>des PR avec au moins un problème</span>
     </div>
-    <p>Il faut 5 passes par modification en médiane. Seules 11 sur 376 ont été livrées telles que l’IA les avait écrites.</p>
+    <p>Il faut 5 passes par PR en médiane. Seules 11 sur 376 ont été livrées telles que l’IA les avait écrites.</p>
 
     <figure>
       <figcaption>Problèmes trouvés par passe de revue, en moyenne</figcaption>
@@ -181,11 +181,11 @@ th { color: var(--text); font-weight: 600; }
       <div class="rodnote"><i></i>Rodage (jusqu’au 13 juillet)</div>
     </figure>
     <p>En mai, la deuxième passe ne trouvait rien sept fois sur dix. Le code n’était pas meilleur&nbsp;: la revue était moins exigeante. Durcie en juin et juillet, elle trouve deux à quatre fois plus de problèmes dès la première passe.</p>
-    <p>Août est le pic&nbsp;: les modifications doublent de taille, près de 1&nbsp;000 lignes en médiane, et tout grimpe avec elles. En octobre, la première passe trouve encore six problèmes, mais les suivantes presque plus&nbsp;: la deuxième passe est propre une fois sur deux, contre une fois sur dix en août.</p>
+    <p>Août est le pic&nbsp;: les PR doublent de taille, près de 1&nbsp;000 lignes en médiane, et tout grimpe avec elles. En octobre, la première passe trouve encore six problèmes, mais les suivantes presque plus&nbsp;: la deuxième passe est propre une fois sur deux, contre une fois sur dix en août.</p>
 
     <figure>
-      <figcaption>Passes de revue par modification, en médiane</figcaption>
-      <div class="cols" role="img" aria-label="Passes par modification, en médiane : mai 5, juin 5, juillet 5, août 7, septembre 4, octobre 3.">
+      <figcaption>Passes de revue par PR, en médiane</figcaption>
+      <div class="cols" role="img" aria-label="Passes par PR, en médiane : mai 5, juin 5, juillet 5, août 7, septembre 4, octobre 3.">
         <div class="col rod"><div class="plot single"><div class="bar s1" style="--h:62%" title="Mai : 5 passes"><b>5</b></div></div><span class="m">mai</span></div>
         <div class="col rod"><div class="plot single"><div class="bar s1" style="--h:62%" title="Juin : 5 passes"><b>5</b></div></div><span class="m">juin</span></div>
         <div class="col"><div class="plot single"><div class="bar s1" style="--h:62%" title="Juillet : 5 passes"><b>5</b></div></div><span class="m">juil.</span></div>
@@ -198,7 +198,7 @@ th { color: var(--text); font-weight: 600; }
     </figure>
 
     <figure>
-      <figcaption>Délai entre l’ouverture et la fusion d’une modification, en heures (médiane)</figcaption>
+      <figcaption>Délai entre l’ouverture et la fusion d’une PR, en heures (médiane)</figcaption>
       <div class="cols" role="img" aria-label="Délai médian en heures : avril, sans revue, 1,3 ; mai 7 ; juin 14,6 ; juillet 3,6 ; août 5,8 ; septembre 6 ; octobre 3,9.">
         <div class="col"><div class="plot single"><div class="bar s2" style="--h:8%" title="Avril, sans full-review : 1,3 h"><b>1,3</b></div></div><span class="m">avril<br>sans revue</span></div>
         <div class="col rod"><div class="plot single"><div class="bar s1" style="--h:44%" title="Mai : 7 h"><b>7</b></div></div><span class="m">mai</span></div>
@@ -211,13 +211,13 @@ th { color: var(--text); font-weight: 600; }
       <div class="axis"></div>
       <div class="rodnote"><i></i>Rodage (jusqu’au 13 juillet)</div>
     </figure>
-    <p>Sans processus, une modification était fusionnée en 1&nbsp;h&nbsp;20. Pendant le rodage, le délai explose&nbsp;: jusqu’à près de 15 heures en juin. Une fois le processus stable, il revient à 4 à 6 heures. C’est le prix de la validation, et il se lit directement sur ce graphique.</p>
+    <p>Sans processus, une PR était fusionnée en 1&nbsp;h&nbsp;20. Pendant le rodage, le délai explose&nbsp;: jusqu’à près de 15 heures en juin. Une fois le processus stable, il revient à 4 à 6 heures. C’est le prix de la validation, et il se lit directement sur ce graphique.</p>
 
     <details>
       <summary>Voir les données mois par mois</summary>
       <div class="tablewrap">
         <table>
-          <thead><tr><th>Mois</th><th>Modifs</th><th>En revue</th><th>Taille méd.</th><th>Passes méd.</th><th>Pb 1re passe</th><th>Pb passes suiv.</th><th>2e passe propre</th><th>Délai méd.</th></tr></thead>
+          <thead><tr><th>Mois</th><th>PR</th><th>En revue</th><th>Taille méd.</th><th>Passes méd.</th><th>Pb 1re passe</th><th>Pb passes suiv.</th><th>2e passe propre</th><th>Délai méd.</th></tr></thead>
           <tbody>
             <tr><td>février</td><td>4</td><td>0&nbsp;%</td><td>712</td><td>–</td><td>–</td><td>–</td><td>–</td><td>0&nbsp;h</td></tr>
             <tr><td>mars</td><td>43</td><td>9&nbsp;%</td><td>255</td><td>–</td><td>–</td><td>–</td><td>–</td><td>13&nbsp;h</td></tr>
@@ -234,22 +234,22 @@ th { color: var(--text); font-weight: 600; }
     </details>
 
     <h2>Ce qu’une IA laisse passer, une autre le voit</h2>
-    <p>Dans 38&nbsp;% des modifications, une IA a jugé le code propre, puis celle d’un autre fournisseur y a trouvé un problème. Même code, autre regard. C’est la raison d’être des trois fournisseurs.</p>
+    <p>Dans 38&nbsp;% des PR, une IA a jugé le code propre, puis celle d’un autre fournisseur y a trouvé un problème. Même code, autre regard. C’est la raison d’être des trois fournisseurs.</p>
     <div class="case">
       <div class="eyebrow">Un cas réel</div>
-      <p>Une modification remplaçait une erreur par une valeur de secours, quand une source externe envoyait des données corrompues. La première revue n’y a vu qu’un détail de documentation. La deuxième l’a décrite comme une amélioration, «&nbsp;plus sûre&nbsp;».</p>
-      <p>À la quatrième passe, le modèle d’un autre fournisseur a suivi cette valeur jusqu’à ses usages&nbsp;: elle servait à calculer des montants réels. Problème classé critique, modification annulée.</p>
+      <p>Une PR remplaçait une erreur par une valeur de secours, quand une source externe envoyait des données corrompues. La première revue n’y a vu qu’un détail de documentation. La deuxième l’a décrite comme une amélioration, «&nbsp;plus sûre&nbsp;».</p>
+      <p>À la quatrième passe, le modèle d’un autre fournisseur a suivi cette valeur jusqu’à ses usages&nbsp;: elle servait à calculer des montants réels. Problème classé critique, changement annulé.</p>
     </div>
 
     <h2>Valider coûte cinq à dix fois plus qu’écrire</h2>
-    <p>Sur les sessions où nous avons pu mesurer les deux phases, la revue prend cinq fois plus de temps que l’écriture en médiane, et jusqu’à dix fois. Écrire prend quelques dizaines de minutes, valider prend des heures. Elle consomme aussi bien plus de tokens, avec trois relecteurs par modification.</p>
+    <p>Sur les sessions où nous avons pu mesurer les deux phases, la revue prend cinq fois plus de temps que l’écriture en médiane, et jusqu’à dix fois. Écrire prend quelques dizaines de minutes, valider prend des heures. Elle consomme aussi bien plus de tokens, avec trois relecteurs par PR.</p>
     <p>C’est pourtant là que l’IA a le plus progressé en 2026. Elle est devenue bien meilleure que l’humain pour valider du code, trouver les failles de sécurité et les corriger avant la mise en production. Aucun relecteur humain ne garde la même attention de la première à la 2&nbsp;542e revue.</p>
 
     <h2>Ce que nous avons appris</h2>
     <p>Chaque règle du processus vient d’un incident réel. Nous en avons consigné 140. Voici les sept leçons qui ont le plus changé les chiffres.</p>
 
     <h3><span class="when">13 mai</span>Une revue en panne n’est pas une revue propre</h3>
-    <p>Un relecteur qui plante ne renvoie aucun problème. Compté comme «&nbsp;propre&nbsp;», il pouvait faire livrer une modification que personne n’avait lue. Depuis, une revue en erreur est ignorée, jamais comptée.</p>
+    <p>Un relecteur qui plante ne renvoie aucun problème. Compté comme «&nbsp;propre&nbsp;», il pouvait faire livrer une PR que personne n’avait lue. Depuis, une revue en erreur est ignorée, jamais comptée.</p>
 
     <h3><span class="when">22 mai</span>Un problème trouvé en cache d’autres</h3>
     <p>Corriger la seule ligne signalée ne suffit pas&nbsp;: le même défaut se trouve souvent ailleurs dans le code. Avant chaque correction, l’IA cherche le même motif dans tout le dépôt, et corrige chaque occurrence, avec un test pour chacune.</p>
@@ -274,8 +274,8 @@ th { color: var(--text); font-weight: 600; }
       <ul>
         <li>Les relecteurs&nbsp;: Claude (Anthropic), Codex (OpenAI) et Grok (xAI), dans un ordre fixe.</li>
         <li>Chaque correction suit le TDD&nbsp;: un test qui échoue d’abord, le correctif ensuite. 2&nbsp;979 corrections prouvées ainsi depuis le 13 juillet.</li>
-        <li>Garder les modifications petites&nbsp;: en août, quand leur taille médiane a doublé, passes et problèmes ont grimpé avec elle.</li>
-        <li>Chaque passe laisse une ligne de bilan sur la modification&nbsp;: relecteur, problèmes, fausses alertes, corrections. C’est d’elles que viennent tous les chiffres de cet article.</li>
+        <li>Garder les PR petites&nbsp;: en août, quand leur taille médiane a doublé, passes et problèmes ont grimpé avec elle.</li>
+        <li>Chaque passe laisse une ligne de bilan sur la PR&nbsp;: relecteur, problèmes, fausses alertes, corrections. C’est d’elles que viennent tous les chiffres de cet article.</li>
       </ul>
     </aside>
 
@@ -283,12 +283,12 @@ th { color: var(--text); font-weight: 600; }
     <p>Donner les ordres&nbsp;: décider quoi construire, et avec quelles exigences. Écrire et faire évoluer les règles de validation, comme ces sept leçons. Et tenir une règle&nbsp;: déléguer l’exécution à l’IA, mais pas la compréhension. Ce sera le sujet des prochains articles.</p>
     <h2>Une dernière leçon, pour finir</h2>
     <p>Ces 300&nbsp;000 lignes sont écrites essentiellement en Python. Alain, qui pilote le projet, ne connaît pas Python&nbsp;: il le lit à peine.</p>
-    <p>Pourtant, 896 modifications plus tard, l’application continue d’évoluer en production. La revue ne tient pas grâce à un expert du langage. Elle tient uniquement grâce à l’IA et au processus qui l’encadre. C’est sans doute la meilleure preuve de son efficacité. La compréhension qu’il garde est celle du produit et des règles, pas celle de la syntaxe.</p>
+    <p>Pourtant, 896 PR plus tard, l’application continue d’évoluer en production. La revue ne tient pas grâce à un expert du langage. Elle tient uniquement grâce à l’IA et au processus qui l’encadre. C’est sans doute la meilleure preuve de son efficacité. La compréhension qu’il garde est celle du produit et des règles, pas celle de la syntaxe.</p>
 
     <p>Nous mettons cette démarche en place avec les équipes dev, sur leur code et avec leurs outils.</p>
     <a class="post-cta" href="../../#offre">Découvrir la démarche<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 
-    <p class="fig-note">Méthode&nbsp;: chiffres tirés des lignes de bilan laissées par chaque passe de revue sur les 896 modifications du projet, du 18 février au 11 novembre 2026. Les mois sont ceux de l’ouverture de la modification. Novembre, incomplet, est exclu des graphiques. Le rapport entre écriture et revue est mesuré sur 7 sessions d’octobre et novembre, temps actif seulement.</p>
+    <p class="fig-note">Méthode&nbsp;: chiffres tirés des lignes de bilan laissées par chaque passe de revue sur les 896 PR du projet, du 18 février au 11 novembre 2026. Les mois sont ceux de l’ouverture de la PR. Novembre, incomplet, est exclu des graphiques. Le rapport entre écriture et revue est mesuré sur 7 sessions d’octobre et novembre, temps actif seulement.</p>
   </article>
 </div>
 </main>
