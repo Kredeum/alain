@@ -13,7 +13,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/blog/qui-verifie/#article", "headline": "L’IA code, ok ! Mais qui vérifie ?", "description": "Neuf mois de revue de code par IA sur une application existante de 300 000 lignes : 896 PRs, les chiffres mois par mois, et sept leçons.", "url": "https://alain.kredeum.com/blog/qui-verifie/", "mainEntityOfPage": "https://alain.kredeum.com/blog/qui-verifie/", "datePublished": "2026-11-12", "inLanguage": "fr", "image": "https://alain.kredeum.com/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/blog/#blog"}}</script>
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap">
-<style>:root{color-scheme:dark;--track:rgba(243,233,220,0.1);--bg:#0E0D0C;--band:#24201C;--line:rgba(243,233,220,0.3);--line2:rgba(243,233,220,0.35);--text:#F3ECE4;--text2:#CFC6BC;--gray:#A89F95;--accent:#FF7A2F;--accent-box:#B4410F;--box-text:#1C1916;--box-muted1:#5C534A;--box-label:#6B6157;--box-muted:#4A433C;--box-line:rgba(28,25,22,0.35);--hover:#FFFFFF;--card:#191715;--nav-btn-bg:#F3E9DC;--nav-btn-text:#0E0D0C;--cta-line:#F3E9DC;--pastille-bg:#F3E9DC;--pastille-fg:#0E0D0C;--aside-bg:#F3E9DC;--aside-border:transparent;--ia-bg:#F3E9DC;--box-bg:#F3E9DC;--alain-border:#1C1916;--team-bg:#0E0D0C;--team-text:#F3ECE4;--ref-rule:#F3E9DC;--contact-text:#0E0D0C;--malt-bg:#0E0D0C;--malt-text:#F3ECE4;--outline-btn:#0E0D0C;--outline-past-bg:#0E0D0C;--outline-past-fg:#F3E9DC;}:root[data-theme="day"]{color-scheme:light;--track:rgba(22,19,15,0.08);--bg:#F5F0E8;--band:#ECE5D9;--line:rgba(22,19,15,0.12);--line2:rgba(22,19,15,0.16);--text:#16130F;--text2:#5E554B;--gray:#8A8076;--accent:#C2410C;--accent-box:#C2410C;--box-text:#16130F;--box-muted1:#5E554B;--box-label:#8A8076;--box-muted:#5E554B;--box-line:rgba(22,19,15,0.2);--hover:#000000;--card:#FBF8F3;--nav-btn-bg:#C2410C;--nav-btn-text:#FFFFFF;--cta-line:#16130F;--pastille-bg:#C2410C;--pastille-fg:#FFFFFF;--aside-bg:#FFFFFF;--aside-border:rgba(22,19,15,0.12);--ia-bg:#F6E3D3;--box-bg:#FFFFFF;--alain-border:rgba(22,19,15,0.25);--team-bg:#F6E3D3;--team-text:#16130F;--ref-rule:#16130F;--contact-text:#16130F;--malt-bg:#C2410C;--malt-text:#FFFFFF;--outline-btn:#16130F;--outline-past-bg:#C2410C;--outline-past-fg:#FFFFFF;}.logo{font:700 26px/1 Inter,system-ui,sans-serif;letter-spacing:-0.02em;color:var(--text);text-decoration:none;white-space:nowrap}.logo span{color:var(--accent);margin-left:0.18em}.logo:hover{color:var(--text)}.theme-toggle,.lang-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--accent);cursor:pointer}.theme-toggle:hover,.lang-toggle:hover{border-color:var(--text)}a.lang-toggle:hover{color:var(--accent)}.theme-toggle:focus-visible,.lang-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.lang-toggle{box-sizing:border-box;font:600 13px/1 Inter,system-ui,sans-serif;letter-spacing:0.04em;text-decoration:none}.theme-toggle .i-moon{display:none}:root[data-theme="day"] .theme-toggle .i-sun{display:none}:root[data-theme="day"] .theme-toggle .i-moon{display:block}p{text-align:justify;hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:7 4 3}#contact p{text-align:inherit;hyphens:manual;-webkit-hyphens:manual}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text)}a{color:var(--text)}a:hover{color:var(--hover)}a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}img{max-width:100%}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
+<style>:root{color-scheme:dark;--track:rgba(243,233,220,0.1);--bg:#0E0D0C;--band:#24201C;--line:rgba(243,233,220,0.3);--line2:rgba(243,233,220,0.35);--text:#F3ECE4;--text2:#CFC6BC;--gray:#A89F95;--accent:#FF7A2F;--accent-box:#B4410F;--box-text:#1C1916;--box-muted1:#5C534A;--box-label:#6B6157;--box-muted:#4A433C;--box-line:rgba(28,25,22,0.35);--hover:#FFFFFF;--card:#191715;--nav-btn-bg:#F3E9DC;--nav-btn-text:#0E0D0C;--cta-line:#F3E9DC;--pastille-bg:#F3E9DC;--pastille-fg:#0E0D0C;--aside-bg:#F3E9DC;--aside-border:transparent;--ia-bg:#F3E9DC;--box-bg:#F3E9DC;--alain-border:#1C1916;--team-bg:#0E0D0C;--team-text:#F3ECE4;--ref-rule:#F3E9DC;--contact-text:#0E0D0C;--malt-bg:#0E0D0C;--malt-text:#F3ECE4;--outline-btn:#0E0D0C;--outline-past-bg:#0E0D0C;--outline-past-fg:#F3E9DC;}:root[data-theme="day"]{color-scheme:light;--track:rgba(22,19,15,0.08);--bg:#F5F0E8;--band:#ECE5D9;--line:rgba(22,19,15,0.12);--line2:rgba(22,19,15,0.16);--text:#16130F;--text2:#5E554B;--gray:#8A8076;--accent:#C2410C;--accent-box:#C2410C;--box-text:#16130F;--box-muted1:#5E554B;--box-label:#8A8076;--box-muted:#5E554B;--box-line:rgba(22,19,15,0.2);--hover:#000000;--card:#FBF8F3;--nav-btn-bg:#C2410C;--nav-btn-text:#FFFFFF;--cta-line:#16130F;--pastille-bg:#C2410C;--pastille-fg:#FFFFFF;--aside-bg:#FFFFFF;--aside-border:rgba(22,19,15,0.12);--ia-bg:#F6E3D3;--box-bg:#FFFFFF;--alain-border:rgba(22,19,15,0.25);--team-bg:#F6E3D3;--team-text:#16130F;--ref-rule:#16130F;--contact-text:#16130F;--malt-bg:#C2410C;--malt-text:#FFFFFF;--outline-btn:#16130F;--outline-past-bg:#C2410C;--outline-past-fg:#FFFFFF;}.logo{font:700 26px/1 Inter,system-ui,sans-serif;letter-spacing:-0.02em;color:var(--text);text-decoration:none;white-space:nowrap}.logo span{color:var(--accent);margin-left:0.18em}.logo:hover{color:var(--text)}.theme-toggle,.lang-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--accent);cursor:pointer}.theme-toggle:hover,.lang-toggle:hover{border-color:var(--text)}a.lang-toggle:hover{color:var(--accent)}.theme-toggle:focus-visible,.lang-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.lang-toggle{box-sizing:border-box;font:600 13px/1 Inter,system-ui,sans-serif;letter-spacing:0.04em;text-decoration:none}.theme-toggle .i-moon{display:none}:root[data-theme="day"] .theme-toggle .i-sun{display:none}:root[data-theme="day"] .theme-toggle .i-moon{display:block}p{text-align:justify;hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:7 4 3}#contact p{text-align:inherit;hyphens:manual;-webkit-hyphens:manual}html{scroll-behavior:smooth;scrollbar-gutter:stable}body{margin:0;background:var(--bg);color:var(--text)}a{color:var(--text)}a:hover{color:var(--hover)}a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}img{max-width:100%}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
 <style>
 :root{--display:Gelasio,Georgia,"Times New Roman",serif;--body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap { max-width: 680px; margin: 0 auto; padding-block: 48px 80px;
@@ -48,7 +48,10 @@ figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
 .loopsvg .lb-head-arc { fill: var(--accent); }
 .loopsvg .lb-line { fill: none; stroke: var(--text2); stroke-width: 1.5; }
 .loopsvg .lb-head-line { fill: var(--text2); }
-.loopsvg .lb-c { font: 600 13px var(--body); fill: var(--text); }
+.loopsvg .lb-diamond { fill: var(--bg); stroke: var(--text); stroke-width: 1.5; stroke-linejoin: round; }
+.loopsvg .lb-d { font: 600 13px var(--body); fill: var(--text); text-anchor: middle; }
+.loopsvg .lb-yes { font: 700 12.5px var(--body); fill: var(--text); }
+.loopsvg .lb-no { font: 700 12.5px var(--body); fill: var(--accent); }
 .loopsvg .lb-r { font: 600 11.5px var(--body); fill: var(--accent); text-anchor: middle; }
 /* Barres par passe */
 .bars { display: grid; grid-template-columns: max-content 1fr max-content; align-items: center; gap: 10px 12px;
@@ -135,46 +138,49 @@ th { color: var(--text); font-weight: 600; }
 
     <h2>2026&nbsp;: les IA se relisent entre elles</h2>
     <p>L’IA code mieux que l’humain, c’est acquis. Elle relit aussi mieux que lui&nbsp;: elle lit chaque ligne, ne se lasse jamais, et ajoute en prime une analyse de sécurité systématique, que l’humain fait le plus souvent après coup, dans de rares audits.</p>
-    <p>Fin avril 2026, nous avons confié la revue à des IA, dans un skill nommé <code>/full-review</code>. Plusieurs IA relisent à tour de rôle la PR. Chaque problème détecté est fixé de suite, puis la revue repart, avec un autre relecteur.</p>
+    <p>Aussi, nous avons décidé de confier notre revue de code à des IA, mais de façon maîtrisée, au travers d’un skill nommé <code>/full-review</code>. Plusieurs IA relisent à tour de rôle la PR. Chaque problème détecté est fixé de suite, puis la revue repart, avec un autre relecteur.</p>
 
     <figure>
-      <figcaption>La boucle de revue</figcaption>
-      <svg class="loopsvg" viewBox="0 0 390 426" role="img" aria-label="Boucle de revue. 1 : une IA écrit la PR. 2a : un LLM relit la PR et cherche les bugs. 2b : les bugs trouvés sont corrigés en TDD. 3 : la main passe à un autre LLM, et la boucle repart en 2a. Après deux revues sans bug d’affilée, la PR sort de la boucle : 4, merge.">
+      <figcaption>Le skill <code>/full-review</code></figcaption>
+      <svg class="loopsvg" viewBox="0 0 390 520" role="img" aria-label="Le skill /full-review. 1 : une IA écrit la PR. 2a : un LLM relit la PR et cherche les bugs. Test : deux revues sans bug d’affilée ? Si non, 2b : les bugs trouvés sont corrigés en TDD, puis 3 : la main passe à un autre LLM, et la boucle repart en 2a. Si oui, 4 : la PR sort de la boucle, merge.">
 <defs>
 <marker id="lb-ah-lb-arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="lb-head-arc"/></marker>
 <marker id="lb-ah-lb-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="lb-head-line"/></marker>
 </defs>
-<path class="lb-line" d="M160.0,54 V85" marker-end="url(#lb-ah-lb-line)"/>
-<path class="lb-arc" d="M160.0,142 V173" marker-end="url(#lb-ah-lb-arc)"/>
-<path class="lb-arc" d="M160.0,230 V261" marker-end="url(#lb-ah-lb-arc)"/>
-<path class="lb-arc" d="M60,290.0 H36 Q24,290.0 24,278.0 V126.0 Q24,114.0 36,114.0 H59" marker-end="url(#lb-ah-lb-arc)"/>
-<text class="lb-r" x="17" y="202.0" transform="rotate(-90 17 202.0)">la boucle repart</text>
-<path class="lb-line" d="M260,114.0 H272 Q284,114.0 284,126.0 V386.0 Q284,398.0 272,398.0 H261" marker-end="url(#lb-ah-lb-line)"/>
-<text class="lb-c" x="292" y="234.0">si 2 revues</text>
-<text class="lb-c" x="292" y="251.0">sans bug</text>
-<text class="lb-c" x="292" y="268.0">d’affilée</text>
-<rect class="lb-box " x="62" y="0" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="22">1. Écrire</text><text class="lb-s" x="160.0" y="40">Une IA écrit la PR</text><rect class="lb-box lb-loop" x="62" y="88" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="110">2a. Chercher les bugs</text><text class="lb-s" x="160.0" y="128">Un LLM relit la PR</text><rect class="lb-box lb-loop" x="62" y="176" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="198">2b. Corriger les findings</text><text class="lb-s" x="160.0" y="216">Les bugs trouvés, en TDD</text><rect class="lb-box lb-loop" x="62" y="264" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="286">3. Passer la main</text><text class="lb-s" x="160.0" y="304">à un autre LLM</text><rect class="lb-box lb-end" x="62" y="372" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="394">4. Merge</text><text class="lb-s" x="160.0" y="412">La PR sort de la boucle</text>
+<path class="lb-line" d="M160.0,54 V81" marker-end="url(#lb-ah-lb-line)"/>
+<path class="lb-arc" d="M160.0,138 V155" marker-end="url(#lb-ah-lb-arc)"/>
+<path class="lb-arc" d="M160.0,240 V289" marker-end="url(#lb-ah-lb-arc)"/>
+<path class="lb-arc" d="M160.0,346 V373" marker-end="url(#lb-ah-lb-arc)"/>
+<path class="lb-arc" d="M60,402.0 H36 Q24,402.0 24,390.0 V122.0 Q24,110.0 36,110.0 H59" marker-end="url(#lb-ah-lb-arc)"/>
+<text class="lb-r" x="17" y="256.0" transform="rotate(-90 17 256.0)">la boucle repart</text>
+<path class="lb-line" d="M240.0,198 H288 Q300,198 300,210 V480.0 Q300,492.0 288,492.0 H261" marker-end="url(#lb-ah-lb-line)"/>
+<path class="lb-diamond" d="M160.0,158 L238.0,198 L160.0,238 L82.0,198 Z"/>
+<text class="lb-d" x="160.0" y="195">2 revues</text>
+<text class="lb-d" x="160.0" y="211">sans bug&#160;?</text>
+<text class="lb-yes" x="248.0" y="190">oui</text>
+<text class="lb-no" x="169.0" y="258">non</text>
+<rect class="lb-box " x="62" y="0" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="22">1. Écrire</text><text class="lb-s" x="160.0" y="40">Une IA écrit la PR</text><rect class="lb-box lb-loop" x="62" y="84" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="106">2a. Chercher les bugs</text><text class="lb-s" x="160.0" y="124">Un LLM relit la PR</text><rect class="lb-box lb-loop" x="62" y="292" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="314">2b. Corriger les findings</text><text class="lb-s" x="160.0" y="332">Les bugs trouvés, en TDD</text><rect class="lb-box lb-loop" x="62" y="376" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="398">3. Passer la main</text><text class="lb-s" x="160.0" y="416">à un autre LLM</text><rect class="lb-box lb-end" x="62" y="466" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="488">4. Merge</text><text class="lb-s" x="160.0" y="506">La PR sort de la boucle</text>
 </svg>
       <p class="fig-note">Après deux revues sans bug d’affilée, faites par deux LLM différents, la PR sort de la boucle.</p>
-    </figure>
-
-    <h2>Neuf mois en quatre temps</h2>
-    <figure>
-      <figcaption>Chronologie du projet</figcaption>
-      <ol class="timeline">
-        <li><b>30 janvier 2026</b>Import du code existant dans le dépôt.</li>
-        <li><b>Février à avril&nbsp;: sans processus de revue</b>136 PRs, petites (200 lignes en médiane), fusionnées en 1&nbsp;h&nbsp;20 en médiane. La revue automatique en intégration continue est coupée le 30 mars.</li>
-        <li class="key"><b>30 avril&nbsp;: naissance de full-review</b>Premier bilan posté sur une PR le 8 mai.</li>
-        <li><b>Mai au 13 juillet&nbsp;: le rodage</b>Les règles changent presque chaque semaine. Les relecteurs tombent en panne, les solutions de secours se multiplient.</li>
-        <li class="key"><b>13 juillet&nbsp;: la deuxième version remplace la première</b>Fin du rodage. Le processus évolue encore, mais par petites retouches.</li>
-        <li><b>Août&nbsp;: trois fournisseurs</b>Les relecteurs externes passent par un outil d’orchestration. Le 28 août, Grok (xAI) rejoint Claude (Anthropic) et Codex (OpenAI).</li>
-        <li class="key"><b>Octobre&nbsp;: la boucle converge</b>3 passes par PR en médiane, contre 7 en août.</li>
-      </ol>
     </figure>
 
     <h2>Notre retour d’expérience</h2>
     <p>Le contexte&nbsp;: la maintenance d’un logiciel existant de 300&nbsp;000 lignes de code. L’objectif&nbsp;: corriger les nombreux bugs détectés en production, puis réaliser les évolutions fonctionnelles demandées par le client, et ce sans jamais casser ce qui marche déjà…</p>
     <p>Depuis 9 mois, chaque correction ou évolution passe par une Pull Request (PR) écrite par l’IA. Plus de 600 PRs sont passées par notre processus de revue de code. Voici ce que l’analyse de ces chiffres nous a appris.</p>
+
+    <h2>Neuf mois en quatre temps</h2>
+    <figure>
+      <figcaption>Chronologie du projet</figcaption>
+      <ol class="timeline">
+        <li><b>Janvier 2026</b>Import du code existant dans le dépôt.</li>
+        <li><b>Février à avril&nbsp;: sans processus de revue</b>136 PRs, petites (200 lignes en médiane), fusionnées en 1&nbsp;h&nbsp;20 en médiane. La revue automatique en intégration continue est coupée en mars.</li>
+        <li class="key"><b>Avril&nbsp;: naissance de <code>/full-review</code></b>Premier bilan posté sur une PR en mai.</li>
+        <li><b>Mai à juillet&nbsp;: le rodage</b>Les règles changent presque chaque semaine. Les relecteurs tombent en panne, les solutions de secours se multiplient.</li>
+        <li class="key"><b>Juillet&nbsp;: la deuxième version remplace la première</b>Fin du rodage. Le processus évolue encore, mais par petites retouches.</li>
+        <li><b>Août&nbsp;: trois fournisseurs</b>Les relecteurs externes passent par un outil d’orchestration. Fin août, Grok (xAI) rejoint Claude (Anthropic) et Codex (OpenAI).</li>
+        <li class="key"><b>Octobre&nbsp;: la boucle converge</b>3 passes par PR en médiane, contre 7 en août.</li>
+      </ol>
+    </figure>
 
     <h2>Ce que montrent les chiffres</h2>
     <p>Depuis la fin du rodage, le 13 juillet&nbsp;:</p>
