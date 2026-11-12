@@ -164,12 +164,12 @@ th { color: var(--text); font-weight: 600; }
     <p>L’IA code mieux que l’humain, c’est acquis. Elle relit aussi mieux que lui&nbsp;: elle lit chaque ligne, ne se lasse jamais, et ajoute en prime une analyse de sécurité systématique, que l’humain fait le plus souvent après coup, dans de rares audits.</p>
     <p>Aussi, nous avons décidé de confier notre revue de code à des IA, mais de façon maîtrisée, au travers d’un skill nommé <code>/full-review</code>. Plusieurs IA relisent à tour de rôle la PR. Chaque problème détecté est fixé de suite, puis la revue repart, avec un autre relecteur.</p>
 
-    <figure class="hero"><svg class="hzsvg" viewBox="21 86 1158 470" role="img" aria-label="Le skill /full-review, la revue de code en boucle par plusieurs IA. 1 : un LLM écrit la PR. 2a : un LLM relit la PR et cherche les bugs. Deux revues sans bug d’affilée ? Si oui, 3 : merge, la PR sort de la boucle. Si non, 2b : les bugs trouvés sont corrigés en TDD, et la boucle repart en 2a avec un autre LLM.">
+    <figure class="hero"><svg class="hzsvg" viewBox="21 86 1158 470" role="img" aria-label="Le skill /full-review, la revue de code en boucle par plusieurs IA. 1 : une IA écrit la PR. 2a : une IA relit la PR et cherche les bugs. Deux revues sans bug d’affilée ? Si oui, 3 : merge, la PR sort de la boucle. Si non, 2b : les bugs trouvés sont corrigés en TDD, et la boucle repart en 2a avec une autre IA.">
 <defs>
 <marker id="hz-hz-arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="hz-head-arc"/></marker>
 <marker id="hz-hz-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="hz-head-line"/></marker>
 </defs>
-<text class="hz-title" x="600.0" y="130"><tspan class="hz-k">/full-review</tspan><tspan class="hz-k2" dx="18">la revue de code en boucle, par plusieurs IA</tspan></text>
+<text class="hz-title" x="600.0" y="130"><tspan class="hz-k2">skill</tspan><tspan class="hz-k" dx="12">/full-review</tspan><tspan class="hz-k2" dx="18">la revue de code en boucle, par plusieurs IA</tspan></text>
 <rect class="hz-zone" x="271.0" y="186" width="638.0" height="354.0" rx="30"/>
 <path class="hz-line" d="M256.0,276 H291.0" marker-end="url(#hz-hz-line)"/>
 <path class="hz-arc" d="M582.0,276 H619.0" marker-end="url(#hz-hz-arc)"/>
@@ -177,17 +177,17 @@ th { color: var(--text); font-weight: 600; }
 <path class="hz-arc" d="M737.0,353 V426.0" marker-end="url(#hz-hz-arc)"/>
 <path class="hz-arc" d="M586.0,476 H455.0 Q437.0,476 437.0,458 V326.0" marker-end="url(#hz-hz-arc)"/>
 <text class="hz-lt" x="461.0" y="392.0">la boucle repart</text>
-<text class="hz-lt" x="461.0" y="418.0">avec un autre LLM</text>
+<text class="hz-lt" x="461.0" y="418.0">avec une autre IA</text>
 <path class="hz-diamond" d="M737.0,202 L851.0,276 L737.0,350 L623.0,276 Z"/>
 <text class="hz-d" x="737.0" y="271">deux revues</text>
 <text class="hz-d" x="737.0" y="297">sans bug&#160;?</text>
 <text class="hz-yes" x="887.0" y="262">oui</text>
 <text class="hz-no" x="751.0" y="396.0">non</text>
-<rect class="hz-box hz-plain" x="31.0" y="230.0" width="222" height="92" rx="18"/><text class="hz-t" x="142.0" y="271">1. Écrire</text><text class="hz-s" x="142.0" y="302">Un LLM écrit la PR</text><rect class="hz-box hz-loop" x="295.0" y="230.0" width="284" height="92" rx="18"/><text class="hz-t" x="437.0" y="271">2a. Chercher les bugs</text><text class="hz-s" x="437.0" y="302">Un LLM relit la PR</text><rect class="hz-box hz-end" x="923.0" y="230.0" width="246" height="92" rx="18"/><text class="hz-t" x="1046.0" y="271">3. Merge</text><text class="hz-s" x="1046.0" y="302">La PR sort de la boucle</text><rect class="hz-box hz-loop" x="589.0" y="430.0" width="296" height="92" rx="18"/><text class="hz-t" x="737.0" y="471">2b. Corriger les findings</text><text class="hz-s" x="737.0" y="502">Les bugs trouvés, en TDD</text>
+<rect class="hz-box hz-plain" x="31.0" y="230.0" width="222" height="92" rx="18"/><text class="hz-t" x="142.0" y="271">1. Écrire</text><text class="hz-s" x="142.0" y="302">Une IA écrit la PR</text><rect class="hz-box hz-loop" x="295.0" y="230.0" width="284" height="92" rx="18"/><text class="hz-t" x="437.0" y="271">2a. Chercher les bugs</text><text class="hz-s" x="437.0" y="302">Une IA relit la PR</text><rect class="hz-box hz-end" x="923.0" y="230.0" width="246" height="92" rx="18"/><text class="hz-t" x="1046.0" y="271">3. Merge</text><text class="hz-s" x="1046.0" y="302">La PR sort de la boucle</text><rect class="hz-box hz-loop" x="589.0" y="430.0" width="296" height="92" rx="18"/><text class="hz-t" x="737.0" y="471">2b. Corriger les findings</text><text class="hz-s" x="737.0" y="502">Les bugs trouvés, en TDD</text>
 </svg></figure>
     <figure class="mobile-only">
       <figcaption>Le skill <code>/full-review</code></figcaption>
-      <svg class="loopsvg" viewBox="0 0 390 440" role="img" aria-label="Le skill /full-review. 1 : une IA écrit la PR. 2a : un LLM relit la PR et cherche les bugs. Test : deux revues sans bug d’affilée ? Si non, 2b : les bugs trouvés sont corrigés en TDD, et la boucle repart en 2a avec un autre LLM. Si oui, 3 : merge, la PR sort de la boucle.">
+      <svg class="loopsvg" viewBox="0 0 390 440" role="img" aria-label="Le skill /full-review. 1 : une IA écrit la PR. 2a : une IA relit la PR et cherche les bugs. Test : deux revues sans bug d’affilée ? Si non, 2b : les bugs trouvés sont corrigés en TDD, et la boucle repart en 2a avec une autre IA. Si oui, 3 : merge, la PR sort de la boucle.">
 <defs>
 <marker id="lb-ah-lb-arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="lb-head-arc"/></marker>
 <marker id="lb-ah-lb-line" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="lb-head-line"/></marker>
@@ -196,16 +196,16 @@ th { color: var(--text); font-weight: 600; }
 <path class="lb-arc" d="M160.0,138 V155" marker-end="url(#lb-ah-lb-arc)"/>
 <path class="lb-arc" d="M160.0,240 V289" marker-end="url(#lb-ah-lb-arc)"/>
 <path class="lb-arc" d="M60,318.0 H36 Q24,318.0 24,306.0 V122.0 Q24,110.0 36,110.0 H59" marker-end="url(#lb-ah-lb-arc)"/>
-<text class="lb-r" x="17" y="214.0" transform="rotate(-90 17 214.0)">la boucle repart avec un autre LLM</text>
+<text class="lb-r" x="17" y="214.0" transform="rotate(-90 17 214.0)">la boucle repart avec une autre IA</text>
 <path class="lb-line" d="M240.0,198 H288 Q300,198 300,210 V400.0 Q300,412.0 288,412.0 H261" marker-end="url(#lb-ah-lb-line)"/>
 <path class="lb-diamond" d="M160.0,158 L238.0,198 L160.0,238 L82.0,198 Z"/>
-<text class="lb-d" x="160.0" y="195">2 revues</text>
+<text class="lb-d" x="160.0" y="195">deux revues</text>
 <text class="lb-d" x="160.0" y="211">sans bug&#160;?</text>
 <text class="lb-yes" x="248.0" y="190">oui</text>
 <text class="lb-no" x="169.0" y="258">non</text>
-<rect class="lb-box " x="62" y="0" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="22">1. Écrire</text><text class="lb-s" x="160.0" y="40">Une IA écrit la PR</text><rect class="lb-box lb-loop" x="62" y="84" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="106">2a. Chercher les bugs</text><text class="lb-s" x="160.0" y="124">Un LLM relit la PR</text><rect class="lb-box lb-loop" x="62" y="292" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="314">2b. Corriger les findings</text><text class="lb-s" x="160.0" y="332">Les bugs trouvés, en TDD</text><rect class="lb-box lb-end" x="62" y="386" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="408">3. Merge</text><text class="lb-s" x="160.0" y="426">La PR sort de la boucle</text>
+<rect class="lb-box " x="62" y="0" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="22">1. Écrire</text><text class="lb-s" x="160.0" y="40">Une IA écrit la PR</text><rect class="lb-box lb-loop" x="62" y="84" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="106">2a. Chercher les bugs</text><text class="lb-s" x="160.0" y="124">Une IA relit la PR</text><rect class="lb-box lb-loop" x="62" y="292" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="314">2b. Corriger les findings</text><text class="lb-s" x="160.0" y="332">Les bugs trouvés, en TDD</text><rect class="lb-box lb-end" x="62" y="386" width="196" height="52" rx="12"/><text class="lb-t" x="160.0" y="408">3. Merge</text><text class="lb-s" x="160.0" y="426">La PR sort de la boucle</text>
 </svg>
-      <p class="fig-note">Après deux revues sans bug d’affilée, faites par deux LLM différents, la PR sort de la boucle.</p>
+      <p class="fig-note">Après deux revues sans bug d’affilée, faites par deux IA différentes, la PR sort de la boucle.</p>
     </figure>
 
     <h2>Notre retour d’expérience</h2>
