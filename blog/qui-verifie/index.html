@@ -331,22 +331,22 @@ th { color: var(--text); font-weight: 600; }
     <h3><span class="n">6.</span> Une revue en panne n’est pas une revue propre</h3>
     <p>Un relecteur qui plante ne renvoie aucun problème. Compté comme «&nbsp;propre&nbsp;», il pouvait faire livrer une PR que personne n’avait lue. Depuis, une revue en erreur est ignorée, jamais comptée.</p>
 
-    <p class="also">Mais aussi</p>
-
     <h3><span class="n">7.</span> Un problème trouvé en cache d’autres</h3>
     <p>Corriger la seule ligne signalée ne suffit pas&nbsp;: le même défaut se trouve souvent ailleurs dans le code. Avant chaque correction, l’IA cherche le même motif dans tout le dépôt, et corrige chaque occurrence, avec un test pour chacune.</p>
 
-    <h3><span class="n">8.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
+    <h3><span class="n">8.</span> Le processus se corrige lui-même</h3>
+    <p>À la fin de chaque revue, l’IA propose des améliorations de ses propres règles. Nous les relisons et les intégrons par lots, plusieurs fois par mois. Le processus d’octobre n’est plus celui de juillet, et c’est voulu.</p>
+
+    <p class="also">Mais aussi</p>
+
+    <h3><span class="n">9.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
     <p>Avec deux revues propres d’affilée comme seul critère, la boucle pouvait s’arrêter avant que le troisième relecteur ait lu le code. Désormais, les deux dernières revues propres viennent de deux relecteurs différents, et les trois doivent avoir lu la version finale. C’est ce qui explique les 5 passes en médiane.</p>
 
-    <h3><span class="n">9.</span> Vérifier chaque soupçon avant de corriger</h3>
+    <h3><span class="n">10.</span> Vérifier chaque soupçon avant de corriger</h3>
     <p>Les IA relèvent beaucoup de faux problèmes. Chaque soupçon est donc vérifié dans le code avant d’être corrigé. Depuis septembre, 8&nbsp;504 fausses alertes ont été écartées, et transmises aux relecteurs suivants pour qu’ils n’y reviennent pas.</p>
 
-    <h3><span class="n">10.</span> Une règle non lue n’est pas appliquée</h3>
+    <h3><span class="n">11.</span> Une règle non lue n’est pas appliquée</h3>
     <p>Les instructions du processus avaient grossi jusqu’à 91&nbsp;000 tokens, relus en entier à chaque passe. Nous les avons découpées&nbsp;: chaque étape charge seulement ce dont elle a besoin, et chaque passe tourne dans un agent neuf, sans le bruit des précédentes.</p>
-
-    <h3><span class="n">11.</span> Le processus se corrige lui-même</h3>
-    <p>À la fin de chaque revue, l’IA propose des améliorations de ses propres règles. Nous les relisons et les intégrons par lots, plusieurs fois par mois. Le processus d’octobre n’est plus celui de juillet, et c’est voulu.</p>
 
     <aside class="dev">
       <strong>Pour les développeurs</strong>
