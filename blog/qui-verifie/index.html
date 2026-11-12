@@ -98,6 +98,7 @@ h3 { margin: 12px 0 0; font: 600 19px/1.35 var(--body); color: var(--text); }
 h3 .n { color: var(--accent); margin-right: 2px; }
 h3 .when { display: block; font: 600 12px/1.4 var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
 /* Chronologie */
+.wrap .also { margin-top: 18px; font: 600 12px/1.4 var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray); }
 .timeline { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
 .timeline li { position: relative; padding: 0 0 20px 30px; font-size: 15px; line-height: 1.5; color: var(--text2); }
 .timeline li:last-child { padding-bottom: 0; }
@@ -316,28 +317,30 @@ th { color: var(--text); font-weight: 600; }
     <p>Sur les sessions où nous avons pu mesurer les deux phases, la revue prend cinq fois plus de temps que l’écriture en médiane, et jusqu’à dix fois. Écrire prend quelques dizaines de minutes, valider prend des heures. Elle consomme aussi bien plus de tokens, avec trois relecteurs par PR.</p>
     <p>C’est pourtant là que l’IA a le plus progressé en 2026. Elle est devenue bien meilleure que l’humain pour valider du code, trouver les failles de sécurité et les corriger avant la mise en production. Aucun relecteur humain ne garde la même attention de la première à la 2&nbsp;542e revue.</p>
 
-    <h3><span class="n">3.</span> Une revue en panne n’est pas une revue propre</h3>
-    <p>Un relecteur qui plante ne renvoie aucun problème. Compté comme «&nbsp;propre&nbsp;», il pouvait faire livrer une PR que personne n’avait lue. Depuis, une revue en erreur est ignorée, jamais comptée.</p>
-
-    <h3><span class="n">4.</span> Un problème trouvé en cache d’autres</h3>
-    <p>Corriger la seule ligne signalée ne suffit pas&nbsp;: le même défaut se trouve souvent ailleurs dans le code. Avant chaque correction, l’IA cherche le même motif dans tout le dépôt, et corrige chaque occurrence, avec un test pour chacune.</p>
-
-    <h3><span class="n">5.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
-    <p>Avec deux revues propres d’affilée comme seul critère, la boucle pouvait s’arrêter avant que le troisième relecteur ait lu le code. Désormais, les deux dernières revues propres viennent de deux relecteurs différents, et les trois doivent avoir lu la version finale. C’est ce qui explique les 5 passes en médiane.</p>
-
-    <h3><span class="n">6.</span> Vérifier chaque soupçon avant de corriger</h3>
-    <p>Les IA relèvent beaucoup de faux problèmes. Chaque soupçon est donc vérifié dans le code avant d’être corrigé. Depuis septembre, 8&nbsp;504 fausses alertes ont été écartées, et transmises aux relecteurs suivants pour qu’ils n’y reviennent pas.</p>
-
-    <h3><span class="n">7.</span> Régler les paramètres pour que la boucle converge</h3>
+    <h3><span class="n">3.</span> Régler les paramètres pour que la boucle converge</h3>
     <p>Deux réglages décident quand la boucle s’arrête. D’abord le seuil d’exigence&nbsp;: chaque relecteur classe ce qu’il trouve sur sa propre échelle, du bug bloquant à la faute de frappe dans la documentation, et le skill fixe le niveau à partir duquel un problème relance la boucle. Ensuite, le nombre de revues sans bug d’affilée exigé pour merger&nbsp;: deux par défaut, un paramètre du skill.</p>
     <p>Mal réglée, la boucle tourne sans fin. En comptant les relances du skill sur une même PR, 34 PRs ont atteint 20 passes, et sept ont dépassé les 30, jusqu’à 41. Un détail de style dans un test relançait toute la boucle, au même titre qu’un bug en production.</p>
     <p>Nous avons donc placé la barre selon l’enjeu&nbsp;: haute sur le code exécuté et les scripts, plus basse sur les tests et la documentation. Moins exigeante sur les détails, la revue demande moins de passes. C’est l’un des changements qui expliquent la convergence d’octobre.</p>
 
-    <h3><span class="n">8.</span> Une règle non lue n’est pas appliquée</h3>
-    <p>Les instructions du processus avaient grossi jusqu’à 91&nbsp;000 tokens, relus en entier à chaque passe. Nous les avons découpées&nbsp;: chaque étape charge seulement ce dont elle a besoin, et chaque passe tourne dans un agent neuf, sans le bruit des précédentes.</p>
-
-    <h3><span class="n">9.</span> Documenter chaque PR pour garder la mémoire du projet</h3>
+    <h3><span class="n">4.</span> Documenter chaque PR pour garder la mémoire du projet</h3>
     <p>Chaque PR s’accompagne d’un fichier Markdown versionné dans le dépôt&nbsp;: le contexte, la cause du problème, la correction, les fichiers touchés et le plan de test. Plus de 700 PRs sont documentées ainsi. C’est la mémoire du projet&nbsp;: une IA qui reprend un sujet des mois plus tard n’a pas à tout redécouvrir, elle relit ce fichier comme le ferait un nouveau développeur. Ce fichier passe lui aussi en revue, au même titre que le code.</p>
+
+    <h3><span class="n">5.</span> Une revue en panne n’est pas une revue propre</h3>
+    <p>Un relecteur qui plante ne renvoie aucun problème. Compté comme «&nbsp;propre&nbsp;», il pouvait faire livrer une PR que personne n’avait lue. Depuis, une revue en erreur est ignorée, jamais comptée.</p>
+
+    <p class="also">Mais aussi</p>
+
+    <h3><span class="n">6.</span> Un problème trouvé en cache d’autres</h3>
+    <p>Corriger la seule ligne signalée ne suffit pas&nbsp;: le même défaut se trouve souvent ailleurs dans le code. Avant chaque correction, l’IA cherche le même motif dans tout le dépôt, et corrige chaque occurrence, avec un test pour chacune.</p>
+
+    <h3><span class="n">7.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
+    <p>Avec deux revues propres d’affilée comme seul critère, la boucle pouvait s’arrêter avant que le troisième relecteur ait lu le code. Désormais, les deux dernières revues propres viennent de deux relecteurs différents, et les trois doivent avoir lu la version finale. C’est ce qui explique les 5 passes en médiane.</p>
+
+    <h3><span class="n">8.</span> Vérifier chaque soupçon avant de corriger</h3>
+    <p>Les IA relèvent beaucoup de faux problèmes. Chaque soupçon est donc vérifié dans le code avant d’être corrigé. Depuis septembre, 8&nbsp;504 fausses alertes ont été écartées, et transmises aux relecteurs suivants pour qu’ils n’y reviennent pas.</p>
+
+    <h3><span class="n">9.</span> Une règle non lue n’est pas appliquée</h3>
+    <p>Les instructions du processus avaient grossi jusqu’à 91&nbsp;000 tokens, relus en entier à chaque passe. Nous les avons découpées&nbsp;: chaque étape charge seulement ce dont elle a besoin, et chaque passe tourne dans un agent neuf, sans le bruit des précédentes.</p>
 
     <h3><span class="n">10.</span> Le processus se corrige lui-même</h3>
     <p>À la fin de chaque revue, l’IA propose des améliorations de ses propres règles. Nous les relisons et les intégrons par lots, plusieurs fois par mois. Le processus d’octobre n’est plus celui de juillet, et c’est voulu.</p>
