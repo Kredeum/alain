@@ -292,47 +292,43 @@ th { color: var(--text); font-weight: 600; }
     </details>
 
     <h2>Ce que nous avons appris</h2>
-    <p>Chaque règle du processus vient d’un incident réel. Nous en avons consigné 140. Voici les onze leçons qui ont le plus changé notre façon de valider.</p>
+    <p>Chaque règle du processus vient d’un incident réel. Nous en avons consigné 140. Voici les neuf leçons qui ont le plus changé notre façon de valider.</p>
 
-    <h3><span class="n">1.</span> Ce qu’une IA laisse passer, une autre le voit</h3>
-    <p>Dans 38&nbsp;% des PRs, une IA a jugé le code propre, puis celle d’un autre fournisseur y a trouvé un problème. Même code, autre regard. C’est la raison d’être des trois fournisseurs.</p>
+    <h3><span class="n">1.</span> Faire jouer la concurrence</h3>
+    <p>Faire relire à une IA le code qu’elle vient d’écrire apporte peu. Changer son niveau d’effort, ou passer à un autre modèle du même fournisseur, aide un peu. Le mieux reste de faire jouer la concurrence&nbsp;: Codex (OpenAI) relit le code écrit par Claude Code (Anthropic), et inversement. Chacun traque chez l’autre le moindre détail.</p>
+    <p>Les chiffres le confirment&nbsp;: dans 38&nbsp;% des PRs, une IA a jugé le code propre, puis celle d’un autre fournisseur y a trouvé un problème. Même code, autre regard. C’est la raison d’être des trois fournisseurs.</p>
     <div class="case">
       <div class="eyebrow">Un cas réel</div>
       <p>Une PR remplaçait une erreur par une valeur de secours, quand une source externe envoyait des données corrompues. La première revue n’y a vu qu’un détail de documentation. La deuxième l’a décrite comme une amélioration, «&nbsp;plus sûre&nbsp;».</p>
       <p>À la quatrième passe, le modèle d’un autre fournisseur a suivi cette valeur jusqu’à ses usages&nbsp;: elle servait à calculer des montants réels. Problème classé critique, changement annulé.</p>
     </div>
-
-    <h3><span class="n">2.</span> Faire jouer la concurrence</h3>
-    <p>Faire relire à une IA le code qu’elle vient d’écrire apporte peu. Changer son niveau d’effort, ou passer à un autre modèle du même fournisseur, aide un peu. Le mieux reste de faire jouer la concurrence&nbsp;: Codex (OpenAI) relit le code écrit par Claude Code (Anthropic), et inversement. Chacun traque chez l’autre le moindre détail.</p>
     <p>Un trait très humain, au passage. Quand une IA reçoit les bugs trouvés dans son propre code, elle les accepte presque toujours. Mais elle les minimise volontiers&nbsp;: «&nbsp;D’accord, c’est un bug, mais il est moins grave que tu ne le dis.&nbsp;» Un échange entre deux IA, sans aucun humain dans la boucle.</p>
 
-    <h3><span class="n">3.</span> Valider coûte cinq à dix fois plus qu’écrire</h3>
+    <h3><span class="n">2.</span> Valider coûte cinq à dix fois plus qu’écrire</h3>
     <p>Sur les sessions où nous avons pu mesurer les deux phases, la revue prend cinq fois plus de temps que l’écriture en médiane, et jusqu’à dix fois. Écrire prend quelques dizaines de minutes, valider prend des heures. Elle consomme aussi bien plus de tokens, avec trois relecteurs par PR.</p>
     <p>C’est pourtant là que l’IA a le plus progressé en 2026. Elle est devenue bien meilleure que l’humain pour valider du code, trouver les failles de sécurité et les corriger avant la mise en production. Aucun relecteur humain ne garde la même attention de la première à la 2&nbsp;542e revue.</p>
 
-    <h3><span class="n">4.</span> Une revue en panne n’est pas une revue propre</h3>
+    <h3><span class="n">3.</span> Une revue en panne n’est pas une revue propre</h3>
     <p>Un relecteur qui plante ne renvoie aucun problème. Compté comme «&nbsp;propre&nbsp;», il pouvait faire livrer une PR que personne n’avait lue. Depuis, une revue en erreur est ignorée, jamais comptée.</p>
 
-    <h3><span class="n">5.</span> Un problème trouvé en cache d’autres</h3>
+    <h3><span class="n">4.</span> Un problème trouvé en cache d’autres</h3>
     <p>Corriger la seule ligne signalée ne suffit pas&nbsp;: le même défaut se trouve souvent ailleurs dans le code. Avant chaque correction, l’IA cherche le même motif dans tout le dépôt, et corrige chaque occurrence, avec un test pour chacune.</p>
 
-    <h3><span class="n">6.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
+    <h3><span class="n">5.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
     <p>Avec deux revues propres d’affilée comme seul critère, la boucle pouvait s’arrêter avant que le troisième relecteur ait lu le code. Désormais, les deux dernières revues propres viennent de deux relecteurs différents, et les trois doivent avoir lu la version finale. C’est ce qui explique les 5 passes en médiane.</p>
 
-    <h3><span class="n">7.</span> Vérifier chaque soupçon avant de corriger</h3>
+    <h3><span class="n">6.</span> Vérifier chaque soupçon avant de corriger</h3>
     <p>Les IA relèvent beaucoup de faux problèmes. Chaque soupçon est donc vérifié dans le code avant d’être corrigé. Depuis septembre, 8&nbsp;504 fausses alertes ont été écartées, et transmises aux relecteurs suivants pour qu’ils n’y reviennent pas.</p>
 
-    <h3><span class="n">8.</span> Placer la barre selon l’enjeu</h3>
-    <p>Un détail de style dans un test relançait toute la boucle, au même titre qu’un bug en production. La barre est maintenant haute sur le code exécuté et les scripts, plus basse sur les tests et la documentation. C’est l’un des changements qui expliquent la convergence d’octobre.</p>
-
-    <h3><span class="n">9.</span> Régler les paramètres pour que la boucle converge</h3>
+    <h3><span class="n">7.</span> Régler les paramètres pour que la boucle converge</h3>
     <p>Deux réglages décident quand la boucle s’arrête. D’abord le seuil d’exigence&nbsp;: chaque relecteur classe ce qu’il trouve sur sa propre échelle, du bug bloquant à la faute de frappe dans la documentation, et le skill fixe le niveau à partir duquel un problème relance la boucle. Ensuite, le nombre de revues sans bug d’affilée exigé pour merger&nbsp;: deux par défaut, un paramètre du skill.</p>
-    <p>Mal réglée, la boucle tourne sans fin. En comptant les relances du skill sur une même PR, 34 PRs ont atteint 20 passes, et sept ont dépassé les 30, jusqu’à 41. Au final, nous avons rendu la revue moins exigeante sur les détails, pour faire baisser le nombre de passes.</p>
+    <p>Mal réglée, la boucle tourne sans fin. En comptant les relances du skill sur une même PR, 34 PRs ont atteint 20 passes, et sept ont dépassé les 30, jusqu’à 41. Un détail de style dans un test relançait toute la boucle, au même titre qu’un bug en production.</p>
+    <p>Nous avons donc placé la barre selon l’enjeu&nbsp;: haute sur le code exécuté et les scripts, plus basse sur les tests et la documentation. Moins exigeante sur les détails, la revue demande moins de passes. C’est l’un des changements qui expliquent la convergence d’octobre.</p>
 
-    <h3><span class="n">10.</span> Une règle non lue n’est pas appliquée</h3>
+    <h3><span class="n">8.</span> Une règle non lue n’est pas appliquée</h3>
     <p>Les instructions du processus avaient grossi jusqu’à 91&nbsp;000 tokens, relus en entier à chaque passe. Nous les avons découpées&nbsp;: chaque étape charge seulement ce dont elle a besoin, et chaque passe tourne dans un agent neuf, sans le bruit des précédentes.</p>
 
-    <h3><span class="n">11.</span> Le processus se corrige lui-même</h3>
+    <h3><span class="n">9.</span> Le processus se corrige lui-même</h3>
     <p>À la fin de chaque revue, l’IA propose des améliorations de ses propres règles. Nous les relisons et les intégrons par lots, plusieurs fois par mois. Le processus d’octobre n’est plus celui de juillet, et c’est voulu.</p>
 
     <aside class="dev">
@@ -345,11 +341,10 @@ th { color: var(--text); font-weight: 600; }
       </ul>
     </aside>
 
-    <h2>Que reste-t-il à l’humain&nbsp;?</h2>
-    <p>Donner les ordres&nbsp;: décider quoi construire, et avec quelles exigences. Écrire et faire évoluer les règles de validation, comme ces onze leçons. Et tenir une règle&nbsp;: déléguer l’exécution à l’IA, mais pas la compréhension. Ce sera le sujet des prochains articles.</p>
-    <h2>Une dernière leçon, pour finir</h2>
-    <p>Ces 300&nbsp;000 lignes sont écrites essentiellement en Python. Alain, qui pilote le projet, ne connaît pas Python&nbsp;: il le lit à peine.</p>
-    <p>Pourtant, 896 PRs plus tard, l’application continue d’évoluer en production. La revue ne tient pas grâce à un expert du langage. Elle tient uniquement grâce à l’IA et au processus qui l’encadre. C’est sans doute la meilleure preuve de son efficacité. La compréhension qu’il garde est celle du produit et des règles, pas celle de la syntaxe.</p>
+    <h2>Conclusion</h2>
+    <p>Neuf mois et près de 900 PRs plus tard, le constat est net&nbsp;: écrire du code ne coûte presque plus rien, le valider coûte cher. Une seule IA qui relit ne suffit pas. Plusieurs IA de fournisseurs différents, encadrées par un processus strict, relisent avec une attention qu’aucun relecteur humain ne tient sur des milliers de revues.</p>
+    <p>Ce processus a un prix&nbsp;: plus de temps et de tokens par PR, et des réglages à reprendre sans cesse. C’est pourtant lui qui permet de confier à l’IA l’évolution d’un code de 300&nbsp;000 lignes déjà en production.</p>
+    <p>L’humain ne disparaît pas pour autant. Il décide quoi construire, fixe le niveau d’exigence, écrit et ajuste les règles de validation. Il délègue l’exécution à l’IA, jamais la compréhension.</p>
 
     <p>Nous mettons cette démarche en place avec les équipes dev, sur leur code et avec leurs outils.</p>
     <a class="post-cta" href="../../#offre">Découvrir la démarche<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
