@@ -99,10 +99,11 @@ h3 .n { color: var(--accent); margin-right: 2px; }
 h3 .when { display: block; font: 600 12px/1.4 var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
 /* Chronologie */
 .timeline { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
-.timeline li { position: relative; padding: 0 0 18px 26px; border-left: 2px solid var(--line); margin-left: 6px; font-size: 15px; line-height: 1.5; color: var(--text2); }
-.timeline li:last-child { padding-bottom: 0; border-left-color: transparent; }
-.timeline li::before { content: ""; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+.timeline li { position: relative; padding: 0 0 20px 30px; font-size: 15px; line-height: 1.5; color: var(--text2); }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before { content: ""; position: absolute; z-index: 1; left: 0; top: 5px; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: var(--band); border: 2px solid var(--accent); }
 .timeline li.key::before { background: var(--accent); }
+.timeline li:not(:last-child)::after { content: ""; position: absolute; left: 6px; top: 12px; bottom: -12px; width: 2px; background: var(--line); }
 .timeline b { display: block; color: var(--text); font-weight: 600; }
 /* Graphiques en colonnes */
 .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font: 500 13px/1.4 var(--body); color: var(--text2); }
@@ -350,7 +351,7 @@ th { color: var(--text); font-weight: 600; }
 
     <h2>Conclusion</h2>
     <p>Neuf mois et près de 900 PRs plus tard, le constat est net&nbsp;: écrire du code ne coûte presque plus rien, le valider coûte cher. Une seule IA qui relit ne suffit pas. Plusieurs IA de fournisseurs différents, encadrées par un processus strict, relisent avec une attention qu’aucun relecteur humain ne tient sur des centaines de revues.</p>
-    <p>Ce processus a un prix&nbsp;: plus de temps et de tokens par PR, et des réglages à reprendre sans cesse. C’est pourtant lui qui permet de confier, les yeux fermés, en toute confiance, à l’IA l’évolution d’un code de plus de 300&nbsp;000 lignes en production.</p>
+    <p>Ce processus a un prix&nbsp;: plus de temps et de tokens par PR, et des réglages à reprendre sans cesse. C’est pourtant lui qui permet de confier en toute confiance à l’IA l’évolution d’un code de plus de 300&nbsp;000 lignes en production.</p>
     <p>L’humain ne disparaît pas pour autant. Il décide quoi construire, fixe le niveau d’exigence, écrit et ajuste les règles de validation.</p>
     <p><strong>Il délègue l’exécution à l’IA, jamais la compréhension.</strong></p>
 
