@@ -38,23 +38,25 @@ figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--
 figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
 .fig-note { font-size: 13px; line-height: 1.5; color: var(--gray); }
 /* Schéma horizontal en tête */
-.hero { padding: 0; overflow: hidden; margin: 16px 0 8px 50%; width: min(1040px, calc(100vw - 48px)); transform: translateX(-50%); }
+.hero { padding: 0; overflow: hidden; margin-top: 16px; }
 @media (max-width: 760px) { .hero { display: none; } }
+.mobile-only { display: none; }
+@media (max-width: 760px) { .mobile-only { display: flex; } }
 .hzsvg { display: block; width: 100%; height: auto; }
 .hzsvg .hz-box { fill: var(--bg); stroke: var(--line); stroke-width: 1.5; }
 .hzsvg .hz-loop { stroke: var(--accent); stroke-width: 2; }
 .hzsvg .hz-end { stroke: var(--text); stroke-width: 2; }
-.hzsvg .hz-t { font: 600 21px var(--body); fill: var(--text); text-anchor: middle; }
-.hzsvg .hz-s { font: 500 17px var(--body); fill: var(--text2); text-anchor: middle; }
+.hzsvg .hz-t { font: 600 22px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-s { font: 500 19px var(--body); fill: var(--text2); text-anchor: middle; }
 .hzsvg .hz-arc { fill: none; stroke: var(--accent); stroke-width: 3; }
 .hzsvg .hz-head-arc { fill: var(--accent); }
 .hzsvg .hz-line { fill: none; stroke: var(--text2); stroke-width: 2.5; }
 .hzsvg .hz-head-line { fill: var(--text2); }
 .hzsvg .hz-diamond { fill: var(--bg); stroke: var(--text); stroke-width: 2; stroke-linejoin: round; }
-.hzsvg .hz-d { font: 600 18px var(--body); fill: var(--text); text-anchor: middle; }
-.hzsvg .hz-yes { font: 700 17px var(--body); fill: var(--text); text-anchor: middle; }
-.hzsvg .hz-no { font: 700 17px var(--body); fill: var(--accent); }
-.hzsvg .hz-lt { font: italic 700 19px var(--display); fill: var(--accent); }
+.hzsvg .hz-d { font: 600 19px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-yes { font: 700 18px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-no { font: 700 18px var(--body); fill: var(--accent); }
+.hzsvg .hz-lt { font: italic 700 20px var(--display); fill: var(--accent); }
 .hzsvg .hz-zone { fill: var(--accent); fill-opacity: 0.07; stroke: var(--accent); stroke-opacity: 0.35; stroke-width: 1.5; stroke-dasharray: 6 6; }
 .hzsvg .hz-title { text-anchor: middle; }
 .hzsvg .hz-k { font: 700 32px ui-monospace, "SF Mono", Menlo, monospace; fill: var(--accent); }
