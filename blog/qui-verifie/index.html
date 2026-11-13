@@ -169,7 +169,7 @@ th { color: var(--text); font-weight: 600; }
     <p class="subtitle">Écrire du code n’est plus un problème&nbsp;: l’IA le fait vite et bien. Le point clé, désormais, c’est de vérifier et sécuriser son code avant la prod&nbsp;!</p>
 
     <h2>Fin 2025&nbsp;: l’IA écrit, l’humain relit</h2>
-    <p>Claude Code a définitivement et radicalement changé notre façon de coder. Un agent lit le code, écrit la correction, lance les tests en TDD et ouvre une PR, en quelques dizaines de minutes. Avec plusieurs agents en parallèle, les PRs arrivent par dizaines. Mais dans l’ancien paradigme&nbsp;: rien ne passe en production sans revue humaine. S’en passer&nbsp;? «&nbsp;Ô sacrilège&nbsp;!&nbsp;», diraient les plus réfractaires.</p>
+    <p>Claude Code a définitivement et radicalement changé notre façon de coder. Un agent lit le code, écrit la correction, lance les tests en TDD et ouvre une PR, en quelques dizaines de minutes. Avec plusieurs agents en parallèle, les PRs arrivent par dizaines. Mais l’ancien paradigme tient toujours&nbsp;: rien ne passe en production sans revue humaine. S’en passer&nbsp;? «&nbsp;Ô sacrilège&nbsp;!&nbsp;», diraient les plus réfractaires.</p>
     <p><em>Pour l’instant, l’IA écrit, l’humain relit.</em></p>
     <p>Mais l’humain ne suit pas&nbsp;: une seule PR peut demander des heures de relecture, et tout relire devient impossible. Résultat&nbsp;: les burn-out se multiplient. Comment faire&nbsp;? Ralentir l’IA au rythme de l’humain, ou valider sans vraiment relire&nbsp;: deux mauvais choix&nbsp;!</p>
     <p><em>La relecture doit changer d’échelle… avec l’IA&nbsp;!</em></p>
@@ -224,7 +224,7 @@ th { color: var(--text); font-weight: 600; }
 
     <h2>Notre retour d’expérience</h2>
     <p>Le contexte&nbsp;: la maintenance d’un logiciel existant de 300&nbsp;000 lignes de code. L’objectif&nbsp;: corriger les nombreux bugs détectés en production, puis réaliser les évolutions fonctionnelles demandées par le client, et ce sans jamais casser en prod ce qui marche déjà…</p>
-    <p>Depuis 9 mois, chaque correction ou évolution passe par une Pull Request (PR) écrite par l’IA. Plus de 600 PRs sont passées par notre skill <code>/full-review</code> de revue de code. Voici ce que l’analyse de ces chiffres nous a appris.</p>
+    <p>Depuis neuf mois, chaque correction ou évolution passe par une Pull Request (PR) écrite par l’IA. Plus de 600 PRs sont passées par notre skill <code>/full-review</code> de revue de code. Voici ce que l’analyse de ces chiffres nous a appris.</p>
 
     <h2>Neuf mois en quatre temps</h2>
     <figure>
@@ -267,8 +267,8 @@ th { color: var(--text); font-weight: 600; }
     <figure>
       <figcaption>Passes de revue par PR et délai de fusion, en médiane</figcaption>
       <div class="legend"><span><i class="s1"></i>Passes par PR</span><span><i class="s2"></i>Délai entre l’ouverture et la fusion, en heures</span></div>
-      <div class="cols" role="img" aria-label="Passes par PR et délai de fusion en heures, en médiane : avril, sans revue, délai 1,3 ; mai 5 passes et 7 h ; juin 5 et 14,6 ; juillet 5 et 3,6 ; août 7 et 5,8 ; septembre 4 et 6 ; octobre 3 et 3,9.">
-        <div class="col"><div class="plot"><div class="bar s2" style="--h:8%" title="Avril : 1,3 h"><b>1,3</b></div></div><span class="m">avril<br>sans revue</span></div>
+      <div class="cols" role="img" aria-label="Passes par PR et délai de fusion en heures, en médiane : avril, avant le skill, délai 1,3 ; mai 5 passes et 7 h ; juin 5 et 14,6 ; juillet 5 et 3,6 ; août 7 et 5,8 ; septembre 4 et 6 ; octobre 3 et 3,9.">
+        <div class="col"><div class="plot"><div class="bar s2" style="--h:8%" title="Avril : 1,3 h"><b>1,3</b></div></div><span class="m">avril<br>avant le skill</span></div>
         <div class="col rod"><div class="plot"><div class="bar s1" style="--h:31%" title="Mai : 5 passes"><b>5</b></div><div class="bar s2" style="--h:44%" title="Mai : 7 h"><b>7</b></div></div><span class="m">mai</span></div>
         <div class="col rod"><div class="plot"><div class="bar s1" style="--h:31%" title="Juin : 5 passes"><b>5</b></div><div class="bar s2" style="--h:91%" title="Juin : 14,6 h"><b>14,6</b></div></div><span class="m">juin</span></div>
         <div class="col"><div class="plot"><div class="bar s1" style="--h:31%" title="Juillet : 5 passes"><b>5</b></div><div class="bar s2" style="--h:22%" title="Juillet : 3,6 h"><b>3,6</b></div></div><span class="m">juil.</span></div>
@@ -285,7 +285,7 @@ th { color: var(--text); font-weight: 600; }
       <summary>Voir les données mois par mois</summary>
       <div class="tablewrap">
         <table>
-          <thead><tr><th>Mois</th><th>PRs</th><th>En revue (%)</th><th>Taille méd.</th><th>Passes méd.</th><th>Pb 1re passe</th><th>Pb passes suiv.</th><th>2e passe propre (%)</th><th>Délai méd. (h)</th></tr></thead>
+          <thead><tr><th>Mois</th><th>PRs</th><th>Full-review (%)</th><th>Taille méd.</th><th>Passes méd.</th><th>Pb 1re passe</th><th>Pb passes suiv.</th><th>2e passe propre (%)</th><th>Délai méd. (h)</th></tr></thead>
           <tbody>
             <tr><td>févr.</td><td>4</td><td>0</td><td>712</td><td>–</td><td>–</td><td>–</td><td>–</td><td>0</td></tr>
             <tr><td>mars</td><td>43</td><td>9</td><td>255</td><td>–</td><td>–</td><td>–</td><td>–</td><td>13</td></tr>
@@ -316,7 +316,7 @@ th { color: var(--text); font-weight: 600; }
     <p>Un trait très humain, au passage. Quand une IA reçoit les bugs trouvés dans son propre code, elle les accepte presque toujours. Mais elle les minimise volontiers&nbsp;: «&nbsp;D’accord, c’est un bug, mais il est moins grave que tu ne le dis.&nbsp;» Un échange entre deux IA, sans aucun humain dans la boucle.</p>
 
     <h3><span class="n">2.</span> Valider coûte cinq à dix fois plus qu’écrire</h3>
-    <p>Sur les sessions où nous avons pu mesurer les deux phases, la revue prend cinq fois plus de temps que l’écriture en médiane, et jusqu’à dix fois. Écrire prend quelques dizaines de minutes, valider prend des heures. Elle consomme aussi bien plus de tokens, avec trois relecteurs par PR.</p>
+    <p>Sur les sessions où nous avons pu mesurer les deux phases, la revue prend cinq fois plus de temps que l’écriture en médiane, et jusqu’à dix fois. Écrire prend quelques dizaines de minutes, valider prend des heures. La revue consomme aussi bien plus de tokens, avec trois relecteurs par PR.</p>
     <p>C’est pourtant là que l’IA a le plus progressé en 2026. Elle est devenue bien meilleure que l’humain pour valider du code, trouver les failles de sécurité et les corriger avant la mise en production. Aucun relecteur humain ne garde la même attention de la première à la centième revue.</p>
 
     <h3><span class="n">3.</span> Régler les paramètres pour que la boucle converge</h3>
@@ -342,7 +342,7 @@ th { color: var(--text); font-weight: 600; }
     <p>Un relecteur qui plante ne renvoie aucun problème. Compté comme «&nbsp;propre&nbsp;», il pouvait faire livrer une PR que personne n’avait lue. Depuis, une revue en erreur est ignorée, jamais comptée.</p>
 
     <h3><span class="n">9.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
-    <p>Avec deux revues propres d’affilée comme seul critère, la boucle pouvait s’arrêter avant que le troisième relecteur ait lu le code. Désormais, les deux dernières revues propres viennent de deux relecteurs différents, et les trois doivent avoir lu la version finale. C’est ce qui explique les 5 passes en médiane.</p>
+    <p>Avec deux revues propres d’affilée comme seul critère, la boucle pouvait s’arrêter avant que le troisième relecteur ait lu le code. Désormais, les deux dernières revues propres viennent de deux relecteurs différents, et les trois doivent avoir lu la version finale. Une PR passe donc toujours au moins trois revues.</p>
 
     <h3><span class="n">10.</span> Vérifier chaque soupçon avant de corriger</h3>
     <p>Les IA relèvent beaucoup de faux problèmes. Chaque soupçon est donc vérifié dans le code avant d’être corrigé. Depuis septembre, 8&nbsp;504 fausses alertes ont été écartées, et transmises aux relecteurs suivants pour qu’ils n’y reviennent pas.</p>
@@ -361,10 +361,10 @@ th { color: var(--text); font-weight: 600; }
     </details>
 
     <h2>Conclusion</h2>
-    <p>Neuf mois et près de 600 PRs plus tard, le constat est net&nbsp;: écrire du code ne coûte presque plus rien, le valider coûte plus cher. Une seule IA qui relit ne suffit pas. Plusieurs IA de fournisseurs différents, encadrées par un processus strict, relisent avec une attention qu’aucun relecteur humain ne tient sur des centaines de revues.</p>
-    <p>Ce processus a un prix&nbsp;: plus de temps et de tokens par PR, et des réglages à reprendre sans cesse. C’est pourtant lui qui permet de confier en toute confiance à l’IA l’évolution d’un code de plus de 300&nbsp;000 lignes en production.</p>
-    <p>L’humain ne disparaît pas pour autant. Il décide quoi construire, fixe le niveau d’exigence, écrit et ajuste les règles de validation.</p>
-    <p><strong>Déléguez l’exécution à l’IA, mais jamais la compréhension&nbsp;!</strong></p>
+    <p>Neuf mois et plus de 600 PRs plus tard, le constat est net&nbsp;: écrire du code ne coûte presque plus rien, le valider coûte plus cher. Une seule IA qui relit ne suffit pas. Plusieurs IA de fournisseurs différents, encadrées par un processus strict, relisent avec une attention qu’aucun relecteur humain ne tient sur des centaines de revues.</p>
+    <p>Ce processus a un prix&nbsp;: plus de temps et de tokens par PR, et des réglages à affiner en continu. C’est pourtant un tel processus qui permet de confier sereinement à l’IA l’évolution de votre logiciel en production.</p>
+    <p>L’humain ne disparaît pas pour autant. Il décide quoi construire, fixe le niveau d’exigence, écrit et ajuste les règles de validation, tout en gardant la maîtrise de bout en bout.</p>
+    <p><strong>Déléguez l’exécution à l’IA, mais gardez la compréhension&nbsp;!</strong></p>
 
     <div class="outro">
       <p>Nous mettons également cette démarche en place avec vos équipes dev, sur votre code et vos outils.</p>
