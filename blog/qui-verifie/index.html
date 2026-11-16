@@ -93,6 +93,8 @@ details.dev { margin: 8px 0; padding: 22px clamp(16px, 3vw, 28px); border: 1px s
 details.dev summary { font-weight: 600; color: var(--text); cursor: pointer; }
 details.dev ul { font-size: 16px; margin-top: 12px; }
 .wrap .ps { margin-top: 28px; }
+.wrap .ps p, .wrap .ps li { color: inherit; text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.wrap .ps ul { margin-top: 4px; gap: 4px; color: inherit; }
 .outro { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; }
 .wrap .outro p { font: italic 500 21px/1.45 var(--display); color: var(--text); text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 details .fig-note { margin-top: 12px; }
@@ -370,7 +372,13 @@ th { color: var(--text); font-weight: 600; }
     <p>L’humain ne disparaît pas pour autant. Il décide quoi construire, fixe le niveau d’exigence, écrit et ajuste les règles de validation, tout en gardant la maîtrise de bout en bout.</p>
     <p><strong>Déléguez l’exécution à l’IA, mais gardez la compréhension&nbsp;!</strong></p>
 
-    <p class="fig-note ps"><strong>P.S.</strong> Travaux connexes&nbsp;: <a href="https://x.com/poteto/status/2102050467505430555" target="_blank" rel="noopener" lang="en">«&nbsp;here’s how i shipped 2,500 PRs last month to production&nbsp;»</a>, tweet de @poteto de l’équipe Grok Bot (4+M&nbsp;vues).</p>
+    <div class="fig-note ps">
+      <p><strong>P.S.</strong> Travaux connexes&nbsp;:</p>
+      <ul>
+        <li><a href="https://x.com/poteto/status/2102050467505430555" target="_blank" rel="noopener" lang="en">«&nbsp;here’s how i shipped 2,500 PRs last month to production&nbsp;»</a>, tweet de @poteto de l’équipe Grok Bot (4+M&nbsp;vues)&nbsp;;</li>
+        <li><a href="https://www.slopmanifesto.com/" target="_blank" rel="noopener" lang="en">«&nbsp;No AI Slop: A Manifesto&nbsp;»</a>, manifeste des intervenants et participants de l’AIE Code Summit 2026 (350&nbsp;signataires).</li>
+      </ul>
+    </div>
 
     <div class="outro">
       <p>Nous mettons également cette démarche en place avec vos équipes dev, sur votre code et vos outils.</p>

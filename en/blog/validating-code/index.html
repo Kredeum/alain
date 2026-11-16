@@ -93,6 +93,8 @@ details.dev { margin: 8px 0; padding: 22px clamp(16px, 3vw, 28px); border: 1px s
 details.dev summary { font-weight: 600; color: var(--text); cursor: pointer; }
 details.dev ul { font-size: 16px; margin-top: 12px; }
 .wrap .ps { margin-top: 28px; }
+.wrap .ps p, .wrap .ps li { color: inherit; text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.wrap .ps ul { margin-top: 4px; gap: 4px; color: inherit; }
 .outro { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; }
 .wrap .outro p { font: italic 500 21px/1.45 var(--display); color: var(--text); text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 details .fig-note { margin-top: 12px; }
@@ -370,7 +372,13 @@ th { color: var(--text); font-weight: 600; }
     <p>Humans don’t disappear, though. They decide what to build, set the bar, and write and adjust the validation rules, while keeping control from end to end.</p>
     <p><strong>Delegate execution to AI, but keep the understanding!</strong></p>
 
-    <p class="fig-note ps"><strong>P.S.</strong> Related work: <a href="https://x.com/poteto/status/2102050467505430555" target="_blank" rel="noopener">“here’s how i shipped 2,500 PRs last month to production”</a>, tweet by @poteto from the Grok Bot team (4+M views).</p>
+    <div class="fig-note ps">
+      <p><strong>P.S.</strong> Related work:</p>
+      <ul>
+        <li><a href="https://x.com/poteto/status/2102050467505430555" target="_blank" rel="noopener">“here’s how i shipped 2,500 PRs last month to production”</a>, tweet by @poteto from the Grok Bot team (4+M&nbsp;views);</li>
+        <li><a href="https://www.slopmanifesto.com/" target="_blank" rel="noopener">“No AI Slop: A Manifesto”</a>, written by the speakers and attendees of the AIE Code Summit 2026 (350&nbsp;signatories).</li>
+      </ul>
+    </div>
 
     <div class="outro">
       <p>We can set up this same approach with your dev teams, on your code and with your tools.</p>
