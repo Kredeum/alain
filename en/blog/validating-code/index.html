@@ -337,18 +337,21 @@ th { color: var(--text); font-weight: 600; }
     <h3><span class="n">7.</span> The process corrects itself</h3>
     <p>At the end of each review, the AI suggests improvements to its own rules. We review them and merge them in batches, several times a month. October’s process is no longer July’s, and that is by design.</p>
 
+    <h3><span class="n">8.</span> Orchestrate the reviewers</h3>
+    <p>Automating a review across several AIs takes a conductor: launch each reviewer on the PR, collect its verdict, relaunch the one that stops responding. Several tools do this. We chose Orca, which coordinates each vendor’s agents while keeping their original command-line tool: Claude Code, Codex and Grok Build run as is, with no adapter layer.</p>
+
     <p class="also">And also</p>
 
-    <h3><span class="n">8.</span> A failed review is not a clean review</h3>
+    <h3><span class="n">9.</span> A failed review is not a clean review</h3>
     <p>A reviewer that crashes reports no issues. Counted as “clean”, it could ship a PR nobody had read. Now a failed review is ignored, never counted.</p>
 
-    <h3><span class="n">9.</span> No single reviewer should be able to close the loop</h3>
-    <p>With two clean reviews in a row as the only criterion, the loop could stop before the third reviewer had read the code. Now the last two clean reviews come from two different reviewers, and all three must have read the final version. So a PR always goes through at least three reviews.</p>
+    <h3><span class="n">10.</span> No single reviewer should be able to close the loop</h3>
+    <p>Two clean reviews in a row are not enough if they come from the same reviewer: it would close the loop alone, with its own blind spots. This happens whenever a reviewer stops responding, quota reached or service down: since July, 56&nbsp;passes failed this way, across 40&nbsp;PRs. Now a PR leaves the loop only once validated by at least two different reviewers, on its final version.</p>
 
-    <h3><span class="n">10.</span> Check every suspicion before fixing</h3>
+    <h3><span class="n">11.</span> Check every suspicion before fixing</h3>
     <p>AIs raise many false positives. So each suspicion is checked in the code before being fixed. Since September, 8,504 false alarms have been dismissed, and passed on to the next reviewers so they don’t come back to them.</p>
 
-    <h3><span class="n">11.</span> A rule nobody reads is not applied</h3>
+    <h3><span class="n">12.</span> A rule nobody reads is not applied</h3>
     <p>The process instructions had grown to 91,000 tokens, reread in full at every pass. We split them: each step loads only what it needs, and each pass runs in a fresh agent, free of the noise of the previous ones.</p>
 
     <details class="dev">

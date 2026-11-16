@@ -337,18 +337,21 @@ th { color: var(--text); font-weight: 600; }
     <h3><span class="n">7.</span> Le processus se corrige lui-même</h3>
     <p>À la fin de chaque revue, l’IA propose des améliorations de ses propres règles. Nous les relisons et les intégrons par lots, plusieurs fois par mois. Le processus d’octobre n’est plus celui de juillet, et c’est voulu.</p>
 
+    <h3><span class="n">8.</span> Orchestrer les relecteurs</h3>
+    <p>Automatiser une revue entre plusieurs IA demande un chef d’orchestre&nbsp;: lancer chaque relecteur sur la PR, récupérer son verdict, relancer celui qui ne répond plus. Plusieurs outils le font. Nous avons choisi Orca, qui coordonne les agents de chaque fournisseur tout en gardant leur outil d’origine, en ligne de commande&nbsp;: Claude Code, Codex et Grok Build tournent tels quels, sans couche d’adaptation.</p>
+
     <p class="also">Mais aussi</p>
 
-    <h3><span class="n">8.</span> Une revue en panne n’est pas une revue propre</h3>
+    <h3><span class="n">9.</span> Une revue en panne n’est pas une revue propre</h3>
     <p>Un relecteur qui plante ne renvoie aucun problème. Compté comme «&nbsp;propre&nbsp;», il pouvait faire livrer une PR que personne n’avait lue. Depuis, une revue en erreur est ignorée, jamais comptée.</p>
 
-    <h3><span class="n">9.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
-    <p>Avec deux revues propres d’affilée comme seul critère, la boucle pouvait s’arrêter avant que le troisième relecteur ait lu le code. Désormais, les deux dernières revues propres viennent de deux relecteurs différents, et les trois doivent avoir lu la version finale. Une PR passe donc toujours au moins trois revues.</p>
+    <h3><span class="n">10.</span> Un seul relecteur ne doit jamais pouvoir conclure</h3>
+    <p>Deux revues propres d’affilée ne suffisent pas si elles viennent du même relecteur&nbsp;: il conclurait seul, avec ses propres angles morts. Le cas arrive dès qu’un relecteur ne répond plus, quota atteint ou service indisponible&nbsp;: depuis juillet, 56&nbsp;passes ont échoué ainsi, sur 40&nbsp;PRs. Désormais, une PR ne sort de la boucle qu’une fois validée par au moins deux relecteurs différents, sur sa version finale.</p>
 
-    <h3><span class="n">10.</span> Vérifier chaque soupçon avant de corriger</h3>
+    <h3><span class="n">11.</span> Vérifier chaque soupçon avant de corriger</h3>
     <p>Les IA relèvent beaucoup de faux problèmes. Chaque soupçon est donc vérifié dans le code avant d’être corrigé. Depuis septembre, 8&nbsp;504 fausses alertes ont été écartées, et transmises aux relecteurs suivants pour qu’ils n’y reviennent pas.</p>
 
-    <h3><span class="n">11.</span> Une règle non lue n’est pas appliquée</h3>
+    <h3><span class="n">12.</span> Une règle non lue n’est pas appliquée</h3>
     <p>Les instructions du processus avaient grossi jusqu’à 91&nbsp;000 tokens, relus en entier à chaque passe. Nous les avons découpées&nbsp;: chaque étape charge seulement ce dont elle a besoin, et chaque passe tourne dans un agent neuf, sans le bruit des précédentes.</p>
 
     <details class="dev">
