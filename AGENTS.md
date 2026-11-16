@@ -12,6 +12,7 @@ Page d'accueil d'Alain Papazoglou (développeur senior, IA appliquée au code) e
 - `robots.txt` (tous les robots autorisés, IA comprises), `sitemap.xml` (les pages d'accueil et leurs langues, le blog et chaque article, date `lastmod` à mettre à jour) et `llms.txt` (résumé du site et de l'offre pour les IA, à tenir à jour si le contenu change).
 - `BingSiteAuth.xml` et la balise `google-site-verification` des deux pages : preuves de propriété du site pour Bing Webmaster Tools et Google Search Console. Ne jamais les supprimer, sinon les deux outils perdent la vérification.
 - `favicon.svg` (suit le mode clair ou sombre du navigateur), `favicon.ico` et `apple-touch-icon.png` : icônes d'onglet « ap », en tracés Inter Bold. Liées en tête de chaque page, accueil et blog.
+- Mesure d'audience : GoatCounter, sans cookie, une ligne `<script data-goatcounter=…>` juste avant `</body>` sur chaque page, accueil et blog, dans les deux langues. Toute nouvelle page la reprend. Statistiques sur https://alain-kredeum.goatcounter.com.
 - `.nojekyll` : désactive Jekyll sur GitHub Pages.
 - `CNAME` : domaine personnalisé `alain.kredeum.com` (entrée CNAME chez OVH vers kredeum.github.io).
 - `README.md` : présentation du dépôt, reprend l'accroche de la page et les liens de contact (à tenir à jour si l'en-tête change).
