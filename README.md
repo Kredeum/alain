@@ -1,4 +1,4 @@
-# Alain Papazoglou · Senior dev IA
+# Alain Papazoglou · Ingénieur IA Senior
 
 Ce dépôt contient la page d'accueil d'Alain Papazoglou, publiée sur GitHub Pages :
 **https://alain.kredeum.com/**
