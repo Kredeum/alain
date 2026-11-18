@@ -188,6 +188,8 @@ L’humain ne disparaît pas pour autant. Il décide quoi construire, fixe le ni
 
 - [« No AI Slop: A Manifesto »](https://www.slopmanifesto.com/), manifeste des intervenants et participants de l’AIE Code Summit 2026 (350 signataires).
 
+**Vous voulez réagir ?** La discussion se passe sur LinkedIn, avec déjà de nombreux retours de devs et de CTO : [rejoindre la discussion](https://www.linkedin.com/posts/alain_lia-code-ok-mais-qui-v%C3%A9rifie-des-pull-activity-7528364436273774593-EERK)
+
 Nous mettons également cette démarche en place avec vos équipes dev, sur votre code et vos outils.
 
 [Découvrir la démarche](https://alain.kredeum.com/#offre)
@@ -377,6 +379,8 @@ Humans don’t disappear, though. They decide what to build, set the bar, and wr
 - [“here’s how i shipped 2,500 PRs last month to production”](https://x.com/poteto/status/2102050467505430555), tweet by @poteto from the Grok Bot team (4+M views);
 
 - [“No AI Slop: A Manifesto”](https://www.slopmanifesto.com/), written by the speakers and attendees of the AIE Code Summit 2026 (350 signatories).
+
+**Want to weigh in?** The discussion is happening on LinkedIn (post in French, auto-translation available), comments in English are welcome: [join the discussion](https://www.linkedin.com/posts/alain_lia-code-ok-mais-qui-v%C3%A9rifie-des-pull-activity-7528364436273774593-EERK)
 
 We can set up this same approach with your dev teams, on your code and with your tools.
 
