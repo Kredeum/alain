@@ -51,3 +51,26 @@ Communs aux deux thèmes :
 - Kredeum le moins possible : nommé seulement dans l'encadré de l'en-tête de la page d'accueil (« Alain Papazoglou @ Kredeum », avec l'étiquette « Ingénieur IA Senior », « Senior AI Engineer » en anglais ; plus de nom dans la barre de menu), la phrase d'en-tête (« Projet ambitieux, besoin de plus de ressources ? L'équipe Kredeum vous accompagne »), dans l'étiquette « Avec l'équipe Kredeum » de la démarche, dans le texte du bloc contact (« avec Alain ou l'équipe Kredeum »), et en pied de page (« © 2026 Alain Papazoglou @ Kredeum · Rennes », lien « Kredeum » vers labs.kredeum.com). Ailleurs, dire « l'équipe ».
 - Sections : en-tête, Votre projet (3 types), La démarche (3 étapes + deux façons de travailler), Nos références (expérience + preuve chiffrée), Contact.
 - Pas de section équipe ni de photos : l'équipe est présentée sur labs.kredeum.com.
+
+## Bloc discussion LinkedIn
+
+En fin d'article, après le P.S. (`.fig-note.ps`) et avant `.outro`, recopier le HTML ci-dessous. Le CSS va dans le `<style>` de la page : les styles sont en ligne, dupliqués dans chaque page. Seule l'URL du post change. Le français et l'anglais portent la même URL. Garder `%C3%A9` dans l'adresse : le remplacer par « é » renvoie une 404.
+
+```css
+.discuss { margin-top: 28px; padding: 20px 22px; border-radius: 16px; background: var(--aside-bg); color: var(--box-text); box-shadow: inset 0 0 0 1px var(--aside-border); }
+.wrap .discuss p { margin: 0; text-align: left; hyphens: manual; -webkit-hyphens: manual; color: inherit; }
+.discuss a, .discuss strong { color: inherit; }
+.discuss a:hover { color: var(--accent-box); }
+```
+
+Français :
+
+```html
+<aside class="discuss" data-linkedin="URL"><p><strong>Vous voulez réagir&nbsp;?</strong> La discussion se passe sur LinkedIn, avec déjà de nombreux retours de devs et de CTO&nbsp;: <a href="URL" target="_blank" rel="noopener">rejoindre la discussion</a></p></aside>
+```
+
+Anglais :
+
+```html
+<aside class="discuss" data-linkedin="URL"><p><strong>Want to weigh in?</strong> The discussion is happening on LinkedIn (post in French, auto-translation available), comments in English are welcome: <a href="URL" target="_blank" rel="noopener">join the discussion</a></p></aside>
+```
