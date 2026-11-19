@@ -385,3 +385,229 @@ Humans don’t disappear, though. They decide what to build, set the bar, and wr
 We can set up this same approach with your dev teams, on your code and with your tools.
 
 [See the approach](https://alain.kredeum.com/en/#offre)
+
+---
+
+Source : https://alain.kredeum.com/blog/qui-porte-ownership/ (langue : fr)
+
+Blog · 24 novembre 2026
+
+# L’IA code et vérifie, ok ! Mais qui porte l’*ownership* ?
+
+Écrire et vérifier ne sont plus le problème : l’IA s’en charge. Le point clé, désormais, c’est qui porte l’ownership, une fois la PR en production.
+
+Suite de [« L’IA code, ok ! Mais qui vérifie ? »](https://alain.kredeum.com/blog/qui-verifie/).
+
+## La PR est en prod. Qui en répond ?
+
+Dans [l’article précédent](https://alain.kredeum.com/blog/qui-verifie/), nous avons répondu à « qui vérifie ? ». La réponse : l’IA. Plusieurs IA, de fournisseurs différents, tenues par un processus strict.
+
+*L’IA code. L’IA vérifie.*
+
+Puis la pull request (PR) est fusionnée. Le code est déployé. Il tourne. À 3 h du matin, quelque chose casse. Qui porte l’ownership ?
+
+Pas l’IA. L’IA n’est jamais propriétaire. L’ownership est porté par un humain, ou personne ne le porte.
+
+## Cascade ou agile, les mêmes phases
+
+Le cycle de vie du logiciel a changé de rythme. La cascade enchaîne les phases une fois, du besoin jusqu’à la mise en production. L’agile les rejoue, en boucles courtes. Ce qui change, c’est le rythme, et la taille des boucles. Les phases, elles, restent les mêmes.
+
+Cascade ou agile, nous enchaînons les mêmes phases.
+
+- **pourquoi** : la raison de faire, le problème qui justifie le travail.
+
+- **quoi** : ce que le logiciel doit faire, le résultat attendu.
+
+- **comment** : la façon de le construire.
+
+- **faire** : écrire le code.
+
+- **tester** : prouver qu’il fait ce qui a été demandé.
+
+- **vérifier** : relire, chercher ce qui cassera, sécuriser avant la prod.
+
+- **déployer** : mettre en production.
+
+- **retester** : une fois en production, vérifier que ça tient.
+
+La cascade aligne ces phases. L’agile les boucle. Une boucle courte contient les huit, comme un cycle long. Aucune des deux n’en retire une, et aucune n’en ajoute. Seule la cadence change.
+
+## La ligne de partage, en 2026
+
+Deux phases restent le domaine de l’humain : le pourquoi, et le quoi. Pourquoi ce travail existe. Quoi, exactement, le logiciel doit faire.
+
+À partir du comment, l’IA peut faire le travail. Le comment, le faire, le tester, le vérifier, le déployer, le retester. Vérifier compris : c’est le sujet de [« Qui vérifie ? »](https://alain.kredeum.com/blog/qui-verifie/), et la réponse n’a pas changé.
+
+Figure : Qui fait chaque phase, en 2026
+
+| Phase | Qui la fait en 2026 |
+|---|---|
+| pourquoi | Humain |
+| quoi | Humain |
+| comment | IA |
+| faire | IA |
+| tester | IA |
+| vérifier | IA |
+| déployer | IA |
+| retester | IA |
+
+Le pourquoi et le quoi restent humains. Du comment au retester, l’IA peut faire le travail, vérification comprise.
+
+La ligne est haute. Elle ne sépare pas celui qui a l’idée de celui qui code. Elle sépare le pourquoi et le quoi, qui restent humains, de tout ce qui suit, que l’IA peut prendre.
+
+## L’ownership remonte au quoi
+
+Conséquence directe. L’exécution, du comment au retester, peut être faite par une IA. Or une IA n’est jamais propriétaire. L’ownership ne peut donc plus se loger dans l’exécution. Il remonte d’un cran, jusqu’au quoi.
+
+Celui qui définit le quoi est le propriétaire de la pull request, et du code déployé. Il a dit ce que le logiciel doit faire. C’est lui qui répond de ce qui tourne en production.
+
+Une phrase circule, bien commode pour se dédouaner : « C’est l’IA qui a fait. » Non. Impossible d’être sérieux, ou professionnel, sans un humain qui garde l’ownership. L’IA fait le travail. Elle ne le possède pas.
+
+*L’IA n’est jamais propriétaire.*
+
+## D’abord, nommer le propriétaire
+
+Porter l’ownership commence par une définition. Qui est le propriétaire ? Sans cette réponse, personne ne porte rien. L’ownership reste vacant, et « c’est l’IA qui a fait » vient occuper la place vide.
+
+Qui valide le quoi ? Celui-là est le propriétaire. De la pull request, et du code une fois déployé. Valider le quoi et porter l’ownership, c’est le même geste. Pour porter l’ownership, il faut d’abord avoir dit qui le porte.
+
+## Le piège du quoi sans les mains
+
+Le piège. Le marketing définit la fonctionnalité. Il valide le quoi. Il devrait donc en porter l’ownership. Mais il ne peut rien modifier en production, rien y corriger. Et derrière lui, personne ne prend l’ownership.
+
+Le quoi a un auteur. La production n’a personne.
+
+Alors le marketing doit déléguer une part de son ownership. À un développeur, ou à une équipe ops / support. L’ownership se partage par rôle.
+
+- **Le marketing** possède le quoi.
+
+- **Le support** possède la production.
+
+L’alerte de 3 h du matin part vers l’équipe support. Pas vers le marketing, qui dort, et qui ne peut pas intervenir. Cette intervention est dans le contrat professionnel du support. C’est son métier.
+
+À 3 h, le support stabilise la production. La frontière entre l’incident et la mauvaise spec se règle dans la journée, quand le propriétaire côté marketing se réveille.
+
+*Une discussion entre gens intelligents.*
+
+## Conclusion
+
+« [Qui vérifie ?](https://alain.kredeum.com/blog/qui-verifie/) » a sa réponse : l’IA, encadrée par un processus que l’humain tient. « Qui porte l’ownership ? » a la sienne : l’humain qui valide le quoi. Et quand cet humain ne peut pas toucher la production, une part de l’ownership est déléguée à ceux dont le métier est d’y répondre, y compris à 3 h du matin.
+
+**L’IA code et vérifie. L’ownership a un nom, et ce nom est humain.**
+
+Nous mettons également cette démarche en place avec vos équipes dev, sur votre code et vos outils.
+
+[Découvrir la démarche](https://alain.kredeum.com/#offre)
+
+---
+
+Source : https://alain.kredeum.com/en/blog/who-owns-the-code/ (langue : en)
+
+Blog · November 24, 2026
+
+# AI writes the code and checks it. Fine. But who *owns* it?
+
+Writing and checking are no longer the problem: AI handles both. What matters now is who owns the code once the PR is in production.
+
+Follow-up to [“AI writes the code. Fine. But who checks it?”](https://alain.kredeum.com/en/blog/validating-code/).
+
+## The PR is in production. Who owns it?
+
+In [the previous article](https://alain.kredeum.com/en/blog/validating-code/), we answered “who checks?”. The answer: AI. Several AIs, from different vendors, governed by a strict process.
+
+*AI writes. AI checks.*
+
+Then the pull request (PR) is merged. The code is deployed. It runs. At 3 a.m., something breaks. Who owns it?
+
+Not the AI. AI is never an owner. Ownership is carried by a human, or nobody carries it.
+
+## Waterfall or agile, the same phases
+
+The software lifecycle has changed tempo. Waterfall runs the phases once, from the need through to production. Agile plays them again, in short loops. What changes is the rhythm, and the size of the loops. The phases stay the same.
+
+Waterfall or agile, we chain the same phases.
+
+- **why**: the reason for doing the work, the problem that justifies it.
+
+- **what**: what the software must do, the result we expect.
+
+- **how**: the way to build it.
+
+- **build**: write the code.
+
+- **test**: prove it does what was asked.
+
+- **check**: review it, look for what will break, secure it before production.
+
+- **deploy**: put it in production.
+
+- **retest**: once it is in production, check that it holds.
+
+Waterfall lines these phases up. Agile loops them. A short loop contains all eight, just as a long cycle does. Neither method drops one, and neither adds one. Only the cadence changes.
+
+## The dividing line, in 2026
+
+Two phases stay human: the why, and the what. Why this work exists. What, exactly, the software must do.
+
+From the how on, AI can do the work. The how, the build, the test, the check, the deploy, the retest. Checking included: that is what [“Who checks?”](https://alain.kredeum.com/en/blog/validating-code/) is about, and the answer has not changed.
+
+Figure : Who does each phase, in 2026
+
+| Phase | Who does it in 2026 |
+|---|---|
+| why | Human |
+| what | Human |
+| how | AI |
+| build | AI |
+| test | AI |
+| check | AI |
+| deploy | AI |
+| retest | AI |
+
+The why and the what stay human. From the how through the retest, AI can do the work, checking included.
+
+The line sits high. It does not split the person with the idea from the person who codes. It splits the why and the what, which stay human, from everything after, which AI can take.
+
+## Ownership moves up to the what
+
+Direct consequence. Execution, from the how through the retest, can be done by an AI. And an AI is never an owner. So ownership can no longer sit inside the execution. It moves up one step, to the what.
+
+Whoever defines the what owns the pull request, and the deployed code. They said what the software must do. They answer for what runs in production.
+
+A convenient sentence is going around, handy for getting yourself off the hook: “The AI did it.” No. You cannot be serious, or professional, without a human keeping ownership. AI does the work. It does not own it.
+
+*AI is never an owner.*
+
+## First, name the owner
+
+Carrying ownership starts with a definition. Who is the owner? Without that answer, nobody carries anything. Ownership stays empty, and “the AI did it” moves into the vacant seat.
+
+Who validates the what? That person is the owner. Of the pull request, and of the code once it is deployed. Validating the what and carrying ownership are the same act. To carry ownership, you first have to say who carries it.
+
+## The trap: a what with no hands on production
+
+The trap. Marketing defines the feature. It validates the what, so it should carry the ownership. But it cannot change anything in production, and it cannot fix anything there. And behind it, nobody takes ownership.
+
+The what has an author. Production has nobody.
+
+Then marketing has to delegate part of its ownership. To a developer, or to an ops or support team. Ownership is split by role.
+
+- **Marketing** owns the what.
+
+- **Support** owns production.
+
+The 3 a.m. alert goes to the support team. Not to marketing, which is asleep, and which couldn’t step in anyway. That intervention is in the support team’s professional contract. It is their job.
+
+At 3 a.m., support stabilizes production. The line between an incident and a bad spec is settled during the day, when the marketing owner wakes up.
+
+*A discussion between intelligent people.*
+
+## Conclusion
+
+[“Who checks?”](https://alain.kredeum.com/en/blog/validating-code/) has its answer: AI, inside a process a human holds. “Who owns it?” has its own: the human who validates the what. And when that human cannot touch production, part of the ownership is delegated to the people whose job is to answer there, including at 3 a.m.
+
+**AI writes and checks. Ownership has a name, and that name is a human’s.**
+
+We can set up this same approach with your dev teams, on your code and with your tools.
+
+[See the approach](https://alain.kredeum.com/en/#offre)

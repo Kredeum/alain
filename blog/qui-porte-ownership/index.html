@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L’IA code et vérifie, ok ! Mais qui porte l’ownership ?</title>
+<meta name="description" content="L’IA écrit le code et le vérifie. En production, l’ownership revient à l’humain qui définit le quoi : l’IA n’est jamais propriétaire.">
+<link rel="canonical" href="https://alain.kredeum.com/blog/qui-porte-ownership/"><link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/qui-porte-ownership/"><link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/who-owns-the-code/"><link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/qui-porte-ownership/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Alain Papazoglou @ Kredeum"><meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://alain.kredeum.com/blog/qui-porte-ownership/"><meta property="og:title" content="L’IA code et vérifie, ok ! Mais qui porte l’ownership ?"><meta property="og:description" content="L’IA écrit le code et le vérifie. En production, l’ownership revient à l’humain qui définit le quoi : l’IA n’est jamais propriétaire.">
+<meta property="og:image" content="https://alain.kredeum.com/blog/qui-porte-ownership/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/blog/qui-porte-ownership/#article", "headline": "L’IA code et vérifie, ok ! Mais qui porte l’ownership ?", "description": "L’IA écrit le code et le vérifie. En production, l’ownership revient à l’humain qui définit le quoi : l’IA n’est jamais propriétaire.", "url": "https://alain.kredeum.com/blog/qui-porte-ownership/", "mainEntityOfPage": "https://alain.kredeum.com/blog/qui-porte-ownership/", "datePublished": "2026-11-24T08:30:00+01:00", "dateModified": "2026-11-24T08:30:00+01:00", "inLanguage": "fr", "image": "https://alain.kredeum.com/blog/qui-porte-ownership/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/blog/#blog"}}</script>
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap">
+<style>:root{color-scheme:dark;--track:rgba(243,233,220,0.1);--bg:#0E0D0C;--band:#24201C;--line:rgba(243,233,220,0.3);--line2:rgba(243,233,220,0.35);--text:#F3ECE4;--text2:#CFC6BC;--gray:#A89F95;--accent:#FF7A2F;--accent-box:#B4410F;--box-text:#1C1916;--box-muted1:#5C534A;--box-label:#6B6157;--box-muted:#4A433C;--box-line:rgba(28,25,22,0.35);--hover:#FFFFFF;--card:#191715;--nav-btn-bg:#F3E9DC;--nav-btn-text:#0E0D0C;--cta-line:#F3E9DC;--pastille-bg:#F3E9DC;--pastille-fg:#0E0D0C;--aside-bg:#F3E9DC;--aside-border:transparent;--ia-bg:#F3E9DC;--box-bg:#F3E9DC;--alain-border:#1C1916;--team-bg:#0E0D0C;--team-text:#F3ECE4;--ref-rule:#F3E9DC;--contact-text:#0E0D0C;--malt-bg:#0E0D0C;--malt-text:#F3ECE4;--outline-btn:#0E0D0C;--outline-past-bg:#0E0D0C;--outline-past-fg:#F3E9DC;}:root[data-theme="day"]{color-scheme:light;--track:rgba(22,19,15,0.08);--bg:#F5F0E8;--band:#ECE5D9;--line:rgba(22,19,15,0.12);--line2:rgba(22,19,15,0.16);--text:#16130F;--text2:#5E554B;--gray:#8A8076;--accent:#C2410C;--accent-box:#C2410C;--box-text:#16130F;--box-muted1:#5E554B;--box-label:#8A8076;--box-muted:#5E554B;--box-line:rgba(22,19,15,0.2);--hover:#000000;--card:#FBF8F3;--nav-btn-bg:#C2410C;--nav-btn-text:#FFFFFF;--cta-line:#16130F;--pastille-bg:#C2410C;--pastille-fg:#FFFFFF;--aside-bg:#FFFFFF;--aside-border:rgba(22,19,15,0.12);--ia-bg:#F6E3D3;--box-bg:#FFFFFF;--alain-border:rgba(22,19,15,0.25);--team-bg:#F6E3D3;--team-text:#16130F;--ref-rule:#16130F;--contact-text:#16130F;--malt-bg:#C2410C;--malt-text:#FFFFFF;--outline-btn:#16130F;--outline-past-bg:#C2410C;--outline-past-fg:#FFFFFF;}.logo{font:700 26px/1 Inter,system-ui,sans-serif;letter-spacing:-0.02em;color:var(--text);text-decoration:none;white-space:nowrap}.logo span{color:var(--accent);margin-left:0.18em}.logo:hover{color:var(--text)}.theme-toggle,.lang-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--accent);cursor:pointer}.theme-toggle:hover,.lang-toggle:hover{border-color:var(--text)}a.lang-toggle:hover{color:var(--accent)}.theme-toggle:focus-visible,.lang-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.lang-toggle{box-sizing:border-box;font:600 13px/1 Inter,system-ui,sans-serif;letter-spacing:0.04em;text-decoration:none}.theme-toggle .i-moon{display:none}:root[data-theme="day"] .theme-toggle .i-sun{display:none}:root[data-theme="day"] .theme-toggle .i-moon{display:block}p{text-align:justify;hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:7 4 3}#contact p{text-align:inherit;hyphens:manual;-webkit-hyphens:manual}html{scroll-behavior:smooth;scrollbar-gutter:stable}body{margin:0;background:var(--bg);color:var(--text)}a{color:var(--text)}a:hover{color:var(--hover)}a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}img{max-width:100%}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
+<style>
+:root{--display:Gelasio,Georgia,"Times New Roman",serif;--body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap { max-width: 680px; margin: 0 auto; padding-block: 48px 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 56px; }
+.eyebrow { font: 600 12px/1.4 var(--body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+article { display: flex; flex-direction: column; gap: 20px; }
+h1 { margin: 0; font: 700 clamp(32px, 5.4vw, 46px)/1.1 var(--display); letter-spacing: -0.015em; text-wrap: balance; }
+h1 em { font-weight: 500; color: var(--accent); }
+@media (min-width: 720px) { h1.one-line { white-space: nowrap; font-size: min(5vw, 43px); } }
+h2 { margin: 24px 0 0; font: 500 clamp(24px, 3.6vw, 30px)/1.2 var(--display); text-wrap: balance; }
+p, ul { margin: 0; color: var(--text2); }
+.lead { font-size: 20px; color: var(--text); }
+.subtitle { margin: -4px 0 8px; font: italic 500 clamp(20px, 2.6vw, 24px)/1.4 var(--display); color: var(--text); text-wrap: pretty; }
+ul { padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
+.wrap p, .wrap li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 7 4 3; }
+.wrap .subtitle, .wrap figure p, .wrap figure li, .wrap .fig-note { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+strong { color: var(--text); font-weight: 600; }
+code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; color: var(--text); white-space: nowrap; hyphens: none; -webkit-hyphens: none; }
+figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--band); border-radius: 20px;
+  display: flex; flex-direction: column; gap: 18px; }
+figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
+.fig-note { font-size: 13px; line-height: 1.5; color: var(--gray); }
+/* Schéma horizontal en tête */
+.hero { padding: 0; overflow: hidden; }
+@media (max-width: 760px) { .hero { display: none; } }
+.mobile-only { display: none; }
+@media (max-width: 760px) { .mobile-only { display: flex; } }
+.hzsvg { display: block; width: 100%; height: auto; }
+.hzsvg .hz-box { fill: var(--bg); stroke: var(--line); stroke-width: 1.5; }
+.hzsvg .hz-loop { stroke: var(--accent); stroke-width: 2; }
+.hzsvg .hz-end { stroke: var(--text); stroke-width: 2; }
+.hzsvg .hz-t { font: 600 22px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-s { font: 500 19px var(--body); fill: var(--text2); text-anchor: middle; }
+.hzsvg .hz-arc { fill: none; stroke: var(--accent); stroke-width: 3; }
+.hzsvg .hz-head-arc { fill: var(--accent); }
+.hzsvg .hz-line { fill: none; stroke: var(--text2); stroke-width: 2.5; }
+.hzsvg .hz-head-line { fill: var(--text2); }
+.hzsvg .hz-diamond { fill: var(--bg); stroke: var(--text); stroke-width: 2; stroke-linejoin: round; }
+.hzsvg .hz-d { font: 600 19px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-yes { font: 700 18px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-no { font: 700 18px var(--body); fill: var(--accent); }
+.hzsvg .hz-lt { font: italic 700 20px var(--display); fill: var(--accent); }
+.hzsvg .hz-zone { fill: var(--accent); fill-opacity: 0.07; stroke: var(--accent); stroke-opacity: 0.35; stroke-width: 1.5; stroke-dasharray: 6 6; }
+.hzsvg .hz-title { text-anchor: middle; }
+.hzsvg .hz-k { font: 700 32px ui-monospace, "SF Mono", Menlo, monospace; fill: var(--accent); }
+.hzsvg .hz-k2 { font: italic 500 27px var(--display); fill: var(--text2); }
+/* Boucle de revue */
+.loopsvg { display: block; width: 100%; max-width: 460px; margin: 0 auto; overflow: visible; }
+.loopsvg .lb-box { fill: var(--bg); stroke: var(--line); stroke-width: 1; }
+.loopsvg .lb-loop { stroke: var(--accent); stroke-width: 1.5; }
+.loopsvg .lb-end { stroke: var(--text2); stroke-width: 1.5; }
+.loopsvg .lb-t { font: 600 14px var(--body); fill: var(--text); text-anchor: middle; }
+.loopsvg .lb-s { font: 500 12.5px var(--body); fill: var(--text2); text-anchor: middle; }
+.loopsvg .lb-arc { fill: none; stroke: var(--accent); stroke-width: 2; }
+.loopsvg .lb-head-arc { fill: var(--accent); }
+.loopsvg .lb-line { fill: none; stroke: var(--text2); stroke-width: 1.5; }
+.loopsvg .lb-head-line { fill: var(--text2); }
+.loopsvg .lb-diamond { fill: var(--bg); stroke: var(--text); stroke-width: 1.5; stroke-linejoin: round; }
+.loopsvg .lb-d { font: 600 13px var(--body); fill: var(--text); text-anchor: middle; }
+.loopsvg .lb-yes { font: 700 12.5px var(--body); fill: var(--text); }
+.loopsvg .lb-no { font: 700 12.5px var(--body); fill: var(--accent); }
+.loopsvg .lb-r { font: 600 11.5px var(--body); fill: var(--accent); text-anchor: middle; }
+/* Barres par passe */
+.bars { display: grid; grid-template-columns: max-content 1fr max-content; align-items: center; gap: 10px 12px;
+  font: 500 14px/1.3 var(--body); color: var(--text2); }
+.bars .track { height: 14px; background: var(--track); border-radius: 0 4px 4px 0; }
+.bars .bar { height: 100%; background: var(--accent); border-radius: 0 4px 4px 0; }
+.bars .val { font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+.figs { display: flex; flex-wrap: wrap; gap: 8px 28px; font: 500 14px/1.4 var(--body); color: var(--text2); }
+.figs b { font: 700 22px/1.1 var(--display); color: var(--text); font-variant-numeric: tabular-nums; margin-right: 6px; }
+.case { margin: 4px 0; padding-left: 18px; border-left: 2px solid var(--accent); display: flex; flex-direction: column; gap: 10px; }
+details.case { font-size: inherit; color: inherit; display: block; }
+details.case summary { font: 600 12px/1.4 var(--body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); cursor: pointer; }
+details.case > p { margin-top: 10px; }
+details.dev { margin: 8px 0; padding: 22px clamp(16px, 3vw, 28px); border: 1px solid var(--line); border-radius: 20px; display: block; font-size: 16px; color: inherit; }
+details.dev summary { font-weight: 600; color: var(--text); cursor: pointer; }
+details.dev ul { font-size: 16px; margin-top: 12px; }
+.wrap .ps { margin-top: 28px; }
+.wrap .ps p, .wrap .ps li { color: inherit; text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.wrap .ps ul { margin-top: 4px; gap: 4px; color: inherit; }
+.discuss { margin-top: 28px; padding: 20px 22px; border-radius: 16px; background: var(--aside-bg); color: var(--box-text); box-shadow: inset 0 0 0 1px var(--aside-border); }
+.wrap .discuss p { margin: 0; text-align: left; hyphens: manual; -webkit-hyphens: manual; color: inherit; }
+.discuss a, .discuss strong { color: inherit; }
+.discuss a:hover { color: var(--accent-box); }
+.outro { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; }
+.wrap .outro p { font: italic 500 21px/1.45 var(--display); color: var(--text); text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+details .fig-note { margin-top: 12px; }
+@media (max-width: 480px) { body { font-size: 17px; } .lead { font-size: 18px; } }
+h3 { margin: 12px 0 0; font: 600 19px/1.35 var(--body); color: var(--text); }
+h3 .n { color: var(--accent); margin-right: 2px; }
+h3 .when { display: block; font: 600 12px/1.4 var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+/* Chronologie */
+.wrap .also { margin-top: 22px; font: italic 600 24px/1.3 var(--display); color: var(--accent); text-align: left; }
+.timeline { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
+.timeline li { position: relative; padding: 0 0 20px 30px; font-size: 15px; line-height: 1.5; color: var(--text2); }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before { content: ""; position: absolute; z-index: 1; left: 0; top: 4px; width: 16px; height: 16px; box-sizing: border-box; border-radius: 50%; border: 2px solid var(--accent); }
+.timeline li::before { background-clip: padding-box; background-image: linear-gradient(to top, var(--accent) var(--fill, 0%), var(--band) var(--fill, 0%)); }
+.timeline li.f1 { --fill: 33%; }
+.timeline li.f2 { --fill: 67%; }
+.timeline li.f3 { --fill: 100%; }
+.timeline li:not(:last-child)::after { content: ""; position: absolute; left: 7px; top: 12px; bottom: -12px; width: 2px; background: var(--line); }
+.timeline b { display: block; color: var(--text); font-weight: 600; }
+/* Graphiques en colonnes */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font: 500 13px/1.4 var(--body); color: var(--text2); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.s1 { background: var(--accent); }
+.s2 { background: var(--gray); }
+.cols { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 6px; align-items: end; }
+.col { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; padding: 8px 2px 0; border-radius: 10px 10px 0 0; }
+.col.rod { background: var(--track); }
+.col .plot { height: 150px; width: 100%; display: flex; align-items: flex-end; justify-content: center; gap: 2px; }
+.col .bar { width: min(26px, 42%); height: var(--h); border-radius: 4px 4px 0 0; position: relative; }
+.col .plot.single .bar { width: min(34px, 70%); }
+.col .bar b { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); padding-bottom: 3px; font: 600 12px/1 var(--body); color: var(--text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.col .m { font: 500 12px/1.2 var(--body); color: var(--text2); text-align: center; }
+.axis { border-top: 1px solid var(--line); margin-top: -6px; }
+.rodnote { font: 500 12px/1.4 var(--body); color: var(--gray); }
+.rodnote i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: var(--track); border: 1px solid var(--line); margin-right: 6px; vertical-align: -1px; }
+@media (max-width: 480px) { .col .bar b { font-size: 10px; } .col .m { font-size: 11px; } }
+/* Tableau de données */
+details { font-size: 14px; color: var(--text2); }
+summary { cursor: pointer; font-weight: 600; color: var(--text); }
+.tablewrap { overflow-x: auto; margin-top: 12px; }
+table { border-collapse: collapse; width: 100%; font: 400 13px/1.4 var(--body); font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 4px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+th { white-space: normal; vertical-align: bottom; hyphens: none; line-height: 1.25; }
+@media (max-width: 480px) { table { font-size: 11.5px; } th, td { padding: 5px 2px; } }
+@media (max-width: 400px) { table { font-size: 10.5px; letter-spacing: -0.01em; } th, td { padding: 5px 1px; } }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--text); font-weight: 600; }
+.wrap .series { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.wrap ul.phases, .wrap ul.phases li { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+table.roles { font-size: 15px; }
+table.roles th, table.roles td { text-align: left; }
+table.roles td.hu, table.roles td.ia { font-weight: 600; text-align: right; white-space: nowrap; }
+table.roles td.hu { color: var(--text); }
+table.roles td.ia { color: var(--accent); }
+table.roles tr.split td { border-top: 2px solid var(--accent); }
+table.roles td:first-child { font-weight: 600; color: var(--text); }
+.wrap{padding-block:24px 64px}
+.post-cta{display:inline-flex;align-items:center;gap:14px;align-self:flex-start;margin-top:8px;padding:6px 6px 6px 26px;border-radius:999px;border:1px solid var(--cta-line);color:var(--cta-line);text-decoration:none;font:600 16px var(--body)}
+.post-cta span{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--pastille-bg);color:var(--pastille-fg)}
+.post-cta:hover{color:var(--cta-line)}
+.posts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.posts a{display:block;padding:22px 24px;border-radius:16px;border:1px solid var(--line2);text-decoration:none}
+.posts a:hover{border-color:var(--text)}
+.posts h2{margin:6px 0 8px}
+.posts p{margin:0}
+.flow .step.loop{border-color:var(--accent)}
+</style>
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='day'&&t!=='night')t=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'day':'night';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+
+<div style="background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6">
+
+<header style="max-width: 1180px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
+<a href="../../" class="logo" aria-label="Alain Papazoglou, accueil">&lt;ap<span>/</span>&gt;</a>
+<nav style="display: flex; flex-wrap: wrap; gap: 26px; align-items: center; font-size: 15px; white-space: nowrap"><a href="../../#situation" style="color: var(--gray); text-decoration: none">Votre projet</a><a href="../../#offre" style="color: var(--gray); text-decoration: none">La démarche</a><a href="../../#pourquoi" style="color: var(--gray); text-decoration: none">Références</a><a href="../../blog/" style="color: var(--text); text-decoration: none" aria-current="page">Blog</a><a href="../../#contact" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: var(--nav-btn-bg); color: var(--nav-btn-text); text-decoration: none; font-weight: 600">Nous contacter</a><span style="display: inline-flex; gap: 10px"><a href="../../en/blog/who-owns-the-code/" hreflang="en" lang="en" class="lang-toggle" aria-label="English version" title="English version">EN</a><button type="button" class="theme-toggle" id="theme-toggle" aria-label="Passer en version jour" title="Passer en version jour"><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></span></nav>
+</header>
+
+<main>
+<div class="wrap">
+  <article>
+    <div class="eyebrow">Blog · 24 novembre 2026</div>
+    <h1>L’IA code et vérifie, ok&nbsp;! Mais qui porte l’<em>ownership</em>&nbsp;?</h1>
+    <p class="subtitle">Écrire et vérifier ne sont plus le problème&nbsp;: l’IA s’en charge. Le point clé, désormais, c’est qui porte l’ownership, une fois la PR en production.</p>
+    <p class="series">Suite de <a href="../qui-verifie/">«&nbsp;L’IA code, ok&nbsp;! Mais qui vérifie&nbsp;?&nbsp;»</a>.</p>
+
+    <h2>La PR est en prod. Qui en répond&nbsp;?</h2>
+    <p>Dans <a href="../qui-verifie/">l’article précédent</a>, nous avons répondu à «&nbsp;qui vérifie&nbsp;?&nbsp;». La réponse&nbsp;: l’IA. Plusieurs IA, de fournisseurs différents, tenues par un processus strict.</p>
+    <p><em>L’IA code. L’IA vérifie.</em></p>
+    <p>Puis la pull request (PR) est fusionnée. Le code est déployé. Il tourne. À 3&nbsp;h du matin, quelque chose casse. Qui porte l’ownership&nbsp;?</p>
+    <p>Pas l’IA. L’IA n’est jamais propriétaire. L’ownership est porté par un humain, ou personne ne le porte.</p>
+
+    <h2>Cascade ou agile, les mêmes phases</h2>
+    <p>Le cycle de vie du logiciel a changé de rythme. La cascade enchaîne les phases une fois, du besoin jusqu’à la mise en production. L’agile les rejoue, en boucles courtes. Ce qui change, c’est le rythme, et la taille des boucles. Les phases, elles, restent les mêmes.</p>
+    <p>Cascade ou agile, nous enchaînons les mêmes phases.</p>
+    <ul class="phases">
+      <li><strong>pourquoi</strong>&nbsp;: la raison de faire, le problème qui justifie le travail.</li>
+      <li><strong>quoi</strong>&nbsp;: ce que le logiciel doit faire, le résultat attendu.</li>
+      <li><strong>comment</strong>&nbsp;: la façon de le construire.</li>
+      <li><strong>faire</strong>&nbsp;: écrire le code.</li>
+      <li><strong>tester</strong>&nbsp;: prouver qu’il fait ce qui a été demandé.</li>
+      <li><strong>vérifier</strong>&nbsp;: relire, chercher ce qui cassera, sécuriser avant la prod.</li>
+      <li><strong>déployer</strong>&nbsp;: mettre en production.</li>
+      <li><strong>retester</strong>&nbsp;: une fois en production, vérifier que ça tient.</li>
+    </ul>
+    <p>La cascade aligne ces phases. L’agile les boucle. Une boucle courte contient les huit, comme un cycle long. Aucune des deux n’en retire une, et aucune n’en ajoute. Seule la cadence change.</p>
+
+    <h2>La ligne de partage, en 2026</h2>
+    <p>Deux phases restent le domaine de l’humain&nbsp;: le pourquoi, et le quoi. Pourquoi ce travail existe. Quoi, exactement, le logiciel doit faire.</p>
+    <p>À partir du comment, l’IA peut faire le travail. Le comment, le faire, le tester, le vérifier, le déployer, le retester. Vérifier compris&nbsp;: c’est le sujet de <a href="../qui-verifie/">«&nbsp;Qui vérifie&nbsp;?&nbsp;»</a>, et la réponse n’a pas changé.</p>
+
+    <figure>
+      <figcaption>Qui fait chaque phase, en 2026</figcaption>
+      <table class="roles">
+        <thead><tr><th>Phase</th><th>Qui la fait en 2026</th></tr></thead>
+        <tbody>
+          <tr><td>pourquoi</td><td class="hu">Humain</td></tr>
+          <tr><td>quoi</td><td class="hu">Humain</td></tr>
+          <tr class="split"><td>comment</td><td class="ia">IA</td></tr>
+          <tr><td>faire</td><td class="ia">IA</td></tr>
+          <tr><td>tester</td><td class="ia">IA</td></tr>
+          <tr><td>vérifier</td><td class="ia">IA</td></tr>
+          <tr><td>déployer</td><td class="ia">IA</td></tr>
+          <tr><td>retester</td><td class="ia">IA</td></tr>
+        </tbody>
+      </table>
+      <p class="fig-note">Le pourquoi et le quoi restent humains. Du comment au retester, l’IA peut faire le travail, vérification comprise.</p>
+    </figure>
+
+    <p>La ligne est haute. Elle ne sépare pas celui qui a l’idée de celui qui code. Elle sépare le pourquoi et le quoi, qui restent humains, de tout ce qui suit, que l’IA peut prendre.</p>
+
+    <h2>L’ownership remonte au quoi</h2>
+    <p>Conséquence directe. L’exécution, du comment au retester, peut être faite par une IA. Or une IA n’est jamais propriétaire. L’ownership ne peut donc plus se loger dans l’exécution. Il remonte d’un cran, jusqu’au quoi.</p>
+    <p>Celui qui définit le quoi est le propriétaire de la pull request, et du code déployé. Il a dit ce que le logiciel doit faire. C’est lui qui répond de ce qui tourne en production.</p>
+    <p>Une phrase circule, bien commode pour se dédouaner&nbsp;: «&nbsp;C’est l’IA qui a fait.&nbsp;» Non. Impossible d’être sérieux, ou professionnel, sans un humain qui garde l’ownership. L’IA fait le travail. Elle ne le possède pas.</p>
+    <p><em>L’IA n’est jamais propriétaire.</em></p>
+
+    <h2>D’abord, nommer le propriétaire</h2>
+    <p>Porter l’ownership commence par une définition. Qui est le propriétaire&nbsp;? Sans cette réponse, personne ne porte rien. L’ownership reste vacant, et «&nbsp;c’est l’IA qui a fait&nbsp;» vient occuper la place vide.</p>
+    <p>Qui valide le quoi&nbsp;? Celui-là est le propriétaire. De la pull request, et du code une fois déployé. Valider le quoi et porter l’ownership, c’est le même geste. Pour porter l’ownership, il faut d’abord avoir dit qui le porte.</p>
+
+    <h2>Le piège du quoi sans les mains</h2>
+    <p>Le piège. Le marketing définit la fonctionnalité. Il valide le quoi. Il devrait donc en porter l’ownership. Mais il ne peut rien modifier en production, rien y corriger. Et derrière lui, personne ne prend l’ownership.</p>
+    <p>Le quoi a un auteur. La production n’a personne.</p>
+    <p>Alors le marketing doit déléguer une part de son ownership. À un développeur, ou à une équipe ops / support. L’ownership se partage par rôle.</p>
+    <ul class="phases">
+      <li><strong>Le marketing</strong> possède le quoi.</li>
+      <li><strong>Le support</strong> possède la production.</li>
+    </ul>
+    <p>L’alerte de 3&nbsp;h du matin part vers l’équipe support. Pas vers le marketing, qui dort, et qui ne peut pas intervenir. Cette intervention est dans le contrat professionnel du support. C’est son métier.</p>
+    <p>À 3&nbsp;h, le support stabilise la production. La frontière entre l’incident et la mauvaise spec se règle dans la journée, quand le propriétaire côté marketing se réveille.</p>
+    <p><em>Une discussion entre gens intelligents.</em></p>
+
+    <h2>Conclusion</h2>
+    <p>«&nbsp;<a href="../qui-verifie/">Qui vérifie&nbsp;?</a>&nbsp;» a sa réponse&nbsp;: l’IA, encadrée par un processus que l’humain tient. «&nbsp;Qui porte l’ownership&nbsp;?&nbsp;» a la sienne&nbsp;: l’humain qui valide le quoi. Et quand cet humain ne peut pas toucher la production, une part de l’ownership est déléguée à ceux dont le métier est d’y répondre, y compris à 3&nbsp;h du matin.</p>
+    <p><strong>L’IA code et vérifie. L’ownership a un nom, et ce nom est humain.</strong></p>
+
+    <!-- Bloc discussion LinkedIn : à placer ici (après le P.S., avant .outro) dès que l’URL du post existe. Même URL en français et en anglais. Garder %C3%A9 dans l’adresse.
+    <aside class="discuss" data-linkedin="URL"><p><strong>Vous voulez réagir&nbsp;?</strong> La discussion se passe sur LinkedIn, avec déjà de nombreux retours de devs et de CTO&nbsp;: <a href="URL" target="_blank" rel="noopener">rejoindre la discussion</a></p></aside>
+    -->
+
+    <div class="outro">
+      <p>Nous mettons également cette démarche en place avec vos équipes dev, sur votre code et vos outils.</p>
+      <a class="post-cta" href="../../#offre">Découvrir la démarche<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    </div>
+  </article>
+</div>
+</main>
+
+<footer style="max-width: 1180px; margin: 0 auto; padding: 32px 24px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--gray)">
+<span>© 2026 Alain Papazoglou @ Kredeum · Rennes</span>
+<span><a href="https://labs.kredeum.com/" style="color: var(--gray)" target="_blank" rel="noopener">Kredeum</a> · <a href="mailto:devia@kredeum.com?subject=Projet%20dev%20avec%20l%27IA" style="color: var(--gray)">E-mail</a> · <a href="https://www.malt.fr/profile/alainpapazoglou" style="color: var(--gray)" target="_blank" rel="noopener">Malt</a> · <a href="https://www.linkedin.com/in/alain/" style="color: var(--gray)" target="_blank" rel="noopener">LinkedIn</a> · <a href="../../en/blog/who-owns-the-code/" hreflang="en" lang="en" style="color: var(--gray)">English version</a></span>
+</footer>
+
+</div>
+<script>(function(){var b=document.getElementById('theme-toggle'),r=document.documentElement,L={day:'Passer en version nuit',night:'Passer en version jour'};function sync(){var t=r.getAttribute('data-theme');b.setAttribute('aria-label',L[t]);b.title=L[t]}sync();b.addEventListener('click',function(){var t=r.getAttribute('data-theme')==='day'?'night':'day';r.setAttribute('data-theme',t);try{localStorage.setItem('theme',t)}catch(e){}sync()})})()</script>
+<script data-goatcounter="https://alain-kredeum.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
