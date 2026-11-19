@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
+<title>Blog · Alain Papazoglou</title>
+<subtitle>Articles d’Alain Papazoglou sur l’IA appliquée au code : écrire, valider et maintenir du logiciel avec l’IA, projets réels à l’appui.</subtitle>
+<link href="https://alain.kredeum.com/blog/feed.xml" rel="self"/>
+<link href="https://alain.kredeum.com/blog/"/>
+<updated>2026-11-18T00:00:00Z</updated>
+<id>https://alain.kredeum.com/blog/</id>
+<author><name>Alain Papazoglou</name></author>
+<entry>
+<title>L’IA code, ok ! Mais qui vérifie ?</title>
+<link href="https://alain.kredeum.com/blog/qui-verifie/"/>
+<id>https://alain.kredeum.com/blog/qui-verifie/</id>
+<published>2026-11-12T00:00:00Z</published>
+<updated>2026-11-18T00:00:00Z</updated>
+<summary>Neuf mois de revue de code par IA sur une application existante de 300 000 lignes : plus de 600 PRs, les chiffres mois par mois, et ce que nous en avons appris.</summary>
+</entry>
+</feed>
+

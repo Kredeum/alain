@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title>Blog · Alain Papazoglou</title>
+<subtitle>Articles by Alain Papazoglou on AI applied to code: writing, validating and maintaining software with AI, backed by real projects.</subtitle>
+<link href="https://alain.kredeum.com/en/blog/feed.xml" rel="self"/>
+<link href="https://alain.kredeum.com/en/blog/"/>
+<updated>2026-11-18T00:00:00Z</updated>
+<id>https://alain.kredeum.com/en/blog/</id>
+<author><name>Alain Papazoglou</name></author>
+<entry>
+<title>AI writes the code. Fine. But who checks it?</title>
+<link href="https://alain.kredeum.com/en/blog/validating-code/"/>
+<id>https://alain.kredeum.com/en/blog/validating-code/</id>
+<published>2026-11-12T00:00:00Z</published>
+<updated>2026-11-18T00:00:00Z</updated>
+<summary>Nine months of AI code review on an existing 300,000-line application: over 600 PRs, month-by-month numbers, and what we learned.</summary>
+</entry>
+</feed>
+
