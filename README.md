@@ -15,12 +15,4 @@ Projet ambitieux, besoin de plus de ressources ? L'équipe [Kredeum](https://lab
 
 ## Contenu du dépôt
 
-- `index.html` : la page entière, en HTML statique avec les styles en ligne. Aucune étape de build.
-- `en/index.html` : la version anglaise, publiée sur [alain.kredeum.com/en](https://alain.kredeum.com/en/).
-- `.nojekyll` : désactive Jekyll sur GitHub Pages.
-- `AGENTS.md` : la charte graphique et les règles de rédaction de la page.
-
-## Modifier la page
-
-Ouvrir `index.html` dans un éditeur, enregistrer, puis recharger le fichier dans le navigateur.
-Tout ce qui est poussé sur la branche `main` est publié automatiquement en une à deux minutes.
+Ce dépôt contient uniquement le site publié : des pages HTML statiques et autonomes, avec leurs styles en ligne, en français et en anglais (`en/`), plus le blog (`blog/`, `en/blog/`) et ses flux Atom. Tout ce qui est poussé sur la branche `main` est publié automatiquement en une à deux minutes.
