@@ -368,9 +368,11 @@ L’humain ne disparaît pas pour autant. Il décide quoi construire, fixe le ni
 
 **P.S.** Travaux connexes :
 
-- [« here’s how i shipped 2,500 PRs last month to production »](https://x.com/poteto/status/2102050467505430555), tweet de @poteto de l’équipe Grok Bot (4+M vues) ;
+- 21 septembre 2026 : [« here’s how i shipped 2,500 PRs last month to production »](https://x.com/poteto/status/2102050467505430555), tweet de @poteto de l’équipe Grok Bot (4+M vues) ;
 
-- [« No AI Slop: A Manifesto »](https://www.slopmanifesto.com/), manifeste des intervenants et participants de l’AIE Code Summit 2026 (350 signataires).
+- 12 novembre 2026 : [« No AI Slop: A Manifesto »](https://www.slopmanifesto.com/), manifeste des intervenants et participants de l’AIE Code Summit 2026 (350 signataires) ;
+
+- 23 novembre 2026 : [« Try it on your next PR: update Claude Code and run /ship. »](https://x.com/ClaudeDevs/status/2124959438175981965), tweet de @ClaudeDevs, le compte d’Anthropic pour les développeurs Claude, sur la commande /ship de Claude Code : Claude ouvre la PR, la relit, traite les retours et les tests en échec (220k vues).
 
 **Vous voulez réagir ?** La discussion se passe sur LinkedIn, avec déjà de nombreux retours de devs et de CTO : [rejoindre la discussion](https://www.linkedin.com/posts/alain_lia-code-ok-mais-qui-v%C3%A9rifie-des-pull-activity-7528364436273774593-EERK)
 
@@ -560,9 +562,11 @@ Humans don’t disappear, though. They decide what to build, set the bar, and wr
 
 **P.S.** Related work:
 
-- [“here’s how i shipped 2,500 PRs last month to production”](https://x.com/poteto/status/2102050467505430555), tweet by @poteto from the Grok Bot team (4+M views);
+- September 21, 2026: [“here’s how i shipped 2,500 PRs last month to production”](https://x.com/poteto/status/2102050467505430555), tweet by @poteto from the Grok Bot team (4+M views);
 
-- [“No AI Slop: A Manifesto”](https://www.slopmanifesto.com/), written by the speakers and attendees of the AIE Code Summit 2026 (350 signatories).
+- November 12, 2026: [“No AI Slop: A Manifesto”](https://www.slopmanifesto.com/), written by the speakers and attendees of the AIE Code Summit 2026 (350 signatories);
+
+- November 23, 2026: [“Try it on your next PR: update Claude Code and run /ship.”](https://x.com/ClaudeDevs/status/2124959438175981965), tweet by @ClaudeDevs, Anthropic’s account for developers building with Claude, on the Claude Code /ship command: Claude opens the PR, reviews it, and handles feedback and failing checks (220k views).
 
 **Want to weigh in?** The discussion is happening on LinkedIn (post in French, auto-translation available), comments in English are welcome: [join the discussion](https://www.linkedin.com/posts/alain_lia-code-ok-mais-qui-v%C3%A9rifie-des-pull-activity-7528364436273774593-EERK)
 
