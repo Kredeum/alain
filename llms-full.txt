@@ -66,7 +66,7 @@ En quelques mois, l’IA a fait des progrès considérables, et elle sait aujour
 
 Celui qui définit le « Quoi ? » est, par défaut, responsable du code livré et de ce qui tourne en production. S’il ne possède pas les compétences techniques nécessaires, il doit confier cette responsabilité à un développeur ou à une équipe clairement désignée. Demander une fonctionnalité ne signifie pas savoir la réparer, mais cela oblige à prévoir qui pourra intervenir.
 
-Une phrase circule, bien commode pour se dédouaner : « C’est l’IA qui a fait. » Non. Être professionnel, c’est précisément répondre de son travail. Un professionnel ne se cache pas derrière ses outils. L’IA fait le travail, elle n’en répond pas.
+En cas de problème, une phrase bien commode pour se dédouaner : « C’est l’IA qui a fait. » Non. Être professionnel, c’est précisément répondre de son travail. Un professionnel ne se cache pas derrière ses outils. L’IA fait le travail, elle n’en répond pas.
 
 *L’humain est responsable, jamais l’IA.*
 
@@ -80,7 +80,7 @@ Dans tous les cas, un responsable du code doit être désigné dès le départ, 
 
 ## Conclusion
 
-« [Qui vérifie ?](https://alain.kredeum.com/blog/qui-verifie/) » a sa réponse : l’IA, encadrée par l’humain dans un processus strict. « Qui est responsable ? » a la sienne : un humain, toujours, nommé dès le départ. Celui qui définit le « Quoi ? », ou, s’il ne peut pas intervenir sur le code, une personne responsable désignée pour répondre à sa place.
+« [Qui vérifie ?](https://alain.kredeum.com/blog/qui-verifie/) » a déjà sa réponse : l’IA, encadrée par l’humain dans un processus strict. « Qui est responsable ? » a aussi la sienne : un humain, toujours, nommé dès le départ. Celui qui définit le « Quoi ? », ou, s’il ne peut pas intervenir sur le code, une personne responsable désignée pour répondre à sa place.
 
 Au départ de tout, il y a la volonté de l’humain. L’exécution, par contre, peut être confiée à l’IA. La frontière entre l’humain et l’IA est un curseur. Il se place aujourd’hui entre le « Quoi ? » et le « Comment ? » : l’humain décide, l’IA construit.
 
@@ -162,7 +162,7 @@ In a few months, AI has made considerable progress, and it now knows how to desi
 
 Whoever defines the “What?” is, by default, responsible for the code delivered and for what runs in production. If they lack the necessary technical skills, they must entrust that responsibility to a clearly designated developer or team. Asking for a feature does not mean knowing how to fix it, but it does mean planning who can step in.
 
-A phrase is going around, very handy for dodging blame: “The AI did it.” No. Being a professional means precisely answering for your work. A professional does not hide behind their tools. AI does the work, it does not answer for it.
+When something goes wrong, there is a very handy phrase for dodging blame: “The AI did it.” No. Being a professional means precisely answering for your work. A professional does not hide behind their tools. AI does the work, it does not answer for it.
 
 *The human is responsible, never the AI.*
 
@@ -176,7 +176,7 @@ In every case, someone responsible for the code must be named from the start, fo
 
 ## Conclusion
 
-[“Who checks?”](https://alain.kredeum.com/en/blog/validating-code/) has its answer: AI, supervised by humans in a strict process. “Who is responsible?” has its own: a human, always, named from the start. Whoever defines the “What?”, or, if they cannot work on the code, a responsible person appointed to answer in their place.
+[“Who checks?”](https://alain.kredeum.com/en/blog/validating-code/) already has its answer: AI, supervised by humans in a strict process. “Who is responsible?” has its own too: a human, always, named from the start. Whoever defines the “What?”, or, if they cannot work on the code, a responsible person appointed to answer in their place.
 
 At the origin of everything, there is human will. Execution, on the other hand, can be handed to AI. The boundary between human and AI is a slider. Today it sits between the “What?” and the “How?”: the human decides, AI builds.
 
