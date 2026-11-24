@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>L’IA code et vérifie, ok ! Mais qui est responsable ?</title>
-<meta name="description" content="L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le Quoi : l’IA n’est jamais responsable.">
+<meta name="description" content="L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le « Quoi ? » : l’IA n’est jamais responsable.">
 <link rel="canonical" href="https://alain.kredeum.com/blog/qui-est-responsable/"><link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/qui-est-responsable/"><link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/who-is-responsible/"><link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/qui-est-responsable/">
 <meta property="og:type" content="article"><meta property="og:site_name" content="Alain Papazoglou @ Kredeum"><meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
-<meta property="og:url" content="https://alain.kredeum.com/blog/qui-est-responsable/"><meta property="og:title" content="L’IA code et vérifie, ok ! Mais qui est responsable ?"><meta property="og:description" content="L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le Quoi : l’IA n’est jamais responsable.">
+<meta property="og:url" content="https://alain.kredeum.com/blog/qui-est-responsable/"><meta property="og:title" content="L’IA code et vérifie, ok ! Mais qui est responsable ?"><meta property="og:description" content="L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le « Quoi ? » : l’IA n’est jamais responsable.">
 <meta property="og:image" content="https://alain.kredeum.com/blog/qui-est-responsable/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/blog/qui-est-responsable/#article", "headline": "L’IA code et vérifie, ok ! Mais qui est responsable ?", "description": "L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le Quoi : l’IA n’est jamais responsable.", "url": "https://alain.kredeum.com/blog/qui-est-responsable/", "mainEntityOfPage": "https://alain.kredeum.com/blog/qui-est-responsable/", "datePublished": "2026-11-24T08:30:00+01:00", "dateModified": "2026-11-24T16:25:00+01:00", "inLanguage": "fr", "image": "https://alain.kredeum.com/blog/qui-est-responsable/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/blog/#blog"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/blog/qui-est-responsable/#article", "headline": "L’IA code et vérifie, ok ! Mais qui est responsable ?", "description": "L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le « Quoi ? » : l’IA n’est jamais responsable.", "url": "https://alain.kredeum.com/blog/qui-est-responsable/", "mainEntityOfPage": "https://alain.kredeum.com/blog/qui-est-responsable/", "datePublished": "2026-11-24T08:30:00+01:00", "dateModified": "2026-11-24T16:34:00+01:00", "inLanguage": "fr", "image": "https://alain.kredeum.com/blog/qui-est-responsable/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/blog/#blog"}}</script>
 <link rel="alternate" type="application/atom+xml" title="Blog · Alain Papazoglou" href="/blog/feed.xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap">
@@ -211,6 +211,7 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
 .flow-svg .f-middle text { fill: var(--text2); }
 .flow-svg .f-left { text-anchor: start; }
 .flow-svg .f-step-name { font-size: 17px; font-weight: 500; }
+#partage-large .f-step-name { font-size: 14px; }
 @media (max-width: 760px) {
   .flow-figure.mobile-only { max-width: 420px; align-self: center; box-sizing: border-box; width: 100%; }
   .flow-svg .f-title { font-size: 26px; }
@@ -224,7 +225,9 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
 .posts a:hover{border-color:var(--text)}
 .posts h2{margin:6px 0 8px;text-align:left;hyphens:manual;-webkit-hyphens:manual;text-wrap:balance}
 .posts p{margin:0}
-.posts img{display:block;width:100%;height:auto;margin:18px 0 0;border-radius:10px;border:1px solid var(--line)}
+.posts img{display:block;width:100%;height:auto;margin:18px 0 0;border-radius:20px;background:var(--band)}
+.posts .th-day,:root[data-theme="day"] .posts .th-night{display:none}
+:root[data-theme="day"] .posts .th-day{display:block}
 .flow .step.loop{border-color:var(--accent)}
 </style>
 <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='day'&&t!=='night')t=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'day':'night';document.documentElement.setAttribute('data-theme',t)})()</script>
@@ -271,14 +274,14 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
           <path class="c-flow" d="M471 288L500 266" marker-end="url(#v-arrow)"/>
           <path class="c-flow" d="M556 208L585 186" marker-end="url(#v-arrow)"/>
           <path class="c-flow" d="M615 127V116" marker-end="url(#v-arrow)"/>
-          <g><rect class="c-box" x="13" y="133" width="144" height="46" rx="8"/><text class="c-label" x="85" y="163"><tspan class="c-number">1</tspan>&#160; Pourquoi</text></g>
-          <g><rect class="c-box" x="98" y="213" width="144" height="46" rx="8"/><text class="c-label" x="170" y="243"><tspan class="c-number">2</tspan>&#160; Quoi</text></g>
-          <g><rect class="c-box" x="183" y="293" width="144" height="46" rx="8"/><text class="c-label" x="255" y="323"><tspan class="c-number">3</tspan>&#160; Comment</text></g>
-          <g><rect class="c-box" x="278" y="373" width="144" height="46" rx="8"/><text class="c-label" x="350" y="403"><tspan class="c-number">4</tspan>&#160; Faire</text></g>
-          <g><rect class="c-box" x="373" y="293" width="144" height="46" rx="8"/><text class="c-label" x="445" y="323"><tspan class="c-number">5</tspan>&#160; Tester</text></g>
-          <g><rect class="c-box" x="458" y="213" width="144" height="46" rx="8"/><text class="c-label" x="530" y="243"><tspan class="c-number">6</tspan>&#160; Vérifier</text></g>
-          <g><rect class="c-box" x="543" y="133" width="144" height="46" rx="8"/><text class="c-label" x="615" y="163"><tspan class="c-number">7</tspan>&#160; Déployer</text></g>
-          <g><rect class="c-box" x="543" y="63" width="144" height="46" rx="8"/><text class="c-label" x="615" y="93"><tspan class="c-number">8</tspan>&#160; Superviser</text></g>
+          <g><rect class="c-box" x="13" y="133" width="144" height="46" rx="8"/><text class="c-label" x="85" y="163"><tspan class="c-number">1</tspan>&#160; Pourquoi&#160;?</text></g>
+          <g><rect class="c-box" x="98" y="213" width="144" height="46" rx="8"/><text class="c-label" x="170" y="243"><tspan class="c-number">2</tspan>&#160; Quoi&#160;?</text></g>
+          <g><rect class="c-box" x="183" y="293" width="144" height="46" rx="8"/><text class="c-label" x="255" y="323"><tspan class="c-number">3</tspan>&#160; Comment&#160;?</text></g>
+          <g><rect class="c-box" x="278" y="373" width="144" height="46" rx="8"/><text class="c-label" x="350" y="403"><tspan class="c-number">4</tspan>&#160; Faire&#160;!</text></g>
+          <g><rect class="c-box" x="373" y="293" width="144" height="46" rx="8"/><text class="c-label" x="445" y="323"><tspan class="c-number">5</tspan>&#160; Tester&#160;!</text></g>
+          <g><rect class="c-box" x="458" y="213" width="144" height="46" rx="8"/><text class="c-label" x="530" y="243"><tspan class="c-number">6</tspan>&#160; Vérifier&#160;!</text></g>
+          <g><rect class="c-box" x="543" y="133" width="144" height="46" rx="8"/><text class="c-label" x="615" y="163"><tspan class="c-number">7</tspan>&#160; Déployer&#160;!</text></g>
+          <g><rect class="c-box" x="543" y="63" width="144" height="46" rx="8"/><text class="c-label" x="615" y="93"><tspan class="c-number">8</tspan>&#160; Superviser&#160;!</text></g>
           <text class="c-caption" x="118" y="435">concevoir</text>
           <text class="c-caption" x="586" y="435">valider et livrer</text>
         </g>
@@ -295,28 +298,28 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
           <path class="c-flow" d="M246 338L259 310" marker-end="url(#v-arrow)"/>
           <path class="c-flow" d="M278 244L291 216" marker-end="url(#v-arrow)"/>
           <path class="c-flow" d="M302 149V130" marker-end="url(#v-arrow)"/>
-          <g><circle class="c-badge" cx="58" cy="172" r="17"/><text class="c-label c-number" x="58" y="178">1</text><text class="c-label" x="58" y="204">Pourquoi</text></g>
-          <g><circle class="c-badge" cx="90" cy="266" r="17"/><text class="c-label c-number" x="90" y="272">2</text><text class="c-label" x="90" y="298">Quoi</text></g>
-          <g><circle class="c-badge" cx="122" cy="360" r="17"/><text class="c-label c-number" x="122" y="366">3</text><text class="c-label" x="122" y="392">Comment</text></g>
-          <g><circle class="c-badge" cx="180" cy="466" r="17"/><text class="c-label c-number" x="180" y="472">4</text><text class="c-label" x="180" y="498">Faire</text></g>
-          <g><circle class="c-badge" cx="238" cy="360" r="17"/><text class="c-label c-number" x="238" y="366">5</text><text class="c-label" x="238" y="392">Tester</text></g>
-          <g><circle class="c-badge" cx="270" cy="266" r="17"/><text class="c-label c-number" x="270" y="272">6</text><text class="c-label" x="270" y="298">Vérifier</text></g>
-          <g><circle class="c-badge" cx="302" cy="172" r="17"/><text class="c-label c-number" x="302" y="178">7</text><text class="c-label" x="302" y="204">Déployer</text></g>
-          <g><circle class="c-badge" cx="302" cy="86" r="17"/><text class="c-label c-number" x="302" y="92">8</text><text class="c-label" x="302" y="118">Superviser</text></g>
+          <g><circle class="c-badge" cx="58" cy="172" r="17"/><text class="c-label c-number" x="58" y="178">1</text><text class="c-label" x="58" y="204">Pourquoi&#160;?</text></g>
+          <g><circle class="c-badge" cx="90" cy="266" r="17"/><text class="c-label c-number" x="90" y="272">2</text><text class="c-label" x="90" y="298">Quoi&#160;?</text></g>
+          <g><circle class="c-badge" cx="122" cy="360" r="17"/><text class="c-label c-number" x="122" y="366">3</text><text class="c-label" x="122" y="392">Comment&#160;?</text></g>
+          <g><circle class="c-badge" cx="180" cy="466" r="17"/><text class="c-label c-number" x="180" y="472">4</text><text class="c-label" x="180" y="498">Faire&#160;!</text></g>
+          <g><circle class="c-badge" cx="238" cy="360" r="17"/><text class="c-label c-number" x="238" y="366">5</text><text class="c-label" x="238" y="392">Tester&#160;!</text></g>
+          <g><circle class="c-badge" cx="270" cy="266" r="17"/><text class="c-label c-number" x="270" y="272">6</text><text class="c-label" x="270" y="298">Vérifier&#160;!</text></g>
+          <g><circle class="c-badge" cx="302" cy="172" r="17"/><text class="c-label c-number" x="302" y="178">7</text><text class="c-label" x="302" y="204">Déployer&#160;!</text></g>
+          <g><circle class="c-badge" cx="302" cy="86" r="17"/><text class="c-label c-number" x="302" y="92">8</text><text class="c-label" x="302" y="118">Superviser&#160;!</text></g>
         </g>
       </svg>
     </figure>
     <p>D’abord le cycle en V, qui déroule un projet en un seul passage. La branche descendante du V précise le besoin, de la spécification jusqu’à la conception détaillée. La branche montante teste dans l’ordre inverse, du test unitaire jusqu’à la recette, et chaque niveau de test répond à une étape de conception. Tout est planifié au départ, et une erreur de spécification n’apparaît souvent qu’à la fin, après des mois, quand la corriger coûte le plus cher.</p>
     <p>Voilà, rapidement, les 8 étapes&nbsp;:</p>
     <ol class="phases">
-      <li><strong>Pourquoi</strong>&nbsp;: l’objectif, la volonté, la raison de faire, le problème qui justifie le travail.</li>
-      <li><strong>Quoi</strong>&nbsp;: la spécification, ce que le logiciel doit faire, le résultat attendu.</li>
-      <li><strong>Comment</strong>&nbsp;: la conception, la façon de le construire.</li>
-      <li><strong>Faire</strong>&nbsp;: le développement, écrire le code.</li>
-      <li><strong>Tester</strong>&nbsp;: les tests unitaires puis d’intégration, pour s’assurer que le code fonctionne.</li>
-      <li><strong>Vérifier</strong>&nbsp;: relire, prouver, chercher ce qui cassera, sécuriser. Le dernier rempart.</li>
-      <li><strong>Déployer</strong>&nbsp;: le déploiement, pour mettre en production la mise à jour de l’application.</li>
-      <li><strong>Superviser</strong>&nbsp;: une fois en production, vérifier que tout se passe comme attendu, alerter en cas de problème.</li>
+      <li><strong>Pourquoi&nbsp;?</strong> L’objectif, la volonté, la raison de faire, le problème qui justifie le travail.</li>
+      <li><strong>Quoi&nbsp;?</strong> La spécification, ce que le logiciel doit faire, le résultat attendu.</li>
+      <li><strong>Comment&nbsp;?</strong> La conception, la façon de le construire.</li>
+      <li><strong>Faire&nbsp;!</strong> Le développement, écrire le code.</li>
+      <li><strong>Tester&nbsp;!</strong> Les tests unitaires puis d’intégration, pour s’assurer que le code fonctionne.</li>
+      <li><strong>Vérifier&nbsp;!</strong> Relire, prouver, chercher ce qui cassera, sécuriser. Le dernier rempart.</li>
+      <li><strong>Déployer&nbsp;!</strong> Le déploiement, pour mettre en production la mise à jour de l’application.</li>
+      <li><strong>Superviser&nbsp;!</strong> Une fois en production, vérifier que tout se passe comme attendu, alerter en cas de problème.</li>
     </ol>
 
     <p>Ensuite l’Agile, qui répond au défaut du cycle en V par un cycle itératif&nbsp;: des boucles courtes, de quelques semaines au plus. À chaque tour, l’équipe livre une petite partie du logiciel, la teste, ajuste le cap et corrige les erreurs au plus tôt.</p>
@@ -375,16 +378,16 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
       <circle class="f-badge f-human" cx="108" cy="310" r="17"/><text class="f-number f-human-number" x="108" y="317">2</text>
       <circle class="f-badge" cx="612" cy="310" r="17"/><text class="f-number" x="612" y="317">7</text>
       <circle class="f-badge" cx="676" cy="310" r="17"/><text class="f-number" x="676" y="317">8</text>
-      <text class="f-step-name" x="44" y="280">Pourquoi</text>
-      <text class="f-step-name" x="108" y="349">Quoi</text>
-      <text class="f-step-name" x="612" y="280">Déployer</text>
-      <text class="f-step-name" x="676" y="349">Superviser</text>
+      <text class="f-step-name" x="44" y="280">Pourquoi&#160;?</text>
+      <text class="f-step-name" x="108" y="349">Quoi&#160;?</text>
+      <text class="f-step-name" x="612" y="280">Déployer&#160;!</text>
+      <text class="f-step-name" x="664" y="349">Superviser&#160;!</text>
       <text class="f-time" x="360" y="349">Le temps</text>
       <path class="f-rule" d="M14 382H706"/>
-      <text class="f-key" x="360" y="414">3 Comment → 4 Faire → 5 Tester → 6 Vérifier</text>
+      <text class="f-key" x="360" y="414">3 Comment&#160;? → 4 Faire&#160;! → 5 Tester&#160;! → 6 Vérifier&#160;!</text>
       <text class="f-meta" x="360" y="444">En option dans chaque boucle</text>
-      <text class="f-meta" x="180" y="474">2 Quoi · affiner le besoin</text>
-      <text class="f-meta" x="535" y="474">7 Déployer · livrer le sprint</text>
+      <text class="f-meta" x="180" y="474">2 Quoi&#160;? · affiner le besoin</text>
+      <text class="f-meta" x="535" y="474">7 Déployer&#160;! · livrer le sprint</text>
       </svg>
     </figure>
     <figure class="mobile-only flow-figure" data-schema="agile">
@@ -397,13 +400,13 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
       <text class="f-meta" x="180" y="55">Des sprints de 2 à 4 semaines</text>
       <path class="f-axis" d="M38 84V810" marker-end="url(#agile-mobile-muted)"/>
       <circle class="f-badge f-human" cx="38" cy="100" r="17"/><text class="f-number f-human-number" x="38" y="107">1</text>
-      <text class="f-label f-left" x="77" y="107">Pourquoi</text>
+      <text class="f-label f-left" x="77" y="107">Pourquoi&#160;?</text>
       <circle class="f-badge f-human" cx="38" cy="158" r="17"/><text class="f-number f-human-number" x="38" y="165">2</text>
-      <text class="f-label f-left" x="77" y="165">Quoi</text>
+      <text class="f-label f-left" x="77" y="165">Quoi&#160;?</text>
       <circle class="f-badge" cx="38" cy="712" r="17"/><text class="f-number" x="38" y="719">7</text>
-      <text class="f-label f-left" x="77" y="719">Déployer</text>
+      <text class="f-label f-left" x="77" y="719">Déployer&#160;!</text>
       <circle class="f-badge" cx="38" cy="776" r="17"/><text class="f-number" x="38" y="783">8</text>
-      <text class="f-label f-left" x="77" y="783">Superviser</text>
+      <text class="f-label f-left" x="77" y="783">Superviser&#160;!</text>
       <g>
         <text class="f-key" x="100" y="247">Sprint 1</text>
         <path class="f-stem" d="M38 270H148"/>
@@ -447,21 +450,21 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
         <text class="f-option-text" x="218" y="612">2 · 7</text>
       </g>
       <path class="f-rule" d="M14 832H346"/>
-      <text class="f-key" x="95" y="868">3 Comment</text>
-      <text class="f-key" x="263" y="868">4 Faire</text>
-      <text class="f-key" x="95" y="898">5 Tester</text>
-      <text class="f-key" x="263" y="898">6 Vérifier</text>
+      <text class="f-key" x="95" y="868">3 Comment&#160;?</text>
+      <text class="f-key" x="263" y="868">4 Faire&#160;!</text>
+      <text class="f-key" x="95" y="898">5 Tester&#160;!</text>
+      <text class="f-key" x="263" y="898">6 Vérifier&#160;!</text>
       <text class="f-meta" x="180" y="936">En option dans chaque boucle</text>
-      <text class="f-meta" x="180" y="965">2 Quoi · affiner le besoin</text>
-      <text class="f-meta" x="180" y="991">7 Déployer · livrer le sprint</text>
+      <text class="f-meta" x="180" y="965">2 Quoi&#160;? · affiner le besoin</text>
+      <text class="f-meta" x="180" y="991">7 Déployer&#160;! · livrer le sprint</text>
       </svg>
     </figure>
     <p>Mais au final, ces deux approches que tout semble opposer passent par les mêmes étapes&nbsp;! Et ce que nous constatons avec l’IA, c’est que nous sommes encore et toujours, pour l’instant, dans ce même cycle.</p>
 
     <h2>La ligne de partage…</h2>
-    <p>L’IA peut tout faire, soit. Mais c’est la volonté de l’humain qui décide de ce que nous voulons construire&nbsp;! L’humain est aux commandes et doit y rester. Dans notre cycle de vie, c’est lui qui fixe le Pourquoi, l’objectif, et qui encore aujourd’hui devrait (doit&nbsp;?) définir le Quoi, le résultat attendu&nbsp;!</p>
-    <p>Prenons un exemple simple. Gagner sa vie est un Pourquoi&nbsp;: il ne dit rien encore de la route. Monter son entreprise ou chercher un emploi sont deux Quoi, deux chemins très différents vers le même but. Apple suit la même logique, à une autre échelle&nbsp;: son Pourquoi, créer les meilleurs produits du monde, a pris tour à tour la forme d’un baladeur, d’un ordinateur, d’un téléphone et d’une tablette. Apple est d’ailleurs l’exemple phare de Simon Sinek dans sa célèbre conférence sur le Pourquoi, <a href="https://www.youtube.com/watch?v=u4ZoJKF_VuA" target="_blank" rel="noopener" lang="en">«&nbsp;Start with why&nbsp;»</a>, l’une des plus vues de TED. Un même Pourquoi ouvre plusieurs Quoi. Choisir lequel est la décision qui engage, et elle revient à l’humain.</p>
-    <p>En quelques mois, l’IA a fait des progrès considérables, et elle sait aujourd’hui concevoir, coder, tester et déployer. À partir du Comment, elle peut commencer à tout prendre en charge, et ce jusqu’à la fin du cycle. Ce n’est pas grave&nbsp;: ces étapes ne sont «&nbsp;que&nbsp;» l’exécution de la volonté de l’humain.</p>
+    <p>L’IA peut tout faire, soit. Mais c’est la volonté de l’humain qui décide de ce que nous voulons construire&nbsp;! L’humain est aux commandes et doit y rester. Dans notre cycle de vie, c’est lui qui fixe le «&nbsp;Pourquoi&nbsp;?&nbsp;», l’objectif, et qui encore aujourd’hui devrait (doit&nbsp;?) définir le «&nbsp;Quoi&nbsp;?&nbsp;», le résultat attendu&nbsp;!</p>
+    <p>Prenons un exemple simple. Gagner sa vie est un «&nbsp;Pourquoi&nbsp;?&nbsp;»&nbsp;: il ne dit rien encore de la route. Monter son entreprise ou chercher un emploi sont deux «&nbsp;Quoi&nbsp;?&nbsp;», deux chemins très différents vers le même but. Apple suit la même logique, à une autre échelle&nbsp;: son «&nbsp;Pourquoi&nbsp;?&nbsp;», créer les meilleurs produits du monde, a pris tour à tour la forme d’un baladeur, d’un ordinateur, d’un téléphone et d’une tablette. Apple est d’ailleurs l’exemple phare de Simon Sinek dans sa célèbre conférence sur le «&nbsp;Pourquoi&nbsp;?&nbsp;», <a href="https://www.youtube.com/watch?v=u4ZoJKF_VuA" target="_blank" rel="noopener" lang="en">«&nbsp;Start with why&nbsp;»</a>, l’une des plus vues de TED. Un même «&nbsp;Pourquoi&nbsp;?&nbsp;» ouvre plusieurs «&nbsp;Quoi&nbsp;?&nbsp;». Choisir lequel est la décision qui engage, et elle revient à l’humain.</p>
+    <p>En quelques mois, l’IA a fait des progrès considérables, et elle sait aujourd’hui concevoir, coder, tester et déployer. À partir du «&nbsp;Comment&nbsp;?&nbsp;», elle peut commencer à tout prendre en charge, et ce jusqu’à la fin du cycle. Ce n’est pas grave&nbsp;: ces étapes ne sont «&nbsp;que&nbsp;» l’exécution de la volonté de l’humain.</p>
     <figure class="hero flow-figure" data-schema="partage">
       <svg class="flow-svg" id="partage-large" viewBox="0 0 720 294" role="img" aria-label="La ligne de partage entre l’humain et l’IA. L’humain définit 1 Pourquoi et 2 Quoi. Il passe la main entre 2 Quoi et 3 Comment. L’IA prend ensuite en charge 3 Comment, 4 Faire, 5 Tester, 6 Vérifier, 7 Déployer et 8 Superviser. Le passage de relais concerne l’exécution, la responsabilité reste humaine. Les huit étapes se lisent de gauche à droite.">
       <defs>
@@ -483,21 +486,21 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
       <path class="f-axis" d="M517 165H561" marker-end="url(#partage-large-muted)"/>
       <path class="f-axis" d="M607 165H651" marker-end="url(#partage-large-muted)"/>
       <circle class="f-badge f-human" cx="44" cy="165" r="17"/><text class="f-number f-human-number" x="44" y="172">1</text>
-      <text class="f-step-name" x="44" y="206">Pourquoi</text>
+      <text class="f-step-name" x="44" y="206">Pourquoi&#160;?</text>
       <circle class="f-badge f-human" cx="118" cy="165" r="17"/><text class="f-number f-human-number" x="118" y="172">2</text>
-      <text class="f-step-name" x="118" y="206">Quoi</text>
+      <text class="f-step-name" x="118" y="206">Quoi&#160;?</text>
       <circle class="f-badge" cx="224" cy="165" r="17"/><text class="f-number" x="224" y="172">3</text>
-      <text class="f-step-name" x="224" y="206">Comment</text>
+      <text class="f-step-name" x="224" y="206">Comment&#160;?</text>
       <circle class="f-badge" cx="314" cy="165" r="17"/><text class="f-number" x="314" y="172">4</text>
-      <text class="f-step-name" x="314" y="206">Faire</text>
+      <text class="f-step-name" x="314" y="206">Faire&#160;!</text>
       <circle class="f-badge" cx="404" cy="165" r="17"/><text class="f-number" x="404" y="172">5</text>
-      <text class="f-step-name" x="404" y="206">Tester</text>
+      <text class="f-step-name" x="404" y="206">Tester&#160;!</text>
       <circle class="f-badge" cx="494" cy="165" r="17"/><text class="f-number" x="494" y="172">6</text>
-      <text class="f-step-name" x="494" y="206">Vérifier</text>
+      <text class="f-step-name" x="494" y="206">Vérifier&#160;!</text>
       <circle class="f-badge" cx="584" cy="165" r="17"/><text class="f-number" x="584" y="172">7</text>
-      <text class="f-step-name" x="584" y="206">Déployer</text>
+      <text class="f-step-name" x="584" y="206">Déployer&#160;!</text>
       <circle class="f-badge" cx="674" cy="165" r="17"/><text class="f-number" x="674" y="172">8</text>
-      <text class="f-step-name" x="674" y="206">Superviser</text>
+      <text class="f-step-name" x="674" y="206">Superviser&#160;!</text>
       </svg>
     </figure>
     <figure class="mobile-only flow-figure" data-schema="partage">
@@ -523,36 +526,36 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
       <path class="f-axis" d="M128 578V598" marker-end="url(#partage-mobile-muted)"/>
       <path class="f-axis" d="M128 646V666" marker-end="url(#partage-mobile-muted)"/>
       <circle class="f-badge f-human" cx="128" cy="126" r="17"/><text class="f-number f-human-number" x="128" y="133">1</text>
-      <text class="f-label f-left" x="164" y="133">Pourquoi</text>
+      <text class="f-label f-left" x="164" y="133">Pourquoi&#160;?</text>
       <circle class="f-badge f-human" cx="128" cy="194" r="17"/><text class="f-number f-human-number" x="128" y="201">2</text>
-      <text class="f-label f-left" x="164" y="201">Quoi</text>
+      <text class="f-label f-left" x="164" y="201">Quoi&#160;?</text>
       <circle class="f-badge" cx="128" cy="350" r="17"/><text class="f-number" x="128" y="357">3</text>
-      <text class="f-label f-left" x="164" y="357">Comment</text>
+      <text class="f-label f-left" x="164" y="357">Comment&#160;?</text>
       <circle class="f-badge" cx="128" cy="418" r="17"/><text class="f-number" x="128" y="425">4</text>
-      <text class="f-label f-left" x="164" y="425">Faire</text>
+      <text class="f-label f-left" x="164" y="425">Faire&#160;!</text>
       <circle class="f-badge" cx="128" cy="486" r="17"/><text class="f-number" x="128" y="493">5</text>
-      <text class="f-label f-left" x="164" y="493">Tester</text>
+      <text class="f-label f-left" x="164" y="493">Tester&#160;!</text>
       <circle class="f-badge" cx="128" cy="554" r="17"/><text class="f-number" x="128" y="561">6</text>
-      <text class="f-label f-left" x="164" y="561">Vérifier</text>
+      <text class="f-label f-left" x="164" y="561">Vérifier&#160;!</text>
       <circle class="f-badge" cx="128" cy="622" r="17"/><text class="f-number" x="128" y="629">7</text>
-      <text class="f-label f-left" x="164" y="629">Déployer</text>
+      <text class="f-label f-left" x="164" y="629">Déployer&#160;!</text>
       <circle class="f-badge" cx="128" cy="690" r="17"/><text class="f-number" x="128" y="697">8</text>
-      <text class="f-label f-left" x="164" y="697">Superviser</text>
+      <text class="f-label f-left" x="164" y="697">Superviser&#160;!</text>
       </svg>
     </figure>
-    <p>Celui qui définit le Quoi est, par défaut, responsable du code livré et de ce qui tourne en production. S’il ne possède pas les compétences techniques nécessaires, il doit confier cette responsabilité à un développeur ou à une équipe clairement désignée. Demander une fonctionnalité ne signifie pas savoir la réparer, mais cela oblige à prévoir qui pourra intervenir.</p>
+    <p>Celui qui définit le «&nbsp;Quoi&nbsp;?&nbsp;» est, par défaut, responsable du code livré et de ce qui tourne en production. S’il ne possède pas les compétences techniques nécessaires, il doit confier cette responsabilité à un développeur ou à une équipe clairement désignée. Demander une fonctionnalité ne signifie pas savoir la réparer, mais cela oblige à prévoir qui pourra intervenir.</p>
     <p>Une phrase circule, bien commode pour se dédouaner&nbsp;: «&nbsp;C’est l’IA qui a fait.&nbsp;» Non. Être professionnel, c’est précisément répondre de son travail. Un professionnel ne se cache pas derrière ses outils. L’IA fait le travail, elle n’en répond pas.</p>
     <p><em>L’humain est responsable, jamais l’IA.</em></p>
     <p>Un juriste dirait d’ailleurs exactement la même chose&nbsp;! En cas de litige, aucun tribunal ne convoquera une IA&nbsp;: il cherchera la personne, ou l’entreprise, qui a décidé de s’en servir.</p>
 
     <h2>Le piège&nbsp;: décider sans pouvoir réparer</h2>
-    <p>Mais voilà un piège. Imaginons par exemple une personne du marketing qui demande une fonctionnalité&nbsp;: elle définit le Quoi, et devrait donc en porter la responsabilité. Or elle ne connaît pas le code, ne le comprend pas, et ne peut rien y faire quand la production tombe. Derrière elle, personne ne prend le relais. Le Quoi a un auteur, le code n’a personne. Elle doit donc déléguer une part de sa responsabilité, à un développeur ou à une équipe support.</p>
-    <p>Dans tous les cas, un responsable du code doit être désigné dès le départ, pour chaque fonctionnalité. Si ce rôle demande des compétences techniques que l’auteur du Quoi n’a pas, il faut désigner une autre personne, une personne responsable, une «&nbsp;person in charge&nbsp;». C’est vers elle que le support se tourne, le lendemain matin.</p>
+    <p>Mais voilà un piège. Imaginons par exemple une personne du marketing qui demande une fonctionnalité&nbsp;: elle définit le «&nbsp;Quoi&nbsp;?&nbsp;», et devrait donc en porter la responsabilité. Or elle ne connaît pas le code, ne le comprend pas, et ne peut rien y faire quand la production tombe. Derrière elle, personne ne prend le relais. Le «&nbsp;Quoi&nbsp;?&nbsp;» a un auteur, le code n’a personne. Elle doit donc déléguer une part de sa responsabilité, à un développeur ou à une équipe support.</p>
+    <p>Dans tous les cas, un responsable du code doit être désigné dès le départ, pour chaque fonctionnalité. Si ce rôle demande des compétences techniques que l’auteur du «&nbsp;Quoi&nbsp;?&nbsp;» n’a pas, il faut désigner une autre personne, une personne responsable, une «&nbsp;person in charge&nbsp;». C’est vers elle que le support se tourne, le lendemain matin.</p>
 
     <h2>Conclusion</h2>
-    <p>«&nbsp;<a href="../qui-verifie/">Qui vérifie&nbsp;?</a>&nbsp;» a sa réponse&nbsp;: l’IA, encadrée par l’humain dans un processus strict. «&nbsp;Qui est responsable&nbsp;?&nbsp;» a la sienne&nbsp;: un humain, toujours, nommé dès le départ. Celui qui définit le Quoi, ou, s’il ne peut pas intervenir sur le code, une personne responsable désignée pour répondre à sa place.</p>
-    <p>Au départ de tout, il y a la volonté de l’humain. L’exécution, par contre, peut être confiée à l’IA. La frontière entre l’humain et l’IA est un curseur. Il se place aujourd’hui entre le Quoi et le Comment&nbsp;: l’humain décide, l’IA construit.</p>
-    <p>Ce curseur bouge. L’humain le fait parfois descendre, quand il veut garder la main sur la conception. Demain, l’AGI (une intelligence artificielle générale, au niveau de l’humain) pourrait le faire monter d’un cran&nbsp;: l’IA ne se contenterait plus de construire, elle choisirait aussi quoi construire. Nous n’y sommes pas encore. Et même ce jour-là, une étape doit rester entre nos mains&nbsp;: le Pourquoi. Décider de ce qui vaut la peine d’être fait, c’est le propre de l’humain.</p>
+    <p>«&nbsp;<a href="../qui-verifie/">Qui vérifie&nbsp;?</a>&nbsp;» a sa réponse&nbsp;: l’IA, encadrée par l’humain dans un processus strict. «&nbsp;Qui est responsable&nbsp;?&nbsp;» a la sienne&nbsp;: un humain, toujours, nommé dès le départ. Celui qui définit le «&nbsp;Quoi&nbsp;?&nbsp;», ou, s’il ne peut pas intervenir sur le code, une personne responsable désignée pour répondre à sa place.</p>
+    <p>Au départ de tout, il y a la volonté de l’humain. L’exécution, par contre, peut être confiée à l’IA. La frontière entre l’humain et l’IA est un curseur. Il se place aujourd’hui entre le «&nbsp;Quoi&nbsp;?&nbsp;» et le «&nbsp;Comment&nbsp;?&nbsp;»&nbsp;: l’humain décide, l’IA construit.</p>
+    <p>Ce curseur bouge. L’humain le fait parfois descendre, quand il veut garder la main sur la conception. Demain, l’AGI (une intelligence artificielle générale, au niveau de l’humain) pourrait le faire monter d’un cran&nbsp;: l’IA ne se contenterait plus de construire, elle choisirait aussi quoi construire. Nous n’y sommes pas encore. Et même ce jour-là, une étape doit rester entre nos mains&nbsp;: le «&nbsp;Pourquoi&nbsp;?&nbsp;». Décider de ce qui vaut la peine d’être fait, c’est le propre de l’humain.</p>
     <p>Et à 3&nbsp;h du matin, quand la production tombe, le support doit savoir vers qui se tourner le lendemain&nbsp;: une personne nommée, qui comprend le code et a les moyens d’agir.</p>
     <p><strong>L’IA exécute, mais la volonté reste humaine.</strong></p>
 
