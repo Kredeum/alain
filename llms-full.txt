@@ -58,7 +58,7 @@ Mais au final, ces deux approches que tout semble opposer passent par les mêmes
 
 L’IA peut tout faire, soit. Mais c’est la volonté de l’humain qui décide de ce que nous voulons construire ! L’humain est aux commandes et doit y rester. Dans notre cycle de vie, c’est lui qui fixe le Pourquoi, l’objectif, et qui encore aujourd’hui devrait (doit ?) définir le Quoi, le résultat attendu !
 
-Prenons un exemple simple. Gagner sa vie est un Pourquoi : il ne dit rien encore de la route. Monter son entreprise ou chercher un emploi sont deux Quoi, deux chemins très différents vers le même but. Apple suit la même logique, à une autre échelle : son Pourquoi, créer les meilleurs produits du monde, a pris tour à tour la forme d’un baladeur, d’un ordinateur, d’un téléphone et d’une tablette. Un même Pourquoi ouvre plusieurs Quoi. Choisir lequel est la décision qui engage, et elle revient à l’humain.
+Prenons un exemple simple. Gagner sa vie est un Pourquoi : il ne dit rien encore de la route. Monter son entreprise ou chercher un emploi sont deux Quoi, deux chemins très différents vers le même but. Apple suit la même logique, à une autre échelle : son Pourquoi, créer les meilleurs produits du monde, a pris tour à tour la forme d’un baladeur, d’un ordinateur, d’un téléphone et d’une tablette. Apple est d’ailleurs l’exemple phare de Simon Sinek dans sa célèbre conférence sur le Pourquoi, [« Start with why »](https://www.youtube.com/watch?v=u4ZoJKF_VuA), l’une des plus vues de TED. Un même Pourquoi ouvre plusieurs Quoi. Choisir lequel est la décision qui engage, et elle revient à l’humain.
 
 En quelques mois, l’IA a fait des progrès considérables, et elle sait aujourd’hui concevoir, coder, tester et déployer. À partir du Comment, elle peut commencer à tout prendre en charge, et ce jusqu’à la fin du cycle. Ce n’est pas grave : ces étapes ne sont « que » l’exécution de la volonté de l’humain.
 
@@ -89,6 +89,10 @@ Ce curseur bouge. L’humain le fait parfois descendre, quand il veut garder la 
 Et à 3 h du matin, quand la production tombe, le support doit savoir vers qui se tourner le lendemain : une personne nommée, qui comprend le code et a les moyens d’agir.
 
 **L’IA exécute, mais la volonté reste humaine.**
+
+**P.S.** Références :
+
+- Septembre 2009 : [« Start with why – how great leaders inspire action »](https://www.youtube.com/watch?v=u4ZoJKF_VuA), conférence de Simon Sinek à TEDxPugetSound, l’une des plus vues de TED.
 
 Nous mettons également cette démarche en place avec vos équipes dev, sur votre code et vos outils.
 
@@ -150,7 +154,7 @@ But in the end, these two approaches that seem opposed in every way go through t
 
 AI can do everything, fine. But it is human will that decides what we want to build! The human is in command and must stay there. In our life cycle, the human sets the Why, the goal, and still today should (must?) define the What, the expected result!
 
-Take a simple example. Earning a living is a Why: it says nothing yet about the road. Starting a company or looking for a job are two Whats, two very different paths to the same goal. Apple follows the same logic, on another scale: its Why, making the best products in the world, has taken the shape, in turn, of a music player, a computer, a phone and a tablet. One Why opens up several Whats. Choosing which one is the decision that commits, and it belongs to the human.
+Take a simple example. Earning a living is a Why: it says nothing yet about the road. Starting a company or looking for a job are two Whats, two very different paths to the same goal. Apple follows the same logic, on another scale: its Why, making the best products in the world, has taken the shape, in turn, of a music player, a computer, a phone and a tablet. Apple is also the flagship example in Simon Sinek’s famous talk on the Why, [“Start with why”](https://www.youtube.com/watch?v=u4ZoJKF_VuA), one of TED’s most watched. One Why opens up several Whats. Choosing which one is the decision that commits, and it belongs to the human.
 
 In a few months, AI has made considerable progress, and it now knows how to design, code, test and deploy. From the How onward, it can start taking care of everything, right to the end of the cycle. That is fine: these steps are “only” the execution of human will.
 
@@ -181,6 +185,10 @@ That slider moves. The human sometimes pulls it down, to keep a hand on the desi
 And at 3 a.m., when production goes down, support must know who to turn to the next morning: a named person who understands the code and has the means to act.
 
 **AI executes, but the will remains human.**
+
+**P.S.** References:
+
+- September 2009: [“Start with why – how great leaders inspire action”](https://www.youtube.com/watch?v=u4ZoJKF_VuA), talk by Simon Sinek at TEDxPugetSound, one of TED’s most watched.
 
 We can set up this same approach with your dev teams, on your code and with your tools.
 
