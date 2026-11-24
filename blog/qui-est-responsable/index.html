@@ -10,7 +10,7 @@
 <meta property="og:url" content="https://alain.kredeum.com/blog/qui-est-responsable/"><meta property="og:title" content="L’IA code et vérifie, ok ! Mais qui est responsable ?"><meta property="og:description" content="L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le « Quoi ? » : l’IA n’est jamais responsable.">
 <meta property="og:image" content="https://alain.kredeum.com/blog/qui-est-responsable/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/blog/qui-est-responsable/#article", "headline": "L’IA code et vérifie, ok ! Mais qui est responsable ?", "description": "L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le « Quoi ? » : l’IA n’est jamais responsable.", "url": "https://alain.kredeum.com/blog/qui-est-responsable/", "mainEntityOfPage": "https://alain.kredeum.com/blog/qui-est-responsable/", "datePublished": "2026-11-24T08:30:00+01:00", "dateModified": "2026-11-24T18:31:00+01:00", "inLanguage": "fr", "image": "https://alain.kredeum.com/blog/qui-est-responsable/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/blog/#blog"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/blog/qui-est-responsable/#article", "headline": "L’IA code et vérifie, ok ! Mais qui est responsable ?", "description": "L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le « Quoi ? » : l’IA n’est jamais responsable.", "url": "https://alain.kredeum.com/blog/qui-est-responsable/", "mainEntityOfPage": "https://alain.kredeum.com/blog/qui-est-responsable/", "datePublished": "2026-11-24T08:30:00+01:00", "dateModified": "2026-11-24T20:09:00+01:00", "inLanguage": "fr", "image": "https://alain.kredeum.com/blog/qui-est-responsable/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/blog/#blog"}}</script>
 <link rel="alternate" type="application/atom+xml" title="Blog · Alain Papazoglou" href="/blog/feed.xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap">
@@ -246,16 +246,28 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
   <article>
     <div class="eyebrow">Blog · 24 novembre 2026</div>
     <h1>L’IA code et vérifie, ok&nbsp;! Mais qui est <em>responsable</em>&nbsp;?</h1>
-    <p class="subtitle">L’IA peut désormais écrire le code et le vérifier, dans un processus strict. Une question reste entière&nbsp;: qui en est responsable, une fois le code en production&nbsp;?</p>
+    <p class="subtitle">L’IA peut désormais écrire le code et le vérifier dans un processus strict. Une question reste entière&nbsp;: qui en est responsable, une fois le code en production&nbsp;?</p>
     <p class="series">Suite d’une série d’articles sur l’IA appliquée au code.<br>L’article précédent sur la vérification du code&nbsp;: <a href="../qui-verifie/">«&nbsp;L’IA code, ok&nbsp;! Mais qui vérifie&nbsp;?&nbsp;»</a></p>
 
     <h2>Le code est en prod. Qui en répond&nbsp;?</h2>
-    <p>Le précédent article s’arrête à la validation du code, écrit puis vérifié dans un processus strict par plusieurs IA de fournisseurs différents. Ensuite, tout s’enchaîne&nbsp;: une pull request (PR) livre le code qui part alors en production, des clients l’utilisent au quotidien. Et une nuit, à 3&nbsp;h du matin, la production tombe, une alerte est déclenchée.</p>
-    <p>Dans une organisation bien structurée, les rôles sont clairs&nbsp;: l’alerte part vers l’équipe support, d’astreinte. Surveiller la prod, intervenir la nuit, c’est son métier. Elle stabilise la production. En journée, le développeur prend le relais&nbsp;: il connaît bien son code, il aide le support à comprendre et à corriger. Il n’est réveillé en pleine nuit qu’en cas d’urgence absolue. Le support répond de la production, le développeur répond de son code.</p>
-    <p>Maintenant, l’IA écrit le code sans aucun humain&nbsp;: il n’y a pas forcément de développeur qui le comprenne. Au mieux, une personne qui rédige un prompt, parfois même un bot qui lance la demande. Qui est alors responsable du code&nbsp;? Vers qui le support se tourne-t-il, le lendemain matin, pour corriger&nbsp;?</p>
+    <p>Le précédent article s’arrête à la validation du code, écrit puis vérifié dans un processus strict par plusieurs IA de fournisseurs différents. Ensuite, tout s’enchaîne&nbsp;: la pull request (PR) est fusionnée, le code part en production, des clients l’utilisent au quotidien. Et une nuit, à 3&nbsp;h du matin, la production tombe, une alerte est déclenchée.</p>
+    <p>Dans une organisation bien structurée, les rôles sont clairs&nbsp;: l’alerte part vers l’équipe support, d’astreinte. Surveiller la prod, intervenir la nuit, c’est son métier. Elle stabilise la production. En journée, le développeur prend le relais&nbsp;: il connaît bien son code, il aide le support à comprendre et à corriger. Il n’est réveillé en pleine nuit qu’en cas d’urgence absolue.</p>
+    <p>Le support répond de la production, le développeur répond de son code.</p>
+    <p>Maintenant, l’IA écrit le code, parfois sans aucun humain&nbsp;: il n’y a plus forcément de développeur qui le comprenne. Au mieux, une personne qui rédige un prompt, parfois même un bot qui lance la demande. Qui est alors responsable du code&nbsp;? Vers qui le support se tourne-t-il pour corriger&nbsp;?</p>
 
     <h2>Cycle en V ou Agile, les mêmes étapes&nbsp;!</h2>
-    <p>Pour savoir qui est responsable de quoi, nous distinguons huit grandes activités, de l’idée jusqu’à la production. Cette grille de lecture permet de situer le rôle de chacun. Selon la méthode choisie, ces activités s’enchaînent, se chevauchent ou se répètent.</p>
+    <p>Pour savoir qui est responsable de quoi, nous distinguons huit étapes, de l’idée jusqu’à la production&nbsp;:</p>
+    <ol class="phases">
+      <li><strong>Pourquoi&nbsp;?</strong> L’objectif, la volonté, la raison de faire, le problème qui justifie le travail.</li>
+      <li><strong>Quoi&nbsp;?</strong> La spécification, ce que le logiciel doit faire, le résultat attendu.</li>
+      <li><strong>Comment&nbsp;?</strong> La conception, la façon de le construire.</li>
+      <li><strong>Faire&nbsp;!</strong> Le développement, écrire le code.</li>
+      <li><strong>Tester&nbsp;!</strong> Les tests unitaires puis d’intégration, pour s’assurer que le code fonctionne.</li>
+      <li><strong>Vérifier&nbsp;!</strong> Relire, prouver, chercher ce qui cassera, sécuriser. Le dernier rempart.</li>
+      <li><strong>Déployer&nbsp;!</strong> Le déploiement, pour mettre en production la mise à jour de l’application.</li>
+      <li><strong>Superviser&nbsp;!</strong> Une fois en production, vérifier que tout se passe comme attendu, alerter en cas de problème.</li>
+    </ol>
+    <p>Cette grille de lecture permet de situer le rôle de chacun. Selon la méthode choisie, ces étapes s’enchaînent, se chevauchent ou se répètent.</p>
     <figure>
       <svg class="cyc cyc-v" id="cycle-v" viewBox="0 0 720 530" preserveAspectRatio="xMidYMin slice" role="img" aria-label="Cycle en V, un seul passage. La branche descendante va de 1 Pourquoi à 2 Quoi, 3 Comment puis 4 Faire, à la pointe du V. La branche montante enchaîne 5 Tester, 6 Vérifier, 7 Déployer puis 8 Superviser. Les pointillés relient les étapes face à face, 3 et 5, 2 et 6, 1 et 7.">
         <defs>
@@ -310,18 +322,6 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
       </svg>
     </figure>
     <p>D’abord le cycle en V, qui déroule un projet en un seul passage. La branche descendante du V précise le besoin, de la spécification jusqu’à la conception détaillée. La branche montante teste dans l’ordre inverse, du test unitaire jusqu’à la recette, et chaque niveau de test répond à une étape de conception. Tout est planifié au départ, et une erreur de spécification n’apparaît souvent qu’à la fin, après des mois, quand la corriger coûte le plus cher.</p>
-    <p>Voilà, rapidement, les 8 étapes&nbsp;:</p>
-    <ol class="phases">
-      <li><strong>Pourquoi&nbsp;?</strong> L’objectif, la volonté, la raison de faire, le problème qui justifie le travail.</li>
-      <li><strong>Quoi&nbsp;?</strong> La spécification, ce que le logiciel doit faire, le résultat attendu.</li>
-      <li><strong>Comment&nbsp;?</strong> La conception, la façon de le construire.</li>
-      <li><strong>Faire&nbsp;!</strong> Le développement, écrire le code.</li>
-      <li><strong>Tester&nbsp;!</strong> Les tests unitaires puis d’intégration, pour s’assurer que le code fonctionne.</li>
-      <li><strong>Vérifier&nbsp;!</strong> Relire, prouver, chercher ce qui cassera, sécuriser. Le dernier rempart.</li>
-      <li><strong>Déployer&nbsp;!</strong> Le déploiement, pour mettre en production la mise à jour de l’application.</li>
-      <li><strong>Superviser&nbsp;!</strong> Une fois en production, vérifier que tout se passe comme attendu, alerter en cas de problème.</li>
-    </ol>
-
     <p>Ensuite l’Agile, qui répond au défaut du cycle en V par un cycle itératif&nbsp;: des boucles courtes, de quelques semaines au plus. À chaque tour, l’équipe livre une petite partie du logiciel, la teste, ajuste le cap et corrige les erreurs au plus tôt.</p>
     <figure class="hero flow-figure" data-schema="agile">
       <svg class="flow-svg" id="agile-large" viewBox="0 0 720 492" role="img" aria-label="Agile, une succession de sprints de 2 à 4 semaines. Au départ, 1 Pourquoi puis 2 Quoi, une fois. Chaque boucle enchaîne 3 Comment, 4 Faire, 5 Tester, 6 Vérifier, puis revient à 3 Comment. Dans chaque boucle, 2 Quoi pour affiner le besoin et 7 Déployer pour livrer le sprint sont en option, en pointillés. Les trois boucles sont Sprint 1, Sprint 2 et les suivants, en pointillés, puis Sprint n. À la fin, 7 Déployer puis 8 Superviser, une fois. Le temps va de gauche à droite.">
@@ -459,12 +459,12 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
       <text class="f-meta" x="180" y="991">7 Déployer&#160;! · livrer le sprint</text>
       </svg>
     </figure>
-    <p>Mais au final, ces deux approches que tout semble opposer passent par les mêmes étapes&nbsp;! Et ce que nous constatons avec l’IA, c’est que nous sommes encore et toujours, pour l’instant, dans ce même cycle.</p>
+    <p>Ces deux approches, que tout semble opposer, passent pourtant par les mêmes étapes. Et avec l’IA, nous sommes toujours, pour l’instant, dans ce même cycle.</p>
 
-    <h2>La ligne de partage…</h2>
-    <p>L’IA peut tout faire, soit. Mais c’est la volonté de l’humain qui décide de ce que nous voulons construire&nbsp;! L’humain est aux commandes et doit y rester. Dans notre cycle de vie, c’est lui qui fixe le «&nbsp;Pourquoi&nbsp;?&nbsp;», l’objectif, et qui encore aujourd’hui devrait (doit&nbsp;?) définir le «&nbsp;Quoi&nbsp;?&nbsp;», le résultat attendu&nbsp;!</p>
-    <p>Prenons un exemple simple. Gagner sa vie est un «&nbsp;Pourquoi&nbsp;?&nbsp;»&nbsp;: il ne dit rien encore de la route. Monter son entreprise ou chercher un emploi sont deux «&nbsp;Quoi&nbsp;?&nbsp;», deux chemins très différents vers le même but. Apple suit la même logique, à une autre échelle&nbsp;: son «&nbsp;Pourquoi&nbsp;?&nbsp;», créer les meilleurs produits du monde, a pris tour à tour la forme d’un baladeur, d’un ordinateur, d’un téléphone et d’une tablette. Apple est d’ailleurs l’exemple phare de Simon Sinek dans sa célèbre conférence sur le «&nbsp;Pourquoi&nbsp;?&nbsp;», <a href="https://www.youtube.com/watch?v=u4ZoJKF_VuA" target="_blank" rel="noopener" lang="en">«&nbsp;Start with why&nbsp;»</a>, l’une des plus vues de TED. Un même «&nbsp;Pourquoi&nbsp;?&nbsp;» ouvre plusieurs «&nbsp;Quoi&nbsp;?&nbsp;». Choisir lequel est la décision qui engage, et elle revient à l’humain.</p>
-    <p>En quelques mois, l’IA a fait des progrès considérables, et elle sait aujourd’hui concevoir, coder, tester et déployer. À partir du «&nbsp;Comment&nbsp;?&nbsp;», elle peut commencer à tout prendre en charge, et ce jusqu’à la fin du cycle. Ce n’est pas grave&nbsp;: ces étapes ne sont «&nbsp;que&nbsp;» l’exécution de la volonté de l’humain.</p>
+    <h2>La ligne de partage entre l’humain et l’IA</h2>
+    <p>L’IA sait désormais tout faire, soit. Mais c’est à l’humain de décider de ce qu’il veut construire&nbsp;! L’humain est aux commandes et doit y rester. Dans ce cycle, c’est lui qui fixe le «&nbsp;Pourquoi&nbsp;?&nbsp;», l’objectif, et qui encore aujourd’hui devrait (doit&nbsp;?) définir le «&nbsp;Quoi&nbsp;?&nbsp;», le résultat attendu.</p>
+    <p>Prenons un exemple simple. Gagner sa vie est un «&nbsp;Pourquoi&nbsp;?&nbsp;»&nbsp;: il ne dit rien encore de la route. Monter son entreprise ou chercher un emploi sont deux «&nbsp;Quoi&nbsp;?&nbsp;», deux chemins très différents vers le même but. Cette idée du «&nbsp;Pourquoi&nbsp;?&nbsp;» vient de Simon Sinek&nbsp;: dans sa célèbre conférence <a href="https://www.youtube.com/watch?v=u4ZoJKF_VuA" target="_blank" rel="noopener" lang="en">«&nbsp;Start with why&nbsp;»</a>, l’une des plus vues de TED, il en fait le point de départ de tout. Apple y est l’exemple phare&nbsp;: son «&nbsp;Pourquoi&nbsp;?&nbsp;», bousculer l’ordre établi et penser différemment, le fameux «&nbsp;Think different&nbsp;», a pris tour à tour la forme d’un ordinateur, d’un baladeur, d’un téléphone et d’une tablette. Un même «&nbsp;Pourquoi&nbsp;?&nbsp;» ouvre plusieurs «&nbsp;Quoi&nbsp;?&nbsp;». Choisir lequel est la décision qui engage, et elle revient aussi à l’humain.</p>
+    <p>En quelques mois, l’IA a fait des progrès considérables, et elle sait aujourd’hui concevoir, coder, tester et déployer. Elle peut commencer à tout prendre en charge à partir du «&nbsp;Comment&nbsp;?&nbsp;», et ce jusqu’à la fin du cycle. Ce n’est pas grave&nbsp;: ces étapes ne sont «&nbsp;que&nbsp;» l’exécution de la volonté de l’humain.</p>
     <figure class="hero flow-figure" data-schema="partage">
       <svg class="flow-svg" id="partage-large" viewBox="0 0 720 294" role="img" aria-label="La ligne de partage entre l’humain et l’IA. L’humain définit 1 Pourquoi et 2 Quoi. Il passe la main entre 2 Quoi et 3 Comment. L’IA prend ensuite en charge 3 Comment, 4 Faire, 5 Tester, 6 Vérifier, 7 Déployer et 8 Superviser. Le passage de relais concerne l’exécution, la responsabilité reste humaine. Les huit étapes se lisent de gauche à droite.">
       <defs>
@@ -543,26 +543,27 @@ table.roles td:first-child { font-weight: 600; color: var(--text); }
       <text class="f-label f-left" x="164" y="697">Superviser&#160;!</text>
       </svg>
     </figure>
-    <p>Celui qui définit le «&nbsp;Quoi&nbsp;?&nbsp;» est, par défaut, responsable du code livré et de ce qui tourne en production. S’il ne possède pas les compétences techniques nécessaires, il doit confier cette responsabilité à un développeur ou à une équipe clairement désignée. Demander une fonctionnalité ne signifie pas savoir la réparer, mais cela oblige à prévoir qui pourra intervenir.</p>
+    <p>Cette ligne n’est pas figée&nbsp;: c’est un curseur. L’humain le déplace parfois, pour garder la main sur la conception. Demain, l’AGI (une intelligence artificielle générale, au niveau de l’humain) pourrait le pousser dans l’autre sens, et choisir aussi quoi construire. Même ce jour-là, le «&nbsp;Pourquoi&nbsp;?&nbsp;» doit rester entre nos mains&nbsp;: décider de ce qui vaut la peine d’être fait, c’est le propre de l’humain.</p>
+    <p>Quand un développeur pilote l’IA et livre le code, rien ne change&nbsp;: il en répond, comme avant. Sans développeur, celui qui définit le «&nbsp;Quoi&nbsp;?&nbsp;» est, par défaut, responsable du code livré et de ce qui tourne en production.</p>
     <p>En cas de problème, une phrase bien commode pour se dédouaner&nbsp;: «&nbsp;C’est l’IA qui a fait.&nbsp;» Non. Être professionnel, c’est précisément répondre de son travail. Un professionnel ne se cache pas derrière ses outils. L’IA fait le travail, elle n’en répond pas.</p>
-    <p><em>L’humain est responsable, jamais l’IA.</em></p>
-    <p>Un juriste dirait d’ailleurs exactement la même chose&nbsp;! En cas de litige, aucun tribunal ne convoquera une IA&nbsp;: il cherchera la personne, ou l’entreprise, qui a décidé de s’en servir.</p>
+    <p>Un juriste dirait d’ailleurs exactement la même chose. En 2024, Air Canada a plaidé que son chatbot était seul responsable de ses réponses&nbsp;: le tribunal a condamné la compagnie. Aucun tribunal ne convoquera une IA&nbsp;: il cherchera la personne, ou l’entreprise, qui a décidé de s’en servir.</p>
+    <p>L’humain est responsable, jamais l’IA.</p>
 
     <h2>Le piège&nbsp;: décider sans pouvoir réparer</h2>
-    <p>Mais voilà un piège. Imaginons par exemple une personne du marketing qui demande une fonctionnalité&nbsp;: elle définit le «&nbsp;Quoi&nbsp;?&nbsp;», et devrait donc en porter la responsabilité. Or elle ne connaît pas le code, ne le comprend pas, et ne peut rien y faire quand la production tombe. Derrière elle, personne ne prend le relais. Le «&nbsp;Quoi&nbsp;?&nbsp;» a un auteur, le code n’a personne. Elle doit donc déléguer une part de sa responsabilité, à un développeur ou à une équipe support.</p>
-    <p>Dans tous les cas, un responsable du code doit être désigné dès le départ, pour chaque fonctionnalité. Si ce rôle demande des compétences techniques que l’auteur du «&nbsp;Quoi&nbsp;?&nbsp;» n’a pas, il faut désigner une autre personne, une personne responsable, une «&nbsp;person in charge&nbsp;». C’est vers elle que le support se tourne, le lendemain matin.</p>
+    <p>Imaginons une personne du marketing qui demande une fonctionnalité&nbsp;: elle définit le «&nbsp;Quoi&nbsp;?&nbsp;», et devrait donc en porter la responsabilité. Or elle ne connaît pas le code, ne le comprend pas, et ne peut rien y faire quand la production tombe. Derrière elle, personne ne prend le relais. Le «&nbsp;Quoi&nbsp;?&nbsp;» a un auteur, le code n’a personne.</p>
+    <p>Demander une fonctionnalité ne signifie pas savoir la réparer, mais cela oblige à prévoir qui pourra intervenir. Un responsable du code, un «&nbsp;owner&nbsp;», doit donc être désigné dès le départ, pour chaque fonctionnalité. Concrètement&nbsp;: un nom dans chaque ticket, avant de lancer l’IA.</p>
+    <p>Si ce rôle demande des compétences techniques que l’auteur du «&nbsp;Quoi&nbsp;?&nbsp;» n’a pas, il faut désigner une autre personne, un développeur ou une équipe. L’auteur du «&nbsp;Quoi&nbsp;?&nbsp;» ne se décharge pas pour autant&nbsp;: il répond de ce qu’il a demandé, la personne désignée répond du code. C’est vers elle que le support se tourne, le lendemain matin. Elle peut bien sûr s’appuyer sur l’IA pour comprendre et corriger. Mais c’est elle qui décide, et qui en répond.</p>
 
     <h2>Conclusion</h2>
-    <p>«&nbsp;<a href="../qui-verifie/">Qui vérifie&nbsp;?</a>&nbsp;» a déjà sa réponse&nbsp;: l’IA, encadrée par l’humain dans un processus strict. «&nbsp;Qui est responsable&nbsp;?&nbsp;» a aussi la sienne&nbsp;: un humain, toujours, nommé dès le départ. Celui qui définit le «&nbsp;Quoi&nbsp;?&nbsp;», ou, s’il ne peut pas intervenir sur le code, une personne responsable désignée pour répondre à sa place.</p>
-    <p>Au départ de tout, il y a la volonté de l’humain. L’exécution, par contre, peut être confiée à l’IA. La frontière entre l’humain et l’IA est un curseur. Il se place aujourd’hui entre le «&nbsp;Quoi&nbsp;?&nbsp;» et le «&nbsp;Comment&nbsp;?&nbsp;»&nbsp;: l’humain décide, l’IA construit.</p>
-    <p>Ce curseur bouge. L’humain le fait parfois descendre, quand il veut garder la main sur la conception. Demain, l’AGI (une intelligence artificielle générale, au niveau de l’humain) pourrait le faire monter d’un cran&nbsp;: l’IA ne se contenterait plus de construire, elle choisirait aussi quoi construire. Nous n’y sommes pas encore. Et même ce jour-là, une étape doit rester entre nos mains&nbsp;: le «&nbsp;Pourquoi&nbsp;?&nbsp;». Décider de ce qui vaut la peine d’être fait, c’est le propre de l’humain.</p>
-    <p>Et à 3&nbsp;h du matin, quand la production tombe, le support doit savoir vers qui se tourner le lendemain&nbsp;: une personne nommée, qui comprend le code et a les moyens d’agir.</p>
+    <p>L’humain définit le «&nbsp;Pourquoi&nbsp;?&nbsp;» et le «&nbsp;Quoi&nbsp;?&nbsp;», l’IA exécute ensuite. Mais alors, qui est responsable&nbsp;? Pour nous, un humain toujours&nbsp;! nommé dès le départ, qui décide et encadre l’IA.</p>
+    <p>Ainsi, à 3&nbsp;h du matin, quand la production tombe, le support sait vers qui se tourner&nbsp;: une personne nommée, qui comprend le code et a les moyens d’agir.</p>
     <p><strong>L’IA exécute, mais la volonté reste humaine.</strong></p>
 
     <div class="fig-note ps">
       <p><strong>P.S.</strong> Références&nbsp;:</p>
       <ul>
         <li>Septembre 2009&nbsp;: <a href="https://www.youtube.com/watch?v=u4ZoJKF_VuA" target="_blank" rel="noopener" lang="en">«&nbsp;Start with why – how great leaders inspire action&nbsp;»</a>, conférence de Simon Sinek à TEDxPugetSound, l’une des plus vues de TED.</li>
+        <li>Février 2024&nbsp;: <a href="https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do" target="_blank" rel="noopener" lang="en">«&nbsp;Moffatt v. Air Canada&nbsp;»</a>, décision d’un tribunal canadien&nbsp;: la compagnie répond de ce que dit son chatbot.</li>
       </ul>
     </div>
 
