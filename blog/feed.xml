@@ -4,9 +4,17 @@
 <subtitle>Articles d’Alain Papazoglou sur l’IA appliquée au code : écrire, valider et maintenir du logiciel avec l’IA, projets réels à l’appui.</subtitle>
 <link href="https://alain.kredeum.com/blog/feed.xml" rel="self"/>
 <link href="https://alain.kredeum.com/blog/"/>
-<updated>2026-11-18T00:00:00Z</updated>
+<updated>2026-11-24T00:00:00Z</updated>
 <id>https://alain.kredeum.com/blog/</id>
 <author><name>Alain Papazoglou</name></author>
+<entry>
+<title>L’IA code et vérifie, ok ! Mais qui est responsable ?</title>
+<link href="https://alain.kredeum.com/blog/qui-est-responsable/"/>
+<id>https://alain.kredeum.com/blog/qui-est-responsable/</id>
+<published>2026-11-24T00:00:00Z</published>
+<updated>2026-11-24T00:00:00Z</updated>
+<summary>L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le Quoi : l’IA n’est jamais responsable.</summary>
+</entry>
 <entry>
 <title>L’IA code, ok ! Mais qui vérifie ?</title>
 <link href="https://alain.kredeum.com/blog/qui-verifie/"/>

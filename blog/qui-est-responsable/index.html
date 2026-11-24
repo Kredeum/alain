@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L’IA code et vérifie, ok ! Mais qui est responsable ?</title>
+<meta name="description" content="L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le Quoi : l’IA n’est jamais responsable.">
+<link rel="canonical" href="https://alain.kredeum.com/blog/qui-est-responsable/"><link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/qui-est-responsable/"><link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/who-is-responsible/"><link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/qui-est-responsable/">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Alain Papazoglou @ Kredeum"><meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://alain.kredeum.com/blog/qui-est-responsable/"><meta property="og:title" content="L’IA code et vérifie, ok ! Mais qui est responsable ?"><meta property="og:description" content="L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le Quoi : l’IA n’est jamais responsable.">
+<meta property="og:image" content="https://alain.kredeum.com/blog/qui-est-responsable/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "@id": "https://alain.kredeum.com/blog/qui-est-responsable/#article", "headline": "L’IA code et vérifie, ok ! Mais qui est responsable ?", "description": "L’IA écrit le code et le vérifie. En production, la responsabilité revient à l’humain qui définit le Quoi : l’IA n’est jamais responsable.", "url": "https://alain.kredeum.com/blog/qui-est-responsable/", "mainEntityOfPage": "https://alain.kredeum.com/blog/qui-est-responsable/", "datePublished": "2026-11-24T08:30:00+01:00", "dateModified": "2026-11-24T08:30:00+01:00", "inLanguage": "fr", "image": "https://alain.kredeum.com/blog/qui-est-responsable/og.png", "author": {"@type": "Person", "@id": "https://alain.kredeum.com/#alain", "name": "Alain Papazoglou", "url": "https://alain.kredeum.com/"}, "isPartOf": {"@type": "Blog", "@id": "https://alain.kredeum.com/blog/#blog"}}</script>
+<link rel="alternate" type="application/atom+xml" title="Blog · Alain Papazoglou" href="/blog/feed.xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap">
+<style>:root{color-scheme:dark;--track:rgba(243,233,220,0.1);--bg:#0E0D0C;--band:#24201C;--line:rgba(243,233,220,0.3);--line2:rgba(243,233,220,0.35);--text:#F3ECE4;--text2:#CFC6BC;--gray:#A89F95;--accent:#FF7A2F;--accent-box:#B4410F;--box-text:#1C1916;--box-muted1:#5C534A;--box-label:#6B6157;--box-muted:#4A433C;--box-line:rgba(28,25,22,0.35);--hover:#FFFFFF;--card:#191715;--nav-btn-bg:#F3E9DC;--nav-btn-text:#0E0D0C;--cta-line:#F3E9DC;--pastille-bg:#F3E9DC;--pastille-fg:#0E0D0C;--aside-bg:#F3E9DC;--aside-border:transparent;--ia-bg:#F3E9DC;--box-bg:#F3E9DC;--alain-border:#1C1916;--team-bg:#0E0D0C;--team-text:#F3ECE4;--ref-rule:#F3E9DC;--contact-text:#0E0D0C;--malt-bg:#0E0D0C;--malt-text:#F3ECE4;--outline-btn:#0E0D0C;--outline-past-bg:#0E0D0C;--outline-past-fg:#F3E9DC;}:root[data-theme="day"]{color-scheme:light;--track:rgba(22,19,15,0.08);--bg:#F5F0E8;--band:#ECE5D9;--line:rgba(22,19,15,0.12);--line2:rgba(22,19,15,0.16);--text:#16130F;--text2:#5E554B;--gray:#8A8076;--accent:#C2410C;--accent-box:#C2410C;--box-text:#16130F;--box-muted1:#5E554B;--box-label:#8A8076;--box-muted:#5E554B;--box-line:rgba(22,19,15,0.2);--hover:#000000;--card:#FBF8F3;--nav-btn-bg:#C2410C;--nav-btn-text:#FFFFFF;--cta-line:#16130F;--pastille-bg:#C2410C;--pastille-fg:#FFFFFF;--aside-bg:#FFFFFF;--aside-border:rgba(22,19,15,0.12);--ia-bg:#F6E3D3;--box-bg:#FFFFFF;--alain-border:rgba(22,19,15,0.25);--team-bg:#F6E3D3;--team-text:#16130F;--ref-rule:#16130F;--contact-text:#16130F;--malt-bg:#C2410C;--malt-text:#FFFFFF;--outline-btn:#16130F;--outline-past-bg:#C2410C;--outline-past-fg:#FFFFFF;}.logo{font:700 26px/1 Inter,system-ui,sans-serif;letter-spacing:-0.02em;color:var(--text);text-decoration:none;white-space:nowrap}.logo span{color:var(--accent);margin-left:0.18em}.logo:hover{color:var(--text)}.theme-toggle,.lang-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--accent);cursor:pointer}.theme-toggle:hover,.lang-toggle:hover{border-color:var(--text)}a.lang-toggle:hover{color:var(--accent)}.theme-toggle:focus-visible,.lang-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.lang-toggle{box-sizing:border-box;font:600 13px/1 Inter,system-ui,sans-serif;letter-spacing:0.04em;text-decoration:none}.theme-toggle .i-moon{display:none}:root[data-theme="day"] .theme-toggle .i-sun{display:none}:root[data-theme="day"] .theme-toggle .i-moon{display:block}p{text-align:justify;hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:7 4 3}#contact p{text-align:inherit;hyphens:manual;-webkit-hyphens:manual}html{scroll-behavior:smooth;scrollbar-gutter:stable}body{margin:0;background:var(--bg);color:var(--text)}a{color:var(--text)}a:hover{color:var(--hover)}a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}img{max-width:100%}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
+<style>
+:root{--display:Gelasio,Georgia,"Times New Roman",serif;--body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap { max-width: 680px; margin: 0 auto; padding-block: 48px 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 56px; }
+.eyebrow { font: 600 12px/1.4 var(--body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+article { display: flex; flex-direction: column; gap: 20px; }
+h1 { margin: 0; font: 700 clamp(32px, 5.4vw, 46px)/1.1 var(--display); letter-spacing: -0.015em; text-wrap: balance; }
+h1 em { font-weight: 500; color: var(--accent); }
+@media (min-width: 720px) { h1.one-line { white-space: nowrap; font-size: min(5vw, 43px); } }
+h2 { margin: 24px 0 0; font: 500 clamp(24px, 3.6vw, 30px)/1.2 var(--display); text-wrap: balance; }
+p, ul { margin: 0; color: var(--text2); }
+.lead { font-size: 20px; color: var(--text); }
+.subtitle { margin: -4px 0 8px; font: italic 500 clamp(20px, 2.6vw, 24px)/1.4 var(--display); color: var(--text); text-wrap: pretty; }
+ul { padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
+.wrap p, .wrap li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 7 4 3; }
+.wrap .subtitle, .wrap figure p, .wrap figure li, .wrap .fig-note { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+strong { color: var(--text); font-weight: 600; }
+code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; color: var(--text); white-space: nowrap; hyphens: none; -webkit-hyphens: none; }
+figure { margin: 8px 0; padding: 24px clamp(16px, 3vw, 28px); background: var(--band); border-radius: 20px;
+  display: flex; flex-direction: column; gap: 18px; }
+figcaption { font: 600 15px/1.4 var(--body); color: var(--text); }
+.fig-note { font-size: 13px; line-height: 1.5; color: var(--gray); }
+/* Schéma horizontal en tête */
+.hero { padding: 0; overflow: hidden; }
+@media (max-width: 760px) { .hero { display: none; } }
+.mobile-only { display: none; }
+@media (max-width: 760px) { .mobile-only { display: flex; } }
+.hzsvg { display: block; width: 100%; height: auto; }
+.hzsvg .hz-box { fill: var(--bg); stroke: var(--line); stroke-width: 1.5; }
+.hzsvg .hz-loop { stroke: var(--accent); stroke-width: 2; }
+.hzsvg .hz-end { stroke: var(--text); stroke-width: 2; }
+.hzsvg .hz-t { font: 600 22px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-s { font: 500 19px var(--body); fill: var(--text2); text-anchor: middle; }
+.hzsvg .hz-arc { fill: none; stroke: var(--accent); stroke-width: 3; }
+.hzsvg .hz-head-arc { fill: var(--accent); }
+.hzsvg .hz-line { fill: none; stroke: var(--text2); stroke-width: 2.5; }
+.hzsvg .hz-head-line { fill: var(--text2); }
+.hzsvg .hz-diamond { fill: var(--bg); stroke: var(--text); stroke-width: 2; stroke-linejoin: round; }
+.hzsvg .hz-d { font: 600 19px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-yes { font: 700 18px var(--body); fill: var(--text); text-anchor: middle; }
+.hzsvg .hz-no { font: 700 18px var(--body); fill: var(--accent); }
+.hzsvg .hz-lt { font: italic 700 20px var(--display); fill: var(--accent); }
+.hzsvg .hz-zone { fill: var(--accent); fill-opacity: 0.07; stroke: var(--accent); stroke-opacity: 0.35; stroke-width: 1.5; stroke-dasharray: 6 6; }
+.hzsvg .hz-title { text-anchor: middle; }
+.hzsvg .hz-k { font: 700 32px ui-monospace, "SF Mono", Menlo, monospace; fill: var(--accent); }
+.hzsvg .hz-k2 { font: italic 500 27px var(--display); fill: var(--text2); }
+/* Boucle de revue */
+.loopsvg { display: block; width: 100%; max-width: 460px; margin: 0 auto; overflow: visible; }
+.loopsvg .lb-box { fill: var(--bg); stroke: var(--line); stroke-width: 1; }
+.loopsvg .lb-loop { stroke: var(--accent); stroke-width: 1.5; }
+.loopsvg .lb-end { stroke: var(--text2); stroke-width: 1.5; }
+.loopsvg .lb-t { font: 600 14px var(--body); fill: var(--text); text-anchor: middle; }
+.loopsvg .lb-s { font: 500 12.5px var(--body); fill: var(--text2); text-anchor: middle; }
+.loopsvg .lb-arc { fill: none; stroke: var(--accent); stroke-width: 2; }
+.loopsvg .lb-head-arc { fill: var(--accent); }
+.loopsvg .lb-line { fill: none; stroke: var(--text2); stroke-width: 1.5; }
+.loopsvg .lb-head-line { fill: var(--text2); }
+.loopsvg .lb-diamond { fill: var(--bg); stroke: var(--text); stroke-width: 1.5; stroke-linejoin: round; }
+.loopsvg .lb-d { font: 600 13px var(--body); fill: var(--text); text-anchor: middle; }
+.loopsvg .lb-yes { font: 700 12.5px var(--body); fill: var(--text); }
+.loopsvg .lb-no { font: 700 12.5px var(--body); fill: var(--accent); }
+.loopsvg .lb-r { font: 600 11.5px var(--body); fill: var(--accent); text-anchor: middle; }
+/* Barres par passe */
+.bars { display: grid; grid-template-columns: max-content 1fr max-content; align-items: center; gap: 10px 12px;
+  font: 500 14px/1.3 var(--body); color: var(--text2); }
+.bars .track { height: 14px; background: var(--track); border-radius: 0 4px 4px 0; }
+.bars .bar { height: 100%; background: var(--accent); border-radius: 0 4px 4px 0; }
+.bars .val { font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+.figs { display: flex; flex-wrap: wrap; gap: 8px 28px; font: 500 14px/1.4 var(--body); color: var(--text2); }
+.figs b { font: 700 22px/1.1 var(--display); color: var(--text); font-variant-numeric: tabular-nums; margin-right: 6px; }
+.case { margin: 4px 0; padding-left: 18px; border-left: 2px solid var(--accent); display: flex; flex-direction: column; gap: 10px; }
+details.case { font-size: inherit; color: inherit; display: block; }
+details.case summary { font: 600 12px/1.4 var(--body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); cursor: pointer; }
+details.case > p { margin-top: 10px; }
+details.dev { margin: 8px 0; padding: 22px clamp(16px, 3vw, 28px); border: 1px solid var(--line); border-radius: 20px; display: block; font-size: 16px; color: inherit; }
+details.dev summary { font-weight: 600; color: var(--text); cursor: pointer; }
+details.dev ul { font-size: 16px; margin-top: 12px; }
+.wrap .ps { margin-top: 28px; }
+.wrap .ps p, .wrap .ps li { color: inherit; text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.wrap .ps ul { margin-top: 4px; gap: 4px; color: inherit; }
+.discuss { margin-top: 28px; padding: 20px 22px; border-radius: 16px; background: var(--aside-bg); color: var(--box-text); box-shadow: inset 0 0 0 1px var(--aside-border); }
+.wrap .discuss p { margin: 0; text-align: left; hyphens: manual; -webkit-hyphens: manual; color: inherit; }
+.discuss a, .discuss strong { color: inherit; }
+.discuss a:hover { color: var(--accent-box); }
+.outro { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; }
+.wrap .outro p { font: italic 500 21px/1.45 var(--display); color: var(--text); text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+details .fig-note { margin-top: 12px; }
+@media (max-width: 480px) { body { font-size: 17px; } .lead { font-size: 18px; } }
+h3 { margin: 12px 0 0; font: 600 19px/1.35 var(--body); color: var(--text); }
+h3 .n { color: var(--accent); margin-right: 2px; }
+h3 .when { display: block; font: 600 12px/1.4 var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+/* Chronologie */
+.wrap .also { margin-top: 22px; font: italic 600 24px/1.3 var(--display); color: var(--accent); text-align: left; }
+.timeline { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
+.timeline li { position: relative; padding: 0 0 20px 30px; font-size: 15px; line-height: 1.5; color: var(--text2); }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before { content: ""; position: absolute; z-index: 1; left: 0; top: 4px; width: 16px; height: 16px; box-sizing: border-box; border-radius: 50%; border: 2px solid var(--accent); }
+.timeline li::before { background-clip: padding-box; background-image: linear-gradient(to top, var(--accent) var(--fill, 0%), var(--band) var(--fill, 0%)); }
+.timeline li.f1 { --fill: 33%; }
+.timeline li.f2 { --fill: 67%; }
+.timeline li.f3 { --fill: 100%; }
+.timeline li:not(:last-child)::after { content: ""; position: absolute; left: 7px; top: 12px; bottom: -12px; width: 2px; background: var(--line); }
+.timeline b { display: block; color: var(--text); font-weight: 600; }
+/* Graphiques en colonnes */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font: 500 13px/1.4 var(--body); color: var(--text2); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.s1 { background: var(--accent); }
+.s2 { background: var(--gray); }
+.cols { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 6px; align-items: end; }
+.col { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; padding: 8px 2px 0; border-radius: 10px 10px 0 0; }
+.col.rod { background: var(--track); }
+.col .plot { height: 150px; width: 100%; display: flex; align-items: flex-end; justify-content: center; gap: 2px; }
+.col .bar { width: min(26px, 42%); height: var(--h); border-radius: 4px 4px 0 0; position: relative; }
+.col .plot.single .bar { width: min(34px, 70%); }
+.col .bar b { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); padding-bottom: 3px; font: 600 12px/1 var(--body); color: var(--text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.col .m { font: 500 12px/1.2 var(--body); color: var(--text2); text-align: center; }
+.axis { border-top: 1px solid var(--line); margin-top: -6px; }
+.rodnote { font: 500 12px/1.4 var(--body); color: var(--gray); }
+.rodnote i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: var(--track); border: 1px solid var(--line); margin-right: 6px; vertical-align: -1px; }
+@media (max-width: 480px) { .col .bar b { font-size: 10px; } .col .m { font-size: 11px; } }
+/* Tableau de données */
+details { font-size: 14px; color: var(--text2); }
+summary { cursor: pointer; font-weight: 600; color: var(--text); }
+.tablewrap { overflow-x: auto; margin-top: 12px; }
+table { border-collapse: collapse; width: 100%; font: 400 13px/1.4 var(--body); font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 4px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+th { white-space: normal; vertical-align: bottom; hyphens: none; line-height: 1.25; }
+@media (max-width: 480px) { table { font-size: 11.5px; } th, td { padding: 5px 2px; } }
+@media (max-width: 400px) { table { font-size: 10.5px; letter-spacing: -0.01em; } th, td { padding: 5px 1px; } }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--text); font-weight: 600; }
+.wrap .series { text-align: left; font-style: italic; hyphens: manual; -webkit-hyphens: manual; }
+.wrap ul.phases, .wrap ul.phases li { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+table.roles { font-size: 15px; }
+table.roles th, table.roles td { text-align: left; }
+table.roles td.hu, table.roles td.ia { font-weight: 600; text-align: right; white-space: nowrap; }
+table.roles td.hu { color: var(--text); }
+table.roles td.ia { color: var(--accent); }
+table.roles tr.split td { border-top: 2px solid var(--accent); }
+table.roles td:first-child { font-weight: 600; color: var(--text); }
+.wrap ol.phases, .wrap ol.phases li { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.cyc { display: block; width: 100%; height: auto; margin: 0; overflow: hidden; }
+.cyc.cyc-v { aspect-ratio: 720 / 460; }
+.cyc .c-small { display: none; }
+.cyc text { font-family: var(--body); text-anchor: middle; fill: var(--text); }
+.cyc .c-title { font: 500 27px var(--display); }
+.cyc .c-label { font-size: 20px; font-weight: 600; }
+.cyc .c-number { fill: var(--accent); font-weight: 700; }
+.cyc .c-caption { font-size: 17px; fill: var(--text2); }
+.cyc .c-box { fill: var(--bg); stroke: var(--line); stroke-width: 1.25; }
+.cyc .c-badge { fill: var(--bg); stroke: var(--accent); stroke-width: 1.5; }
+.cyc .c-flow, .cyc .c-exit, .cyc .c-pair { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.cyc .c-flow { stroke: var(--accent); stroke-width: 2; }
+.cyc .c-exit { stroke: var(--text2); stroke-width: 1.5; }
+.cyc .c-pair { stroke: var(--text2); stroke-width: 1.25; stroke-dasharray: 3 6; opacity: 0.6; }
+.cyc .c-arrow { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.cyc .c-arrow-muted { stroke: var(--text2); }
+@media (max-width: 600px) {
+  .cyc.cyc-v { aspect-ratio: 360 / 530; }
+  .cyc .c-wide { display: none; }
+  .cyc .c-small { display: inline; }
+  .cyc .c-title { font-size: 26px; }
+  .cyc .c-label { font-size: 18px; }
+  .cyc .c-caption { font-size: 16px; }
+}
+
+.flow-figure { padding: 24px clamp(16px, 3vw, 28px); }
+.flow-svg { display: block; width: 100%; height: auto; }
+.flow-svg text { font-family: var(--body); fill: var(--text); text-anchor: middle; }
+.flow-svg .f-title { font: 500 27px var(--display); }
+.flow-svg .f-section { font: 500 24px var(--display); }
+.flow-svg .f-label { font-size: 20px; font-weight: 600; }
+.flow-svg .f-key { font-size: 18px; font-weight: 500; }
+.flow-svg .f-meta { font-size: 17px; fill: var(--text2); }
+.flow-svg .f-time { font: italic 500 19px var(--display); fill: var(--text2); }
+.flow-svg .f-number { font-size: 20px; font-weight: 700; fill: var(--accent); }
+.flow-svg .f-badge { fill: var(--bg); stroke: var(--accent); stroke-width: 1.5; }
+.flow-svg .f-human { stroke: var(--text2); }
+.flow-svg .f-human-number { fill: var(--text); }
+.flow-svg .f-loop, .flow-svg .f-axis, .flow-svg .f-stem, .flow-svg .f-rule, .flow-svg .f-boundary { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.flow-svg .f-loop { stroke: var(--accent); stroke-width: 2; }
+.flow-svg .f-axis { stroke: var(--text2); stroke-width: 1.5; }
+.flow-svg .f-stem { stroke: var(--line); stroke-width: 1.5; }
+.flow-svg .f-rule { stroke: var(--line); stroke-width: 1; }
+.flow-svg .f-boundary { stroke: var(--accent); stroke-width: 2.5; }
+.flow-svg .f-handoff { font-size: 18px; font-weight: 600; fill: var(--accent); }
+.flow-svg .f-arrow { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.flow-svg .f-arrow-muted { stroke: var(--text2); }
+.flow-svg .f-option { fill: var(--band); stroke: var(--text2); stroke-width: 1; stroke-dasharray: 3 4; }
+.flow-svg .f-option-text { font-size: 18px; fill: var(--text2); }
+.flow-svg .f-middle { opacity: 0.65; }
+.flow-svg .f-middle path, .flow-svg .f-middle circle, .flow-svg .f-middle rect { stroke: var(--text2); stroke-dasharray: 3 5; }
+.flow-svg .f-middle text { fill: var(--text2); }
+.flow-svg .f-left { text-anchor: start; }
+.flow-svg .f-step-name { font-size: 17px; font-weight: 500; }
+@media (max-width: 760px) {
+  .flow-figure.mobile-only { max-width: 420px; align-self: center; box-sizing: border-box; width: 100%; }
+  .flow-svg .f-title { font-size: 26px; }
+}
+.wrap{padding-block:24px 64px}
+.post-cta{display:inline-flex;align-items:center;gap:14px;align-self:flex-start;margin-top:8px;padding:6px 6px 6px 26px;border-radius:999px;border:1px solid var(--cta-line);color:var(--cta-line);text-decoration:none;font:600 16px var(--body)}
+.post-cta span{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--pastille-bg);color:var(--pastille-fg)}
+.post-cta:hover{color:var(--cta-line)}
+.posts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.posts a{display:block;padding:22px 24px;border-radius:16px;border:1px solid var(--line2);text-decoration:none}
+.posts a:hover{border-color:var(--text)}
+.posts h2{margin:6px 0 8px;text-align:left;hyphens:manual;-webkit-hyphens:manual;text-wrap:balance}
+.posts p{margin:0}
+.flow .step.loop{border-color:var(--accent)}
+</style>
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='day'&&t!=='night')t=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'day':'night';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+
+<div style="background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6">
+
+<header style="max-width: 1180px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
+<a href="../../" class="logo" aria-label="Alain Papazoglou, accueil">&lt;ap<span>/</span>&gt;</a>
+<nav style="display: flex; flex-wrap: wrap; gap: 26px; align-items: center; font-size: 15px; white-space: nowrap"><a href="../../#situation" style="color: var(--gray); text-decoration: none">Votre projet</a><a href="../../#offre" style="color: var(--gray); text-decoration: none">La démarche</a><a href="../../#pourquoi" style="color: var(--gray); text-decoration: none">Références</a><a href="../../blog/" style="color: var(--text); text-decoration: none" aria-current="page">Blog</a><a href="../../#contact" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: var(--nav-btn-bg); color: var(--nav-btn-text); text-decoration: none; font-weight: 600">Nous contacter</a><span style="display: inline-flex; gap: 10px"><a href="../../en/blog/who-is-responsible/" hreflang="en" lang="en" class="lang-toggle" aria-label="English version" title="English version">EN</a><button type="button" class="theme-toggle" id="theme-toggle" aria-label="Passer en version jour" title="Passer en version jour"><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></span></nav>
+</header>
+
+<main>
+<div class="wrap">
+  <article>
+    <div class="eyebrow">Blog · 24 novembre 2026</div>
+    <h1>L’IA code et vérifie, ok&nbsp;! Mais qui est <em>responsable</em>&nbsp;?</h1>
+    <p class="subtitle">Écrire le code et le vérifier n’est plus le problème&nbsp;: l’IA s’en charge. Le point clé, désormais&nbsp;: qui en est responsable, une fois le code en production&nbsp;?</p>
+    <p class="series">Suite d’une série d’articles sur l’IA appliquée au code.<br>L’article précédent sur la vérification du code&nbsp;: <a href="../qui-verifie/">«&nbsp;L’IA code, ok&nbsp;! Mais qui vérifie&nbsp;?&nbsp;»</a></p>
+
+    <h2>Le code est en prod. Qui en répond&nbsp;?</h2>
+    <p>Le précédent article s’arrête à la validation du code, écrit puis vérifié dans un processus strict par plusieurs IA de fournisseurs différents. Ensuite, tout s’enchaîne&nbsp;: une pull request (PR) livre le code qui part alors en production, des clients l’utilisent au quotidien. Et une nuit, à 3&nbsp;h du matin, la production tombe, une alerte est déclenchée.</p>
+    <p>Dans une organisation bien structurée, les rôles sont clairs&nbsp;: l’alerte part vers l’équipe support, d’astreinte. Surveiller la prod, intervenir la nuit, c’est son métier. Elle stabilise la production. En journée, le développeur prend le relais&nbsp;: il connaît bien son code, il aide le support à comprendre et à corriger. Il n’est réveillé en pleine nuit qu’en cas d’urgence absolue. Le support répond de la production, le développeur répond de son code.</p>
+    <p>Maintenant, l’IA écrit le code sans aucun humain&nbsp;: il n’y a plus vraiment de développeur qui le comprenne. Au mieux, une personne qui rédige un prompt, parfois même un bot qui lance la demande. Qui est alors responsable du code&nbsp;? Vers qui le support se tourne-t-il, le lendemain matin, pour corriger&nbsp;?</p>
+
+    <h2>Cycle en V ou Agile, les mêmes étapes&nbsp;!</h2>
+    <p>Pour savoir qui est responsable de quoi, définissons d’abord les étapes du cycle de vie d’une application, de l’idée jusqu’à la production. Deux grandes approches se sont succédé dans l’histoire du logiciel.</p>
+    <figure>
+      <svg class="cyc cyc-v" id="cycle-v" viewBox="0 0 720 530" preserveAspectRatio="xMidYMin slice" role="img" aria-label="Cycle en V, un seul passage. La branche descendante va de 1 Pourquoi à 2 Quoi, 3 Comment puis 4 Faire, à la pointe du V. La branche montante enchaîne 5 Tester, 6 Vérifier, 7 Déployer puis 8 Superviser. Les pointillés relient les étapes face à face, 3 et 5, 2 et 6, 1 et 7.">
+        <defs>
+          <marker id="v-arrow" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="8" refY="5" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="c-arrow" d="M3 1L8 5L3 9"/></marker>
+          <marker id="v-muted" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="8" refY="5" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="c-arrow c-arrow-muted" d="M3 1L8 5L3 9"/></marker>
+        </defs>
+        <g class="c-wide">
+          <text class="c-title" x="360" y="28">Cycle en V&#160;: un seul passage</text>
+          <path class="c-pair" d="M165 156H535" marker-start="url(#v-muted)" marker-end="url(#v-muted)"/>
+          <path class="c-pair" d="M250 236H450" marker-start="url(#v-muted)" marker-end="url(#v-muted)"/>
+          <path class="c-pair" d="M335 316H365" marker-start="url(#v-muted)" marker-end="url(#v-muted)"/>
+          <path class="c-flow" d="M109 186L138 208" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M194 266L223 288" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M281 346L316 368" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M383 368L416 346" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M471 288L500 266" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M556 208L585 186" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M615 127V116" marker-end="url(#v-arrow)"/>
+          <g><rect class="c-box" x="13" y="133" width="144" height="46" rx="8"/><text class="c-label" x="85" y="163"><tspan class="c-number">1</tspan>&#160; Pourquoi</text></g>
+          <g><rect class="c-box" x="98" y="213" width="144" height="46" rx="8"/><text class="c-label" x="170" y="243"><tspan class="c-number">2</tspan>&#160; Quoi</text></g>
+          <g><rect class="c-box" x="183" y="293" width="144" height="46" rx="8"/><text class="c-label" x="255" y="323"><tspan class="c-number">3</tspan>&#160; Comment</text></g>
+          <g><rect class="c-box" x="278" y="373" width="144" height="46" rx="8"/><text class="c-label" x="350" y="403"><tspan class="c-number">4</tspan>&#160; Faire</text></g>
+          <g><rect class="c-box" x="373" y="293" width="144" height="46" rx="8"/><text class="c-label" x="445" y="323"><tspan class="c-number">5</tspan>&#160; Tester</text></g>
+          <g><rect class="c-box" x="458" y="213" width="144" height="46" rx="8"/><text class="c-label" x="530" y="243"><tspan class="c-number">6</tspan>&#160; Vérifier</text></g>
+          <g><rect class="c-box" x="543" y="133" width="144" height="46" rx="8"/><text class="c-label" x="615" y="163"><tspan class="c-number">7</tspan>&#160; Déployer</text></g>
+          <g><rect class="c-box" x="543" y="63" width="144" height="46" rx="8"/><text class="c-label" x="615" y="93"><tspan class="c-number">8</tspan>&#160; Superviser</text></g>
+          <text class="c-caption" x="118" y="435">concevoir</text>
+          <text class="c-caption" x="586" y="435">valider et livrer</text>
+        </g>
+        <g class="c-small" transform="translate(180 0)">
+          <text class="c-title" x="180" y="27">Cycle en V</text>
+          <text class="c-caption" x="180" y="53">Un seul passage</text>
+          <path class="c-pair" d="M81 172H279" marker-start="url(#v-muted)" marker-end="url(#v-muted)"/>
+          <path class="c-pair" d="M113 266H247" marker-start="url(#v-muted)" marker-end="url(#v-muted)"/>
+          <path class="c-pair" d="M145 360H215" marker-start="url(#v-muted)" marker-end="url(#v-muted)"/>
+          <path class="c-flow" d="M69 216L82 241" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M101 310L114 335" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M139 404L165 442" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M193 444L223 404" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M246 338L259 310" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M278 244L291 216" marker-end="url(#v-arrow)"/>
+          <path class="c-flow" d="M302 149V130" marker-end="url(#v-arrow)"/>
+          <g><circle class="c-badge" cx="58" cy="172" r="17"/><text class="c-label c-number" x="58" y="178">1</text><text class="c-label" x="58" y="204">Pourquoi</text></g>
+          <g><circle class="c-badge" cx="90" cy="266" r="17"/><text class="c-label c-number" x="90" y="272">2</text><text class="c-label" x="90" y="298">Quoi</text></g>
+          <g><circle class="c-badge" cx="122" cy="360" r="17"/><text class="c-label c-number" x="122" y="366">3</text><text class="c-label" x="122" y="392">Comment</text></g>
+          <g><circle class="c-badge" cx="180" cy="466" r="17"/><text class="c-label c-number" x="180" y="472">4</text><text class="c-label" x="180" y="498">Faire</text></g>
+          <g><circle class="c-badge" cx="238" cy="360" r="17"/><text class="c-label c-number" x="238" y="366">5</text><text class="c-label" x="238" y="392">Tester</text></g>
+          <g><circle class="c-badge" cx="270" cy="266" r="17"/><text class="c-label c-number" x="270" y="272">6</text><text class="c-label" x="270" y="298">Vérifier</text></g>
+          <g><circle class="c-badge" cx="302" cy="172" r="17"/><text class="c-label c-number" x="302" y="178">7</text><text class="c-label" x="302" y="204">Déployer</text></g>
+          <g><circle class="c-badge" cx="302" cy="86" r="17"/><text class="c-label c-number" x="302" y="92">8</text><text class="c-label" x="302" y="118">Superviser</text></g>
+        </g>
+      </svg>
+    </figure>
+    <p>D’abord le cycle en V, qui déroule un projet en un seul passage. La branche descendante du V précise le besoin, de la spécification jusqu’à la conception détaillée. La branche montante teste dans l’ordre inverse, du test unitaire jusqu’à la recette, et chaque niveau de test répond à une étape de conception. Tout est planifié au départ, et une erreur de spécification n’apparaît souvent qu’à la fin, après des mois, quand la corriger coûte le plus cher.</p>
+    <p>Voilà, rapidement, les 8 étapes&nbsp;:</p>
+    <ol class="phases">
+      <li><strong>Pourquoi</strong>&nbsp;: l’objectif, la volonté, la raison de faire, le problème qui justifie le travail.</li>
+      <li><strong>Quoi</strong>&nbsp;: la spécification, ce que le logiciel doit faire, le résultat attendu.</li>
+      <li><strong>Comment</strong>&nbsp;: la conception, la façon de le construire.</li>
+      <li><strong>Faire</strong>&nbsp;: le développement, écrire le code.</li>
+      <li><strong>Tester</strong>&nbsp;: les tests unitaires puis d’intégration, pour s’assurer que le code fonctionne.</li>
+      <li><strong>Vérifier</strong>&nbsp;: relire, prouver, chercher ce qui cassera, sécuriser. Le dernier rempart.</li>
+      <li><strong>Déployer</strong>&nbsp;: le déploiement, pour mettre en production la mise à jour de l’application.</li>
+      <li><strong>Superviser</strong>&nbsp;: une fois en production, vérifier que tout se passe comme attendu, alerter en cas de problème.</li>
+    </ol>
+
+    <p>Ensuite l’Agile, qui répond au défaut du cycle en V par un cycle itératif&nbsp;: des boucles courtes, de quelques semaines au plus. À chaque tour, l’équipe livre une petite partie du logiciel, la teste, ajuste le cap et corrige les erreurs au plus tôt.</p>
+    <figure class="hero flow-figure" data-schema="agile">
+      <svg class="flow-svg" id="agile-large" viewBox="0 0 720 492" role="img" aria-label="Agile, une succession de sprints de 2 à 4 semaines. Au départ, 1 Pourquoi puis 2 Quoi, une fois. Chaque boucle enchaîne 3 Comment, 4 Faire, 5 Tester, 6 Vérifier, puis revient à 3 Comment. Dans chaque boucle, 2 Quoi pour affiner le besoin et 7 Déployer pour livrer le sprint sont en option, en pointillés. Les trois boucles sont Sprint 1, Sprint 2 et les suivants, en pointillés, puis Sprint n. À la fin, 7 Déployer puis 8 Superviser, une fois. Le temps va de gauche à droite.">
+      <defs>
+        <marker id="agile-large-arrow" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="8" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path class="f-arrow" d="M3 1L8 5L3 9"/></marker>
+        <marker id="agile-large-muted" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="8" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path class="f-arrow f-arrow-muted" d="M3 1L8 5L3 9"/></marker>
+      </defs>
+      <text class="f-title" x="360" y="28">Agile&#160;: une succession de sprints</text>
+      <text class="f-meta" x="360" y="55">2 à 4 semaines par sprint</text>
+      <path class="f-axis" d="M22 310H708" marker-end="url(#agile-large-muted)"/>
+      <g>
+        <text class="f-key" x="218" y="98">Sprint 1</text>
+        <path class="f-stem" d="M218 268V310"/>
+        <path class="f-loop" d="M168.3 170.9A54 54 0 0 1 196.9 142.3" marker-end="url(#agile-large-arrow)"/>
+        <path class="f-loop" d="M239.1 142.3A54 54 0 0 1 267.7 170.9" marker-end="url(#agile-large-arrow)"/>
+        <path class="f-loop" d="M267.7 213.1A54 54 0 0 1 239.1 241.7" marker-end="url(#agile-large-arrow)"/>
+        <path class="f-loop" d="M196.9 241.7A54 54 0 0 1 168.3 213.1" marker-end="url(#agile-large-arrow)"/>
+        <circle class="f-badge" cx="164" cy="192" r="16"/><text class="f-number" x="164" y="199">3</text>
+        <circle class="f-badge" cx="218" cy="138" r="16"/><text class="f-number" x="218" y="145">4</text>
+        <circle class="f-badge" cx="272" cy="192" r="16"/><text class="f-number" x="272" y="199">5</text>
+        <circle class="f-badge" cx="218" cy="246" r="16"/><text class="f-number" x="218" y="253">6</text>
+        <rect class="f-option" x="189" y="178" width="58" height="28" rx="14"/>
+        <text class="f-option-text" x="218" y="198">2 · 7</text>
+      </g>
+      <g class="f-middle">
+        <text class="f-key" x="375" y="98">Sprint 2…</text>
+        <path class="f-stem" d="M375 268V310"/>
+        <path class="f-loop" d="M325.3 170.9A54 54 0 0 1 353.9 142.3"/>
+        <path class="f-loop" d="M396.1 142.3A54 54 0 0 1 424.7 170.9"/>
+        <path class="f-loop" d="M424.7 213.1A54 54 0 0 1 396.1 241.7"/>
+        <path class="f-loop" d="M353.9 241.7A54 54 0 0 1 325.3 213.1"/>
+        <circle class="f-badge" cx="321" cy="192" r="16"/><text class="f-number" x="321" y="199">3</text>
+        <circle class="f-badge" cx="375" cy="138" r="16"/><text class="f-number" x="375" y="145">4</text>
+        <circle class="f-badge" cx="429" cy="192" r="16"/><text class="f-number" x="429" y="199">5</text>
+        <circle class="f-badge" cx="375" cy="246" r="16"/><text class="f-number" x="375" y="253">6</text>
+        <rect class="f-option" x="346" y="178" width="58" height="28" rx="14"/>
+        <text class="f-option-text" x="375" y="198">2 · 7</text>
+      </g>
+      <g>
+        <text class="f-key" x="532" y="98">Sprint n</text>
+        <path class="f-stem" d="M532 268V310"/>
+        <path class="f-loop" d="M482.3 170.9A54 54 0 0 1 510.9 142.3" marker-end="url(#agile-large-arrow)"/>
+        <path class="f-loop" d="M553.1 142.3A54 54 0 0 1 581.7 170.9" marker-end="url(#agile-large-arrow)"/>
+        <path class="f-loop" d="M581.7 213.1A54 54 0 0 1 553.1 241.7" marker-end="url(#agile-large-arrow)"/>
+        <path class="f-loop" d="M510.9 241.7A54 54 0 0 1 482.3 213.1" marker-end="url(#agile-large-arrow)"/>
+        <circle class="f-badge" cx="478" cy="192" r="16"/><text class="f-number" x="478" y="199">3</text>
+        <circle class="f-badge" cx="532" cy="138" r="16"/><text class="f-number" x="532" y="145">4</text>
+        <circle class="f-badge" cx="586" cy="192" r="16"/><text class="f-number" x="586" y="199">5</text>
+        <circle class="f-badge" cx="532" cy="246" r="16"/><text class="f-number" x="532" y="253">6</text>
+        <rect class="f-option" x="503" y="178" width="58" height="28" rx="14"/>
+        <text class="f-option-text" x="532" y="198">2 · 7</text>
+      </g>
+      <circle class="f-badge f-human" cx="44" cy="310" r="17"/><text class="f-number f-human-number" x="44" y="317">1</text>
+      <circle class="f-badge f-human" cx="108" cy="310" r="17"/><text class="f-number f-human-number" x="108" y="317">2</text>
+      <circle class="f-badge" cx="612" cy="310" r="17"/><text class="f-number" x="612" y="317">7</text>
+      <circle class="f-badge" cx="676" cy="310" r="17"/><text class="f-number" x="676" y="317">8</text>
+      <text class="f-step-name" x="44" y="280">Pourquoi</text>
+      <text class="f-step-name" x="108" y="349">Quoi</text>
+      <text class="f-step-name" x="612" y="280">Déployer</text>
+      <text class="f-step-name" x="676" y="349">Superviser</text>
+      <text class="f-time" x="360" y="349">Le temps</text>
+      <path class="f-rule" d="M14 382H706"/>
+      <text class="f-key" x="360" y="414">3 Comment → 4 Faire → 5 Tester → 6 Vérifier</text>
+      <text class="f-meta" x="360" y="444">En option dans chaque boucle</text>
+      <text class="f-meta" x="180" y="474">2 Quoi · affiner le besoin</text>
+      <text class="f-meta" x="535" y="474">7 Déployer · livrer le sprint</text>
+      </svg>
+    </figure>
+    <figure class="mobile-only flow-figure" data-schema="agile">
+      <svg class="flow-svg" id="agile-mobile" viewBox="0 0 360 1010" role="img" aria-label="Agile, une succession de sprints de 2 à 4 semaines. Au départ, 1 Pourquoi puis 2 Quoi, une fois. Chaque boucle enchaîne 3 Comment, 4 Faire, 5 Tester, 6 Vérifier, puis revient à 3 Comment. Dans chaque boucle, 2 Quoi pour affiner le besoin et 7 Déployer pour livrer le sprint sont en option, en pointillés. Les trois boucles sont Sprint 1, Sprint 2 et les suivants, en pointillés, puis Sprint n. À la fin, 7 Déployer puis 8 Superviser, une fois. Le temps va du haut vers le bas.">
+      <defs>
+        <marker id="agile-mobile-arrow" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="8" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path class="f-arrow" d="M3 1L8 5L3 9"/></marker>
+        <marker id="agile-mobile-muted" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="8" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path class="f-arrow f-arrow-muted" d="M3 1L8 5L3 9"/></marker>
+      </defs>
+      <text class="f-title" x="180" y="28">Agile</text>
+      <text class="f-meta" x="180" y="55">Des sprints de 2 à 4 semaines</text>
+      <path class="f-axis" d="M38 84V810" marker-end="url(#agile-mobile-muted)"/>
+      <circle class="f-badge f-human" cx="38" cy="100" r="17"/><text class="f-number f-human-number" x="38" y="107">1</text>
+      <text class="f-label f-left" x="77" y="107">Pourquoi</text>
+      <circle class="f-badge f-human" cx="38" cy="158" r="17"/><text class="f-number f-human-number" x="38" y="165">2</text>
+      <text class="f-label f-left" x="77" y="165">Quoi</text>
+      <circle class="f-badge" cx="38" cy="712" r="17"/><text class="f-number" x="38" y="719">7</text>
+      <text class="f-label f-left" x="77" y="719">Déployer</text>
+      <circle class="f-badge" cx="38" cy="776" r="17"/><text class="f-number" x="38" y="783">8</text>
+      <text class="f-label f-left" x="77" y="783">Superviser</text>
+      <g>
+        <text class="f-key" x="100" y="247">Sprint 1</text>
+        <path class="f-stem" d="M38 270H148"/>
+        <path class="f-loop" d="M170.1 249.7A52 52 0 0 1 197.7 222.1" marker-end="url(#agile-mobile-arrow)"/>
+        <path class="f-loop" d="M238.3 222.1A52 52 0 0 1 265.9 249.7" marker-end="url(#agile-mobile-arrow)"/>
+        <path class="f-loop" d="M265.9 290.3A52 52 0 0 1 238.3 317.9" marker-end="url(#agile-mobile-arrow)"/>
+        <path class="f-loop" d="M197.7 317.9A52 52 0 0 1 170.1 290.3" marker-end="url(#agile-mobile-arrow)"/>
+        <circle class="f-badge" cx="166" cy="270" r="16"/><text class="f-number" x="166" y="277">3</text>
+        <circle class="f-badge" cx="218" cy="218" r="16"/><text class="f-number" x="218" y="225">4</text>
+        <circle class="f-badge" cx="270" cy="270" r="16"/><text class="f-number" x="270" y="277">5</text>
+        <circle class="f-badge" cx="218" cy="322" r="16"/><text class="f-number" x="218" y="329">6</text>
+        <rect class="f-option" x="189" y="256" width="58" height="28" rx="14"/>
+        <text class="f-option-text" x="218" y="276">2 · 7</text>
+      </g>
+      <g class="f-middle">
+        <text class="f-key" x="100" y="415">Sprint 2…</text>
+        <path class="f-stem" d="M38 438H148"/>
+        <path class="f-loop" d="M170.1 417.7A52 52 0 0 1 197.7 390.1"/>
+        <path class="f-loop" d="M238.3 390.1A52 52 0 0 1 265.9 417.7"/>
+        <path class="f-loop" d="M265.9 458.3A52 52 0 0 1 238.3 485.9"/>
+        <path class="f-loop" d="M197.7 485.9A52 52 0 0 1 170.1 458.3"/>
+        <circle class="f-badge" cx="166" cy="438" r="16"/><text class="f-number" x="166" y="445">3</text>
+        <circle class="f-badge" cx="218" cy="386" r="16"/><text class="f-number" x="218" y="393">4</text>
+        <circle class="f-badge" cx="270" cy="438" r="16"/><text class="f-number" x="270" y="445">5</text>
+        <circle class="f-badge" cx="218" cy="490" r="16"/><text class="f-number" x="218" y="497">6</text>
+        <rect class="f-option" x="189" y="424" width="58" height="28" rx="14"/>
+        <text class="f-option-text" x="218" y="444">2 · 7</text>
+      </g>
+      <g>
+        <text class="f-key" x="100" y="583">Sprint n</text>
+        <path class="f-stem" d="M38 606H148"/>
+        <path class="f-loop" d="M170.1 585.7A52 52 0 0 1 197.7 558.1" marker-end="url(#agile-mobile-arrow)"/>
+        <path class="f-loop" d="M238.3 558.1A52 52 0 0 1 265.9 585.7" marker-end="url(#agile-mobile-arrow)"/>
+        <path class="f-loop" d="M265.9 626.3A52 52 0 0 1 238.3 653.9" marker-end="url(#agile-mobile-arrow)"/>
+        <path class="f-loop" d="M197.7 653.9A52 52 0 0 1 170.1 626.3" marker-end="url(#agile-mobile-arrow)"/>
+        <circle class="f-badge" cx="166" cy="606" r="16"/><text class="f-number" x="166" y="613">3</text>
+        <circle class="f-badge" cx="218" cy="554" r="16"/><text class="f-number" x="218" y="561">4</text>
+        <circle class="f-badge" cx="270" cy="606" r="16"/><text class="f-number" x="270" y="613">5</text>
+        <circle class="f-badge" cx="218" cy="658" r="16"/><text class="f-number" x="218" y="665">6</text>
+        <rect class="f-option" x="189" y="592" width="58" height="28" rx="14"/>
+        <text class="f-option-text" x="218" y="612">2 · 7</text>
+      </g>
+      <path class="f-rule" d="M14 832H346"/>
+      <text class="f-key" x="95" y="868">3 Comment</text>
+      <text class="f-key" x="263" y="868">4 Faire</text>
+      <text class="f-key" x="95" y="898">5 Tester</text>
+      <text class="f-key" x="263" y="898">6 Vérifier</text>
+      <text class="f-meta" x="180" y="936">En option dans chaque boucle</text>
+      <text class="f-meta" x="180" y="965">2 Quoi · affiner le besoin</text>
+      <text class="f-meta" x="180" y="991">7 Déployer · livrer le sprint</text>
+      </svg>
+    </figure>
+    <p>Mais au final, ces deux approches que tout semble opposer passent par les mêmes étapes&nbsp;! Et ce que nous constatons avec l’IA, c’est que nous sommes encore et toujours, pour l’instant, dans ce même cycle.</p>
+
+    <h2>La ligne de partage…</h2>
+    <p>L’IA peut tout faire, soit. Mais c’est la volonté de l’humain qui décide de ce que nous voulons construire&nbsp;! L’humain est aux commandes et doit y rester. Dans notre cycle de vie, c’est lui qui fixe le Pourquoi, l’objectif, et qui encore aujourd’hui devrait (doit&nbsp;?) définir le Quoi, le résultat attendu&nbsp;!</p>
+    <p>Prenons un exemple simple. Gagner sa vie est un Pourquoi&nbsp;: il ne dit rien encore de la route. Monter son entreprise ou chercher un emploi sont deux Quoi, deux chemins très différents vers le même but. Apple suit la même logique, à une autre échelle&nbsp;: son Pourquoi, créer les meilleurs produits du monde, a pris tour à tour la forme d’un baladeur, d’un ordinateur, d’un téléphone et d’une tablette. Un même Pourquoi ouvre plusieurs Quoi. Choisir lequel est la décision qui engage, et elle revient à l’humain.</p>
+    <p>En quelques mois, l’IA a fait des progrès considérables, et elle sait aujourd’hui concevoir, coder, tester et déployer. À partir du Comment, elle peut commencer à tout prendre en charge, et ce jusqu’à la fin du cycle. Ce n’est pas grave&nbsp;: ces étapes ne sont «&nbsp;que&nbsp;» l’exécution de la volonté de l’humain.</p>
+    <figure class="hero flow-figure" data-schema="partage">
+      <svg class="flow-svg" id="partage-large" viewBox="0 0 720 294" role="img" aria-label="La ligne de partage entre l’humain et l’IA. L’humain définit 1 Pourquoi et 2 Quoi. Il passe la main entre 2 Quoi et 3 Comment. L’IA prend ensuite en charge 3 Comment, 4 Faire, 5 Tester, 6 Vérifier, 7 Déployer et 8 Superviser. Le passage de relais concerne l’exécution, la responsabilité reste humaine. Les huit étapes se lisent de gauche à droite.">
+      <defs>
+        <marker id="partage-large-arrow" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="8" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path class="f-arrow" d="M3 1L8 5L3 9"/></marker>
+        <marker id="partage-large-muted" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="8" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path class="f-arrow f-arrow-muted" d="M3 1L8 5L3 9"/></marker>
+      </defs>
+      <text class="f-title" x="360" y="28">De la volonté à l’exécution</text>
+      <text class="f-section" x="81" y="82">Humain</text>
+      <text class="f-meta" x="81" y="109">Décider</text>
+      <text class="f-section" x="449" y="82">IA</text>
+      <text class="f-meta" x="449" y="109">Exécuter</text>
+      <path class="f-boundary" d="M171 126V240"/>
+      <text class="f-handoff" x="171" y="273">L’humain passe la main</text>
+      <path class="f-axis" d="M67 165H95" marker-end="url(#partage-large-muted)"/>
+      <path class="f-axis" d="M141 165H201" marker-end="url(#partage-large-muted)"/>
+      <path class="f-axis" d="M247 165H291" marker-end="url(#partage-large-muted)"/>
+      <path class="f-axis" d="M337 165H381" marker-end="url(#partage-large-muted)"/>
+      <path class="f-axis" d="M427 165H471" marker-end="url(#partage-large-muted)"/>
+      <path class="f-axis" d="M517 165H561" marker-end="url(#partage-large-muted)"/>
+      <path class="f-axis" d="M607 165H651" marker-end="url(#partage-large-muted)"/>
+      <circle class="f-badge f-human" cx="44" cy="165" r="17"/><text class="f-number f-human-number" x="44" y="172">1</text>
+      <text class="f-step-name" x="44" y="206">Pourquoi</text>
+      <circle class="f-badge f-human" cx="118" cy="165" r="17"/><text class="f-number f-human-number" x="118" y="172">2</text>
+      <text class="f-step-name" x="118" y="206">Quoi</text>
+      <circle class="f-badge" cx="224" cy="165" r="17"/><text class="f-number" x="224" y="172">3</text>
+      <text class="f-step-name" x="224" y="206">Comment</text>
+      <circle class="f-badge" cx="314" cy="165" r="17"/><text class="f-number" x="314" y="172">4</text>
+      <text class="f-step-name" x="314" y="206">Faire</text>
+      <circle class="f-badge" cx="404" cy="165" r="17"/><text class="f-number" x="404" y="172">5</text>
+      <text class="f-step-name" x="404" y="206">Tester</text>
+      <circle class="f-badge" cx="494" cy="165" r="17"/><text class="f-number" x="494" y="172">6</text>
+      <text class="f-step-name" x="494" y="206">Vérifier</text>
+      <circle class="f-badge" cx="584" cy="165" r="17"/><text class="f-number" x="584" y="172">7</text>
+      <text class="f-step-name" x="584" y="206">Déployer</text>
+      <circle class="f-badge" cx="674" cy="165" r="17"/><text class="f-number" x="674" y="172">8</text>
+      <text class="f-step-name" x="674" y="206">Superviser</text>
+      </svg>
+    </figure>
+    <figure class="mobile-only flow-figure" data-schema="partage">
+      <svg class="flow-svg" id="partage-mobile" viewBox="0 0 360 728" role="img" aria-label="La ligne de partage entre l’humain et l’IA. L’humain définit 1 Pourquoi et 2 Quoi. Il passe la main entre 2 Quoi et 3 Comment. L’IA prend ensuite en charge 3 Comment, 4 Faire, 5 Tester, 6 Vérifier, 7 Déployer et 8 Superviser. Le passage de relais concerne l’exécution, la responsabilité reste humaine. Les huit étapes se lisent du haut vers le bas.">
+      <defs>
+        <marker id="partage-mobile-arrow" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="8" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path class="f-arrow" d="M3 1L8 5L3 9"/></marker>
+        <marker id="partage-mobile-muted" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="8" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path class="f-arrow f-arrow-muted" d="M3 1L8 5L3 9"/></marker>
+      </defs>
+      <text class="f-title" x="180" y="28">De l’humain à l’IA</text>
+      <text class="f-meta" x="180" y="57">Décider, puis exécuter</text>
+      <text class="f-section" x="51" y="130">Humain</text>
+      <text class="f-meta" x="51" y="155">Décider</text>
+      <text class="f-section" x="51" y="334">IA</text>
+      <text class="f-meta" x="51" y="359">Exécuter</text>
+      <path class="f-boundary" d="M22 256H338"/>
+      <text class="f-handoff" x="243" y="283">L’humain passe</text>
+      <text class="f-handoff" x="243" y="307">la main</text>
+      <path class="f-axis" d="M128 150V170" marker-end="url(#partage-mobile-muted)"/>
+      <path class="f-axis" d="M128 218V326" marker-end="url(#partage-mobile-muted)"/>
+      <path class="f-axis" d="M128 374V394" marker-end="url(#partage-mobile-muted)"/>
+      <path class="f-axis" d="M128 442V462" marker-end="url(#partage-mobile-muted)"/>
+      <path class="f-axis" d="M128 510V530" marker-end="url(#partage-mobile-muted)"/>
+      <path class="f-axis" d="M128 578V598" marker-end="url(#partage-mobile-muted)"/>
+      <path class="f-axis" d="M128 646V666" marker-end="url(#partage-mobile-muted)"/>
+      <circle class="f-badge f-human" cx="128" cy="126" r="17"/><text class="f-number f-human-number" x="128" y="133">1</text>
+      <text class="f-label f-left" x="164" y="133">Pourquoi</text>
+      <circle class="f-badge f-human" cx="128" cy="194" r="17"/><text class="f-number f-human-number" x="128" y="201">2</text>
+      <text class="f-label f-left" x="164" y="201">Quoi</text>
+      <circle class="f-badge" cx="128" cy="350" r="17"/><text class="f-number" x="128" y="357">3</text>
+      <text class="f-label f-left" x="164" y="357">Comment</text>
+      <circle class="f-badge" cx="128" cy="418" r="17"/><text class="f-number" x="128" y="425">4</text>
+      <text class="f-label f-left" x="164" y="425">Faire</text>
+      <circle class="f-badge" cx="128" cy="486" r="17"/><text class="f-number" x="128" y="493">5</text>
+      <text class="f-label f-left" x="164" y="493">Tester</text>
+      <circle class="f-badge" cx="128" cy="554" r="17"/><text class="f-number" x="128" y="561">6</text>
+      <text class="f-label f-left" x="164" y="561">Vérifier</text>
+      <circle class="f-badge" cx="128" cy="622" r="17"/><text class="f-number" x="128" y="629">7</text>
+      <text class="f-label f-left" x="164" y="629">Déployer</text>
+      <circle class="f-badge" cx="128" cy="690" r="17"/><text class="f-number" x="128" y="697">8</text>
+      <text class="f-label f-left" x="164" y="697">Superviser</text>
+      </svg>
+    </figure>
+    <p>Celui qui définit le Quoi doit être responsable du code livré, et de ce qui tourne en production. Une phrase circule, bien commode pour se dédouaner&nbsp;: «&nbsp;C’est l’IA qui a fait.&nbsp;» Non. Être professionnel, c’est précisément répondre de son travail. Un professionnel ne se cache pas derrière ses outils. L’IA fait le travail, elle n’en répond pas.</p>
+    <p><em>L’humain est responsable, jamais l’IA.</em></p>
+    <p>Un juriste dirait d’ailleurs exactement la même chose&nbsp;! En cas de litige, aucun tribunal ne convoquera une IA&nbsp;: il cherchera la personne, ou l’entreprise, qui a décidé de s’en servir.</p>
+
+    <h2>Le piège&nbsp;: décider sans pouvoir réparer</h2>
+    <p>Mais voilà un piège. Imaginons par exemple une personne du marketing qui demande une fonctionnalité&nbsp;: elle définit le Quoi, et devrait donc en porter la responsabilité. Or elle ne connaît pas le code, ne le comprend pas, et ne peut rien y faire quand la production tombe. Derrière elle, personne ne prend le relais. Le Quoi a un auteur, le code n’a personne. Elle doit donc déléguer une part de sa responsabilité, à un développeur ou à une équipe support.</p>
+    <p>Dans tous les cas, un responsable du code doit être désigné dès le départ, pour chaque fonctionnalité. Si ce rôle demande des compétences techniques que l’auteur du Quoi n’a pas, il faut désigner une autre personne, une personne responsable, une «&nbsp;person in charge&nbsp;». C’est vers elle que le support se tourne, le lendemain matin.</p>
+
+    <h2>Conclusion</h2>
+    <p>«&nbsp;<a href="../qui-verifie/">Qui vérifie&nbsp;?</a>&nbsp;» a sa réponse&nbsp;: l’IA, encadrée par l’humain dans un processus strict. «&nbsp;Qui est responsable&nbsp;?&nbsp;» a la sienne&nbsp;: un humain, toujours, nommé dès le départ. Celui qui définit le Quoi, ou, s’il ne peut pas intervenir sur le code, une personne responsable désignée pour répondre à sa place.</p>
+    <p>Au départ de tout, il y a la volonté de l’humain. L’exécution, par contre, peut être confiée à l’IA. La frontière entre l’humain et l’IA est un curseur. Il se place aujourd’hui entre le Quoi et le Comment&nbsp;: l’humain décide, l’IA construit.</p>
+    <p>Ce curseur bouge. L’humain le fait parfois descendre, quand il veut garder la main sur la conception. Demain, l’AGI (une intelligence artificielle générale, au niveau de l’humain) pourrait le faire monter d’un cran&nbsp;: l’IA ne se contenterait plus de construire, elle choisirait aussi quoi construire. Nous n’y sommes pas encore. Et même ce jour-là, une étape doit rester entre nos mains&nbsp;: le Pourquoi. Décider de ce qui vaut la peine d’être fait, c’est le propre de l’humain.</p>
+    <p><strong>L’IA exécute, mais la volonté reste humaine.</strong></p>
+
+    <!-- Bloc discussion LinkedIn : à placer ici (après le P.S., avant .outro) dès que l’URL du post existe. Même URL en français et en anglais. Garder %C3%A9 dans l’adresse.
+    <aside class="discuss" data-linkedin="URL"><p><strong>Vous voulez réagir&nbsp;?</strong> La discussion se passe sur LinkedIn, avec déjà de nombreux retours de devs et de CTO&nbsp;: <a href="URL" target="_blank" rel="noopener">rejoindre la discussion</a></p></aside>
+    -->
+
+    <div class="outro">
+      <p>Nous mettons également cette démarche en place avec vos équipes dev, sur votre code et vos outils.</p>
+      <a class="post-cta" href="../../#offre">Découvrir la démarche<span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+    </div>
+  </article>
+</div>
+</main>
+
+<footer style="max-width: 1180px; margin: 0 auto; padding: 32px 24px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--gray)">
+<span>© 2026 Alain Papazoglou @ Kredeum · Rennes</span>
+<span><a href="https://labs.kredeum.com/" style="color: var(--gray)" target="_blank" rel="noopener">Kredeum</a> · <a href="mailto:devia@kredeum.com?subject=Projet%20dev%20avec%20l%27IA" style="color: var(--gray)">E-mail</a> · <a href="https://www.malt.fr/profile/alainpapazoglou" style="color: var(--gray)" target="_blank" rel="noopener">Malt</a> · <a href="https://www.linkedin.com/in/alain/" style="color: var(--gray)" target="_blank" rel="noopener">LinkedIn</a> · <a href="../../blog/feed.xml" type="application/atom+xml" style="color: var(--gray)">RSS</a> · <a href="../../en/blog/who-is-responsible/" hreflang="en" lang="en" style="color: var(--gray)">English version</a></span>
+</footer>
+
+</div>
+<script>(function(){var b=document.getElementById('theme-toggle'),r=document.documentElement,L={day:'Passer en version nuit',night:'Passer en version jour'};function sync(){var t=r.getAttribute('data-theme');b.setAttribute('aria-label',L[t]);b.title=L[t]}sync();b.addEventListener('click',function(){var t=r.getAttribute('data-theme')==='day'?'night':'day';r.setAttribute('data-theme',t);try{localStorage.setItem('theme',t)}catch(e){}sync()})})()</script>
+<script data-goatcounter="https://alain-kredeum.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

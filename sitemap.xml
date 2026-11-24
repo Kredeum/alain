@@ -16,17 +16,31 @@
   </url>
   <url>
     <loc>https://alain.kredeum.com/blog/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/"/>
   </url>
   <url>
     <loc>https://alain.kredeum.com/en/blog/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/"/>
+  </url>
+  <url>
+    <loc>https://alain.kredeum.com/blog/qui-est-responsable/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/qui-est-responsable/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/who-is-responsible/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/qui-est-responsable/"/>
+  </url>
+  <url>
+    <loc>https://alain.kredeum.com/en/blog/who-is-responsible/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alain.kredeum.com/blog/qui-est-responsable/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alain.kredeum.com/en/blog/who-is-responsible/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alain.kredeum.com/blog/qui-est-responsable/"/>
   </url>
   <url>
     <loc>https://alain.kredeum.com/blog/qui-verifie/</loc>

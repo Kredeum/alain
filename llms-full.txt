@@ -4,6 +4,182 @@
 
 ---
 
+Source : https://alain.kredeum.com/blog/qui-est-responsable/ (langue : fr)
+
+Blog · 24 novembre 2026
+
+# L’IA code et vérifie, ok ! Mais qui est *responsable* ?
+
+Écrire le code et le vérifier n’est plus le problème : l’IA s’en charge. Le point clé, désormais : qui en est responsable, une fois le code en production ?
+
+Suite d’une série d’articles sur l’IA appliquée au code. L’article précédent sur la vérification du code : [« L’IA code, ok ! Mais qui vérifie ? »](https://alain.kredeum.com/blog/qui-verifie/)
+
+## Le code est en prod. Qui en répond ?
+
+Le précédent article s’arrête à la validation du code, écrit puis vérifié dans un processus strict par plusieurs IA de fournisseurs différents. Ensuite, tout s’enchaîne : une pull request (PR) livre le code qui part alors en production, des clients l’utilisent au quotidien. Et une nuit, à 3 h du matin, la production tombe, une alerte est déclenchée.
+
+Dans une organisation bien structurée, les rôles sont clairs : l’alerte part vers l’équipe support, d’astreinte. Surveiller la prod, intervenir la nuit, c’est son métier. Elle stabilise la production. En journée, le développeur prend le relais : il connaît bien son code, il aide le support à comprendre et à corriger. Il n’est réveillé en pleine nuit qu’en cas d’urgence absolue. Le support répond de la production, le développeur répond de son code.
+
+Maintenant, l’IA écrit le code sans aucun humain : il n’y a plus vraiment de développeur qui le comprenne. Au mieux, une personne qui rédige un prompt, parfois même un bot qui lance la demande. Qui est alors responsable du code ? Vers qui le support se tourne-t-il, le lendemain matin, pour corriger ?
+
+## Cycle en V ou Agile, les mêmes étapes !
+
+Pour savoir qui est responsable de quoi, définissons d’abord les étapes du cycle de vie d’une application, de l’idée jusqu’à la production. Deux grandes approches se sont succédé dans l’histoire du logiciel.
+
+[Graphique : Cycle en V, un seul passage. La branche descendante va de 1 Pourquoi à 2 Quoi, 3 Comment puis 4 Faire, à la pointe du V. La branche montante enchaîne 5 Tester, 6 Vérifier, 7 Déployer puis 8 Superviser. Les pointillés relient les étapes face à face, 3 et 5, 2 et 6, 1 et 7.]
+
+D’abord le cycle en V, qui déroule un projet en un seul passage. La branche descendante du V précise le besoin, de la spécification jusqu’à la conception détaillée. La branche montante teste dans l’ordre inverse, du test unitaire jusqu’à la recette, et chaque niveau de test répond à une étape de conception. Tout est planifié au départ, et une erreur de spécification n’apparaît souvent qu’à la fin, après des mois, quand la corriger coûte le plus cher.
+
+Voilà, rapidement, les 8 étapes :
+
+1. **Pourquoi** : l’objectif, la volonté, la raison de faire, le problème qui justifie le travail.
+
+2. **Quoi** : la spécification, ce que le logiciel doit faire, le résultat attendu.
+
+3. **Comment** : la conception, la façon de le construire.
+
+4. **Faire** : le développement, écrire le code.
+
+5. **Tester** : les tests unitaires puis d’intégration, pour s’assurer que le code fonctionne.
+
+6. **Vérifier** : relire, prouver, chercher ce qui cassera, sécuriser. Le dernier rempart.
+
+7. **Déployer** : le déploiement, pour mettre en production la mise à jour de l’application.
+
+8. **Superviser** : une fois en production, vérifier que tout se passe comme attendu, alerter en cas de problème.
+
+Ensuite l’Agile, qui répond au défaut du cycle en V par un cycle itératif : des boucles courtes, de quelques semaines au plus. À chaque tour, l’équipe livre une petite partie du logiciel, la teste, ajuste le cap et corrige les erreurs au plus tôt.
+
+[Graphique : Agile, une succession de sprints de 2 à 4 semaines. Au départ, 1 Pourquoi puis 2 Quoi, une fois. Chaque boucle enchaîne 3 Comment, 4 Faire, 5 Tester, 6 Vérifier, puis revient à 3 Comment. Dans chaque boucle, 2 Quoi pour affiner le besoin et 7 Déployer pour livrer le sprint sont en option, en pointillés. Les trois boucles sont Sprint 1, Sprint 2 et les suivants, en pointillés, puis Sprint n. À la fin, 7 Déployer puis 8 Superviser, une fois. Le temps va de gauche à droite.]
+
+Mais au final, ces deux approches que tout semble opposer passent par les mêmes étapes ! Et ce que nous constatons avec l’IA, c’est que nous sommes encore et toujours, pour l’instant, dans ce même cycle.
+
+## La ligne de partage…
+
+L’IA peut tout faire, soit. Mais c’est la volonté de l’humain qui décide de ce que nous voulons construire ! L’humain est aux commandes et doit y rester. Dans notre cycle de vie, c’est lui qui fixe le Pourquoi, l’objectif, et qui encore aujourd’hui devrait (doit ?) définir le Quoi, le résultat attendu !
+
+Prenons un exemple simple. Gagner sa vie est un Pourquoi : il ne dit rien encore de la route. Monter son entreprise ou chercher un emploi sont deux Quoi, deux chemins très différents vers le même but. Apple suit la même logique, à une autre échelle : son Pourquoi, créer les meilleurs produits du monde, a pris tour à tour la forme d’un baladeur, d’un ordinateur, d’un téléphone et d’une tablette. Un même Pourquoi ouvre plusieurs Quoi. Choisir lequel est la décision qui engage, et elle revient à l’humain.
+
+En quelques mois, l’IA a fait des progrès considérables, et elle sait aujourd’hui concevoir, coder, tester et déployer. À partir du Comment, elle peut commencer à tout prendre en charge, et ce jusqu’à la fin du cycle. Ce n’est pas grave : ces étapes ne sont « que » l’exécution de la volonté de l’humain.
+
+[Graphique : La ligne de partage entre l’humain et l’IA. L’humain définit 1 Pourquoi et 2 Quoi. Il passe la main entre 2 Quoi et 3 Comment. L’IA prend ensuite en charge 3 Comment, 4 Faire, 5 Tester, 6 Vérifier, 7 Déployer et 8 Superviser. Le passage de relais concerne l’exécution, la responsabilité reste humaine. Les huit étapes se lisent de gauche à droite.]
+
+Celui qui définit le Quoi doit être responsable du code livré, et de ce qui tourne en production. Une phrase circule, bien commode pour se dédouaner : « C’est l’IA qui a fait. » Non. Être professionnel, c’est précisément répondre de son travail. Un professionnel ne se cache pas derrière ses outils. L’IA fait le travail, elle n’en répond pas.
+
+*L’humain est responsable, jamais l’IA.*
+
+Un juriste dirait d’ailleurs exactement la même chose ! En cas de litige, aucun tribunal ne convoquera une IA : il cherchera la personne, ou l’entreprise, qui a décidé de s’en servir.
+
+## Le piège : décider sans pouvoir réparer
+
+Mais voilà un piège. Imaginons par exemple une personne du marketing qui demande une fonctionnalité : elle définit le Quoi, et devrait donc en porter la responsabilité. Or elle ne connaît pas le code, ne le comprend pas, et ne peut rien y faire quand la production tombe. Derrière elle, personne ne prend le relais. Le Quoi a un auteur, le code n’a personne. Elle doit donc déléguer une part de sa responsabilité, à un développeur ou à une équipe support.
+
+Dans tous les cas, un responsable du code doit être désigné dès le départ, pour chaque fonctionnalité. Si ce rôle demande des compétences techniques que l’auteur du Quoi n’a pas, il faut désigner une autre personne, une personne responsable, une « person in charge ». C’est vers elle que le support se tourne, le lendemain matin.
+
+## Conclusion
+
+« [Qui vérifie ?](https://alain.kredeum.com/blog/qui-verifie/) » a sa réponse : l’IA, encadrée par l’humain dans un processus strict. « Qui est responsable ? » a la sienne : un humain, toujours, nommé dès le départ. Celui qui définit le Quoi, ou, s’il ne peut pas intervenir sur le code, une personne responsable désignée pour répondre à sa place.
+
+Au départ de tout, il y a la volonté de l’humain. L’exécution, par contre, peut être confiée à l’IA. La frontière entre l’humain et l’IA est un curseur. Il se place aujourd’hui entre le Quoi et le Comment : l’humain décide, l’IA construit.
+
+Ce curseur bouge. L’humain le fait parfois descendre, quand il veut garder la main sur la conception. Demain, l’AGI (une intelligence artificielle générale, au niveau de l’humain) pourrait le faire monter d’un cran : l’IA ne se contenterait plus de construire, elle choisirait aussi quoi construire. Nous n’y sommes pas encore. Et même ce jour-là, une étape doit rester entre nos mains : le Pourquoi. Décider de ce qui vaut la peine d’être fait, c’est le propre de l’humain.
+
+**L’IA exécute, mais la volonté reste humaine.**
+
+Nous mettons également cette démarche en place avec vos équipes dev, sur votre code et vos outils.
+
+[Découvrir la démarche](https://alain.kredeum.com/#offre)
+
+---
+
+Source : https://alain.kredeum.com/en/blog/who-is-responsible/ (langue : en)
+
+Blog · November 24, 2026
+
+# AI writes the code and checks it. Fine. But who is *responsible*?
+
+Writing the code and checking it is no longer the problem: AI handles it. The key question now: who is responsible for it, once the code is in production?
+
+Part of a series of articles on AI applied to code. The previous article, on checking the code: [“AI writes the code. Fine. But who checks it?”](https://alain.kredeum.com/en/blog/validating-code/)
+
+## The code is in prod. Who answers for it?
+
+The previous article stops at code validation: code written, then checked, in a strict process, by several AIs from different vendors. Then everything follows: a pull request (PR) delivers the code, it goes to production, and customers use it every day. And one night, at 3 a.m., production goes down and an alert fires.
+
+In a well-run organization, roles are clear: the alert goes to the support team, on call. Watching prod and stepping in at night is its job. It stabilizes production. During the day, the developer takes over: they know their code well, and they help support understand and fix. They are woken up in the middle of the night only in an absolute emergency. Support answers for production, the developer answers for their code.
+
+Now AI writes the code with no human involved: there is no longer really a developer who understands it. At best, a person who writes a prompt, sometimes even a bot that fires the request. So who is responsible for the code? Who does support turn to, the next morning, to fix it?
+
+## V-model or Agile, the same steps!
+
+To know who is responsible for what, let us first define the steps in the life cycle of an application, from the idea to production. Two major approaches have followed one another in the history of software.
+
+[Graphique : V-model, a single pass. The descending branch goes from 1 Why to 2 What, 3 How, then 4 Build, at the tip of the V. The ascending branch runs through 5 Test, 6 Verify, 7 Deploy, then 8 Monitor. Dotted lines link the steps facing each other: 3 and 5, 2 and 6, 1 and 7.]
+
+First the V-model, which runs a project in a single pass. The descending branch of the V refines the need, from specification down to detailed design. The ascending branch tests in reverse order, from unit tests up to acceptance, and each level of testing answers a design step. Everything is planned up front, and a specification error often shows up only at the end, months later, when fixing it costs the most.
+
+Here, briefly, are the 8 steps:
+
+1. **Why**: the goal, the will, the reason for doing it, the problem that justifies the work.
+
+2. **What**: the specification, what the software must do, the expected result.
+
+3. **How**: the design, the way to build it.
+
+4. **Build**: the development, writing the code.
+
+5. **Test**: unit tests then integration tests, to make sure the code works.
+
+6. **Verify**: review, prove, look for what will break, secure. The last line of defense.
+
+7. **Deploy**: the deployment, to put the application update into production.
+
+8. **Monitor**: once in production, check that everything goes as expected, alert when something goes wrong.
+
+Then Agile, which answers the V-model’s flaw with an iterative cycle: short loops, a few weeks at most. On each lap, the team ships a small part of the software, tests it, adjusts course and fixes errors as early as possible.
+
+[Graphique : Agile, a succession of sprints of 2 to 4 weeks. At the start, 1 Why then 2 What, once. Each loop runs through 3 How, 4 Build, 5 Test, 6 Verify, then returns to 3 How. In each loop, 2 What to refine the need and 7 Deploy to ship the sprint are optional, shown dotted. The three loops are Sprint 1, Sprint 2 and the following ones, dotted, then Sprint n. At the end, 7 Deploy then 8 Monitor, once. Time runs from left to right.]
+
+But in the end, these two approaches that seem opposed in every way go through the same steps! And what we see with AI is that we are still, and always, for now, in this same cycle.
+
+## The dividing line…
+
+AI can do everything, fine. But it is human will that decides what we want to build! The human is in command and must stay there. In our life cycle, the human sets the Why, the goal, and still today should (must?) define the What, the expected result!
+
+Take a simple example. Earning a living is a Why: it says nothing yet about the road. Starting a company or looking for a job are two Whats, two very different paths to the same goal. Apple follows the same logic, on another scale: its Why, making the best products in the world, has taken the shape, in turn, of a music player, a computer, a phone and a tablet. One Why opens up several Whats. Choosing which one is the decision that commits, and it belongs to the human.
+
+In a few months, AI has made considerable progress, and it now knows how to design, code, test and deploy. From the How onward, it can start taking care of everything, right to the end of the cycle. That is fine: these steps are “only” the execution of human will.
+
+[Graphique : The dividing line between human and AI. The human defines 1 Why and 2 What, then hands over between 2 What and 3 How. AI then takes care of 3 How, 4 Build, 5 Test, 6 Verify, 7 Deploy and 8 Monitor. The handover is about execution; responsibility remains human. The eight steps read from left to right.]
+
+Whoever defines the What must be responsible for the code delivered, and for what runs in production. A phrase is going around, very handy for dodging blame: “The AI did it.” No. Being a professional means precisely answering for your work. A professional does not hide behind their tools. AI does the work, it does not answer for it.
+
+*The human is responsible, never the AI.*
+
+A lawyer would say exactly the same thing, by the way! In a dispute, no court will summon an AI: it will look for the person, or the company, that decided to use it.
+
+## The trap: deciding without being able to fix
+
+But here is a trap. Picture, for example, someone in marketing who asks for a feature: they define the What, and should therefore carry the responsibility for it. Yet they do not know the code, do not understand it, and can do nothing when production goes down. Behind them, nobody takes over. The What has an author, the code has no one. So they must delegate part of their responsibility, to a developer or to a support team.
+
+In every case, someone responsible for the code must be named from the start, for each feature. If that role requires technical skills the author of the What does not have, another person must be named, a responsible person, a “person in charge”. That is who support turns to, the next morning.
+
+## Conclusion
+
+[“Who checks?”](https://alain.kredeum.com/en/blog/validating-code/) has its answer: AI, supervised by humans in a strict process. “Who is responsible?” has its own: a human, always, named from the start. Whoever defines the What, or, if they cannot work on the code, a responsible person appointed to answer in their place.
+
+At the origin of everything, there is human will. Execution, on the other hand, can be handed to AI. The boundary between human and AI is a slider. Today it sits between the What and the How: the human decides, AI builds.
+
+That slider moves. The human sometimes pulls it down, to keep a hand on the design. Tomorrow, AGI (artificial general intelligence, at human level) could push it up a notch: AI would no longer just build, it would also choose what to build. We are not there yet. And even on that day, one step must stay in our hands: the Why. Deciding what is worth doing is what makes us human.
+
+**AI executes, but the will remains human.**
+
+We can set up this same approach with your dev teams, on your code and with your tools.
+
+[See the approach](https://alain.kredeum.com/en/#offre)
+
+---
+
 Source : https://alain.kredeum.com/blog/qui-verifie/ (langue : fr)
 
 Blog · 12 novembre 2026

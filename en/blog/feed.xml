@@ -4,9 +4,17 @@
 <subtitle>Articles by Alain Papazoglou on AI applied to code: writing, validating and maintaining software with AI, backed by real projects.</subtitle>
 <link href="https://alain.kredeum.com/en/blog/feed.xml" rel="self"/>
 <link href="https://alain.kredeum.com/en/blog/"/>
-<updated>2026-11-18T00:00:00Z</updated>
+<updated>2026-11-24T00:00:00Z</updated>
 <id>https://alain.kredeum.com/en/blog/</id>
 <author><name>Alain Papazoglou</name></author>
+<entry>
+<title>AI writes the code and checks it. Fine. But who is responsible?</title>
+<link href="https://alain.kredeum.com/en/blog/who-is-responsible/"/>
+<id>https://alain.kredeum.com/en/blog/who-is-responsible/</id>
+<published>2026-11-24T00:00:00Z</published>
+<updated>2026-11-24T00:00:00Z</updated>
+<summary>AI writes the code and checks it. In production, responsibility lies with the human who defines the What: AI is never responsible.</summary>
+</entry>
 <entry>
 <title>AI writes the code. Fine. But who checks it?</title>
 <link href="https://alain.kredeum.com/en/blog/validating-code/"/>
