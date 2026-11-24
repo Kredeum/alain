@@ -20,7 +20,7 @@ Le précédent article s’arrête à la validation du code, écrit puis vérifi
 
 Dans une organisation bien structurée, les rôles sont clairs : l’alerte part vers l’équipe support, d’astreinte. Surveiller la prod, intervenir la nuit, c’est son métier. Elle stabilise la production. En journée, le développeur prend le relais : il connaît bien son code, il aide le support à comprendre et à corriger. Il n’est réveillé en pleine nuit qu’en cas d’urgence absolue. Le support répond de la production, le développeur répond de son code.
 
-Maintenant, l’IA écrit le code sans aucun humain : il n’y a plus vraiment de développeur qui le comprenne. Au mieux, une personne qui rédige un prompt, parfois même un bot qui lance la demande. Qui est alors responsable du code ? Vers qui le support se tourne-t-il, le lendemain matin, pour corriger ?
+Maintenant, l’IA écrit le code sans aucun humain : il n’y a pas forcément de développeur qui le comprenne. Au mieux, une personne qui rédige un prompt, parfois même un bot qui lance la demande. Qui est alors responsable du code ? Vers qui le support se tourne-t-il, le lendemain matin, pour corriger ?
 
 ## Cycle en V ou Agile, les mêmes étapes !
 
@@ -116,7 +116,7 @@ The previous article stops at code validation: code written, then checked, in a 
 
 In a well-run organization, roles are clear: the alert goes to the support team, on call. Watching prod and stepping in at night is its job. It stabilizes production. During the day, the developer takes over: they know their code well, and they help support understand and fix. They are woken up in the middle of the night only in an absolute emergency. Support answers for production, the developer answers for their code.
 
-Now AI writes the code with no human involved: there is no longer really a developer who understands it. At best, a person who writes a prompt, sometimes even a bot that fires the request. So who is responsible for the code? Who does support turn to, the next morning, to fix it?
+Now AI writes the code with no human involved: there is not necessarily a developer who understands it. At best, a person who writes a prompt, sometimes even a bot that fires the request. So who is responsible for the code? Who does support turn to, the next morning, to fix it?
 
 ## V-model or Agile, the same steps!
 
