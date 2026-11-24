@@ -10,7 +10,7 @@ Blog · 24 novembre 2026
 
 # L’IA code et vérifie, ok ! Mais qui est *responsable* ?
 
-Écrire le code et le vérifier n’est plus le problème : l’IA s’en charge. Le point clé, désormais : qui en est responsable, une fois le code en production ?
+L’IA peut désormais écrire le code et le vérifier, dans un processus strict. Une question reste entière : qui en est responsable, une fois le code en production ?
 
 Suite d’une série d’articles sur l’IA appliquée au code. L’article précédent sur la vérification du code : [« L’IA code, ok ! Mais qui vérifie ? »](https://alain.kredeum.com/blog/qui-verifie/)
 
@@ -24,7 +24,7 @@ Maintenant, l’IA écrit le code sans aucun humain : il n’y a plus vraiment d
 
 ## Cycle en V ou Agile, les mêmes étapes !
 
-Pour savoir qui est responsable de quoi, définissons d’abord les étapes du cycle de vie d’une application, de l’idée jusqu’à la production. Deux grandes approches se sont succédé dans l’histoire du logiciel.
+Pour savoir qui est responsable de quoi, nous distinguons huit grandes activités, de l’idée jusqu’à la production. Cette grille de lecture permet de situer le rôle de chacun. Selon la méthode choisie, ces activités s’enchaînent, se chevauchent ou se répètent.
 
 [Graphique : Cycle en V, un seul passage. La branche descendante va de 1 Pourquoi à 2 Quoi, 3 Comment puis 4 Faire, à la pointe du V. La branche montante enchaîne 5 Tester, 6 Vérifier, 7 Déployer puis 8 Superviser. Les pointillés relient les étapes face à face, 3 et 5, 2 et 6, 1 et 7.]
 
@@ -64,7 +64,9 @@ En quelques mois, l’IA a fait des progrès considérables, et elle sait aujour
 
 [Graphique : La ligne de partage entre l’humain et l’IA. L’humain définit 1 Pourquoi et 2 Quoi. Il passe la main entre 2 Quoi et 3 Comment. L’IA prend ensuite en charge 3 Comment, 4 Faire, 5 Tester, 6 Vérifier, 7 Déployer et 8 Superviser. Le passage de relais concerne l’exécution, la responsabilité reste humaine. Les huit étapes se lisent de gauche à droite.]
 
-Celui qui définit le Quoi doit être responsable du code livré, et de ce qui tourne en production. Une phrase circule, bien commode pour se dédouaner : « C’est l’IA qui a fait. » Non. Être professionnel, c’est précisément répondre de son travail. Un professionnel ne se cache pas derrière ses outils. L’IA fait le travail, elle n’en répond pas.
+Celui qui définit le Quoi est, par défaut, responsable du code livré et de ce qui tourne en production. S’il ne possède pas les compétences techniques nécessaires, il doit confier cette responsabilité à un développeur ou à une équipe clairement désignée. Demander une fonctionnalité ne signifie pas savoir la réparer, mais cela oblige à prévoir qui pourra intervenir.
+
+Une phrase circule, bien commode pour se dédouaner : « C’est l’IA qui a fait. » Non. Être professionnel, c’est précisément répondre de son travail. Un professionnel ne se cache pas derrière ses outils. L’IA fait le travail, elle n’en répond pas.
 
 *L’humain est responsable, jamais l’IA.*
 
@@ -84,6 +86,8 @@ Au départ de tout, il y a la volonté de l’humain. L’exécution, par contre
 
 Ce curseur bouge. L’humain le fait parfois descendre, quand il veut garder la main sur la conception. Demain, l’AGI (une intelligence artificielle générale, au niveau de l’humain) pourrait le faire monter d’un cran : l’IA ne se contenterait plus de construire, elle choisirait aussi quoi construire. Nous n’y sommes pas encore. Et même ce jour-là, une étape doit rester entre nos mains : le Pourquoi. Décider de ce qui vaut la peine d’être fait, c’est le propre de l’humain.
 
+Et à 3 h du matin, quand la production tombe, le support doit savoir vers qui se tourner le lendemain : une personne nommée, qui comprend le code et a les moyens d’agir.
+
 **L’IA exécute, mais la volonté reste humaine.**
 
 Nous mettons également cette démarche en place avec vos équipes dev, sur votre code et vos outils.
@@ -98,7 +102,7 @@ Blog · November 24, 2026
 
 # AI writes the code and checks it. Fine. But who is *responsible*?
 
-Writing the code and checking it is no longer the problem: AI handles it. The key question now: who is responsible for it, once the code is in production?
+AI can now write the code and check it, within a strict process. One question remains: who is responsible for it once the code is in production?
 
 Part of a series of articles on AI applied to code. The previous article, on checking the code: [“AI writes the code. Fine. But who checks it?”](https://alain.kredeum.com/en/blog/validating-code/)
 
@@ -112,7 +116,7 @@ Now AI writes the code with no human involved: there is no longer really a devel
 
 ## V-model or Agile, the same steps!
 
-To know who is responsible for what, let us first define the steps in the life cycle of an application, from the idea to production. Two major approaches have followed one another in the history of software.
+To understand who is responsible for what, we distinguish eight main activities, from the initial idea through to production. This framework helps clarify each person’s role. Depending on the method chosen, these activities follow one another, overlap or repeat.
 
 [Graphique : V-model, a single pass. The descending branch goes from 1 Why to 2 What, 3 How, then 4 Build, at the tip of the V. The ascending branch runs through 5 Test, 6 Verify, 7 Deploy, then 8 Monitor. Dotted lines link the steps facing each other: 3 and 5, 2 and 6, 1 and 7.]
 
@@ -152,7 +156,9 @@ In a few months, AI has made considerable progress, and it now knows how to desi
 
 [Graphique : The dividing line between human and AI. The human defines 1 Why and 2 What, then hands over between 2 What and 3 How. AI then takes care of 3 How, 4 Build, 5 Test, 6 Verify, 7 Deploy and 8 Monitor. The handover is about execution; responsibility remains human. The eight steps read from left to right.]
 
-Whoever defines the What must be responsible for the code delivered, and for what runs in production. A phrase is going around, very handy for dodging blame: “The AI did it.” No. Being a professional means precisely answering for your work. A professional does not hide behind their tools. AI does the work, it does not answer for it.
+Whoever defines the What is, by default, responsible for the code delivered and for what runs in production. If they lack the necessary technical skills, they must entrust that responsibility to a clearly designated developer or team. Asking for a feature does not mean knowing how to fix it, but it does mean planning who can step in.
+
+A phrase is going around, very handy for dodging blame: “The AI did it.” No. Being a professional means precisely answering for your work. A professional does not hide behind their tools. AI does the work, it does not answer for it.
 
 *The human is responsible, never the AI.*
 
@@ -171,6 +177,8 @@ In every case, someone responsible for the code must be named from the start, fo
 At the origin of everything, there is human will. Execution, on the other hand, can be handed to AI. The boundary between human and AI is a slider. Today it sits between the What and the How: the human decides, AI builds.
 
 That slider moves. The human sometimes pulls it down, to keep a hand on the design. Tomorrow, AGI (artificial general intelligence, at human level) could push it up a notch: AI would no longer just build, it would also choose what to build. We are not there yet. And even on that day, one step must stay in our hands: the Why. Deciding what is worth doing is what makes us human.
+
+And at 3 a.m., when production goes down, support must know who to turn to the next morning: a named person who understands the code and has the means to act.
 
 **AI executes, but the will remains human.**
 
