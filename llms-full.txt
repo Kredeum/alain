@@ -98,6 +98,8 @@ Ainsi, à 3 h du matin, quand la production tombe, le support sait vers qui se t
 
 - Février 2024 : [« Moffatt v. Air Canada »](https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do), décision d’un tribunal canadien : la compagnie répond de ce que dit son chatbot.
 
+**Vous voulez réagir ?** La discussion se passe sur LinkedIn : [rejoindre la discussion](https://www.linkedin.com/feed/update/urn:li:activity:7531259966658314242/)
+
 Nous mettons également cette démarche en place avec vos équipes dev, sur votre code et vos outils.
 
 [Découvrir la démarche](https://alain.kredeum.com/#offre)
@@ -197,6 +199,8 @@ So at 3 a.m., when production goes down, support knows who to turn to: a named p
 - September 2009: [“Start with why – how great leaders inspire action”](https://www.youtube.com/watch?v=u4ZoJKF_VuA), talk by Simon Sinek at TEDxPugetSound, one of TED’s most watched.
 
 - February 2024: [“Moffatt v. Air Canada”](https://decisions.civilresolutionbc.ca/crt/crtd/en/525448/1/document.do), decision of a Canadian tribunal: the airline answers for what its chatbot says.
+
+**Want to weigh in?** The discussion is happening on LinkedIn (post in French, auto-translation available), comments in English are welcome: [join the discussion](https://www.linkedin.com/feed/update/urn:li:activity:7531259966658314242/)
 
 We can set up this same approach with your dev teams, on your code and with your tools.
 
